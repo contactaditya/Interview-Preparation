@@ -4,14 +4,14 @@ import java.io.InputStreamReader;
 
 public class Mean {
 	
-  public static long calculateMean(long[] numbers) {
+  public static long calculateMean(long[] array) {
 
-	long n = numbers.length;  
+	long n = array.length;  
     long sum = 0;
     long mean = 0;
      
     for(int i=0; i<n; i++) {
-    sum = sum + numbers[i];
+    sum = sum + array[i];
     }
 
     mean = sum/n;
