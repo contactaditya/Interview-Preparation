@@ -18,25 +18,21 @@ class Node {
 	  this.next = next;
     }
     
-	public Object getData()
-	{
-	  return data;
-	}
+    public Object getData() {
+	return data;
+    }
 	
-	public void setData(Object data)
-	{
+    public void setData(Object data) {
 	  this.data = data;
-	}
+    }
 	
-	public Node getNext()
-	{
+    public Node getNext() {
 	  return next;
-	}
+    }
 	
-	public void setNext(Node next)
-	{
+    public void setNext(Node next) {
 	  this.next = next;
-	}
+    }
 }
 
 public class LinkList {
@@ -399,55 +395,55 @@ public class LinkList {
 	 choice = Integer.parseInt(br.readLine());
   switch (choice) {
    case 1:  System.out.println();	
-	   		System.out.print("Enter a element to insert as the first element in the linkedlist: ");
+	   	System.out.print("Enter a element to insert as the first element in the linkedlist: ");
 	        BufferedReader br1 = new BufferedReader(new InputStreamReader(System.in));  	
 	        String element = br1.readLine();
 	        addFirst(element);
 	    	break;
 	case 2: System.out.println();	
-		    System.out.print("Enter the index of the element in the linkedlist: ");
+		System.out.print("Enter the index of the element in the linkedlist: ");
 	        BufferedReader br2 = new BufferedReader(new InputStreamReader(System.in));  	
 	        int index = Integer.parseInt(br2.readLine());
 	        System.out.println();	
 	    	System.out.print("Enter a element to insert in the linkedlist: ");
-		  	BufferedReader br3 = new BufferedReader(new InputStreamReader(System.in));  	
-		  	String element1 = br3.readLine();
-		  	add(index, element1);
+		BufferedReader br3 = new BufferedReader(new InputStreamReader(System.in));  	
+		String element1 = br3.readLine();
+		add(index, element1);
 	        break;
 	case 3: System.out.println();	
-		    System.out.print("Enter a element to insert as the last element in the linkedlist: ");
-	   		BufferedReader br4 = new BufferedReader(new InputStreamReader(System.in));  	
-	   		String element2 = br4.readLine();
-	   		addLast(element2);
+		System.out.print("Enter a element to insert as the last element in the linkedlist: ");
+	   	BufferedReader br4 = new BufferedReader(new InputStreamReader(System.in));  	
+	   	String element2 = br4.readLine();
+	   	addLast(element2);
 	        break;
 	case 4: removeFirst();
 	        break;
 	case 5: removeLast();
 	        break;  
 	case 6: System.out.println();	
-		    System.out.print("Enter the index of the element in the linkedlist: ");
-			BufferedReader br7 = new BufferedReader(new InputStreamReader(System.in));  	
-			int index2 = Integer.parseInt(br7.readLine());
-		    remove(index2);
+		System.out.print("Enter the index of the element in the linkedlist: ");
+	        BufferedReader br7 = new BufferedReader(new InputStreamReader(System.in));  	
+		int index2 = Integer.parseInt(br7.readLine());
+		remove(index2);
      		break;
 	case 7: displayFirst();
      		break;  
 	case 8: displayLast();
      		break;  
 	case 9: System.out.println();	
-		    System.out.print("Enter the index of the element in the linkedlist: ");
-	 		BufferedReader br8 = new BufferedReader(new InputStreamReader(System.in));  	
-	 		int index3 = Integer.parseInt(br8.readLine());
-	 		display(index3);
-	 		break;  		
+		System.out.print("Enter the index of the element in the linkedlist: ");
+	 	BufferedReader br8 = new BufferedReader(new InputStreamReader(System.in));  	
+	        int index3 = Integer.parseInt(br8.readLine());
+	        display(index3);
+	 	break;  		
 	case 10: display();
-			 break; 
-    case 11: isEmpty();
-		   	 break;  
+	         break; 
+        case 11: isEmpty();
+		 break;  
 	case 12: size();
-	   	     break;  
+	   	 break;  
 	case 13: reverse();
-	 		 break;     	 
+                 break;     	 
 	}
 	 System.out.print("\n");
 		}while(choice!=14);
