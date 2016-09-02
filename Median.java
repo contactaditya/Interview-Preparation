@@ -29,7 +29,6 @@ long array[] = new long[numbers];
 	    
 System.out.print("\n");
 System.out.println("Please enter the actual values in the array:");
-System.out.print("\n");
 for (int i = 0; i < numbers; i++) {
   array[i] = Integer.parseInt(br.readLine());
 }
