@@ -3,36 +3,36 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 class Node {
-    public Object data;
-    public Node next;
+  public Object data;
+  public Node next;
 
-    //Node constructor
+  //Node constructor
     
-    public Node(Object data) {
-	  this.data = data;
-      next = null;
-    }
+  public Node(Object data) {
+    this.data = data;
+    next = null;
+  }
     
-    public Node(Object data, Node next) {
-	  this.data = data;
-	  this.next = next;
-    }
+  public Node(Object data, Node next) {
+    this.data = data;
+	this.next = next;
+  }
     
-    public Object getData() {
-	return data;
-    }
+  public Object getData() {
+    return data;
+  }
 	
-    public void setData(Object data) {
-	  this.data = data;
-    }
+  public void setData(Object data) {
+	this.data = data;
+  }
 	
-    public Node getNext() {
-	  return next;
-    }
+  public Node getNext() {
+    return next;
+  }
 	
-    public void setNext(Node next) {
-	  this.next = next;
-    }
+  public void setNext(Node next) {
+	this.next = next;
+  }
 }
 
 public class LinkList {
@@ -49,8 +49,8 @@ public class LinkList {
 		
   public static void addFirst(Object object) {
    /**
-	 * Add an item to the front of the linkedlist.
-	 */
+	* Add an item to the front of the linkedlist.
+	*/
   Node temp = new Node(object);
   Node current = head;	  
   
@@ -68,8 +68,8 @@ public class LinkList {
   
   public static void add(int index,Object object) {
    /**
-	 * Add an item on a specific index in the linkedlist.
-	 */
+	* Add an item on a specific index in the linkedlist.
+	*/
 	  
   Node temp = new Node(object);
   Node current = head;	
@@ -106,8 +106,8 @@ public class LinkList {
 	 
   public static void addLast(Object object) {
    /**
-	 * Add an item to the back of the linkedlist.
-	 */
+	* Add an item to the back of the linkedlist.
+	*/
   Node temp = new Node(object);
   Node current = head;
   
@@ -129,8 +129,8 @@ public class LinkList {
 
   public static Object removeFirst() {
    /**
-	 * Removes the first item from the linked list.	 
-	 */	 
+	* Removes the first item from the linked list.	 
+	*/	 
 	  
   System.out.println();	 	
   if(size==0) {	   
@@ -148,8 +148,8 @@ public class LinkList {
   
   public static Object removeLast() {
    /**
-	 * Removes the last item from the linked list.	 
-	 */	 
+	* Removes the last item from the linked list.	 
+	*/	 
 	  
    System.out.println();	 	
    if(size==0) {	   
@@ -171,10 +171,60 @@ public class LinkList {
   return current;
   }
   
+  public static Object skipAndRemove(int number, int index) {
+  /**
+   * Removes the last item from the linked list.	 
+   */	 
+		   	
+  if(size==0) {
+	System.out.println();	   
+    System.out.println("The linked list is currently empty and has no elements.");	 	
+    return head == null;  
+  }
+  
+  if(index < 0) {  
+	System.out.println();	   
+	System.out.println("Index entered by the user is negative.");
+    return false;
+  }
+  
+  if(index >= size) {  
+	System.out.println();	   
+	System.out.println("Index entered by the user is greater than size.");
+    return false;
+  }
+	  
+  Node current = head;
+  int count = 0;
+  while(current != null) {
+
+  for(count = 1; count < index && current != null; count++) {	
+   if(current.getNext() == null) {
+	 System.out.println();	   
+     System.out.println("The linked list has ended before reaching the index. No element can be removed from the linked list.");	
+	 return false;
+   }  
+	 current = current.getNext();  
+   }
+  
+  Node temp = current.next;
+  
+  for(count = 1; count <= number && temp != null; count++) {	
+	 Node temp1 = temp;
+	 temp = temp.next;
+	 size--;
+  }
+  
+  current.next = temp;
+  current = temp;
+  }
+  return current;
+ }
+  
   public static boolean remove(int index) {
    /**
-	 * Removes the item at the specified place in the linked list.	 
-	 */	 
+	* Removes the item at the specified place in the linked list.	 
+	*/	 
 	  
   System.out.println();	
   
@@ -203,14 +253,14 @@ public class LinkList {
   }	  
 	  
   else {		
-	  for(int i=1; i < index; i++) {
-	    if(current.getNext() == null) {
-	      System.out.println("The linked list has ended before reaching the index. No element can be removed from the linked list.");	
-		  return false;
-	    }
-	   current = current.getNext();
-	  }	 		  
-	}
+    for(int i=1; i < index; i++) {
+	  if(current.getNext() == null) {
+	    System.out.println("The linked list has ended before reaching the index. No element can be removed from the linked list.");	
+		return false;
+	  }
+	 current = current.getNext();
+	}	 		  
+  }
   System.out.println("The linked list has successfully removed " + current.getNext().getData());
   current.setNext(current.getNext().getNext());
   size--; 
@@ -264,8 +314,8 @@ public class LinkList {
   
   public static void displayFirst() {
    /**
-     * Displays the first element of the linked list.
-	 */
+    * Displays the first element of the linked list.
+	*/
 
   System.out.println();	  
 	  
@@ -301,8 +351,8 @@ public class LinkList {
   
   public static void display(int index) {
   /**
-	* Displays the element at the specified position in the linked list.
-	*/
+   * Displays the element at the specified position in the linked list.
+   */
 	 
   System.out.println();	
   
@@ -380,14 +430,15 @@ public class LinkList {
 	 System.out.println("4. For deleting the first element from the linked list if it is present.");
 	 System.out.println("5. For deleting the last element from the linked list if it is present.");
 	 System.out.println("6. For deleting an element from the linked list if it is present.");
-	 System.out.println("7. For displaying the first element of the linked list.");
-	 System.out.println("8. For displaying the last element of the linked list.");
-	 System.out.println("9. For displaying the element at the specified position in the linked list.");
-	 System.out.println("10. For displaying the contents of the linked list.");
-	 System.out.println("11. For checking the contents of the linked list are empty or not.");
-	 System.out.println("12. For checking the size of the linked list.");
-	 System.out.println("13. For reversing the linked list.");
-	 System.out.println("14. For exiting from the program.");
+	 System.out.println("7. For deleting m nodes from the linked list after n nodes if they are present.");
+	 System.out.println("8. For displaying the first element of the linked list.");
+	 System.out.println("9. For displaying the last element of the linked list.");
+	 System.out.println("10. For displaying the element at the specified position in the linked list.");
+	 System.out.println("11. For displaying the contents of the linked list.");
+	 System.out.println("12. For checking the contents of the linked list are empty or not.");
+	 System.out.println("13. For checking the size of the linked list.");
+	 System.out.println("14. For reversing the linked list.");
+	 System.out.println("15. For exiting from the program.");
 	 
 	 System.out.println();	
 	 System.out.print("Enter your choice: ");
@@ -395,57 +446,67 @@ public class LinkList {
 	 choice = Integer.parseInt(br.readLine());
   switch (choice) {
    case 1:  System.out.println();	
-	   	System.out.print("Enter a element to insert as the first element in the linkedlist: ");
+	   		System.out.print("Enter a element to insert as the first element in the linkedlist: ");
 	        BufferedReader br1 = new BufferedReader(new InputStreamReader(System.in));  	
 	        String element = br1.readLine();
 	        addFirst(element);
 	    	break;
 	case 2: System.out.println();	
-		System.out.print("Enter the index of the element in the linkedlist: ");
+		    System.out.print("Enter the index of the element in the linkedlist: ");
 	        BufferedReader br2 = new BufferedReader(new InputStreamReader(System.in));  	
 	        int index = Integer.parseInt(br2.readLine());
 	        System.out.println();	
 	    	System.out.print("Enter a element to insert in the linkedlist: ");
-		BufferedReader br3 = new BufferedReader(new InputStreamReader(System.in));  	
-		String element1 = br3.readLine();
-		add(index, element1);
+		  	BufferedReader br3 = new BufferedReader(new InputStreamReader(System.in));  	
+		  	String element1 = br3.readLine();
+		  	add(index, element1);
 	        break;
 	case 3: System.out.println();	
-		System.out.print("Enter a element to insert as the last element in the linkedlist: ");
-	   	BufferedReader br4 = new BufferedReader(new InputStreamReader(System.in));  	
-	   	String element2 = br4.readLine();
-	   	addLast(element2);
+		    System.out.print("Enter a element to insert as the last element in the linkedlist: ");
+	   		BufferedReader br4 = new BufferedReader(new InputStreamReader(System.in));  	
+	   		String element2 = br4.readLine();
+	   		addLast(element2);
 	        break;
 	case 4: removeFirst();
 	        break;
 	case 5: removeLast();
 	        break;  
 	case 6: System.out.println();	
-		System.out.print("Enter the index of the element in the linkedlist: ");
-	        BufferedReader br7 = new BufferedReader(new InputStreamReader(System.in));  	
-		int index2 = Integer.parseInt(br7.readLine());
-		remove(index2);
+		    System.out.print("Enter the index of the element in the linkedlist: ");
+			BufferedReader br7 = new BufferedReader(new InputStreamReader(System.in));  	
+			int index2 = Integer.parseInt(br7.readLine());
+		    remove(index2);
      		break;
-	case 7: displayFirst();
+	case 7: System.out.println();	
+			System.out.print("Enter the number of nodes that you want to delete: ");
+			BufferedReader br8 = new BufferedReader(new InputStreamReader(System.in));  	
+			int number = Integer.parseInt(br8.readLine());
+			System.out.println();	
+			System.out.print("Enter the index of the element where you want to delete in the linkedlist: ");
+			BufferedReader br9 = new BufferedReader(new InputStreamReader(System.in));  	
+			int index4 = Integer.parseInt(br9.readLine());
+    		skipAndRemove(number, index4);
+			break;     		
+	case 8: displayFirst();
      		break;  
-	case 8: displayLast();
+	case 9: displayLast();
      		break;  
-	case 9: System.out.println();	
-		System.out.print("Enter the index of the element in the linkedlist: ");
-	 	BufferedReader br8 = new BufferedReader(new InputStreamReader(System.in));  	
-	        int index3 = Integer.parseInt(br8.readLine());
-	        display(index3);
-	 	break;  		
-	case 10: display();
-	         break; 
-        case 11: isEmpty();
-		 break;  
-	case 12: size();
-	   	 break;  
-	case 13: reverse();
-                 break;     	 
+	case 10:System.out.println();	
+		    System.out.print("Enter the index of the element in the linkedlist: ");
+	 		BufferedReader br10 = new BufferedReader(new InputStreamReader(System.in));  	
+	 		int index5 = Integer.parseInt(br10.readLine());
+	 		display(index5);
+	 		break;  		
+	case 11: display();
+			 break; 
+    case 12: isEmpty();
+		   	 break;  
+	case 13: size();
+	   	     break;  
+	case 14: reverse();
+	 		 break;     	 
 	}
 	 System.out.print("\n");
-		}while(choice!=14);
+		}while(choice!=15);
 	 }
   }
