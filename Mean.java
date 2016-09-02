@@ -15,7 +15,6 @@ public class Mean {
  }
 
  mean = sum/n;
-
  return mean;		
  }
 
@@ -45,6 +44,5 @@ public class Mean {
     
   System.out.print("\n");
   System.out.println("The value of the mean of the array is: " + mean);
-
   }
 }
