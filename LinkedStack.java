@@ -29,8 +29,8 @@ public static Object pop() {
    */	 
 	
   if(top == null) {
-  System.out.println("The stack is already empty. No element can be removed from the stack.");  
-  return -1;
+    System.out.println("The stack is already empty. No element can be removed from the stack.");  
+    return -1;
   }	
 	
   Object item = top.data;
@@ -47,12 +47,12 @@ public static boolean isEmpty() {
  System.out.println();	
 	
  if(top == null) {	 
-    System.out.println("The stack is currently empty and has no elements.");	 	  	   
-  }
+   System.out.println("The stack is currently empty and has no elements.");	 	  	   
+ }
 		   
  else {	
-	 System.out.println("The stack is currently not empty.");	 		   
-  }
+   System.out.println("The stack is currently not empty.");	 		   
+ }
  return top == null;
  }
 		 
@@ -63,7 +63,7 @@ public static int size() {
 	
   int count = 0;
   for (Node node = top; node != null; node = node.next) {
-  count++;
+    count++;
   }
   
   System.out.println();		    
