@@ -24,39 +24,38 @@ public class Median {
 	
   public static void main(String[] args) throws NumberFormatException, IOException {
 	
-	  	Scanner input = new Scanner(System.in);
-	    System.out.print("Enter number of elements in the array: ");
-	    int numbers = input.nextInt();   
-	    long array[] = new long[numbers];
+    Scanner input = new Scanner(System.in);
+    System.out.print("Enter number of elements in the array: "); 
+    int numbers = input.nextInt();   
+    long array[] = new long[numbers];
 	    
-	    System.out.print("\n");
-		System.out.print("Please enter the actual values in the array: ");
-		for (int i = 0; i < numbers; i++) {
-		  array[i] = input.nextInt(); 
-		}
+    System.out.print("\n");
+    System.out.print("Please enter the actual values in the array: ");
+    for (int i = 0; i < numbers; i++) {
+       array[i] = input.nextInt(); 
+    }
 		
-		System.out.print("\n");
+    System.out.print("\n");
 		
-		System.out.print("The actual values in the array are: ");
-		for (int i = 0; i < numbers; i++) {
-		  System.out.print(array[i] + " ");
-		}  
+    System.out.print("The actual values in the array are: ");
+    for (int i = 0; i < numbers; i++) {
+      System.out.print(array[i] + " ");
+    }  
 		
-		System.out.print("\n \n");
+    System.out.print("\n \n");
 		
-		Arrays.sort(array);
+    Arrays.sort(array);
 		
-		System.out.print("The sorted values in the array are: ");
+    System.out.print("The sorted values in the array are: ");
 		
-		 for (Long i : array) {
-		   System.out.print(i.intValue() + " ");
-		 }
+    for (Long i : array) {
+      System.out.print(i.intValue() + " ");
+    }
 		  	
-	    long median = calculateMedian(array);
+    long median = calculateMedian(array);
 	    
-	    System.out.print("\n \n");
+    System.out.print("\n \n");
 	    
-	    System.out.println("The value of the median of the array is: " + median);
-
-		}
-	}
+    System.out.println("The value of the median of the array is: " + median);
+   }
+}
