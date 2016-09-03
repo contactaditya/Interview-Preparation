@@ -16,7 +16,7 @@ public class UnionAndIntersection {
   
   while(i < x && j < y) {
    if(array[i] < array1[j]) {
-	 i++;  
+     i++;  
    }
    
    else if(array[i] > array1[j]) {
@@ -24,9 +24,9 @@ public class UnionAndIntersection {
    }
    
    else {
-	list.add(array[i]);
-	i++;
-	j++;
+     list.add(array[i]);
+     i++;
+     j++;
    }
   }
   
@@ -47,21 +47,21 @@ public class UnionAndIntersection {
   System.out.print("The value of union of the sorted arrays is: ");
   
   while(i < x && j < y) {
-	if(array[i] < array1[j]) {
-	  list.add(array[i]);	
-	  i++;  
-	}
+    if(array[i] < array1[j]) {
+      list.add(array[i]);	
+      i++;  
+    }
 	   
-	else if(array[i] > array1[j]) {
-	  list.add(array1[j]);		
-	  j++;  
-	}
+    else if(array[i] > array1[j]) {
+      list.add(array1[j]);		
+      j++;  
+    }
 	   
-	else {
-	list.add(array[i]);
-	i++;
-	j++;
-	}
+    else {
+      list.add(array[i]);
+      i++;
+      j++;
+    }
   }
   
   
@@ -71,8 +71,8 @@ public class UnionAndIntersection {
   }
   
   while (j < array1.length) {
-	list.add(array1[j]);
-	j++;
+    list.add(array1[j]);
+    j++;
   }
   
   Set<Integer> uniqueSet = new TreeSet<Integer>(list);
@@ -106,8 +106,8 @@ public class UnionAndIntersection {
   
   System.out.println();	
   System.out.print("Please enter number: ");
-  for (int i = 0; i < array1.length; i++) {
-	array1[i] = input.nextInt();
+  for(int i = 0; i < array1.length; i++) {
+     array1[i] = input.nextInt();
   }
   
   Arrays.sort(array1);
