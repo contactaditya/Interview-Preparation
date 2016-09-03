@@ -101,13 +101,13 @@ public class UnionAndIntersection {
   Scanner input1 = new Scanner(System.in);
   System.out.println();	
   System.out.print("Enter number of elements in the second array: ");
-  int number1 = input.nextInt();  
+  int number1 = input1.nextInt();  
   int array1[] = new int[number1];
   
   System.out.println();	
   System.out.print("Please enter number: ");
   for(int i = 0; i < array1.length; i++) {
-     array1[i] = input.nextInt();
+     array1[i] = input1.nextInt();
   }
   
   Arrays.sort(array1);
