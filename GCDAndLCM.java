@@ -5,7 +5,7 @@ public class GCDAndLCM {
 	
  public static int findGCD(int number1, int number2) {
   if (number2 == 0) {
-	return number1;  
+    return number1;  
   }  
   return findGCD(number2, number1%number2);			
  }
@@ -27,26 +27,26 @@ public class GCDAndLCM {
   System.out.println();	
 		    
   do{	
-	 System.out.println("1. To calculate the gcd of the numbers.");
-	 System.out.println("2. To calculate the lcm of the numbers.");
-	 System.out.println("3. For exiting from the program.");
+      System.out.println("1. To calculate the gcd of the numbers.");
+      System.out.println("2. To calculate the lcm of the numbers.");
+      System.out.println("3. For exiting from the program.");
 		   
-	 System.out.println();	
-		    	
-	 System.out.print("Enter your choice: ");
-	 BufferedReader br1 = new BufferedReader(new InputStreamReader(System.in));  
-	 choice = Integer.parseInt(br1.readLine());
-	 switch (choice) {
-	   case 1:  int gcd = findGCD(number1, number2);
-	   			System.out.println();	
-	   			System.out.println("The GCD of the two numbers is: " + gcd);
-		    	break;
-	   case 2:  int lcm = findLCM(number1, number2);
-	   			System.out.println();	
-	   			System.out.println("The LCM of the two numbers is: " + lcm);
-		        break;    
-	}
+      System.out.println();	
+		    	 
+      System.out.print("Enter your choice: ");
+      BufferedReader br1 = new BufferedReader(new InputStreamReader(System.in));  
+      choice = Integer.parseInt(br1.readLine());
+      switch (choice) {
+        case 1:  int gcd = findGCD(number1, number2);
+	         System.out.println();	
+	   	 System.out.println("The GCD of the two numbers is: " + gcd);
+		 break;
+        case 2:  int lcm = findLCM(number1, number2);
+	   	 System.out.println();	
+	   	 System.out.println("The LCM of the two numbers is: " + lcm);
+		 break;    
+      }
     System.out.print("\n");
-	}while(choice!=3);	  
+    }while(choice!=3);	  
   }
 }
