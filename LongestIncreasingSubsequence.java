@@ -19,14 +19,14 @@ public class LongestIncreasingSubsequence {
  for(int i = 1; i < n; i++) {
   for (int j = 0; j < i; j++) {
    if(array[i] > array[j] && LIS[i] < LIS[j] + 1) {
-	 LIS[i] = LIS[j] + 1; 
+     LIS[i] = LIS[j] + 1; 
    }	   
   }
  }
  
  for(int i = 0; i < n; i++) {
   if(LIS[i] > max) {
-	max = LIS[i];  
+    max = LIS[i];  
   }
  }
    
@@ -34,8 +34,9 @@ public class LongestIncreasingSubsequence {
   if(LIS[i] == max) {
    elements.add(array[i]);   
    max = max - 1;
-   if(max==0)
-	break;
+   if(max==0) {
+     break;
+   }
   }
  }	
  
@@ -47,7 +48,7 @@ public class LongestIncreasingSubsequence {
  
  public static void LongestIncreasingSubsequence1(int[] array) {
   if(array.length == 0 || array == null) {
-	return;  
+    return;  
   }
 	  
  int n = array.length; 
@@ -64,13 +65,13 @@ public class LongestIncreasingSubsequence {
    int high = list.size() - 1;
    
    while(low<high) {
-	int mid = low + (high - low)/2;
-	if(list.get(mid) < number) {
-	  low = mid + 1;
-	}
-	else {
-	  high = mid - 1;	 
-	}
+    int mid = low + (high - low)/2;
+    if(list.get(mid) < number) {
+      low = mid + 1;
+    }
+    else {
+      high = mid - 1;	 
+    }
    }
    list.set(high, number);    
   }
@@ -91,10 +92,10 @@ public class LongestIncreasingSubsequence {
      return middle+1;
    }
    else if (input[T[middle]] < key) {
-	 start = middle+1;   
+     start = middle+1;   
    }
-   else {
-	 end = middle-1; 
+   else { 
+     end = middle-1; 
    }
   }
  return -1;
@@ -199,7 +200,7 @@ public class LongestIncreasingSubsequence {
   System.out.print("\n");
   System.out.print("Please enter the actual values in the array: ");
   for(int i = 0; i < numbers; i++) {
-	array[i] = input.nextInt(); 
+    array[i] = input.nextInt(); 
   }
   
   LongestIncreasingSubsequence(array);
