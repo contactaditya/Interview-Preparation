@@ -10,7 +10,7 @@ public class GraphDFS {
   adj = new LinkedList[v];
  
  for(int i=0;i<v;i++) {
-	adj[i] = new LinkedList();  
+   adj[i] = new LinkedList();  
  }	 
 }
 
@@ -49,8 +49,8 @@ public class GraphDFS {
 	 	
   for(Integer neighbour : adj[v]) {
    if(!visited[neighbour]) {
-	visited[neighbour] = true;
-	stack.push(neighbour);
+     visited[neighbour] = true;
+     stack.push(neighbour);
    }  
   }
  }
@@ -71,9 +71,9 @@ public class GraphDFS {
    int temp = stack.pop();
    System.out.print(temp + " "); //Printing the root
    for(Integer i : adj[temp]) {
-	if(!list.contains(i)) {
-	 list.add(i);
-	 stack.push(i);						
+    if(!list.contains(i)) {
+      list.add(i);
+      stack.push(i);						
     }
    }
   }
