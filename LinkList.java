@@ -1,6 +1,8 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.HashSet;
+import java.util.Hashtable;
 
 class Node {
   public Object data;
@@ -254,10 +256,10 @@ public class LinkList {
 	  
   else {		
     for(int i=1; i < index; i++) {
-     if(current.getNext() == null) {
-       System.out.println("The linked list has ended before reaching the index. No element can be removed from the linked list.");	
-       return false;
-     }
+      if(current.getNext() == null) {
+        System.out.println("The linked list has ended before reaching the index. No element can be removed from the linked list.");	
+	return false;
+	}
      current = current.getNext();
     }	 		  
   }
@@ -266,7 +268,34 @@ public class LinkList {
   size--; 
   return true;
   }
-
+  
+  public static void removeDuplicates() {
+  /**
+   * Removes the duplicates from the linked list.	 
+   */	 
+		    
+  HashSet<Object> set = new HashSet<Object>();
+  Node previous = null;
+  Node current = head;
+  	  
+  if(size==0) {	   
+	System.out.println();  
+    System.out.println("The linked list is currently empty and has no elements so no elements can be removed.");	
+  }	  
+		  
+  else {
+   while (current != null) {
+	if (set.contains(current.data)) {
+	  previous.next = current.next;
+	} else {
+	  set.add(current.data);
+	  previous = current;
+	}
+	current = current.next;
+  }
+ }
+}
+ 
   public static boolean isEmpty() {
     /**
      * Test if the link list is empty.
@@ -288,7 +317,6 @@ public class LinkList {
     */
   System.out.println();	 	  
   System.out.println("The size of the linked list is: " + size);	 
-  //   return link list.size();
   }
 		 
   public static void display() {
@@ -421,10 +449,10 @@ public class LinkList {
 	  
   else {		
    for(int i = 0; i < k-1; i++) {
-     if(p2 == null) {
-      System.out.println("The linked list has ended before reaching the index.");	
-      return;
-     }
+	if(p2 == null) {
+	 System.out.println("The linked list has ended before reaching the index.");	
+	 return;
+	}
     p2 = p2.getNext();
    }
   
@@ -483,7 +511,8 @@ public class LinkList {
     System.out.println("13. For checking the contents of the linked list are empty or not.");
     System.out.println("14. For checking the size of the linked list.");
     System.out.println("15. For reversing the linked list.");
-    System.out.println("16. For exiting from the program.");
+    System.out.println("16. For removing duplicates from the linked list.");
+    System.out.println("17. For exiting from the program.");
 	 
     System.out.println();	
     System.out.print("Enter your choice: ");
@@ -491,31 +520,31 @@ public class LinkList {
     choice = Integer.parseInt(br.readLine());
   switch (choice) {
    case 1: System.out.println();	
-	   System.out.print("Enter a element to insert as the first element in the linkedlist: ");
-	   BufferedReader br1 = new BufferedReader(new InputStreamReader(System.in));  	
-	   String element = br1.readLine();
-	   addFirst(element);
-	   break;
+	   	   System.out.print("Enter a element to insert as the first element in the linkedlist: ");
+	   	   BufferedReader br1 = new BufferedReader(new InputStreamReader(System.in));  	
+	   	   String element = br1.readLine();
+	   	   addFirst(element);
+	   	   break;
    case 2: System.out.println();	
-	   System.out.print("Enter the index of the element in the linkedlist: ");
-	   BufferedReader br2 = new BufferedReader(new InputStreamReader(System.in));  	
-	   int index = Integer.parseInt(br2.readLine());
-	   System.out.println();	
-	   System.out.print("Enter a element to insert in the linkedlist: ");
-	   BufferedReader br3 = new BufferedReader(new InputStreamReader(System.in));  	
-	   String element1 = br3.readLine();
-	   add(index, element1);
-	   break;
+	   	   System.out.print("Enter the index of the element in the linkedlist: ");
+	   	   BufferedReader br2 = new BufferedReader(new InputStreamReader(System.in));  	
+	   	   int index = Integer.parseInt(br2.readLine());
+	   	   System.out.println();	
+	   	   System.out.print("Enter a element to insert in the linkedlist: ");
+	   	   BufferedReader br3 = new BufferedReader(new InputStreamReader(System.in));  	
+	   	   String element1 = br3.readLine();
+	   	   add(index, element1);
+	   	   break;
    case 3: System.out.println();	
-	   System.out.print("Enter a element to insert as the last element in the linkedlist: ");
-	   BufferedReader br4 = new BufferedReader(new InputStreamReader(System.in));  	
-	   String element2 = br4.readLine();
-	   addLast(element2);
-	   break;
+	   	   System.out.print("Enter a element to insert as the last element in the linkedlist: ");
+	   	   BufferedReader br4 = new BufferedReader(new InputStreamReader(System.in));  	
+	   	   String element2 = br4.readLine();
+	   	   addLast(element2);
+	   	   break;
    case 4: removeFirst();
-	   break;
+	   	   break;
    case 5: removeLast();
-	   break;  
+	   	   break;  
    case 6: System.out.println();	
            System.out.print("Enter the index of the element in the linkedlist: ");
            BufferedReader br7 = new BufferedReader(new InputStreamReader(System.in));  	
@@ -523,41 +552,43 @@ public class LinkList {
            remove(index2);
      	   break;
    case 7: System.out.println();	
-	   System.out.print("Enter the number of nodes that you want to delete: ");
-	   BufferedReader br8 = new BufferedReader(new InputStreamReader(System.in));  	
-	   int number = Integer.parseInt(br8.readLine());
-	   System.out.println();	
-	   System.out.print("Enter the index of the element where you want to delete in the linkedlist: ");
-	   BufferedReader br9 = new BufferedReader(new InputStreamReader(System.in));  	
-	   int index4 = Integer.parseInt(br9.readLine());
-	   skipAndRemove(number, index4);
-	   break;     		
+	   	   System.out.print("Enter the number of nodes that you want to delete: ");
+	   	   BufferedReader br8 = new BufferedReader(new InputStreamReader(System.in));  	
+	   	   int number = Integer.parseInt(br8.readLine());
+	   	   System.out.println();	
+	   	   System.out.print("Enter the index of the element where you want to delete in the linkedlist: ");
+	   	   BufferedReader br9 = new BufferedReader(new InputStreamReader(System.in));  	
+	   	   int index4 = Integer.parseInt(br9.readLine());
+	   	   skipAndRemove(number, index4);
+	   	   break;     		
    case 8: displayFirst();
      	   break;  
    case 9: displayLast();
      	   break;  
   case 10: System.out.println();	
-	   System.out.print("Enter the index of the element in the linkedlist: ");
-	   BufferedReader br10 = new BufferedReader(new InputStreamReader(System.in));  	
-	   int index5 = Integer.parseInt(br10.readLine());
-	   display(index5);
-	   break;  		
+	   	   System.out.print("Enter the index of the element in the linkedlist: ");
+	   	   BufferedReader br10 = new BufferedReader(new InputStreamReader(System.in));  	
+	   	   int index5 = Integer.parseInt(br10.readLine());
+	   	   display(index5);
+	   	   break;  		
   case 11: display();
-	   break; 
+	   	   break; 
   case 12: System.out.println();	
-           System.out.print("Enter the index of the kth to last element in the linkedlist: ");
-           BufferedReader br11 = new BufferedReader(new InputStreamReader(System.in));  	
-  	   int index6 = Integer.parseInt(br11.readLine());
-  	   displayNthToLast(index6);
-           break; 
+  		   System.out.print("Enter the index of the kth to last element in the linkedlist: ");
+  		   BufferedReader br11 = new BufferedReader(new InputStreamReader(System.in));  	
+  		   int index6 = Integer.parseInt(br11.readLine());
+  		   displayNthToLast(index6);
+  		   break; 
   case 13: isEmpty();
-	   break;   
+	   	   break;   
   case 14: size();
-	   break;  
+	   	   break;  
   case 15: reverse();
-	   break;     	 
+	   	   break;  
+  case 16: removeDuplicates();
+	   	   break; 
    }
    System.out.print("\n");
-  } while(choice!=16);
+  } while(choice!=17);
  }
 }
