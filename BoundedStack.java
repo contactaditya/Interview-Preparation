@@ -12,8 +12,8 @@ public class BoundedStack {
 
   public static void push(Object object) {
   /**
-	* Add an item to back of stack.
-	*/
+   * Add an item to back of stack.
+   */
 	  
   if (size == array.length) {
     throw new IllegalStateException("The stack is already full. You cannot add more items to the stack.");
@@ -24,8 +24,8 @@ public class BoundedStack {
 
   public static Object pop() {
   /**
-	* Removes the next item from the front of the stack.	 
-	*/	 
+   * Removes the next item from the front of the stack.	 
+   */	 
 	  
  if(size == 0) {
   System.out.println("The stack is already empty. No element can be removed from the stack.");  
@@ -40,8 +40,8 @@ public class BoundedStack {
 
  public static boolean isEmpty() {
    /**
-	 * Test if the stack is empty.
-	 */
+    * Test if the stack is empty.
+    */
 	   
  if(size == 0) {
   System.out.println();		 
@@ -57,8 +57,8 @@ public class BoundedStack {
 		 
  public static int size() {
    /**
-	 * Returns the number of items currently in the stack.
-	 */
+    * Returns the number of items currently in the stack.
+    */
 	 
   System.out.println();			   
   System.out.println("The size of the stack is: " + size);	 
@@ -67,9 +67,9 @@ public class BoundedStack {
   }
 		
  public static void display() {
-   /**
-	 * Displays all the contents of the stack.
-	 */
+   /** 
+    * Displays all the contents of the stack.
+    */
 	 
   System.out.println();		 
 	 
@@ -84,9 +84,9 @@ public class BoundedStack {
  }
 		 
   public static Object peek() {
-	/**
-	  * Returns the front item from the stack without popping it.
-	  */	 
+   /**
+    * Returns the front item from the stack without popping it.
+    */	 
 		  
  if(size == 0) {  
    System.out.println();			 
@@ -129,11 +129,11 @@ public static void main(String[] args) throws NumberFormatException, IOException
 	    choice = Integer.parseInt(br1.readLine());
 	    switch (choice) {
 	      case 1:  System.out.println();	
-	    	  	   System.out.print("Enter a element to insert in the stack: ");
-	      		   BufferedReader br2 = new BufferedReader(new InputStreamReader(System.in));  	
-	      		   String element = br2.readLine();
-	    	  	   push(element);
-	    	  	   break;
+	    	       System.out.print("Enter a element to insert in the stack: ");
+	      	       BufferedReader br2 = new BufferedReader(new InputStreamReader(System.in));  	
+	      	       String element = br2.readLine();
+	    	       push(element);
+	    	       break;
 	      case 2:  pop();
 	               break;
 	      case 3:  display();
@@ -141,9 +141,9 @@ public static void main(String[] args) throws NumberFormatException, IOException
 	      case 4:  isEmpty();
 	               break;
 	      case 5:  size();
-	      		   break;  
+	      	       break;  
 	      case 6:  peek();
-			   	   break;     
+		       break;     
 	      }
 	      System.out.print("\n");
 		}while(choice!=7);
