@@ -8,19 +8,19 @@ public class EquilibriumIndexOfAnArray {
   int leftsum = 0;
 
   for(int i = 0; i < array.length; i++) {
-	sum = sum + array[i];  
+     sum = sum + array[i];  
   }
   
   System.out.print("The numbers that satisfy the equilibrium index are: ");
   
   for(int i = 0; i < array.length; i++) {
-	sum = sum - array[i]; 
-	 
-	if(leftsum == sum) {
-	  System.out.print(array[i] + " ");
-	}
+    sum = sum - array[i]; 
+	  
+    if(leftsum == sum) {
+      System.out.print(array[i] + " ");
+    }
 	
-	leftsum = leftsum + array[i];		 
+    leftsum = leftsum + array[i];		 
   }
  }
  
@@ -33,7 +33,7 @@ public class EquilibriumIndexOfAnArray {
    System.out.println();	
    System.out.print("Please enter the actual numbers in the array: ");
    for (int i = 0; i < array.length; i++) {
-	 array[i] = input.nextInt();
+     array[i] = input.nextInt();
    }
    System.out.println();	
    equilibrium(array);  
