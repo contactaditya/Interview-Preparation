@@ -13,13 +13,13 @@ public class LongestCommonSubsequence {
  for(int i = 0; i <= string1.length(); i++) {
   for(int j = 0; j <= string2.length(); j++) {
    if(i == 0 || j == 0) {
-	lengths[i][j] = 0;
+     lengths[i][j] = 0;
    }
    else if(string1.charAt(i-1) == string2.charAt(j-1)) {
-    lengths[i][j] = lengths[i-1][j-1] + 1; 
+     lengths[i][j] = lengths[i-1][j-1] + 1; 
    }
    else {
-	lengths[i][j] = Math.max(lengths[i-1][j], lengths[i][j-1]); 
+     lengths[i][j] = Math.max(lengths[i-1][j], lengths[i][j-1]); 
    }	
   }
  }
@@ -40,7 +40,7 @@ public class LongestCommonSubsequence {
    i--;
   }
  else {
-	j--;
+    j--;
   }
  }
 
