@@ -29,17 +29,16 @@ public class AllPossiblePathsInABoard {
 
   public static void main(String[] args) {
     Scanner input = new Scanner(System.in);
-	System.out.print("Enter number of rows in the board: ");
-	int rows = input.nextInt();   
+    System.out.print("Enter number of rows in the board: ");
+    int rows = input.nextInt();   
 	    
-	System.out.print("\n");
-	System.out.print("Enter number of columns in the board: ");
-	int columns = input.nextInt();   
+    System.out.print("\n");
+    System.out.print("Enter number of columns in the board: ");
+    int columns = input.nextInt();   
 		  	
-	int path = numberOfPaths(rows, columns);
+    int path = numberOfPaths(rows, columns);
 	    
-	System.out.print("\n");
-	    
+    System.out.print("\n");	    
     System.out.println("The total number of ways a player can complete the game is: " + path);
   }
 }
