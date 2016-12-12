@@ -10,13 +10,13 @@ import java.util.*;
  
  public Node createMinimalBST(int array[], int start, int end) {
    if(end < start) {
-	 return null;	
+      return null;	
    }
 	 
-	int mid = (start + end) / 2;
-	Node newNode = new Node(array[mid]);
-	newNode.left = createMinimalBST(array, start, mid - 1);
-	newNode.right = createMinimalBST(array, mid + 1, end);
+   int mid = (start + end) / 2;
+   Node newNode = new Node(array[mid]);
+   newNode.left = createMinimalBST(array, start, mid - 1);
+   newNode.right = createMinimalBST(array, mid + 1, end);
 	 
    return newNode;		  
  }
@@ -30,16 +30,16 @@ import java.util.*;
    System.out.println();	
    System.out.print("Please enter the elements in the array: ");
    for(int i=0; i < n; i++) {
-	  array[i] = input.nextInt();
+      array[i] = input.nextInt();
    }
 	  
-	MinimalTree tree = new MinimalTree();
-	TreePreorderTraversal tree1 = new TreePreorderTraversal();
+   MinimalTree tree = new MinimalTree();
+   TreePreorderTraversal tree1 = new TreePreorderTraversal();
 
-	root = tree.createMinimalBST(array);		
-	System.out.println();
-	System.out.print("The preorder traversal of the tree is: ");
-	tree1.printPreorderTraversal(tree.root);		
+   root = tree.createMinimalBST(array);		
+   System.out.println();
+   System.out.print("The preorder traversal of the tree is: ");
+   tree1.printPreorderTraversal(tree.root);		
 
   }
 }
