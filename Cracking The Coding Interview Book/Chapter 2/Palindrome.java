@@ -1,7 +1,7 @@
 import java.util.*;
 
- public class Palindrome { 	
-	private static LinkedListNode head;
+ public class Palindrome { 	 
+    private static LinkedListNode head;
     private static int size;  
 
     public Palindrome() {
@@ -11,7 +11,7 @@ import java.util.*;
     }
     
     public static boolean isPalindrome(LinkedListNode node) {
-  	  LinkedListNode reversed = reverseAndClone(head);   	         		           
+      LinkedListNode reversed = reverseAndClone(head);   	         		           
       return isEqual(head, reversed);   
     }
     
@@ -52,7 +52,7 @@ import java.util.*;
 	  boolean IsAPalindrome = list.isPalindrome(head);
 	  
 	  if(IsAPalindrome) {
-		System.out.println("The linkedlist is a palindrome.");  
+	    System.out.println("The linkedlist is a palindrome.");  
 	  }
 	  else {
 	    System.out.println("The linkedlist is not a palindrome.");    
