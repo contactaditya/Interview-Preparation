@@ -14,8 +14,8 @@ import java.util.Stack;
 	    //Node constructor
 		    
 	    public NodeWithMin(int value, int min) {
-		  this.value = value;
-		  this.min = min;	   
+		this.value = value;
+		this.min = min;	   
 	    }
 	 }
 
@@ -23,14 +23,14 @@ import java.util.Stack;
      /**
 	  * Add an item to back of stack.
       */
-		if(stack.isEmpty()){
-		  stack.push(new NodeWithMin(value, value));
-		} else {	
+	  if(stack.isEmpty()){
+            stack.push(new NodeWithMin(value, value));
+	  } else {	
 	   if(stack.peek().min > value){	
 	     stack.push(new NodeWithMin(value, value)); 
 	   }
 	   else {
-		 stack.push(new NodeWithMin(value, stack.peek().min));  
+	     stack.push(new NodeWithMin(value, stack.peek().min));  
 	   }
      }
 	}
@@ -41,8 +41,8 @@ import java.util.Stack;
 	   */	 
 			  
 	  if(stack.isEmpty()) {
-		System.out.println("The stack is already empty. No element can be removed from the stack.");  
-		return -1;
+	     System.out.println("The stack is already empty. No element can be removed from the stack.");  
+	     return -1;
 	  } 
 	  return stack.pop().value;
      }
@@ -57,7 +57,7 @@ import java.util.Stack;
 	    }
 			   
 	   else {
-		 System.out.println("The stack is currently not empty.");	 		   
+	       System.out.println("The stack is currently not empty.");	 		   
 	    }
 	   return stack.isEmpty();
 	  }
@@ -68,12 +68,12 @@ import java.util.Stack;
 	   */	 
 				  
 	    if(stack.isEmpty()) {
-		   System.out.println("The stack is empty. No element can be returned from the stack.");  
-		   return Integer.MAX_VALUE;
-		} else {
-		   System.out.println("The minimum element in the stack is: " + stack.peek().min);  	
-		   return stack.peek().min;	
-		}
+	        System.out.println("The stack is empty. No element can be returned from the stack.");  
+		return Integer.MAX_VALUE;
+	    } else {
+		System.out.println("The minimum element in the stack is: " + stack.peek().min);  	
+		return stack.peek().min;	
+	    }
 	  }
 	 
 	 public static int size() {
@@ -82,7 +82,7 @@ import java.util.Stack;
 	   */
 				   
 	    System.out.println("The size of the stack is: " + stack.size());	 
-		return stack.size();
+	    return stack.size();
 	 }
 	   
 	 public static int peek() {
@@ -91,12 +91,12 @@ import java.util.Stack;
 	   */	 
 				  
 	   if(stack.isEmpty()) {  
-		  System.out.println("The stack is empty so we can't see the last item of the stack.");  
-		  return -1;
+	      System.out.println("The stack is empty so we can't see the last item of the stack.");  
+	      return -1;
 	   }	 
 				  
 	   else {
-		  System.out.println("The following element is the last element of the stack: " + stack.peek().value);  	  
+	      System.out.println("The following element is the last element of the stack: " + stack.peek().value);  	  
 	   }
 	   return stack.peek().value;
 	 }
@@ -109,8 +109,8 @@ import java.util.Stack;
 	    System.out.print("Contents of the stack are: "); 
 		 
 	    for (int i = 0; i < stack.size(); i++) {
-		  System.out.print(stack.get(i).value + " ");
-		} 
+	      System.out.print(stack.get(i).value + " ");
+	    } 
 	    System.out.println();
 	 }
 	 
@@ -133,28 +133,28 @@ import java.util.Stack;
 		    choice = input.nextInt();  
 		    switch (choice) {
 		      case 1:  System.out.println();
-		    	  	   System.out.print("Enter a element to insert in the stack: ");
-		    	  	   Scanner input1 = new Scanner(System.in);
-		      		   int element = input1.nextInt();  
-		    	  	   push(element);
-		    	  	   break;
+		    	       System.out.print("Enter a element to insert in the stack: ");
+		    	       Scanner input1 = new Scanner(System.in);
+		      	       int element = input1.nextInt();  
+		    	       push(element);
+		    	       break;
 		      case 2:  pop();
 		               break;
 		      case 3:  System.out.println();
-		    	  	   display();
+		    	       display();
 		               break;
 		      case 4:  System.out.println();
-		    	   	   isEmpty();
+		    	       isEmpty();
 		               break;
 		      case 5:  System.out.println();
-		    	  	   size();
-		      		   break;  
+		    	       size();
+		      	       break;  
 		      case 6:  System.out.println();
-		      		   peek();
-				   	   break;     
+		      	       peek();
+			       break;     
 		      case 7:  System.out.println();
-		  	   		   min();
-   	  	   			   break;     
+		  	       min();
+   	  	               break;     
 		     }
 		     System.out.print("\n");
 		  }while(choice!=8);
