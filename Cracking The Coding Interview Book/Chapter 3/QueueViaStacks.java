@@ -14,7 +14,7 @@ import java.util.Stack;
     
     public int size() {
       System.out.println();
-   	  System.out.println("The size of the queue is: " + stackNewest.size() + stackOldest.size()); 
+      System.out.println("The size of the queue is: " + stackNewest.size() + stackOldest.size()); 
       return stackNewest.size() + stackOldest.size();	
     }
     
@@ -37,13 +37,13 @@ import java.util.Stack;
       */
     	
       shiftStacks();
-	  System.out.println();
-	  System.out.print("Contents of the queue are: "); 
-	  for (int i = stackOldest.size() - 1; i >= 0; i--) {
+      System.out.println();
+      System.out.print("Contents of the queue are: "); 
+      for (int i = stackOldest.size() - 1; i >= 0; i--) {
         System.out.print(stackOldest.get(i) + " ");
-	  }
+      }
 	  
-	  System.out.println();
+       System.out.println();
     }
     
     public boolean isEmpty() {
@@ -81,9 +81,9 @@ import java.util.Stack;
        return stackOldest.pop();   
     }
 
-	public static void main(String[] args) throws NumberFormatException, IOException { 
-	  int choice = 0;
-	  QueueViaStacks<Integer> queue = new QueueViaStacks<Integer>();	
+   public static void main(String[] args) throws NumberFormatException, IOException { 
+       int choice = 0;
+       QueueViaStacks<Integer> queue = new QueueViaStacks<Integer>();	
     
 	do{	
     System.out.println("1. For inserting an element in the queue.");
@@ -100,11 +100,11 @@ import java.util.Stack;
     choice = Integer.parseInt(br.readLine());
     switch (choice) {
       case 1:  System.out.println();  
-    	  	   System.out.print("Enter a element to insert in the queue: ");
-    	  	   Scanner input = new Scanner(System.in);
-      		   int element = input.nextInt();
-    	  	   queue.add(element);
-    	  	   break;
+    	       System.out.print("Enter a element to insert in the queue: ");
+    	       Scanner input = new Scanner(System.in);
+      	       int element = input.nextInt();
+    	       queue.add(element);
+    	       break;
       case 2:  queue.remove();
                break;
       case 3:  queue.display();
@@ -112,9 +112,9 @@ import java.util.Stack;
       case 4:  queue.isEmpty();
                break;
       case 5:  queue.size();
-      		   break;  
+      	       break;  
       case 6:  queue.peek();
-		   	   break;     
+	       break;     
      }
       System.out.print("\n");
 	}while(choice!=7);
