@@ -75,13 +75,13 @@ public class DecoratorPattern {
 
 	public static void main(String[] args) {  
 	  Coffee c = new SimpleCoffee();
-      printInfo(c);
+          printInfo(c);
 
-      c = new WithMilk(c);
-      printInfo(c);
+          c = new WithMilk(c);
+          printInfo(c);
 
-      c = new WithSprinkles(c);
-      printInfo(c);
+      	  c = new WithSprinkles(c);
+      	  printInfo(c);
 	  
 	}
 }
