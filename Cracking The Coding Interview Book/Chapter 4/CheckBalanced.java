@@ -26,12 +26,12 @@ import java.util.*;
 	 if(Math.abs(heightDifference) > 1) {
 	    return Integer.MIN_VALUE;	 
 	 } else {
-		return Math.max(leftHeight, rightHeight) + 1;	  
+	    return Math.max(leftHeight, rightHeight) + 1;	  
 	 }
    }	
    
    static boolean isBalanced(Node root) {
-	  return checkHeight(root) != Integer.MIN_VALUE; 
+       return checkHeight(root) != Integer.MIN_VALUE; 
    }
 
 	public static void main(String[] args) { 
@@ -45,9 +45,9 @@ import java.util.*;
 	  
 	  boolean isBalanced = isBalanced(tree.root);
 	  if(isBalanced) {
-         System.out.println("Tree is balanced");
+            System.out.println("Tree is balanced");
 	  } else {
-         System.out.println("Tree is not balanced");
-      }	  
-   }
+            System.out.println("Tree is not balanced");
+          } 	  
+      }
  } 
