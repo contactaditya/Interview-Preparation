@@ -12,23 +12,23 @@ import java.util.*;
   }
 
  public class Successor { 
-	static TreeNode root;	    
-	static TreeNode previous;
+     static TreeNode root;	    
+     static TreeNode previous;
 	
-	TreeNode insert(TreeNode node, int data) {
+     TreeNode insert(TreeNode node, int data) {
 		 
-	 /* 1. If the tree is empty, return a new, single node */
-	   if (node == null) {
-	      return (new TreeNode(data));
-	   } else {
+      /* 1. If the tree is empty, return a new, single node */
+	if (node == null) {
+	   return (new TreeNode(data));
+	} else {
 	 
-	     TreeNode temp = null;
+	  TreeNode temp = null;
 	             
 	 /* 2. Otherwise, recurse down the tree */
-	   if (data <= node.data) {
-	      temp = insert(node.left, data);
-	      node.left = temp;
-	      temp.parent = node;
+	  if (data <= node.data) {
+	     temp = insert(node.left, data);
+	     node.left = temp;
+	     temp.parent = node;
 	 
 	   } else {
 	      temp = insert(node.right, data);
@@ -39,22 +39,22 @@ import java.util.*;
 	 /* return the (unchanged) node pointer */
 	  return node;
 	 }
-   }
+     }
 	
 	public static TreeNode inorderSuccessor(TreeNode node) {
 	   if(node == null) {
-		  return null;
-       }
+	      return null;
+           }
 	   
 	   if(node.right != null) {
-		  return leftMostChild(node.right);
+	      return leftMostChild(node.right);
 	   } else {
-		  TreeNode x = node.parent;
+	      TreeNode x = node.parent;
 		   
-		  while(x != null && x.left != node) {
-			node = x;
-			x = x.parent;
-		  }
+	      while(x != null && x.left != node) {
+		 node = x;
+		 x = x.parent;
+	      }
 		 
 	     return x;    		   
 	   }	 	   
@@ -62,11 +62,11 @@ import java.util.*;
 	
 	public static TreeNode leftMostChild(TreeNode node) {
 	   if(node == null) {
-		  return null;
+	      return null;
 	   }
 		   
 	   if(node.left != null) {
-		  node = node.left;
+	      node = node.left;
 	   }  
 	  return node; 
 	}
@@ -74,14 +74,14 @@ import java.util.*;
 	public static void main(String[] args) {  
 	  Successor tree = new Successor();
 	  TreeNode root = null, temp = null, suc = null, min = null;
-      root = tree.insert(root, 20);
-      root = tree.insert(root, 8);
-      root = tree.insert(root, 22);
-      root = tree.insert(root, 4);
-      root = tree.insert(root, 12);
-      root = tree.insert(root, 10);
-      root = tree.insert(root, 14);
-      temp = root.left.right.left;
+          root = tree.insert(root, 20);
+          root = tree.insert(root, 8);
+      	  root = tree.insert(root, 22);
+      	  root = tree.insert(root, 4);
+          root = tree.insert(root, 12);
+      	  root = tree.insert(root, 10);
+      	  root = tree.insert(root, 14);
+          temp = root.left.right.left;
 	  
 	  TreeNode next = inorderSuccessor(temp);	
 	  if(next != null) {
