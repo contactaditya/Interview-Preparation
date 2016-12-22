@@ -11,16 +11,16 @@ public class PowerSet {
      System.out.print("{");
        
    for (int j = 0; j < n; j++) {
-	if ((i & (1 << j)) > 0) {
+     if ((i & (1 << j)) > 0) {
        System.out.print(array[j] + "");  
-	}   
+     }   
    }  
      System.out.println("}");
    }
  }
 
   public static void main(String[] args) { 	
-	Scanner input = new Scanner(System.in);
+    Scanner input = new Scanner(System.in);
     System.out.print("Enter number of characters in the set: ");
     int number = input.nextInt();  
     char array[] = new char[number];
