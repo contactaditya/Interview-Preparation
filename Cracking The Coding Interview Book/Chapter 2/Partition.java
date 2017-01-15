@@ -1,6 +1,6 @@
 import java.util.*;
 
- public class Partition { 	
+  public class Partition { 	
 	private static LinkedListNode head;
 	private static int size;  
 
@@ -15,18 +15,18 @@ import java.util.*;
 	   LinkedListNode tail = node;
 			     
 	   while(node != null) {    
-		 LinkedListNode next = node.next;
-         if((int)node.data < x) {
-           // Insert node at head
-           node.next = head;
-           head = node;
-         } else {
-           // Insert node at tail
-           tail.next = node;
-           tail = node;   	 
-         }
-         node = next;
-	   }
+	     LinkedListNode next = node.next;
+             if((int)node.data < x) {
+             // Insert node at head
+              node.next = head;
+              head = node;
+             } else {
+             // Insert node at tail
+              tail.next = node;
+              tail = node;   	 
+             }
+             node = next;
+	    }
 	   
 	 tail.next = null;
 	   
@@ -50,15 +50,15 @@ import java.util.*;
 	  LinkedListNode current = list.partition(head, value);
 	  
 	  if(current == null) {
-		System.out.println("The element is not present in the linkedlist. There is no partition in the linkedlist.");  
+	     System.out.println("The element is not present in the linkedlist. There is no partition in the linkedlist.");  
 	  }
 	  else {
-		System.out.println();  
-		System.out.print("Contents of the linked list are: ");	 
-		while(current != null) {	   
-		  System.out.print(current.getData() + " ");	 	
-		  current = current.getNext();
-		}
-	  }
-   }
+	    System.out.println();  
+	    System.out.print("Contents of the linked list are: ");	 
+	    while(current != null) {	   
+	       System.out.print(current.getData() + " ");	 	
+	       current = current.getNext();
+	    }
+	}
+    }
 }
