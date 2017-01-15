@@ -20,17 +20,17 @@ import java.util.*;
 	   LinkedListNode p2 = head;
 			  	  
 	   if(k <= 0) {  
-		 System.out.println("Index entered by the user is either negative or null.");
-		 return null;
+	      System.out.println("Index entered by the user is either negative or null.");
+	      return null;
 	   }
 			  
 	   if(k > size) {  
-		 System.out.println("Index entered by the user is greater than size.");
-		 return null;
+	      System.out.println("Index entered by the user is greater than size.");
+	      return null;
 	   }
 			  
 	   if(size==0) {	   
-		 System.out.println("The linked list is currently empty and has no elements.");	 	  	   
+	      System.out.println("The linked list is currently empty and has no elements.");	 	  	   
 	   }
 		  
 	  // Move p2 forward k nodes into the list.
@@ -39,16 +39,16 @@ import java.util.*;
 		 for(int i = 0; i < k-1; i++) {
 		   if(p2 == null) {
 		     System.out.println("The linked list has ended before reaching the index.");	
-			 return null;
+		     return null;
 		   }
 		  p2 = p2.getNext();
 		 }
 		  
 	  // Now, move p1 and p2 at the same speed. When p2 hits the end, p1 will be at the right element.
 	     while(p2.next != null) {
-		    p1 = p1.getNext();
-		    p2 = p2.getNext();	  
-		 }	  
+		p1 = p1.getNext();
+		p2 = p2.getNext();	  
+	     }	  
 	  }
 	return p1;
 	}  
