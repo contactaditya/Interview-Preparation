@@ -2,14 +2,14 @@ import java.util.*;
 import java.io.*;
 
  public class SortALinkedList { 	
-	private static LinkedListNode head;
-	private static int size;  
+    private static LinkedListNode head;
+    private static int size;  
 
-	public SortALinkedList() {
+    public SortALinkedList() {
    // this is an empty list, so the reference to the head node is set to a new node with no data				  
       head = new LinkedListNode(null);
       size = 0;
-	}
+    }
 	
 	public static void sortLinkedList() {	 
 	  LinkedListNode current = head; 		
@@ -18,8 +18,8 @@ import java.io.*;
    // count[0] will store total number of '0's, count[1] will store total number of '1's, count[2] will store total number of '2's  */
 	   
 	  while(current != null) {	   
-		count[(int)current.data]++;
-		current = current.next;
+	     count[(int)current.data]++;
+	     current = current.next;
 	  }
  
 	  int i = 0;
@@ -31,22 +31,22 @@ import java.io.*;
        * 3) fill the list with 2, till n3 > 0  */
 	  
 	  while (current != null) {
-        if (count[i] == 0) {
-          i++;
-        }
-        else {
-          current.data = i;
-          count[i]--;
-          current = current.next;
-        }
-      }
+            if (count[i] == 0) {
+               i++;
+            }
+            else {
+             current.data = i;
+             count[i]--;
+             current = current.next;
+            }
+          }
 	}   
 
 	 public static void PrintElementsOfALinkedList(LinkedListNode head) {	 
 	   LinkedListNode current = head; 		    
 	   while(current != null) {	   
-		 System.out.print(current.getData() + " ");	 	
-		 current = current.getNext();
+	      System.out.print(current.getData() + " ");	 	
+	      current = current.getNext();
 	   }
 	 } 
 
@@ -64,10 +64,10 @@ import java.io.*;
 
 	  System.out.print("Contents of the linked list before sorting are: ");	 
 	  list.PrintElementsOfALinkedList(head);
-      list.sortLinkedList(); 
-      System.out.println();
-      System.out.println();
-      System.out.print("Contents of the linked list after sorting are: ");	 
-      list.PrintElementsOfALinkedList(head);
+          list.sortLinkedList(); 
+          System.out.println();
+      	  System.out.println();
+          System.out.print("Contents of the linked list after sorting are: ");	 
+          list.PrintElementsOfALinkedList(head);
   }
 }
