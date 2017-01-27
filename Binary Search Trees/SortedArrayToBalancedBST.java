@@ -6,11 +6,11 @@ import java.util.*;
     static Node previous;
  
  public static Node sortedArrayToBST(int array[], int start, int end) {
-	if (start > end) {
-         return null;
+    if (start > end) {
+       return null;
     }
 	
-	 /* Get the middle element and make it root */
+    /* Get the middle element and make it root */
 	
     int mid = (start + end) / 2;
     Node node = new Node(array[mid]);
@@ -21,36 +21,36 @@ import java.util.*;
     /* Recursively construct the right subtree and make it right child of root */
     node.right = sortedArrayToBST(array, mid + 1, end);
     
-	return node; 
+   return node; 
  }
  
  public void printPreorderTraversal(Node node) {
 	 
     if (node == null) {
-	   return;
-	}
+       return;
+    }
 	    
-	System.out.print(node.data + " ");		  
-	printPreorderTraversal(node.left);
-	printPreorderTraversal(node.right);
+    System.out.print(node.data + " ");		  
+    printPreorderTraversal(node.left);
+    printPreorderTraversal(node.right);
   }
 
-	public static void main(String[] args) {  
-	  SortedArrayToBalancedBST tree = new SortedArrayToBalancedBST();
-	  Scanner input = new Scanner(System.in);
-	  System.out.print("Enter the number of elements in the array: ");
-	  int n = input.nextInt();
-	  int array[] = new int[n];
-	  System.out.println();	
-	  System.out.print("Please enter the elements in the array: ");
-	  for(int i=0; i < n; i++) {
-	    array[i] = input.nextInt();
-	  }
+ public static void main(String[] args) {  
+     SortedArrayToBalancedBST tree = new SortedArrayToBalancedBST();
+     Scanner input = new Scanner(System.in);
+     System.out.print("Enter the number of elements in the array: ");
+     int n = input.nextInt();
+     int array[] = new int[n];
+     System.out.println();	
+     System.out.print("Please enter the elements in the array: ");
+     for(int i=0; i < n; i++) {
+        array[i] = input.nextInt();
+     }
 	  
-	  root = sortedArrayToBST(array, 0, n - 1);
+     root = sortedArrayToBST(array, 0, n - 1);
 	  
-	  System.out.println();
-      System.out.print("Preorder traversal of binary tree is: ");
-	  tree.printPreorderTraversal(root);		
-	}
+     System.out.println();
+     System.out.print("Preorder traversal of binary tree is: ");
+     tree.printPreorderTraversal(root);		
+   }
  }
