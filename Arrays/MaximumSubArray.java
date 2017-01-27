@@ -18,20 +18,20 @@ public class MaximumSubArray {
 	
   public static void main(String[] args) throws NumberFormatException, IOException {
 	  
-	Scanner input = new Scanner(System.in);
-	System.out.print("Enter number of elements in the first array: ");
-	int number = input.nextInt();  
-	int array[] = new int[number];
+       Scanner input = new Scanner(System.in);
+       System.out.print("Enter number of elements in the first array: ");
+       int number = input.nextInt();  
+       int array[] = new int[number];
 	
-	System.out.println();	
-	System.out.print("Please enter number: ");
-	for (int i = 0; i < array.length; i++) {
+       System.out.println();	
+       System.out.print("Please enter number: ");
+       for (int i = 0; i < array.length; i++) {
 	  array[i] = input.nextInt();
-	}
+       }
 		
-	int max = maxSubArraySum(array);
-	System.out.print("\n");
+       int max = maxSubArraySum(array);
+       System.out.print("\n");
 	    
-	System.out.println("The value of the sum of the maximum contiguous subarray within an array is: " + max);
+       System.out.println("The value of the sum of the maximum contiguous subarray within an array is: " + max);
    }     
  }
