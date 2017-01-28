@@ -1,8 +1,8 @@
 import java.util.*;
 
 public class ValidateBST {
-     static Node root;	    
-     static Node previous;
+   static Node root;	    
+   static Node previous;
 	 
    public static boolean checkBST(Node node) {
        return checkBST(node, null, null); 
@@ -24,20 +24,20 @@ public class ValidateBST {
     return true;
    }
 
-     public static void main(String[] args) { 	  
-	  ValidateBST tree = new ValidateBST();
-	  tree.root = new Node(4);
-	  tree.root.left = new Node(2);
-	  tree.root.right = new Node(5);
-	  tree.root.left.left = new Node(1);
-	  tree.root.left.right = new Node(3);
+ public static void main(String[] args) { 	  
+     ValidateBST tree = new ValidateBST();
+     tree.root = new Node(4);
+     tree.root.left = new Node(2); 
+     tree.root.right = new Node(5);
+     tree.root.left.left = new Node(1);
+     tree.root.left.right = new Node(3);
   
-	  boolean checkBST = checkBST(tree.root);
+     boolean checkBST = checkBST(tree.root);
 	  
-	  if(checkBST) {
-	    System.out.println("Tree is a binary search tree.");
-	  } else {
-            System.out.println("Tree is not a binary search tree.");
-          }	  
-     }
+     if(checkBST) {
+       System.out.println("Tree is a binary search tree.");
+     } else {
+       System.out.println("Tree is not a binary search tree.");
+     }	  
+   }
 }
