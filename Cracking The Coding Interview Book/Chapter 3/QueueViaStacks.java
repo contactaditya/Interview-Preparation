@@ -81,11 +81,11 @@ import java.util.Stack;
        return stackOldest.pop();   
     }
 
-   public static void main(String[] args) throws NumberFormatException, IOException { 
+ public static void main(String[] args) throws NumberFormatException, IOException { 
        int choice = 0;
        QueueViaStacks<Integer> queue = new QueueViaStacks<Integer>();	
     
-	do{	
+  do{	
     System.out.println("1. For inserting an element in the queue.");
     System.out.println("2. For deleting an element from the queue.");
     System.out.println("3. For displaying the contents of the queue.");
@@ -115,9 +115,9 @@ import java.util.Stack;
       	       break;  
       case 6:  queue.peek();
 	       break;     
-     }
+    }
       System.out.print("\n");
-	}while(choice!=7);
+    }while(choice!=7);
   }
 }
 
