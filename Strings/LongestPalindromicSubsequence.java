@@ -9,7 +9,7 @@ public class LongestPalindromicSubsequence {
   
  // Strings of length 1 are palindrome of length 1.
   for (int i = 0; i < n; i++) {
-   LPS[i][i] = 1;	  
+    LPS[i][i] = 1;	  
   }
   
  for(int substringLength = 2;substringLength<=n;substringLength++) {
@@ -17,13 +17,13 @@ public class LongestPalindromicSubsequence {
    int j = i + substringLength - 1;
 	
    if(string.charAt(i) == string.charAt(j) && substringLength == 2) {
-	 LPS[i][j] = 2;
+      LPS[i][j] = 2;
    }   
    else if(string.charAt(i) == string.charAt(j)) {
-	 LPS[i][j] = LPS[i+1][j-1] + 2;	
+      LPS[i][j] = LPS[i+1][j-1] + 2;	
    }
    else {
-	 LPS[i][j] = Math.max(LPS[i+1][j], LPS[i][j-1]);	
+      LPS[i][j] = Math.max(LPS[i+1][j], LPS[i][j-1]);	
    }
   }  
  }
@@ -33,22 +33,22 @@ public class LongestPalindromicSubsequence {
 
  public static String LongestPalindromicSubsequence(String string1, String string2) {
 	   
- int lengths[][] = new int[string1.length() + 1][string2.length() + 1]; 
+   int lengths[][] = new int[string1.length() + 1][string2.length() + 1]; 
 			  
- if (string1 == null || string2 == null || string1.length() == 0 || string2.length() == 0) {
-   return "";  
- }
+   if (string1 == null || string2 == null || string1.length() == 0 || string2.length() == 0) {
+      return "";  
+   }
 		      
- for(int i = 0; i <= string1.length(); i++) {
-  for(int j = 0; j <= string2.length(); j++) {
-   if(i == 0 || j == 0) {
-	lengths[i][j] = 0;
-   }
-   else if(string1.charAt(i-1) == string2.charAt(j-1)) {
-	lengths[i][j] = lengths[i-1][j-1] + 1; 
-   }
+   for(int i = 0; i <= string1.length(); i++) {
+     for(int j = 0; j <= string2.length(); j++) {
+        if(i == 0 || j == 0) {
+          lengths[i][j] = 0;
+        }
+   	else if(string1.charAt(i-1) == string2.charAt(j-1)) {
+      	  lengths[i][j] = lengths[i-1][j-1] + 1; 
+        }
    else {
-	lengths[i][j] = Math.max(lengths[i-1][j], lengths[i][j-1]); 
+      lengths[i][j] = Math.max(lengths[i-1][j], lengths[i][j-1]); 
    }	
   }
  }
@@ -59,17 +59,17 @@ public class LongestPalindromicSubsequence {
  StringBuffer sb = new StringBuffer();
  while(i > 0 && j > 0) {
  if(string1.charAt(i-1) == string2.charAt(j-1)) {
- // Put current character in the string
-  sb.append(string1.charAt(i-1));
-  i--;
-  j--;
+  // Put current character in the string
+   sb.append(string1.charAt(i-1));
+   i--;
+   j--;
  }
  // If the characters are not same, then find the larger of two and go in the direction of larger value
  else if (lengths[i - 1][j] > lengths[i][j - 1]) {
-  i--;
+   i--;
  }
  else {
-  j--;
+   j--;
  }
 }
 	 
