@@ -7,7 +7,7 @@ public class LongestCommonSubsequence {
  int lengths[][] = new int[string1.length() + 1][string2.length() + 1]; 
 		 
  if (string1 == null || string2 == null || string1.length() == 0 || string2.length() == 0) {
-  return "";  
+   return "";  
  }
 	      
  for(int i = 0; i <= string1.length(); i++) {
