@@ -24,7 +24,7 @@ public class findMissingNumber {
   System.out.println();	
   System.out.print("Please enter consecutive elements in the array with exactly only one element missing: ");
   for (int i = 0; i < array.length; i++) {
-	array[i] = input.nextInt();
+     array[i] = input.nextInt();
   }
   
   int firstElement = array[0];
