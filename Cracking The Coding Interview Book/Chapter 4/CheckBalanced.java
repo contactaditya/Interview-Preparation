@@ -34,20 +34,20 @@ import java.util.*;
        return checkHeight(root) != Integer.MIN_VALUE; 
    }
 	 
-    public static void main(String[] args) { 
-        CheckBalanced tree = new CheckBalanced();
-	tree.root = new Node(3);
-	tree.root.left = new Node(5);
-	tree.root.right = new Node(2);
-	tree.root.left.left = new Node(1);
-	tree.root.left.right = new Node(4);
-	tree.root.right.left = new Node(6);
+ public static void main(String[] args) { 
+     CheckBalanced tree = new CheckBalanced();
+     tree.root = new Node(3);
+     tree.root.left = new Node(5);
+     tree.root.right = new Node(2);
+     tree.root.left.left = new Node(1);
+     tree.root.left.right = new Node(4);
+     tree.root.right.left = new Node(6);
 	  
-	boolean isBalanced = isBalanced(tree.root);
-	if(isBalanced) {
-          System.out.println("Tree is balanced");
-	} else {
-          System.out.println("Tree is not balanced");
-        } 	  
-     }
+     boolean isBalanced = isBalanced(tree.root);
+     if(isBalanced) {
+       System.out.println("Tree is balanced");
+     } else {
+       System.out.println("Tree is not balanced");
+     } 	  
+   }
  } 
