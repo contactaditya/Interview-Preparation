@@ -4,11 +4,11 @@ import java.util.*;
 public class AllStringPermutations {    
 	
  public static void getPermutation1(StringBuffer s) { 
-  String str = s.toString();
-  System.out.println();	
-  System.out.println("These are the permutations obtained from the second method: ");	
-  System.out.println();	
-  getPermutation1("", str); 
+   String str = s.toString();
+   System.out.println();	
+   System.out.println("These are the permutations obtained from the second method: ");	
+   System.out.println();	
+   getPermutation1("", str); 
  }
  
  
@@ -46,24 +46,24 @@ public class AllStringPermutations {
 }
  
  public static void swap(StringBuffer string, int i, int j) {
-	char c = string.charAt(i);
-	string.setCharAt(i, string.charAt(j));
+    char c = string.charAt(i);
+    string.setCharAt(i, string.charAt(j));
     string.setCharAt(j, c);
  }
 	
   public static void main(String[] args) { 
 	  
-   StringBuffer word = new StringBuffer();	  
-   Scanner input = new Scanner(System.in);
-   System.out.print("Enter the string whose permutation you want to find: ");
-   word.append(input.nextLine());  
+    StringBuffer word = new StringBuffer();	  
+    Scanner input = new Scanner(System.in);
+    System.out.print("Enter the string whose permutation you want to find: ");
+    word.append(input.nextLine());  
    
-   System.out.println();	
-   System.out.println("These are the permutations obtained from the first method: ");	
-   System.out.println();	
+    System.out.println();	
+    System.out.println("These are the permutations obtained from the first method: ");	
+    System.out.println();	
    	
-   getPermutation(word, word.length());
+    getPermutation(word, word.length());
 	   
-   getPermutation1(word);
+    getPermutation1(word);
    }     
  }
