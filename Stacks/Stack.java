@@ -10,7 +10,7 @@ public static void push(Object object) {
   * Add an item to back of stack.
   */
 		   
- stack.addFirst(object);
+  stack.addFirst(object);
 }
 
 public static Object pop() {
@@ -18,11 +18,11 @@ public static Object pop() {
  * Removes the next item from the front of the stack.	 
  */	 
 	  
-if(stack.isEmpty()) {
-  System.out.println("The stack is already empty. No element can be removed from the stack.");  
-  return -1;
+ if(stack.isEmpty()) {
+   System.out.println("The stack is already empty. No element can be removed from the stack.");  
+   return -1;
  }
-return stack.removeFirst();
+ return stack.removeFirst();
 }
 
 public static boolean isEmpty() {
@@ -31,13 +31,13 @@ public static boolean isEmpty() {
   */
 	   
  if(stack.isEmpty()) {	   
-  System.out.println("The stack is currently empty and has no elements.");	 	  	   
+   System.out.println("The stack is currently empty and has no elements.");	 	  	   
  }
  
  else {
   System.out.println("The stack is currently not empty.");	 		   
  }
-return stack.isEmpty();
+ return stack.isEmpty();
 }
 		 
 public static int size() {
@@ -45,8 +45,8 @@ public static int size() {
  * Returns the number of items currently in the stack.
  */
 		   
-System.out.println("The size of the stack is: " + stack.size());	 
-return stack.size();
+  System.out.println("The size of the stack is: " + stack.size());	 
+  return stack.size();
 }
 		
 public static void display() {
@@ -54,7 +54,7 @@ public static void display() {
  * Displays all the contents of the stack.
  */
 		   
-System.out.println("Contents of the stack are: " + stack);
+  System.out.println("Contents of the stack are: " + stack);
 }
 		 
 public static Object peek() {
@@ -63,18 +63,17 @@ public static Object peek() {
   */	 
 		  
  if(stack.isEmpty()) {  
-   System.out.println("The stack is empty so we can't see the last item of the stack.");  
-   return -1;
+    System.out.println("The stack is empty so we can't see the last item of the stack.");  
+    return -1;
  }	 
 		  
-   else {
-     System.out.println("The following element is the last element of the stack: " + stack.getFirst());  	  
-	}
+ else {
+   System.out.println("The following element is the last element of the stack: " + stack.getFirst());  	  
+ }
    return stack.getFirst();
-   }
+ }
 
 public static void main(String[] args) throws NumberFormatException, IOException {
-	 // TODO Auto-generated method stub
 		  
 int choice = 0;
 	    
@@ -108,6 +107,6 @@ do{
 	     break;     
     }
     System.out.print("\n");
-    }while(choice!=7);
+    } while(choice!=7);
   }
 }
