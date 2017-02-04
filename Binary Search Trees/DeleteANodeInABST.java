@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.*;
 
  public class DeleteANodeInABST { 	
-	Node root;	    
+    Node root;	    
     Node previous;
 
   public Node deleteNode(Node node, int key) {
@@ -10,7 +10,7 @@ import java.util.*;
    /* Base Case: If the tree is empty */  
 	 
     if (node == null) {
-   	 return node;
+       return node;
     }
     if(key < node.data) {
       node.left = deleteNode(node.left, key);
@@ -39,27 +39,27 @@ import java.util.*;
   
   public int minimumValue(Node node) {
 		 
-	int minimumValue = node.data;
-	while (node.left != null) {
-	   minimumValue = node.left.data;
+    int minimumValue = node.data;
+    while (node.left != null) {
+       minimumValue = node.left.data;
        node = node.left;
     }
-	return minimumValue;		
+    return minimumValue;		
   }
   
   public void printInorderTraversal(Node node) {
 		 
-	if (node == null) {
-	  return;
-	}
+    if (node == null) {
+       return;
+    }
 		 
-	printInorderTraversal(node.left);
-	System.out.print(node.data + " ");	
-	printInorderTraversal(node.right);
+    printInorderTraversal(node.left);
+    System.out.print(node.data + " ");	
+    printInorderTraversal(node.right);
   }
 
   public static void main(String[] args) {   
-	DeleteANodeInABST tree = new DeleteANodeInABST();
+    DeleteANodeInABST tree = new DeleteANodeInABST();
     tree.root = new Node(50);
     tree.root.left = new Node(30);
     tree.root.right = new Node(70);
@@ -69,19 +69,19 @@ import java.util.*;
     tree.root.right.left = new Node(60);
     
     System.out.print("Inorder traversal of binary tree is: ");
-	tree.printInorderTraversal(tree.root);		
+    tree.printInorderTraversal(tree.root);		
 	
-	System.out.println();
-	System.out.println();
-	Scanner input = new Scanner(System.in);
-	System.out.print("Enter the value of the node you want to delete in the tree: ");
-	int value = input.nextInt();  
+    System.out.println();
+    System.out.println();
+    Scanner input = new Scanner(System.in);
+    System.out.print("Enter the value of the node you want to delete in the tree: ");
+    int value = input.nextInt();  
 	   
-	tree.deleteNode(tree.root, value);		
+    tree.deleteNode(tree.root, value);		
 	
-	System.out.println();
-	System.out.print("Inorder traversal of binary tree is: ");
-	tree.printInorderTraversal(tree.root);		
+    System.out.println();
+    System.out.print("Inorder traversal of binary tree is: ");
+    tree.printInorderTraversal(tree.root);		
 	
   }
 }
