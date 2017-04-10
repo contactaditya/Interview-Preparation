@@ -46,7 +46,7 @@ public class MergeSort {
    // Copy the rest of the left side of the array into the target array 
    int remaining = middle - helperLeft;
    for (int i = 0; i <= remaining; i++) {
-   array[current + i] = helper[helperLeft + i];
+     array[current + i] = helper[helperLeft + i];
    }
  }
 		
