@@ -1,75 +1,75 @@
 import java.util.*;
 
 class LinkedListNode {
-	 public Object data; 
-	 public LinkedListNode next;
+   public Object data;  
+   public LinkedListNode next;
 
-	  //Node constructor
+   //Node constructor
 		    
-	 public LinkedListNode(Object data) {
-	   this.data = data;
-	   next = null;
-	 }
+   public LinkedListNode(Object data) {
+      this.data = data;
+      next = null;
+   }
 		    
-	 public LinkedListNode(Object data, LinkedListNode next) {
-	   this.data = data;
-	   this.next = next;
-	 }
+   public LinkedListNode(Object data, LinkedListNode next) {
+      this.data = data;
+      this.next = next;
+   }
 	 
-	 public Object getData() {
-	   return data;
-	 }
+   public Object getData() {
+      return data;
+   }
 			
-	 public void setData(Object data) {
-	   this.data = data; 
-	 }
+   public void setData(Object data) {
+      this.data = data; 
+   }
 			
-	 public LinkedListNode getNext() {
-	    return next;
-	 }
+   public LinkedListNode getNext() {
+      return next;
+   }
 			
-	 public void setNext(LinkedListNode next) {
-	    this.next = next;
-	  }
-	 }
+   public void setNext(LinkedListNode next) {
+      this.next = next;
+   }
+}
 
  public class LoopDetection { 
-	private static LinkedListNode head;
-	private static int size;  
+    private static LinkedListNode head;
+    private static int size;  
 	
-	public LoopDetection() {
+    public LoopDetection() {
     // this is an empty list, so the reference to the head node is set to a new node with no data				  
-	  head = new LinkedListNode(null);
-	  size = 0;
-        }
+       head = new LinkedListNode(null);
+       size = 0;
+    }
 
-	public static LinkedListNode findBeginning(LinkedListNode head) {
-	   LinkedListNode slow = head;
-	   LinkedListNode fast = head;
+    public static LinkedListNode findBeginning(LinkedListNode head) {
+       LinkedListNode slow = head;
+       LinkedListNode fast = head;
 		     
-	   while(fast != null && fast.next != null) {    
-	      slow = slow.next;
-	      fast = fast.next.next;
-	      if(slow == fast) {
-		break; 
-	      }
-	   }
+       while(fast != null && fast.next != null) {    
+	  slow = slow.next;
+	  fast = fast.next.next;
+	  if(slow == fast) {
+	    break; 
+	  }
+       }
 	   
-	   // If there is no meeting point then there is no loop
+     // If there is no meeting point then there is no loop
 	   
-	   if(fast == null || fast.next == null) {
-	      return null;
-	   }
+       if(fast == null || fast.next == null) {
+	 return null;
+       }
 	   
-	   slow = head;
+      slow = head;
 	   
-	   while(slow != fast) {
-	      slow = slow.next;
-	      fast = fast.next;
-	   }
-	   
-	 return fast;
-	}
+      while(slow != fast) {
+	slow = slow.next;
+	fast = fast.next;
+      }
+	  
+   return fast;
+ }
 	  
  public static void main(String[] args) {  
      LoopDetection list = new LoopDetection();
