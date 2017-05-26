@@ -7,17 +7,17 @@ public class DijkstrasAlgorithm {
   // A function to find the vertex with minimum distance value, from the set of vertices not yet included in shortest path tree
   
   public int minimumDistance(int distance[], Boolean shortestPathTreeSet[]) {
-	int minimum = Integer.MAX_VALUE;
-	int minimumIndex = -1;
+     int minimum = Integer.MAX_VALUE;
+     int minimumIndex = -1;
 	
-	for (int v = 0; v < vertices; v++) {
-	 if (shortestPathTreeSet[v] == false && distance[v] <= minimum) {
+     for (int v = 0; v < vertices; v++) {
+	if (shortestPathTreeSet[v] == false && distance[v] <= minimum) {
 	   minimum = distance[v];
 	   minimumIndex = v;
-     }			
-	}
+        }			
+     }
 	  
-  return minimumIndex;	  
+    return minimumIndex;	  
   }
   
   public void printSolution(int distance[], int n) {
