@@ -11,22 +11,22 @@ public class FirstNonRepeatedCharacter {
     LinkedHashMap<Character, Integer> hashmap = new LinkedHashMap<Character, Integer>();  
 		
     for(int i = 0; i< string.length(); i++) {  
-       if(string.charAt(i) != ' '){  
+       if(string.charAt(i) != ' ') {  
          if(hashmap.get(string.charAt(i)) != null) {  
            hashmap.put(string.charAt(i), hashmap.get(string.charAt(i)) + 1);  
          } else {  
            hashmap.put(string.charAt(i), 1);  
          }  
        }  
-     }  
+    }  
 		
-     for(Character character : hashmap.keySet()) {		
-        if(hashmap.get(character) == 1) {
-	   return character;
-	}
-      }
-     return null;
+    for(Character character : hashmap.keySet()) {		
+       if(hashmap.get(character) == 1) {
+	  return character;
+       }
     }
+  return null;
+}
 
 public static void main(String[] args) { 
     String string = new String();	  
