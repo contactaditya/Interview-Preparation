@@ -20,7 +20,7 @@ import java.util.*;
        while(left < right) {
       // A triplet found
     	 if(array[left] + array[right] == array[i]) {
-    		return true; 
+    	    return true; 
     	 }
     	 if(array[left] + array[right] < array[i]) {
             left++;
@@ -30,29 +30,29 @@ import java.util.*;
          }   
        } 
      }
-	  return false;
-   }
+    return false;
+  }
 
-	public static void main(String[] args) { 
-	   Scanner input = new Scanner(System.in);
-	   System.out.print("Enter number of elements in the array: ");
-	   int numbers = input.nextInt();   
-	   int array[] = new int[numbers];
+  public static void main(String[] args) { 
+      Scanner input = new Scanner(System.in);
+      System.out.print("Enter number of elements in the array: ");
+      int numbers = input.nextInt();   
+      int array[] = new int[numbers];
 	    
-	   System.out.print("\n");
-	   System.out.print("Please enter the actual values in the array: ");
-	   for (int i = 0; i < numbers; i++) {
-		 array[i] = input.nextInt(); 
-	   }
+      System.out.print("\n");
+      System.out.print("Please enter the actual values in the array: ");
+      for (int i = 0; i < numbers; i++) {
+	 array[i] = input.nextInt(); 
+      }
 	   
-	   boolean isTriplet = pythagoreanTriplet(array, array.length); 
+      boolean isTriplet = pythagoreanTriplet(array, array.length); 
 	   
-	   System.out.println();
-	   if(isTriplet) {
-		  System.out.println("There is a Pythagorean Triplet");  
-	   }
-	   else {
-		  System.out.println("There is no Pythagorean Triplet");    
-	   }
-	}
+      System.out.println();
+      if(isTriplet) {
+	 System.out.println("There is a Pythagorean Triplet");  
+      }
+      else {
+	 System.out.println("There is no Pythagorean Triplet");    
+      }
+   }
  }
