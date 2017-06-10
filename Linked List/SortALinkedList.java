@@ -42,7 +42,7 @@ import java.io.*;
        }
     }   
 
-public static void PrintElementsOfALinkedList(LinkedListNode head) {	 
+ public static void PrintElementsOfALinkedList(LinkedListNode head) {	 
     LinkedListNode current = head; 		    
     while(current != null) {	   
        System.out.print(current.getData() + " ");	 	
@@ -50,24 +50,24 @@ public static void PrintElementsOfALinkedList(LinkedListNode head) {
     }
  } 
 
-public static void main(String[] args) {  
-   SortALinkedList list = new SortALinkedList();
-   list.head = new LinkedListNode(2);
-   list.head.next = new LinkedListNode(1);
-   list.head.next.next = new LinkedListNode(2);
-   list.head.next.next.next = new LinkedListNode(1);
-   list.head.next.next.next.next = new LinkedListNode(1);	  
-   list.head.next.next.next.next.next = new LinkedListNode(2);
-   list.head.next.next.next.next.next.next = new LinkedListNode(0);
-   list.head.next.next.next.next.next.next.next = new LinkedListNode(1);
-   list.head.next.next.next.next.next.next.next.next = new LinkedListNode(0);
+ public static void main(String[] args) {  
+    SortALinkedList list = new SortALinkedList();
+    list.head = new LinkedListNode(2);
+    list.head.next = new LinkedListNode(1);
+    list.head.next.next = new LinkedListNode(2);
+    list.head.next.next.next = new LinkedListNode(1);
+    list.head.next.next.next.next = new LinkedListNode(1);	  
+    list.head.next.next.next.next.next = new LinkedListNode(2);
+    list.head.next.next.next.next.next.next = new LinkedListNode(0);
+    list.head.next.next.next.next.next.next.next = new LinkedListNode(1);
+    list.head.next.next.next.next.next.next.next.next = new LinkedListNode(0);
 
-   System.out.print("Contents of the linked list before sorting are: ");	 
-   list.PrintElementsOfALinkedList(head);
-   list.sortLinkedList(); 
-   System.out.println();
-   System.out.println();
-   System.out.print("Contents of the linked list after sorting are: ");	 
-   list.PrintElementsOfALinkedList(head);
+    System.out.print("Contents of the linked list before sorting are: ");	 
+    list.PrintElementsOfALinkedList(head);
+    list.sortLinkedList(); 
+    System.out.println();
+    System.out.println();
+    System.out.print("Contents of the linked list after sorting are: ");	 
+    list.PrintElementsOfALinkedList(head);
   }
 }
