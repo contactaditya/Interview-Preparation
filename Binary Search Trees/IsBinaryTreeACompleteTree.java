@@ -28,24 +28,24 @@ import java.util.*;
       return (isComplete(root.left, 2 * index + 1, nodeCount) && isComplete(root.right, 2 * index + 2, nodeCount));  	
     }
 
- public static void main(String[] args) {   
-      IsBinaryTreeACompleteTree tree = new IsBinaryTreeACompleteTree();
-      tree.root = new Node(1);
-      tree.root.left = new Node(2);
-      tree.root.right = new Node(3);
-      tree.root.left.right = new Node(5);
-      tree.root.left.left = new Node(4);
-      tree.root.right.right = new Node(6);
+   public static void main(String[] args) {   
+       IsBinaryTreeACompleteTree tree = new IsBinaryTreeACompleteTree();
+       tree.root = new Node(1);
+       tree.root.left = new Node(2);
+       tree.root.right = new Node(3);
+       tree.root.left.right = new Node(5);
+       tree.root.left.left = new Node(4);
+       tree.root.right.right = new Node(6);
       
-      int index = 0;  
-      int nodeCount = tree.getNodeCount(tree.root);
+       int index = 0;  
+       int nodeCount = tree.getNodeCount(tree.root);
       
-      if(tree.isComplete(tree.root, index, nodeCount)) {
-    	System.out.println("The binary tree is complete.");  
-      }
-      else {
-    	System.out.println("The binary tree is not complete.");    
-      }
+       if(tree.isComplete(tree.root, index, nodeCount)) {
+    	 System.out.println("The binary tree is complete.");  
+       }
+       else {
+    	 System.out.println("The binary tree is not complete.");    
+       }
       
    }
  }
