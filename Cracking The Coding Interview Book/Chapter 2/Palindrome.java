@@ -23,39 +23,38 @@ import java.util.*;
          n.next = head;
          head = n;
          node = node.next;
-       }	
-       
+       }	  
      return head;   
     }
     
     public static boolean isEqual(LinkedListNode one, LinkedListNode two) {
-      while (one != null && two != null) {
-    	if(one.data != two.data) {
+       while (one != null && two != null) {
+    	 if(one.data != two.data) {
     	   return false;	
-    	}
-    	one = one.next;
-    	two = two.next;
-      }
+    	 }
+    	 one = one.next;
+    	 two = two.next;
+       }
     	
-      return one == null && two == null;   
-    }
+     return one == null && two == null;   
+   }
 
-	public static void main(String[] args) { 
+  public static void main(String[] args) { 
 	 
-	  Palindrome list = new Palindrome();	
-	  list.head = new LinkedListNode(0);
-	  list.head.next = new LinkedListNode(1);
-	  list.head.next.next = new LinkedListNode(2);
-	  list.head.next.next.next = new LinkedListNode(1);
-	  list.head.next.next.next.next = new LinkedListNode(0);
+      Palindrome list = new Palindrome();	
+      list.head = new LinkedListNode(0);
+      list.head.next = new LinkedListNode(1);
+      list.head.next.next = new LinkedListNode(2);
+      list.head.next.next.next = new LinkedListNode(1);
+      list.head.next.next.next.next = new LinkedListNode(0);
 	     	     
-	  boolean IsAPalindrome = list.isPalindrome(head);
+      boolean IsAPalindrome = list.isPalindrome(head);
 	  
-	  if(IsAPalindrome) {
-	    System.out.println("The linkedlist is a palindrome.");  
-	  }
-	  else {
-	    System.out.println("The linkedlist is not a palindrome.");    
-	  }
-	}
+      if(IsAPalindrome) {
+	 System.out.println("The linkedlist is a palindrome.");  
+      }
+      else {
+	 System.out.println("The linkedlist is not a palindrome.");    
+      }
+    }
   }
