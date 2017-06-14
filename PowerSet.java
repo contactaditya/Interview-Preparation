@@ -6,20 +6,19 @@ public class PowerSet {
  public static void printPowerSet(char array[]) { 
    int n = array.length;
    
-   for (int i = 0; i < (1<<n); i++)
-   {
+   for (int i = 0; i < (1<<n); i++) {
      System.out.print("{");
        
-   for (int j = 0; j < n; j++) {
-     if ((i & (1 << j)) > 0) {
-       System.out.print(array[j] + "");  
-     }   
-   }  
+     for (int j = 0; j < n; j++) {
+       if ((i & (1 << j)) > 0) {
+         System.out.print(array[j] + "");  
+       }   
+     }  
      System.out.println("}");
    }
  }
 
-  public static void main(String[] args) { 	
+ public static void main(String[] args) { 	
     Scanner input = new Scanner(System.in);
     System.out.print("Enter number of characters in the set: ");
     int number = input.nextInt();  
