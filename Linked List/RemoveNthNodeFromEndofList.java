@@ -57,34 +57,34 @@ import java.io.*;
   }  
 
   public static void PrintElementsOfALinkedList(LinkedListNode head) {	 
-   LinkedListNode current = head; 		    
-   while(current != null) {	   
-     System.out.print(current.getData() + " ");	 	
-     current = current.getNext();
-   }
- } 
+    LinkedListNode current = head; 		    
+    while(current != null) {	   
+      System.out.print(current.getData() + " ");	 	
+      current = current.getNext();
+    }
+  } 
 
  public static void main(String[] args) {
-   RemoveNthNodeFromEndofList list = new RemoveNthNodeFromEndofList();
-   list.head = new LinkedListNode(3);
-   list.head.next = new LinkedListNode(5);
-   list.head.next.next = new LinkedListNode(8);
-   list.head.next.next.next = new LinkedListNode(5);
-   list.head.next.next.next.next = new LinkedListNode(10);
-   list.head.next.next.next.next.next = new LinkedListNode(2);
-   list.head.next.next.next.next.next.next = new LinkedListNode(1);
+     RemoveNthNodeFromEndofList list = new RemoveNthNodeFromEndofList();
+     list.head = new LinkedListNode(3);
+     list.head.next = new LinkedListNode(5);
+     list.head.next.next = new LinkedListNode(8);
+     list.head.next.next.next = new LinkedListNode(5);
+     list.head.next.next.next.next = new LinkedListNode(10);
+     list.head.next.next.next.next.next = new LinkedListNode(2);
+     list.head.next.next.next.next.next.next = new LinkedListNode(1);
    
-   size = 7;
+     size = 7;
    
-   Scanner input = new Scanner(System.in);
-   System.out.print("Enter the index of the nth to last element in the linkedlist that you want to remove: ");
-   int index = input.nextInt(); 
-   System.out.println();
+     Scanner input = new Scanner(System.in);
+     System.out.print("Enter the index of the nth to last element in the linkedlist that you want to remove: ");
+     int index = input.nextInt(); 
+     System.out.println();
  
-   System.out.print("Contents of the linked list before removing the node is: ");	 
-   list.PrintElementsOfALinkedList(head);
-   LinkedListNode oddEvenLinkedList = list.removeNthNodeFromEndofList(head, index); 
-   System.out.print("Contents of the linked list after removing the node is: ");	 
-   list.PrintElementsOfALinkedList(head);
+     System.out.print("Contents of the linked list before removing the node is: ");	 
+     list.PrintElementsOfALinkedList(head);
+     LinkedListNode oddEvenLinkedList = list.removeNthNodeFromEndofList(head, index); 
+     System.out.print("Contents of the linked list after removing the node is: ");	 
+     list.PrintElementsOfALinkedList(head);
  }
 }
