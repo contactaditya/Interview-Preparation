@@ -3,7 +3,7 @@ import java.io.*;
 
 public class SecondSmallestElementInAnArray {   
 	
- public static void printSecondSmallest(int[] array) {
+  public static void printSecondSmallest(int[] array) {
      int n = array.length;  
      int first = 0;
      int second = 0;
@@ -21,7 +21,7 @@ public class SecondSmallestElementInAnArray {
        }
 		
        else if (array[i] < second && array[i] != first) {
-	   second = array[i];	
+	  second = array[i];	
        }
      }
 	  
@@ -32,9 +32,9 @@ public class SecondSmallestElementInAnArray {
 	System.out.print("The second smallest element in the array is: " + second);       
      }
 
-}
+  }
 
-public static void main(String[] args) { 	
+  public static void main(String[] args) { 	
       Scanner input = new Scanner(System.in);
       System.out.print("Enter number of elements in the array: ");
       int numbers = input.nextInt();   
@@ -48,5 +48,5 @@ public static void main(String[] args) {
 	  
       System.out.println();
       printSecondSmallest(array);
-   }
+  }
 }
