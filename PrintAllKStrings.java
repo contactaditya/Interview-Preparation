@@ -4,32 +4,32 @@ import java.util.*;
 public class PrintAllKStrings {  
 	
   public static void printAllKLength(char array[], int number) { 
-	int n = array.length;	 
-	printAllKLengthRecursion(array, "", n, number);
+     int n = array.length;	 
+     printAllKLengthRecursion(array, "", n, number);
   }
 
   public static void printAllKLengthRecursion(char array[], String prefix, int n, int number) { 
 	  
-   // Base case: number is 0, print prefix
-   if (number == 0) {
-	System.out.println(prefix);
-	return;
-   }
+    // Base case: number is 0, print prefix
+    if (number == 0) {
+      System.out.println(prefix);
+      return;
+    }
 
-   // One by one add all characters from set and recursively call for number equals to number-1
-   for (int i = 0; i < n; ++i) {
+    // One by one add all characters from set and recursively call for number equals to number-1
+    for (int i = 0; i < n; ++i) {
 			
-   // Next character of input added
-   String newPrefix = prefix + array[i]; 
+      // Next character of input added
+      String newPrefix = prefix + array[i]; 
 			
-   // number is decreased, because we have added a new character
-   printAllKLengthRecursion(array, newPrefix, n, number - 1); 
-  }
- }  
+      // number is decreased, because we have added a new character
+      printAllKLengthRecursion(array, newPrefix, n, number - 1); 
+    }
+  }  
   
   public static void main(String[] args) {    
   
-	Scanner input = new Scanner(System.in);
+    Scanner input = new Scanner(System.in);
     System.out.print("Enter number of characters in the set: ");
     int number = input.nextInt();  
     char array[] = new char[number];
@@ -48,5 +48,5 @@ public class PrintAllKStrings {
 	   	
     printAllKLength(array, number1);
 		   
-	}     
+    }     
   }
