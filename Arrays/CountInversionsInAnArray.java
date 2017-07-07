@@ -5,8 +5,8 @@ import java.io.*;
 	 
     public static int mergeSort(int array[]) {
        int temp[] = new int[array.length];
-	   return mergeSort(array, temp, 0, array.length - 1);	 
-	}	
+       return mergeSort(array, temp, 0, array.length - 1);	 
+    }	
     
     public static int mergeSort(int array[], int temp[], int left, int right) {
        int mid = 0;
@@ -20,8 +20,8 @@ import java.io.*;
     	 inversionCount += merge(array, temp, left, mid+1, right);
        }
     
- 	   return inversionCount;	 
- 	}	
+      return inversionCount;	 
+    }	
     
     public static int merge(int array[], int temp[], int left, int mid, int right) {
         int i = left; /* i is index for left subarray*/
@@ -30,10 +30,10 @@ import java.io.*;
         int inversionCount = 0;
         while((i <= mid - 1) && (j <= right)) {
           if(array[i] <= array[j]) {
-        	temp[k++] = array[i++]; 
+            temp[k++] = array[i++]; 
           }
           else {
-          	temp[k++] = array[j++]; 
+            temp[k++] = array[j++]; 
             inversionCount = inversionCount + (mid - i);	
           }
         }
@@ -53,25 +53,25 @@ import java.io.*;
           array[i] = temp[i];	
         }
      
-  	   return inversionCount;	 
-  	}	    
+      return inversionCount;	 
+    }	    
 
-	public static void main(String[] args) {
-	  Scanner input = new Scanner(System.in);
-	  System.out.print("Enter number of elements in the array: ");
-	  int numbers = input.nextInt();   
-	  int array[] = new int[numbers];
+    public static void main(String[] args) {
+	Scanner input = new Scanner(System.in);
+	System.out.print("Enter number of elements in the array: ");
+	int numbers = input.nextInt();   
+	int array[] = new int[numbers];
 	    
-      System.out.print("\n");
-	  System.out.print("Please enter the actual values in the array: ");
-	  for (int i = 0; i < numbers; i++) {
-		array[i] = input.nextInt();
-	  }
-		  
-	  System.out.println();
-	  int count = mergeSort(array);
-	  
-	  System.out.println("Number of inversions are: " + count);
-
+        System.out.print("\n");
+	System.out.print("Please enter the actual values in the array: ");
+	for (int i = 0; i < numbers; i++) {
+	  array[i] = input.nextInt();
 	}
- }
+		  
+	System.out.println();
+	int count = mergeSort(array);
+	  
+	System.out.println("Number of inversions are: " + count);
+
+    }
+  }
