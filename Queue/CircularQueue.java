@@ -14,9 +14,9 @@ import java.util.*;
    }
 
    public static void enqueue(Object object) {
-  /**
-   * Add an item to back of queue.
-   */
+    /**
+     * Add an item to back of queue.
+     */
      if(size == queue.length) {  
 	System.out.println();	 
 	System.out.println("The queue is full. No new element can be inserted.");  
@@ -32,27 +32,27 @@ import java.util.*;
    }
 
    public static Object dequeue() {
-   /**
-    * Removes the next item from the front of the queue.	 
-    */	 
-     if(size == 0) {  
-       System.out.println(); 
-       System.out.println("The queue is empty so we can't see the front item of the queue.");  
-       return -1;
-     }	 
-     else {
-       Object temp = queue[front]; 
-       queue[front] = null;
-       front = (front + 1) % queue.length;  
-       size--;
-       return temp;  
-    }
-  }
+     /**
+      * Removes the next item from the front of the queue.	 
+      */	 
+      if(size == 0) {  
+        System.out.println(); 
+        System.out.println("The queue is empty so we can't see the front item of the queue.");  
+        return -1;
+      }	 
+      else {
+        Object temp = queue[front]; 
+        queue[front] = null;
+        front = (front + 1) % queue.length;  
+        size--;
+        return temp;  
+      }
+   }
 
    public static boolean isEmpty() {
-   /**
-    * Test if the queue is empty.
-    */	
+    /**
+     * Test if the queue is empty.
+     */	
      if(size == 0) {	  
        System.out.println();	 
        System.out.println("The queue is currently empty and has no elements.");	 	  	   
@@ -64,10 +64,10 @@ import java.util.*;
      return size == 0;
    }
    
-   public static boolean isFull() {
-   /**
-    * Test if the queue is full.
-    */	
+  public static boolean isFull() {
+    /**
+     * Test if the queue is full.
+     */	
     if(size == capacity) {	   
        System.out.println();  
        System.out.println("The queue is full. No new element can be inserted.");	 	  	   
@@ -76,22 +76,22 @@ import java.util.*;
        System.out.println();
        System.out.println("The queue is currently not full.");	 		   
     }
-   return size == capacity;
+    return size == capacity;
   }
 
   public static int size() {
-  /**
-   * Returns the number of items currently in the queue.
-   */
+   /**
+    * Returns the number of items currently in the queue.
+    */
     System.out.println();  
     System.out.println("The size of the queue is: " + size);	 
     return size;
   }
 
   public static void display() {
-  /**
-   * Displays all the contents of the queue.
-   */
+   /**
+    * Displays all the contents of the queue.
+    */
 	  
     System.out.println();
     if (size == 0) { 
@@ -108,9 +108,9 @@ import java.util.*;
   }
 
   public static Object peek() {
-  /**
-   * Returns the front item from the queue without popping it.
-   */	 
+   /**
+    * Returns the front item from the queue without popping it.
+    */	 
     if (size == 0) {  
        System.out.println();	    
        System.out.println("The queue is empty so we can't see the front item of the queue.");  
@@ -120,8 +120,8 @@ import java.util.*;
        System.out.println();	  
        System.out.println("The following element is the top element of the queue: " + queue[front]);  	  
     }
-  return queue[front];
- }
+    return queue[front];
+  }
 	
  public static void main(String[] args) throws NumberFormatException, IOException { 	  
      int choice = 0;
