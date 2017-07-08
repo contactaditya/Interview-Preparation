@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class AllPossiblePathsInABoard {
 	
   public static int numberOfPaths(int rows, int columns) {      
-	// Create a 2D table to store results of subproblems	  
+    // Create a 2D table to store results of subproblems	  
     int count[][] = new int[rows][columns];
   
     // Count of paths to reach any cell in first column is 1  
@@ -24,8 +24,8 @@ public class AllPossiblePathsInABoard {
      }          
     } 
 
- return count[rows-1][columns-1];
- }	
+    return count[rows-1][columns-1];
+  }	
 
   public static void main(String[] args) {
     Scanner input = new Scanner(System.in);
