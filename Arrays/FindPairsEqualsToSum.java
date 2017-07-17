@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 
-  public class FindPairsEqualsToSum { 
+ public class FindPairsEqualsToSum { 
 	 
    public static int findPairsEqualsToSum(int array[], int sum) {
       HashMap<Integer, Integer> elementIndexMap = new HashMap<Integer, Integer>();
