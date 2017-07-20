@@ -16,7 +16,7 @@ import java.io.*;
        for (int i = 1; i < array.length; i++) {
     	 for (int j = 0; j < i; j++) {
     	   if (array[i] > array[j] && msis[i] < msis[j] + array[i]) {
-    		  msis[i] = msis[j] + array[i];	 
+    	      msis[i] = msis[j] + array[i];	 
     	   }   
     	 }
        }
@@ -24,7 +24,7 @@ import java.io.*;
        /* Pick maximum of all msis values */
        for (int i = 0; i < array.length; i++) {
          if (max < msis[i]) {
-           max = msis[i]; 
+            max = msis[i]; 
          }
        }
            
