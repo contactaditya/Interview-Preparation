@@ -5,7 +5,7 @@ import java.net.URL;
 
   public class URLReader {
 
-	public static void main(String[] args) throws IOException {
+      public static void main(String[] args) throws IOException {
 	  URL oracle = new URL("https://www.oracle.com/");
 	  BufferedReader input = new BufferedReader(new InputStreamReader(oracle.openStream()));
 
@@ -14,5 +14,5 @@ import java.net.URL;
 	    System.out.println(inputLine);
 	  }
 	  input.close();
-	}
+      }
   }
