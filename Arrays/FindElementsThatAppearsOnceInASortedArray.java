@@ -10,7 +10,7 @@ import java.io.*;
        } 
        
        if (low == high) {
-          return array[low];
+         return array[low];
        } 
        
        // Find the middle point
@@ -31,13 +31,13 @@ import java.io.*;
        
        else if(mid % 2 == 1) {
          if(array[mid] == array[mid-1]) {
-        	return findElementsThatAppearsOnce(array, mid-2, high);
+           return findElementsThatAppearsOnce(array, mid-2, high);
          }
          else {
-        	return findElementsThatAppearsOnce(array, low, mid-1);
+           return findElementsThatAppearsOnce(array, low, mid-1);
          }
        }
-	  return array[low];
+       return array[low];
     }
     
     public static int findElementsThatAppearsOnce1(int[] array, int low, int high) {
@@ -64,28 +64,28 @@ import java.io.*;
       return array[low];
     }
 
-	public static void main(String[] args) {   
-	   Scanner input = new Scanner(System.in);
-	   System.out.print("Enter number of elements in the array: ");
-	   int numbers = input.nextInt();   
-	   int array[] = new int[numbers];
+    public static void main(String[] args) {   
+       Scanner input = new Scanner(System.in);
+       System.out.print("Enter number of elements in the array: ");
+       int numbers = input.nextInt();   
+       int array[] = new int[numbers];
 	    
-	   System.out.println();
-	   System.out.print("Please enter the actual values in the array: ");
-	   for (int i = 0; i < numbers; i++) {
-		 array[i] = input.nextInt(); 
-	   }
+       System.out.println();
+       System.out.print("Please enter the actual values in the array: ");
+       for (int i = 0; i < numbers; i++) {
+	 array[i] = input.nextInt(); 
+       }
 	   
-	   Arrays.sort(array);
+       Arrays.sort(array);
 	   
-	   int onceElement = findElementsThatAppearsOnce1(array, 0, array.length - 1);
+       int onceElement = findElementsThatAppearsOnce1(array, 0, array.length - 1);
 	   
-	   if (!(onceElement == 0)) {
-		 System.out.println(); 
-	 	 System.out.println("The element that appears once in the array is " + onceElement);
-	   } else {
-		 System.out.println();	
-		 System.out.println("There is no element that only appers once in the array.");
-	   }
-	}
+       if (!(onceElement == 0)) {
+          System.out.println(); 
+	  System.out.println("The element that appears once in the array is " + onceElement);
+       } else {
+	  System.out.println();	
+	  System.out.println("There is no element that only appers once in the array.");
+       }
+    }
  }
