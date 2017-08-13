@@ -21,30 +21,30 @@ public class CountDistinctWindow {
     }
     System.out.println();	
     System.out.print("The count of distinct numbers in all windows of size k is: ");	
-   // Traverse through the remaining array
+    // Traverse through the remaining array
     for (int i = k; i < array.length; i++) {
-   // Remove first element of previous window If there was only one occurrence, then reduce distinct count.
+      // Remove first element of previous window If there was only one occurrence, then reduce distinct count.
       if (hashMap.get(array[i-k]) == 1) {
          hashMap.remove(array[i-k]);
          distinctCount--;
       }
-   // Reduce count of the removed element
+      // Reduce count of the removed element
       else {
           int count = hashMap.get(array[i-k]);
           hashMap.put(array[i-k], count-1);
       }
-   // Add new element of current window. If this element appears first time, increment distinct element count 
+      // Add new element of current window. If this element appears first time, increment distinct element count 
       if (hashMap.get(array[i]) == null) {
          hashMap.put(array[i], 1);
          distinctCount++;
       }
-   // Increment distinct element count
+      // Increment distinct element count
       else  {
          int count = hashMap.get(array[i]);
          hashMap.put(array[i], count+1);
       }
 	   
-    // Print count of first window
+       // Print count of first window
        System.out.print(distinctCount + " ");
      }
    }	 
