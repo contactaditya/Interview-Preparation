@@ -38,15 +38,15 @@ import java.io.*;
       return true;
     }
 
-	public static void main(String[] args) {
-	  Scanner input = new Scanner(System.in);
-	  System.out.print("Enter an even number greater than 2: ");
-	  int number = input.nextInt();  
-	  ArrayList<Integer> result = new ArrayList<Integer>();
+    public static void main(String[] args) {
+       Scanner input = new Scanner(System.in);
+       System.out.print("Enter an even number greater than 2: ");
+       int number = input.nextInt();  
+       ArrayList<Integer> result = new ArrayList<Integer>();
 			
-	  result = primeSum(number);
+       result = primeSum(number);
 
-	  System.out.println();	
-	  System.out.print("The two prime numbers whose sum will be equal to given number: " + result);
-	}
+       System.out.println();	
+       System.out.print("The two prime numbers whose sum will be equal to given number: " + result);
+    }
  }
