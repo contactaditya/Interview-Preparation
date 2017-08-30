@@ -27,36 +27,36 @@ import java.io.*;
        }
     	
        return result;
-    }  
+   }  
 
-	public static void main(String[] args) {
+   public static void main(String[] args) {
       ArrayList<ArrayList<Integer>> A = new ArrayList<ArrayList<Integer>>();	
-	  Scanner input = new Scanner(System.in);
-	  System.out.print("Please enter the number of rows in the square matrix: ");
-	  int x = input.nextInt();  
-	  System.out.println();
-	  System.out.print("Please enter the number of columns in the square matrix: ");
+      Scanner input = new Scanner(System.in);
+      System.out.print("Please enter the number of rows in the square matrix: ");
+      int x = input.nextInt();  
+      System.out.println();
+      System.out.print("Please enter the number of columns in the square matrix: ");
       int y = input.nextInt();  
-	  System.out.println();
-	  System.out.println("Please enter the actual values in the matrix: ");
-	  for(int i=0; i < x; i++) {
-	   ArrayList<Integer> temp = new ArrayList<Integer>();
-       A.add(temp);  
-	   for(int j=0; j < y; j++) {  
-		 temp.add(input.nextInt());      
-	   } 
-	  }
+      System.out.println();
+      System.out.println("Please enter the actual values in the matrix: ");
+      for(int i=0; i < x; i++) {
+	ArrayList<Integer> temp = new ArrayList<Integer>();
+        A.add(temp);  
+        for(int j=0; j < y; j++) {  
+           temp.add(input.nextInt());      
+	} 
+      }
 	  
-	  ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();	
+      ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();	
 	  
-	  result = diagonal(A);
+      result = diagonal(A);
 	  
-	  System.out.println();	
-	  System.out.print("The array of the anti diagonals of the square matrix is: ");
-	  System.out.println();	
-	  for(ArrayList<Integer> t : result) {
+      System.out.println();	
+      System.out.print("The array of the anti diagonals of the square matrix is: ");
+      System.out.println();	
+      for(ArrayList<Integer> t : result) {
         System.out.println(t);
       }
 	   		
-	}
+    }
   }
