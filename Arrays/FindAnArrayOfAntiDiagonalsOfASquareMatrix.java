@@ -21,8 +21,8 @@ import java.io.*;
     	 }  
     	 ArrayList<Integer> row = new ArrayList<Integer>();
     	 for (int j = offset; j <= i - offset; j++) {
-		   row.add(a.get(j).get(i - j));
- 	     }
+	   row.add(a.get(j).get(i - j));
+ 	 }
     	 result.add(row);
        }
     	
