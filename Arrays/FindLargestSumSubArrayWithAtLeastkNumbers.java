@@ -4,10 +4,10 @@ import java.io.*;
   public class FindLargestSumSubArrayWithAtLeastkNumbers {
 	 
     public static int maxSumWithK(int[] array, int n, int k) {
-	int maxSum[] = new int [n];
-	maxSum[0] = array[0];
+       int maxSum[] = new int [n];
+       maxSum[0] = array[0];
 	   
-        // We use Kadane's algorithm to fill maxSum[]
+       // We use Kadane's algorithm to fill maxSum[]
 	   
        int currentMax = array[0];
        for (int i = 1; i < n; i++) {
