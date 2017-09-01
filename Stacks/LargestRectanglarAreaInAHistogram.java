@@ -12,7 +12,7 @@ import java.io.*;
        
        // Run through all bars of given histogram
        while(i < n) {
-    	// If this bar is higher than the bar on top stack, push it to stack  
+    	 // If this bar is higher than the bar on top stack, push it to stack  
     	 if (stack.empty() || histogram[stack.peek()] <= histogram[i]) {
     	   stack.push(i++);	  
     	 }
@@ -24,7 +24,7 @@ import java.io.*;
     	   AreaWithTop = histogram[topOfTheStack] * (stack.empty() ? i : i - stack.peek() - 1);
     	   
     	   if (maximumArea < AreaWithTop) {
-    		 maximumArea = AreaWithTop;
+    	      maximumArea = AreaWithTop;
     	   }
     	 }
        }
@@ -43,23 +43,23 @@ import java.io.*;
     	 }
        }
       
-	  return maximumArea;
+       return maximumArea;
     }	
 
-	public static void main(String[] args) { 	  
-	  Scanner input = new Scanner(System.in);
-	  System.out.print("Enter number of elements in the array: ");
-	  int number = input.nextInt();  
-	  int histogram[] = new int[number];
+    public static void main(String[] args) { 	  
+	Scanner input = new Scanner(System.in);
+	System.out.print("Enter number of elements in the array: ");
+	int number = input.nextInt();  
+	int histogram[] = new int[number];
 	
-	  System.out.println();	
-	  System.out.print("Please enter the elements in the array: ");
-	  for (int i = 0; i < histogram.length; i++) {
-		histogram[i] = input.nextInt();
-	  }
-		  
-	  System.out.println();
-	  int maxArea = getMaxArea(histogram, histogram.length);
-	  System.out.print("The largest rectangular area in the given histogram is: " + maxArea);
+	System.out.println();	
+	System.out.print("Please enter the elements in the array: ");
+	for (int i = 0; i < histogram.length; i++) {
+	  histogram[i] = input.nextInt();
 	}
+		  
+	System.out.println();
+	int maxArea = getMaxArea(histogram, histogram.length);
+	System.out.print("The largest rectangular area in the given histogram is: " + maxArea);
+    }
   }
