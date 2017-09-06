@@ -42,7 +42,7 @@ import java.io.*;
      System.out.print("\n");
      System.out.print("Please enter the actual values in the array: ");
      for (int i = 0; i < numbers; i++) {
-        array[i] = input.nextInt(); 
+       array[i] = input.nextInt(); 
      }
 	  
      System.out.println();
