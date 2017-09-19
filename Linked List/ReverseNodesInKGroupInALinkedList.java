@@ -2,8 +2,8 @@ import java.util.*;
 import java.io.*;
 
   public class ReverseNodesInKGroupInALinkedList {     
-      private static LinkedListNode head;
-      private static int size;  	
+     private static LinkedListNode head;
+     private static int size;  	
 	
      public static LinkedListNode reverseKGroup(LinkedListNode head, int k) {
 	if (head == null || head.next == null || k == 1) {
