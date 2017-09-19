@@ -3,11 +3,11 @@ import java.io.*;
 
  public class WiggleSortII {
 	 
-	public static void wiggleSort(int[] array) {
-	  if (array == null || array.length <= 1) {
-	     return;
-	  }
-	  Arrays.sort(array);
+   public static void wiggleSort(int[] array) {
+      if (array == null || array.length <= 1) {
+	 return;
+      }
+      Arrays.sort(array);
       int n = array.length;
       
       int[] temp = new int[n];
@@ -24,25 +24,25 @@ import java.io.*;
         }
       }
       System.arraycopy(temp, 0, array, 0, n);
-	}	 
+   }	 
 
-	public static void main(String[] args) {
-	   Scanner input = new Scanner(System.in);
-	   System.out.print("Enter number of elements in the array: ");
-	   int numbers = input.nextInt();   
-	   int array[] = new int[numbers];
+   public static void main(String[] args) {
+      Scanner input = new Scanner(System.in);
+      System.out.print("Enter number of elements in the array: ");
+      int numbers = input.nextInt();   
+      int array[] = new int[numbers];
 				    
-	   System.out.print("\n");
-	   System.out.print("Please enter the actual values in the array: ");
-	   for (int i = 0; i < numbers; i++) {
-		 array[i] = input.nextInt(); 
-	   }
+      System.out.print("\n");
+      System.out.print("Please enter the actual values in the array: ");
+      for (int i = 0; i < numbers; i++) {
+	array[i] = input.nextInt(); 
+      }
 
-	   wiggleSort(array);
-	   System.out.println();
-	   System.out.print("The array after wiggle sort is: ");
-	   for (int i=0; i < array.length; i++) {
-		 System.out.print(array[i] + " ");
-	   }
-	}
+      wiggleSort(array);
+      System.out.println();
+      System.out.print("The array after wiggle sort is: ");
+      for (int i=0; i < array.length; i++) {
+	System.out.print(array[i] + " ");
+      }
+   }
  }
