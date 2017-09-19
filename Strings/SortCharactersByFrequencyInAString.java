@@ -27,23 +27,23 @@ import java.io.*;
       for (int position = bucket.length - 1; position >=0; position--) {
     	if (bucket[position] != null) { 
           for (char num : bucket[position]) {
-        	for (int i = 0; i < map.get(num); i++) { 
-        	   sb.append(num);	
-        	}
+            for (int i = 0; i < map.get(num); i++) { 
+               sb.append(num);	
+            }
           }
     	}
       }
     	
       return sb.toString();      
-	}	 
+    }	 
 
-	public static void main(String[] args) {   
-	  String string = new String();	  
-	  Scanner input = new Scanner(System.in);
-	  System.out.print("Enter the string: ");
-	  string = input.nextLine(); 
-	  String result = frequencySort(string);
-	  System.out.println();
-	  System.out.println("The string in decreasing order based on the frequency of characters is: " + result);
-	}
+    public static void main(String[] args) {   
+       String string = new String();	  
+       Scanner input = new Scanner(System.in);
+       System.out.print("Enter the string: ");
+       string = input.nextLine(); 
+       String result = frequencySort(string);
+       System.out.println();
+       System.out.println("The string in decreasing order based on the frequency of characters is: " + result);
+    }
  }
