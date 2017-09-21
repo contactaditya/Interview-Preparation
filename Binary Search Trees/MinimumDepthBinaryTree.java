@@ -2,16 +2,16 @@ import java.util.*;
 import java.io.*;
 
  public class MinimumDepthBinaryTree {   
-	Node root;	    
-	Node previous;
+    Node root;	    
+    Node previous;
 
     public int minimumDepth(Node node) {
 		 
-	  if (node == null) {
-	    return 0;
-	  }
+      if (node == null) {
+	 return 0;
+      }
 	
-	  LinkedList<Node> nodes = new LinkedList<Node>();
+      LinkedList<Node> nodes = new LinkedList<Node>();
       LinkedList<Integer> depths = new LinkedList<Integer>();
     
       nodes.add(node);
@@ -36,11 +36,11 @@ import java.io.*;
         }	
       }
 
-	  return 0;
+      return 0;
     }
   
     public int minimumDepth1(Node root) {
-	  // called on root = NULL
+      // called on root = NULL
       if (root == null) {
          return 0;
       }
@@ -64,13 +64,13 @@ import java.io.*;
     }  
 
     public static void main(String[] args) { 
-	   MinimumDepthBinaryTree tree = new MinimumDepthBinaryTree();
-	   tree.root = new Node(1);
-	   tree.root.left = new Node(2);
-	   tree.root.right = new Node(3);
-	   tree.root.left.left = new Node(4);
-	   tree.root.left.right = new Node(5);
+       MinimumDepthBinaryTree tree = new MinimumDepthBinaryTree();
+       tree.root = new Node(1);
+       tree.root.left = new Node(2);
+       tree.root.right = new Node(3);
+       tree.root.left.left = new Node(4);
+       tree.root.left.right = new Node(5);
 	  
-	   System.out.println("The minimum depth of "+ "binary tree is : " + tree.minimumDepth(tree.root));
+       System.out.println("The minimum depth of "+ "binary tree is : " + tree.minimumDepth(tree.root));
     }
 }
