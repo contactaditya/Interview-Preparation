@@ -2,46 +2,46 @@ import java.util.*;
 import java.io.*;
 
   public class TrimABinarySearchTree {
-	Node root;	    
-	Node previous;
+     Node root;	    
+     Node previous;
 		    
-	public Node trimBST(Node root, int left, int right) {       
-       if(root == null) {
-	      return null;
-	   }
+     public Node trimBST(Node root, int left, int right) {       
+        if(root == null) {
+	   return null;
+        }
        
-       if (root.data < left) {
-    	 return trimBST(root.right, left, right);
-       }
-       if (root.data > right) {
-    	 return trimBST(root.left, left, right);
-       }
+        if (root.data < left) {
+    	  return trimBST(root.right, left, right);
+        }
+        if (root.data > right) {
+    	  return trimBST(root.left, left, right);
+        }
        
-       root.left = trimBST(root.left, left, right);
-       root.right = trimBST(root.right, left, right);
+        root.left = trimBST(root.left, left, right);
+        root.right = trimBST(root.right, left, right);
 	        
-	   return root;
-	}
+        return root;
+     }
 	
-	public void printInorderTraversal(Node node) {		 
-	  if(node == null) {
-		 return;
-	  }
+     public void printInorderTraversal(Node node) {		 
+        if(node == null) {
+	   return;
+        }
 			 
-      printInorderTraversal(node.left);
-	  System.out.print(node.data + " ");	
-	  printInorderTraversal(node.right);
-	}
+        printInorderTraversal(node.left);
+	System.out.print(node.data + " ");	
+	printInorderTraversal(node.right);
+     }
 		
-	public void printPreorderTraversal(Node node) {
-	  if (node == null) {
-		 return;
-	  }
-			    
-	  System.out.print(node.data + " ");		  
-	  printPreorderTraversal(node.left);
-	  printPreorderTraversal(node.right);
+     public void printPreorderTraversal(Node node) {
+	if (node == null) {
+          return;
 	}
+			    
+	System.out.print(node.data + " ");		  
+	printPreorderTraversal(node.left);
+	printPreorderTraversal(node.right);
+     }
 	
 	public static void main(String[] args) {
 	  TrimABinarySearchTree tree = new TrimABinarySearchTree();
