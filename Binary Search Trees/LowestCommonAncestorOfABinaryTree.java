@@ -1,27 +1,26 @@
 import java.util.*;
 import java.io.*;
 
- public class LowestCommonAncestorOfABinaryTree { 	
-	Node root;
+public class LowestCommonAncestorOfABinaryTree { 	
+  Node root;
 	
-	public Node findLowestCommonAncestor(Node root, Node n1, Node n2) {
-		 
-	   if(root == null || root == n1 || root == n2) {
-		 return root;
-	   }
-		    
-       Node left = findLowestCommonAncestor(root.left, n1, n2);
-       Node right = findLowestCommonAncestor(root.right, n1, n2);
-       
-       if (left !=null && right !=null) {
+  public Node findLowestCommonAncestor(Node root, Node n1, Node n2) {		 
+      if(root == null || root == n1 || root == n2) {
          return root;
-       }
+      }
+		    
+      Node left = findLowestCommonAncestor(root.left, n1, n2);
+      Node right = findLowestCommonAncestor(root.right, n1, n2);
+       
+      if (left !=null && right !=null) {
+         return root;
+      }
     
-       return (left != null) ? left : right; 
-	}
+      return (left != null) ? left : right; 
+  }
 
-	public static void main(String[] args) {     
-	  LowestCommonAncestorOfABinaryTree tree = new LowestCommonAncestorOfABinaryTree();
+  public static void main(String[] args) {     
+      LowestCommonAncestorOfABinaryTree tree = new LowestCommonAncestorOfABinaryTree();
       tree.root = new Node(1);
       tree.root.left = new Node(2);
       tree.root.right = new Node(3);
@@ -40,5 +39,5 @@ import java.io.*;
       else {
     	System.out.println("Keys are not present.");  
       }
-	}
- }
+  }
+}
