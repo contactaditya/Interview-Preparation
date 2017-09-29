@@ -3,10 +3,10 @@ import java.io.*;
 
  public class UglyNumberII {
 	
-	public static int nthUglyNumber(int number) {
+   public static int nthUglyNumber(int number) {
       if (number <= 0) {
-		return 0;
-	  }      
+	return 0;
+      }      
       List<Integer> list = new ArrayList<>();
       list.add(1);
       int i=0, j=0, k=0;
@@ -31,15 +31,15 @@ import java.io.*;
         }
       }
 		  
-       return list.get(list.size()-1);
-	}	 
+      return list.get(list.size()-1);
+   }	 
 
-	public static void main(String[] args) { 	  
-	  Scanner input = new Scanner(System.in);
-	  System.out.print("Enter the number: ");
-	  int number = input.nextInt();   
-	  int isTheNumberUgly = nthUglyNumber(number);
-	  System.out.println();
-	  System.out.println(number + "th ugly number is " + isTheNumberUgly);  
-	}
+   public static void main(String[] args) { 	  
+      Scanner input = new Scanner(System.in);
+      System.out.print("Enter the number: ");
+      int number = input.nextInt();   
+      int isTheNumberUgly = nthUglyNumber(number);
+      System.out.println();
+      System.out.println(number + "th ugly number is " + isTheNumberUgly);  
+   }
  } 
