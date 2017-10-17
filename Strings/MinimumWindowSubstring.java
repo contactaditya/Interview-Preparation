@@ -23,7 +23,7 @@ import java.io.*;
          map[String[end++]]--;  
          while(counter == 0) {
            if(end-start < minimumLength) {
-        	 minimumStart = start;
+             minimumStart = start;
              minimumLength = end - start;
            }
            map[String[start]]++;
