@@ -42,31 +42,31 @@ import java.io.*;
         }
       }
       return range; 
-	}	 
+    }	 
 
-	public static void main(String[] args) {
-	   Scanner input = new Scanner(System.in);
-	   System.out.print("Enter the number of lists: ");
-	   int numberOfLists = input.nextInt();	   
-	   List<List<Integer>> array = new ArrayList<List<Integer>>();
-	   for (int i = 0; i < numberOfLists; i++) {
-		 System.out.println();  
-	     System.out.print("Enter the number of elements in the list: ");
-		 int numberOfElements = input.nextInt();
-	     System.out.println();
-	     System.out.print("Please enter the actual elements in the list: ");
-	     ArrayList<Integer> list = new ArrayList<Integer>();
-	     for (int j = 0; j < numberOfElements; j++) {
-	        list.add(input.nextInt());
-		 }	
-	     array.add(list);
-	   }		  
+    public static void main(String[] args) {
+       Scanner input = new Scanner(System.in);
+       System.out.print("Enter the number of lists: ");
+       int numberOfLists = input.nextInt();	   
+       List<List<Integer>> array = new ArrayList<List<Integer>>();
+       for (int i = 0; i < numberOfLists; i++) {
+	 System.out.println();  
+	 System.out.print("Enter the number of elements in the list: ");
+         int numberOfElements = input.nextInt();
+	 System.out.println();
+	 System.out.print("Please enter the actual elements in the list: ");
+	 ArrayList<Integer> list = new ArrayList<Integer>();
+	 for (int j = 0; j < numberOfElements; j++) {
+	   list.add(input.nextInt());
+	 }	
+	 array.add(list);
+       }		  
 
-	   int smallestRange[] = smallestRange(array);
-	   System.out.println();
-	   System.out.print("The smallest range that includes at least one number from each of the k lists is: ");
-	   for(int i = 0; i < smallestRange.length; i++){
-	     System.out.print(smallestRange[i] + " ");
-	   }
-	}
+       int smallestRange[] = smallestRange(array);
+       System.out.println();
+       System.out.print("The smallest range that includes at least one number from each of the k lists is: ");
+       for(int i = 0; i < smallestRange.length; i++){
+	 System.out.print(smallestRange[i] + " ");
+       }
+    }
  }
