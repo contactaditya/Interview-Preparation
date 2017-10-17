@@ -33,7 +33,7 @@ import java.io.*;
    }
    
    public static int LongestPalindromicSubsequence1(String string) {
-	 int n = string.length(), result = 0;
+     int n = string.length(), result = 0;
      int[] dp = new int[n];
      char[] array = string.toCharArray();
      Arrays.fill(dp,1);
@@ -67,7 +67,7 @@ import java.io.*;
          if(i == 0 || j == 0) {
            lengths[i][j] = 0;
          }
-   	     else if(string1.charAt(i-1) == string2.charAt(j-1)) {
+   	 else if(string1.charAt(i-1) == string2.charAt(j-1)) {
       	   lengths[i][j] = lengths[i-1][j-1] + 1; 
          }
          else {
