@@ -1,12 +1,12 @@
 import java.util.*;
 import java.io.*;
 
-  public class CheckIfAStringIsAPermutationOfAnotherString {
+ public class CheckIfAStringIsAPermutationOfAnotherString {
 	 
-	public static boolean checkInclusion(String s1, String s2) {
-	  if(s1.length() > s2.length()) {
-		return false;	
-	  }
+   public static boolean checkInclusion(String s1, String s2) {
+      if(s1.length() > s2.length()) {
+	return false;	
+      }
       int[] count = new int[26];
       char[] array1 = s1.toCharArray();
       for(int i=0;i<array1.length;i++) {
@@ -28,29 +28,29 @@ import java.io.*;
         }
       }
      
-	  return false;     
-    }	  
+      return false;     
+   }	  
 
-	public static void main(String[] args) {   
-	  String smallString = new String();	  
-	  Scanner input = new Scanner(System.in);
-	  System.out.print("Enter the smaller string: ");
-	  smallString = input.nextLine(); 
+   public static void main(String[] args) {   
+      String smallString = new String();	  
+      Scanner input = new Scanner(System.in);
+      System.out.print("Enter the smaller string: ");
+      smallString = input.nextLine(); 
 	  
-	  System.out.println();
+      System.out.println();
 	  
-	  String largeString = new String();	  
-	  System.out.print("Enter the second string: ");
-	  largeString = input.nextLine(); 
+      String largeString = new String();	  
+      System.out.print("Enter the second string: ");
+      largeString = input.nextLine(); 
 	  
-	  boolean checkPermutation = checkInclusion(smallString, largeString);
+      boolean checkPermutation = checkInclusion(smallString, largeString);
 	  
-	  System.out.println();
+      System.out.println();
 	  
-	  if(checkPermutation) {
-		 System.out.print(largeString + " contains one permutation of " + smallString);
-	  } else {
-		 System.out.println(largeString + " does not contain any permutation of " + smallString);  
-	  }
-	}
-  }
+      if(checkPermutation) {
+	 System.out.print(largeString + " contains one permutation of " + smallString);
+      } else {
+	 System.out.println(largeString + " does not contain any permutation of " + smallString);  
+      }
+   }
+ }
