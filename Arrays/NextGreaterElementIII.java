@@ -3,17 +3,17 @@ import java.io.*;
 
  public class NextGreaterElementIII {
 	 
-	public static int nextGreaterElement(int n) {
-	   char[] number = (n + "").toCharArray();	
-	   int i, j;
-	   // I) Start from the right most digit and find the first digit that is smaller than the digit next to it.
-	   for (i = number.length-1; i > 0; i--) {
+    public static int nextGreaterElement(int n) {
+       char[] number = (n + "").toCharArray();	
+       int i, j;
+       // I) Start from the right most digit and find the first digit that is smaller than the digit next to it.
+       for (i = number.length-1; i > 0; i--) {
          if (number[i-1] < number[i]) {
            break;	
          }
-	   }
+       }
 	   
-	   // If no such digit is found, its the edge case 1.
+       // If no such digit is found, its the edge case 1.
        if (i == 0) {
     	 return -1;
        }
@@ -36,16 +36,16 @@ import java.io.*;
        
        long value = Long.parseLong(new String(number));
        return (value <= Integer.MAX_VALUE) ? (int) value : -1; 
-	} 
+    } 
 
-	public static void main(String[] args) {
-	  Scanner input = new Scanner(System.in);
-	  System.out.print("Enter a number: ");
-	  int number = input.nextInt();  
+    public static void main(String[] args) {
+       Scanner input = new Scanner(System.in);
+       System.out.print("Enter a number: ");
+       int number = input.nextInt();  
 			
-	  int nextGreaterElement = nextGreaterElement(number);
-	  System.out.println();	
-	  System.out.print("The smallest 32-bit integer which has exactly the same digits existing in the integer " + number + " and is greater in value is: " + nextGreaterElement);
+       int nextGreaterElement = nextGreaterElement(number);
+       System.out.println();	
+       System.out.print("The smallest 32-bit integer which has exactly the same digits existing in the integer " + number + " and is greater in value is: " + nextGreaterElement);
 
-	}
+    }
  }
