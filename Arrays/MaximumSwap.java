@@ -24,13 +24,13 @@ import java.io.*;
        return number; 
     }
 
-	public static void main(String[] args) {
-	  Scanner input = new Scanner(System.in);
-	  System.out.print("Enter the number: ");
-	  int number = input.nextInt();  
+    public static void main(String[] args) {
+       Scanner input = new Scanner(System.in);
+       System.out.print("Enter the number: ");
+       int number = input.nextInt();  
 		   
-	  int maximumValuedNumber = maximumSwap(number);
-	  System.out.println();	
-	  System.out.print("The maximum valued number you could get after swapping two digits at most once is: " + maximumValuedNumber);
-	}
+       int maximumValuedNumber = maximumSwap(number);
+       System.out.println();	
+       System.out.print("The maximum valued number you could get after swapping two digits at most once is: " + maximumValuedNumber);
+    }
   }
