@@ -6,27 +6,25 @@ import java.util.*;
     private static Node root2;	
     private static Node previous = null;	 
 	
-    public static boolean isSubtree(Node tree, Node subtree) {
-		  
-      if (subtree == null) {
-        return true;
-      }
+    public static boolean isSubtree(Node tree, Node subtree) {	  
+       if (subtree == null) {
+         return true;
+       }
      
-      if (tree == null) {
-  	return false;
-      }
+       if (tree == null) {
+  	 return false;
+       }
 		 
-      if (areIdentical(tree, subtree)) {
-	return true;
-      }
+       if (areIdentical(tree, subtree)) {
+	 return true;
+       }
 		
-      // If the tree with root as current node doesn't match then try left and right subtrees one by one */
+       // If the tree with root as current node doesn't match then try left and right subtrees one by one */
 	 
-      return isSubtree(tree.left, subtree) || isSubtree(tree.right, subtree) ;
+       return isSubtree(tree.left, subtree) || isSubtree(tree.right, subtree);
     }	
 	
-    public static boolean areIdentical(Node node1, Node node2) {
-	  
+    public static boolean areIdentical(Node node1, Node node2) {  
        if (node1 == null && node2 == null) {
 	 return true;
        }
