@@ -3,7 +3,7 @@ import java.io.*;
 
   public class LinkedListRandomNode {
 	  
-	private static LinkedListNode head;
+    private static LinkedListNode head;
     Random random;
     
     public LinkedListRandomNode (LinkedListNode head) {
@@ -24,14 +24,14 @@ import java.io.*;
       return r;	
     }
     
-	public static void main(String[] args) {   
-	  LinkedListRandomNode list = new LinkedListRandomNode(head);
-	  list.head = new LinkedListNode(1);
-	  list.head.next = new LinkedListNode(2);
-	  list.head.next.next = new LinkedListNode(3);
+    public static void main(String[] args) {   
+       LinkedListRandomNode list = new LinkedListRandomNode(head);
+       list.head = new LinkedListNode(1);
+       list.head.next = new LinkedListNode(2);
+       list.head.next.next = new LinkedListNode(3);
 
-	  int randomValue = list.getRandom();
-	  System.out.print("The random's node value from the linked list is: " + randomValue);	 
+       int randomValue = list.getRandom();
+       System.out.print("The random's node value from the linked list is: " + randomValue);	 
 
-	}
+    }
   }
