@@ -3,12 +3,12 @@ import java.io.*;
 
   public class LongestContinuousIncreasingSubsequence {
 	 
-	public static int findLengthOfLCIS(int[] array) { 
-	   if(array.length == 0 || array == null) {
-	     return 0;  
-	   }
+    public static int findLengthOfLCIS(int[] array) { 
+       if(array.length == 0 || array == null) {
+	  return 0;  
+       }
 	   
-	   int max = 1;
+       int max = 1;
        int count = 1;
        for(int i=1; i<array.length; i++) {
          if(array[i] > array[i-1]) {
@@ -20,10 +20,10 @@ import java.io.*;
          max = Math.max(count, max);
        }
        return max; 
-	}  
+    }  
 
-	public static void main(String[] args) {     
-	   Scanner input = new Scanner(System.in);
+    public static void main(String[] args) {     
+       Scanner input = new Scanner(System.in);
        System.out.print("Enter number of elements in the array: ");
        int numbers = input.nextInt();   
        int array[] = new int[numbers];
@@ -35,5 +35,5 @@ import java.io.*;
        }
  
        findLengthOfLCIS(array);
-	}
+    }
   }
