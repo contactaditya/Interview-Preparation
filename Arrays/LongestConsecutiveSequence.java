@@ -3,11 +3,11 @@ import java.io.*;
 
   public class LongestConsecutiveSequence {
 	  
-	public static int longestConsecutive(int[] array) { 
-	   if(array.length == 0 || array == null) {
-	     return 0;  
-	   }
-	   Arrays.sort(array);
+    public static int longestConsecutive(int[] array) { 
+       if(array.length == 0 || array == null) {
+	  return 0;  
+       }
+       Arrays.sort(array);
 
        int longestStreak = 1;
        int currentStreak = 1;
@@ -24,10 +24,10 @@ import java.io.*;
        }
 
        return Math.max(longestStreak, currentStreak);
-	}	  
+    }	  
 
-	public static void main(String[] args) {    
-	  Scanner input = new Scanner(System.in);
+    public static void main(String[] args) {    
+      Scanner input = new Scanner(System.in);
       System.out.print("Enter number of elements in the array: ");
       int numbers = input.nextInt();   
       int array[] = new int[numbers];
@@ -42,5 +42,5 @@ import java.io.*;
       System.out.println();
       System.out.print("The length of the longest consecutive elements sequence is: " + longestConsecutiveSequence);
       
-	}
+    }
   }
