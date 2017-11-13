@@ -3,15 +3,15 @@ import java.io.*;
 
   public class AllocateBooksToMStudentsSoThatMaximumNumberOfPagesAlloatedToAStudentIsMinimum {
 	 
-	public static int books(ArrayList<Integer> a, int b) {
-	   long sum = 0;
+    public static int books(ArrayList<Integer> a, int b) {
+       long sum = 0;
 	   
-	   // return -1 if number of books is less than number of students
-	   if(a.size() < b) {
-		 return -1;  
-	   }
+       // return -1 if number of books is less than number of students
+       if(a.size() < b) {
+	  return -1;  
+       }
 	   
-	   // Count total number of pages
+       // Count total number of pages
        for (int i = 0; i < a.size(); i++) {
           sum += a.get(i);
        }
@@ -35,14 +35,14 @@ import java.io.*;
        }
        
        // Return minimum number of pages
-	   return result;
-	}	  
+       return result;
+    }	  
 
-	private static boolean isPossible(ArrayList<Integer> a, int b, int currentMinimum) {
-	   int studentsRequired = 1;
-	   int currentSum = 0;	
+    private static boolean isPossible(ArrayList<Integer> a, int b, int currentMinimum) {
+       int studentsRequired = 1;
+       int currentSum = 0;	
 	   
-	   // iterate over all books
+	// iterate over all books
        for (int i = 0; i < a.size(); i++) {
     	  if (a.get(i) > currentMinimum) {
             return false; 
@@ -61,28 +61,28 @@ import java.io.*;
     	  }
        }
 		
-	   return true;
-	}
+       return true;
+    }
 
-	public static void main(String[] args) {   
-	  Scanner input = new Scanner(System.in);
-	  System.out.print("Enter number of elements in the array: ");
-	  int number = input.nextInt();  
-	  ArrayList<Integer> numberOfPages = new ArrayList<>();	
+    public static void main(String[] args) {    
+       Scanner input = new Scanner(System.in);
+       System.out.print("Enter number of elements in the array: ");
+       int number = input.nextInt();  
+       ArrayList<Integer> numberOfPages = new ArrayList<>();	
 		
-	  System.out.println();	
-	  System.out.print("Please enter the elements of the array: ");
-	  for (int i = 0; i < number; i++) {
-		numberOfPages.add(input.nextInt());
-	  }
-	  System.out.println();	
-	  System.out.print("Enter the number of students: ");
-	  int numberOfStudents = input.nextInt();  
+       System.out.println();	
+       System.out.print("Please enter the elements of the array: ");
+       for (int i = 0; i < number; i++) {
+	 numberOfPages.add(input.nextInt());
+       }
+       System.out.println();	
+       System.out.print("Enter the number of students: ");
+       int numberOfStudents = input.nextInt();  
 	  
-	  int result = books(numberOfPages, numberOfStudents);
+       int result = books(numberOfPages, numberOfStudents);
 	    
-	  System.out.println();	
-	  System.out.print("Minimum number of pages are: " + result);
+       System.out.println();	
+       System.out.print("Minimum number of pages are: " + result);
 	  
-	}
+    }
   }
