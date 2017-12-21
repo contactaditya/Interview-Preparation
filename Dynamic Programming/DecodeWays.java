@@ -3,10 +3,10 @@ import java.io.*;
 
  public class DecodeWays {
 	 
-	public static int numDecodings(String string) {
+   public static int numDecodings(String string) {
       if(string == null || string.length() == 0) {
-	    return 0;
-	  } 
+	 return 0;
+      } 
       int n = string.length();
       int[] dp = new int[n+1];
       dp[0] = 1;
@@ -20,16 +20,15 @@ import java.io.*;
           }
         }
       }
-	  return dp[n];     
-	}	 
+      return dp[n];     
+   }	 
 
-	public static void main(String[] args) {   
-	  String string = new String();	  
-	  Scanner input = new Scanner(System.in);
-	  System.out.print("Enter the string: ");
-	  string = input.nextLine(); 
-	  int totalNumberOfWays = numDecodings(string);
-	  System.out.println();
-	  System.out.println("The total number of ways to decode the encoded message containing digits are: " + totalNumberOfWays);  
-	}
+   public static void main(String[] args) {   
+      String string = new String();	  
+      Scanner input = new Scanner(System.in);
+      System.out.print("Enstring = input.nextLine(); 
+      int totalNumberOfWays = numDecodings(string);
+      System.out.println();
+      System.out.println("The total number of ways to decode the encoded message containing digits are: " + totalNumberOfWays);  
+   }
  }
