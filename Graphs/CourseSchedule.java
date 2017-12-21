@@ -3,7 +3,7 @@ import java.io.*;
 
   public class CourseSchedule {
 	  
-	public static boolean canFinish(int numCourses, int[][] prerequisites) {
+    public static boolean canFinish(int numCourses, int[][] prerequisites) {
       if (numCourses == 0 || prerequisites.length == 0) {
     	 return true;
       }
@@ -35,34 +35,34 @@ import java.io.*;
       }
 
       return (canFinishCount == numCourses);       
-	}  
+    }  
 
-	public static void main(String[] args) {  
-	  Scanner input = new Scanner(System.in);
-	  System.out.print("Please enter the total number of courses: ");
-	  int numCourses = input.nextInt();  
-	  System.out.println();
-	  System.out.print("Please enter the number of rows in the list of prerequisite pairs: ");
-	  int x = input.nextInt();  
-	  System.out.println();
-	  System.out.print("Please enter the number of columns in the list of prerequisite pairs: ");
-	  int y = input.nextInt();  
-	  int[][] prerequisites = new int[x][y];
-	  System.out.println();
-	  System.out.println("Please enter the actual values in the prerequisite pairs: ");
-	  for(int i=0; i < x; i++) {
-        for(int j=0; j < y; j++) {
-          prerequisites[i][j] = input.nextInt();
-        }
-      }
+    public static void main(String[] args) {  
+       Scanner input = new Scanner(System.in);
+       System.out.print("Please enter the total number of courses: ");
+       int numCourses = input.nextInt();  
+       System.out.println();
+       System.out.print("Please enter the number of rows in the list of prerequisite pairs: "); 
+       int x = input.nextInt();  
+       System.out.println();
+       System.out.print("Please enter the number of columns in the list of prerequisite pairs: ");
+       int y = input.nextInt();  
+       int[][] prerequisites = new int[x][y];
+       System.out.println();
+       System.out.println("Please enter the actual values in the prerequisite pairs: ");
+       for(int i=0; i < x; i++) {
+         for(int j=0; j < y; j++) {
+           prerequisites[i][j] = input.nextInt();
+         }
+       }
 	  
-	  boolean isItPossibleToFinishAllCourses = canFinish(numCourses, prerequisites); 
-	  System.out.println();
-	  if(isItPossibleToFinishAllCourses) {
-		System.out.println("Yes it is possible for you to finish all courses given the total number of courses and a list of prerequisite pairs.");  
-	  }
-	  else {
-		System.out.println("No it is possible for you to finish all courses given the total number of courses and a list of prerequisite pairs.");    
-	  }
-	}
+       boolean isItPossibleToFinishAllCourses = canFinish(numCourses, prerequisites); 
+       System.out.println();
+       if(isItPossibleToFinishAllCourses) {
+	  System.out.println("Yes it is possible for you to finish all courses given the total number of courses and a list of prerequisite pairs.");  
+       }
+       else {
+	  System.out.println("No it is possible for you to finish all courses given the total number of courses and a list of prerequisite pairs.");    
+       }
+    }
   }
