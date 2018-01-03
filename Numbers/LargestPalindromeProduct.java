@@ -28,8 +28,8 @@ import java.io.*;
       return result;
     }    
 	 
-	private static boolean isFactorable(long number, int max, int min) {  
-	  long low = (int)Math.sqrt(number);
+    private static boolean isFactorable(long number, int max, int min) {  
+      long low = (int)Math.sqrt(number);
       long high = (int)Math.sqrt(number); 
 
       long product = low * high;
@@ -49,31 +49,31 @@ import java.io.*;
       }
 
       return true;
-	}
+    }
 
-	public static int largestPalindrome1(int number) {
-	  long max = (long)Math.pow(10, number) - 1;
-	  long min = max / 10;
+    public static int largestPalindrome1(int number) {
+      long max = (long)Math.pow(10, number) - 1;
+      long min = max / 10;
 	        
-	  for (long h = max; h > min; h--) {
-	   long left = h, right = 0;
-	   for (long i = h; i != 0; right = right * 10 + i % 10, i /= 10, left *= 10);
-	    long palindrome = left + right; // construct the palindrome        
-	    for (long i = max; i > min; i--) {
-	     long j = palindrome/i;
-	     if (j > i || j <= min) {
-	       break; // terminate if the other number is greater than current number or is not an n-digit number
-	     }
-	     if (palindrome % i == 0) {
-	       return (int)(palindrome % 1337); // found if current number is a factor
-	     }
+      for (long h = max; h > min; h--) {
+	long left = h, right = 0;
+	for (long i = h; i != 0; right = right * 10 + i % 10, i /= 10, left *= 10);
+	  long palindrome = left + right; // construct the palindrome        
+	  for (long i = max; i > min; i--) {
+	    long j = palindrome/i;
+	    if (j > i || j <= min) {
+	      break; // terminate if the other number is greater than current number or is not an n-digit number
+	    }
+	    if (palindrome % i == 0) {
+	      return (int)(palindrome % 1337); // found if current number is a factor
 	    }
 	  }
+      }
 
-	  return 9; // account for case n = 1
+      return 9; // account for case n = 1
     }	 
 
-	public static void main(String[] args) {     
+    public static void main(String[] args) {     
       Scanner input = new Scanner(System.in);
       System.out.print("Enter the number: ");
       int number = input.nextInt();   
@@ -82,5 +82,5 @@ import java.io.*;
 
       System.out.println();	
       System.out.println("The largest palindrome that can be made from the product of two n-digit numbers is: " + largestPalindrome);	
-	}
+    }
  }
