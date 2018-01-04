@@ -4,11 +4,11 @@ import java.util.*;
  public class FindTheClosestPalindrome {   
 	 
    public static String nearestPalindromic(String number) { 
-	  if (number.equals("1")) {
+      if (number.equals("1")) {
         return "0";
-	  }
+      }
 	  
-	  // If replication is used to generate the palindromic number, we should always replicate the first half to the second half. In this implementation, we've stored such a number in a at a difference of diff1 from the number.
+      // If replication is used to generate the palindromic number, we should always replicate the first half to the second half. In this implementation, we've stored such a number in a at a difference of diff1 from the number.
 
       String a = mirroring(number);
       long diff1 = Long.MAX_VALUE;
@@ -62,18 +62,18 @@ import java.util.*;
       }
    }	
 
-	public static String mirroring(String number) {
-	  String x = number.substring(0, (number.length())/2);
-	  return x + (number.length() % 2 == 1 ? number.charAt(number.length()/2) : "") + new StringBuilder(x).reverse().toString();
-    }
+   public static String mirroring(String number) {
+      String x = number.substring(0, (number.length())/2);
+      return x + (number.length() % 2 == 1 ? number.charAt(number.length()/2) : "") + new StringBuilder(x).reverse().toString();
+   }
 
-	public static void main(String[] args) {
-	  Scanner input = new Scanner(System.in);
-	  System.out.print("Enter the number: ");
-	  String number = input.nextLine();  
+   public static void main(String[] args) {
+     Scanner input = new Scanner(System.in);
+     System.out.print("Enter the number: ");
+     String number = input.nextLine();  
 			  
-	  String closestPalindrome = nearestPalindromic(number); 
-	  System.out.println();
-	  System.out.println("The closest integer which is a palindrome is: " + closestPalindrome);
-	}
+     String closestPalindrome = nearestPalindromic(number); 
+     System.out.println();
+     System.out.println("The closest integer which is a palindrome is: " + closestPalindrome);
+   }
  }
