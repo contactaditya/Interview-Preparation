@@ -3,8 +3,8 @@ import java.io.*;
 
   public class DivideTwoIntegers {
 	
-	public static int divide(int dividend, int divisor) {
-	  long count = 0;
+    public static int divide(int dividend, int divisor) {
+      long count = 0;
       int sign = 1;
       int result = 0;
         
@@ -31,35 +31,35 @@ import java.io.*;
          result = (int)(sign * count); 
        }
         
-	   return result;	
-	}
+       return result;	
+    }
 	
-	private static long divideLong(long dividend, long divisor) {	   
-	   // Return if nothing to divide
-	   if (dividend < divisor) {
-		 return 0;
-	   }
+    private static long divideLong(long dividend, long divisor) {	   
+       // Return if nothing to divide
+       if (dividend < divisor) {
+	  return 0;
+       }
 	   
-	   long sum = divisor;
-	   long multiple = 1;
-	   while ((sum+sum) <= dividend) {
-	     sum += sum;
-	     multiple += multiple;
-	   }
+       long sum = divisor;
+       long multiple = 1;
+       while ((sum+sum) <= dividend) {
+	  sum += sum;
+	  multiple += multiple;
+       }
 		
-	   return multiple + divideLong((dividend-sum), divisor);
-	}
+       return multiple + divideLong((dividend-sum), divisor);
+    }
 
-	public static void main(String[] args) { 	
-	  Scanner input = new Scanner(System.in);
-	  System.out.print("Enter the dividend: ");
-	  int dividend = input.nextInt();  
-	  System.out.println();	
-	  System.out.print("Enter the divisor: ");
-	  int divisor = input.nextInt();  
+    public static void main(String[] args) { 	
+       Scanner input = new Scanner(System.in);
+       System.out.print("Enter the dividend: ");
+       int dividend = input.nextInt();  
+       System.out.println();	
+       System.out.print("Enter the divisor: ");
+       int divisor = input.nextInt();  
 	  
-	  int result = divide(dividend, divisor);
-	  System.out.println();	
-	  System.out.print("The result of the division of the two integers is: " + result);
-	}
+       int result = divide(dividend, divisor);
+       System.out.println();	
+       System.out.print("The result of the division of the two integers is: " + result);
+    }
   }
