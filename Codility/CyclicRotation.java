@@ -1,28 +1,28 @@
 import java.util.*;
 import java.io.*;
 
-  public class CyclicRotation {
+ public class CyclicRotation {
 	  
-	public static int[] cyclicRotation(int[] array, int numberOfRotations){
-	  int[] result = new int[array.length];   
+   public static int[] cyclicRotation(int[] array, int numberOfRotations){
+      int[] result = new int[array.length];   
 		    
-	  for(int i=0; i<array.length; i++) {
-	    result[(i+numberOfRotations)%array.length] = array[i];  
-	  }
+      for(int i=0; i<array.length; i++) {
+	 result[(i+numberOfRotations)%array.length] = array[i];  
+      }
 	      
-	  return result;  
-	}
+      return result;  
+   }
 	
-	public static void printArray(int[] array) {
+   public static void printArray(int[] array) {
       System.out.println();		
-	  System.out.print("The array after rotation in the right direction is: ");  
-	  for(int i=0; i<array.length; i++) {     
-	    System.out.print(array[i] + " ");
-	  }	  
-	}
+      System.out.print("The array after rotation in the right direction is: ");   
+      for(int i=0; i<array.length; i++) {     
+        System.out.print(array[i] + " ");
+      }	  
+   }
 
-	public static void main(String[] args) {     
-	  Scanner input = new Scanner(System.in);
+   public static void main(String[] args) {     
+      Scanner input = new Scanner(System.in);
       System.out.print("Enter the number of elements in the array: ");
       int lengthOfArray = input.nextInt();
       int[] array = new int[lengthOfArray];    
@@ -37,5 +37,5 @@ import java.io.*;
       
       int result[] = cyclicRotation(array, numberOfRotations);
       printArray(result);
-	}
-  }
+   }
+ }
