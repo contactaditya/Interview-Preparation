@@ -3,8 +3,8 @@ import java.io.*;
 
   public class TapeEquilibrium {
 	  
-	public static int getTapeEquilibrium(int[] array) {
-	  int length = array.length;
+    public static int getTapeEquilibrium(int[] array) {
+      int length = array.length;
       if(length == 1) {
         return Math.abs(array[0]);
       } else if(length == 2) {
@@ -23,23 +23,23 @@ import java.io.*;
         minimum = Math.min(difference, minimum);
       }
 		
-	  return (int)minimum;	  
-	}
+      return (int)minimum;	  
+    }
 
-	public static void main(String[] args) {  
-	  Scanner input = new Scanner(System.in);
-	  System.out.print("Enter number of elements in the array: ");
-	  int numbers = input.nextInt();   
-	  int array[] = new int[numbers];
+    public static void main(String[] args) {  
+      Scanner input = new Scanner(System.in);
+      System.out.print("Enter number of elements in the array: ");
+      int numbers = input.nextInt();   
+      int array[] = new int[numbers];
 					    
-	  System.out.println();	
-	  System.out.print("Please enter the actual values in the array: ");
-	  for (int i = 0; i < numbers; i++) {
-		array[i] = input.nextInt(); 
-	  }
+      System.out.println();	
+      System.out.print("Please enter the actual values in the array: ");
+      for (int i = 0; i < numbers; i++) {
+	array[i] = input.nextInt(); 
+      }
 	  
-	  int getMinimalDifference = getTapeEquilibrium(array);
-	  System.out.println();	
-	  System.out.print("The minimal difference from the absolute difference between the sum of the first part and the sum of the second part that can be achieved is: " + getMinimalDifference);
-	}
+      int getMinimalDifference = getTapeEquilibrium(array);
+      System.out.println();	
+      System.out.print("The minimal difference from the absolute difference between the sum of the first part and the sum of the second part that can be achieved is: " + getMinimalDifference);
+    }
   }
