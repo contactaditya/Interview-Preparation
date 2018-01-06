@@ -47,19 +47,19 @@ import java.io.*;
      }
 			   
      public static void main(String[] args) {   
-        Scanner input = new Scanner(System.in);
-	System.out.print("Enter number of elements in the array: ");
-	int numbers = input.nextInt();   
-	int array[] = new int[numbers];
+       Scanner input = new Scanner(System.in);
+       System.out.print("Enter number of elements in the array: ");
+       int numbers = input.nextInt();   
+       int array[] = new int[numbers];
 					    
-	System.out.println();	
-	System.out.print("Please enter the actual values in the array: ");
-	for (int i = 0; i < numbers; i++) {
-	  array[i] = input.nextInt(); 
-        }
+       System.out.println();	
+       System.out.print("Please enter the actual values in the array: ");
+       for (int i = 0; i < numbers; i++) {
+	 array[i] = input.nextInt(); 
+       }
 	  
-	int missingInteger = findMissingInteger(array);
-	System.out.println();	
-	System.out.print("The smallest positive integer that does not occur in the array is: " + missingInteger);
+       int missingInteger = findMissingInteger(array);
+       System.out.println();	
+       System.out.print("The smallest positive integer that does not occur in the array is: " + missingInteger);
      }
   }
