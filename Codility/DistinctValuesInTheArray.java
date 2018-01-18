@@ -7,10 +7,10 @@ import java.io.*;
       Arrays.sort(array);   
       int distinctCount = 1;
       for (int i = 0; i < array.length - 1; i++) {
-  	    if(array[i] != array[i + 1]) {
-  	      distinctCount++;
-  	    }
-  	  }
+  	if(array[i] != array[i + 1]) {
+  	  distinctCount++;
+  	}
+      }
   
       return distinctCount;
     }
