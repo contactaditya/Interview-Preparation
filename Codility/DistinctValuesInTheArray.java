@@ -27,8 +27,8 @@ import java.io.*;
       return set.size();
     }
 
-	public static void main(String[] args) { 	  
-	  Scanner input = new Scanner(System.in);
+    public static void main(String[] args) { 	  
+      Scanner input = new Scanner(System.in);
       System.out.print("Enter the number of elements in the array: ");
       int lengthOfArray = input.nextInt();
       int[] array = new int[lengthOfArray];    
@@ -42,5 +42,5 @@ import java.io.*;
       System.out.println();	
       System.out.println("The number of distinct values in array are: " + getDistinctValuesInTheArray);	
 
-	}
+    }
   }
