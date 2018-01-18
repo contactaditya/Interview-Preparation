@@ -20,37 +20,37 @@ import java.io.*;
       return stack.empty() ? 1 : 0; 
     }
 
-	private static boolean matches(char openTerm, char closeTerm) {
-	  for (char[] array: TOKENS) {
-	    if(array[0] == openTerm) {
-	      return array[1] == closeTerm;	
-	    }  
-	  }	
-	  return false;
-	}
+    private static boolean matches(char openTerm, char closeTerm) {
+      for (char[] array: TOKENS) {
+        if(array[0] == openTerm) {
+	  return array[1] == closeTerm;	
+	}  
+      }	
+      return false;
+    }
 
-	private static boolean isOpenTerm(char c) {
-	  for (char[] array: TOKENS) {
-	    if(array[0] == c) {
-	      return true;	
-	    }  
-	  }	
-	  return false;
-	}
+    private static boolean isOpenTerm(char c) {
+      for (char[] array: TOKENS) {
+        if(array[0] == c) {
+	  return true;	
+	}  
+      }	
+      return false;
+    }
 
-	public static void main(String[] args) {
-	  Scanner input = new Scanner(System.in);
-	  String expression = new String();	
-	  System.out.print("Please enter an expression with only these characters (){}[]: ");
-	  expression = input.next();  
+    public static void main(String[] args) {
+      Scanner input = new Scanner(System.in);
+      String expression = new String();	
+      System.out.print("Please enter an expression with only these characters (){}[]: ");
+      expression = input.next();  
 			  
-	  int isProperlyNested = isProperlyNested(expression);
-	  System.out.println();
-	  if(isProperlyNested == 1) {
-		System.out.println("The expression " + expression + " is properly nested.");
-	  }
-	  else {
-		System.out.println("The expression " + expression + " is not properly nested.");	  
-	  }
-	}
+      int isProperlyNested = isProperlyNested(expression);
+      System.out.println();
+      if(isProperlyNested == 1) {
+	System.out.println("The expression " + expression + " is properly nested.");
+      }
+      else {
+	System.out.println("The expression " + expression + " is not properly nested.");	  
+      }
+    }
   }
