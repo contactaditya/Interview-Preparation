@@ -3,12 +3,12 @@ import java.io.*;
 
   public class Dominator {
 	  
-	public static int findDominator(int[] array, int N) {
-	  HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
+    public static int findDominator(int[] array, int N) {
+      HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
 		
-	  if(array.length == 1) {
-		return 0;
-	  }
+      if(array.length == 1) {
+	return 0; 
+      }
       
       for (int i = 0; i < array.length; i++) {
         if (map.containsKey(array[i])) {
@@ -22,11 +22,11 @@ import java.io.*;
         }
       }
 	   
-	  return -1;  
-	}
+      return -1;  
+    }
 
-	public static void main(String[] args) { 	 
-	  Scanner input = new Scanner(System.in);
+    public static void main(String[] args) { 	 
+      Scanner input = new Scanner(System.in);
       System.out.print("Enter the number of elements in the array: ");
       int lengthOfArray = input.nextInt();
       int[] array = new int[lengthOfArray];    
@@ -39,5 +39,5 @@ import java.io.*;
       int dominator = findDominator(array, array.length);
       System.out.println();	
       System.out.println("The dominator of the array is: " + dominator);	
-	}
-  }
+   }
+ }
