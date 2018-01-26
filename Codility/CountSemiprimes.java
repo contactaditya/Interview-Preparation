@@ -79,7 +79,7 @@ import java.io.*;
       int result[] = countSemiprimes(N, P, Q);
 	  
       System.out.println();		
-      System.out.print("The number of semiprimes within specified ranges is as follows: ");   
+      System.out.print("The number of semi primes within specified ranges is as follows: ");   
       for(int i=0; i < result.length; i++) {     
         System.out.print(result[i] + " ");
       }	  
