@@ -73,7 +73,7 @@ import java.io.*;
       }
 	  
       System.out.println();	
-      System.out.print("Enter an interger which indicates the upper end of the range: ");
+      System.out.print("Enter an integer which indicates the upper end of the range: ");
       int N = input.nextInt();  
 	  
       int result[] = countSemiprimes(N, P, Q);
