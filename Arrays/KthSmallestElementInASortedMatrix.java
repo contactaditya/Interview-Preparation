@@ -10,7 +10,7 @@ import java.io.*;
         int count = 0,  j = matrix[0].length - 1;
         for(int i = 0; i < matrix.length; i++) {
           while(j >= 0 && matrix[i][j] > mid) {
-        	j--;
+             j--;
           }
           count += (j + 1);
         }
