@@ -10,8 +10,8 @@ import java.io.*;
 
   public class MergeIntervals {
 	  
-	public static List<Interval1> merge(List<Interval1> intervals) {
-	  Collections.sort(intervals, new IntervalComparator());
+    public static List<Interval1> merge(List<Interval1> intervals) {
+      Collections.sort(intervals, new IntervalComparator());
 
       LinkedList<Interval1> merged = new LinkedList<Interval1>();
       for (Interval1 interval : intervals) {
@@ -26,10 +26,10 @@ import java.io.*;
       }
 
       return merged;
-	}
+    }
 	
-	public static List<Interval1> merge1(List<Interval1> intervals) {
-	  List<Interval1> result = new ArrayList<>();
+    public static List<Interval1> merge1(List<Interval1> intervals) {
+      List<Interval1> result = new ArrayList<>();
       int[] starts = new int[intervals.size()];
       int[] ends = new int[intervals.size()];
       for (int i = 0; i < intervals.size(); i++) {
@@ -48,22 +48,22 @@ import java.io.*;
         i++;
       }
       return result;
-	}
+    }
 	
-	public static void main(String[] args) { 
-	  Interval1 item1 = new Interval1(1,3);
-	  Interval1 item2 = new Interval1(2,6);
-	  Interval1 item3 = new Interval1(8,10);
-	  Interval1 item4 = new Interval1(15,18);
+    public static void main(String[] args) { 
+      Interval1 item1 = new Interval1(1,3);
+      Interval1 item2 = new Interval1(2,6);
+      Interval1 item3 = new Interval1(8,10);
+      Interval1 item4 = new Interval1(15,18);
       ArrayList<Interval1> intervals = new ArrayList<Interval1>();
       intervals.add(item1);
       intervals.add(item2);
       intervals.add(item3);	
       intervals.add(item4);	
-	  List<Interval1> merge = merge(intervals);
-	  System.out.print("After merging all the overlapping intervals: ");
-	  for (int i = 0; i < merge.size(); i++) {
-	    System.out.print("[" + merge.get(i).start + "," + merge.get(i).end + "]" + " ");
-	  }
-	}
+      List<Interval1> merge = merge(intervals);
+      System.out.print("After merging all the overlapping intervals: ");
+      for (int i = 0; i < merge.size(); i++) {
+	System.out.print("[" + merge.get(i).start + "," + merge.get(i).end + "]" + " ");
+      }
+    }
   }
