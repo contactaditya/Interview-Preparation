@@ -4,17 +4,17 @@ import java.io.*;
   public class MaximumProductOfWordLengths {
 	  
     public static int maxProduct(String[] words) {
-      if (words == null || words.length == 0) {
-	return 0;	
-      }
-      int[] value = new int[words.length];
-      for (int i = 0; i < words.length; i++) {
-	String temp = words[i];
-	value[i] = 0;
-	for (int j = 0; j < temp.length(); j++) {
-	  value[i] |= 1 << (temp.charAt(j) - 'a');
-	}
-      } 
+       if (words == null || words.length == 0) {
+	 return 0;	
+       }
+       int[] value = new int[words.length];
+       for (int i = 0; i < words.length; i++) {
+	 String temp = words[i];
+	 value[i] = 0;
+	 for (int j = 0; j < temp.length(); j++) {
+	   value[i] |= 1 << (temp.charAt(j) - 'a');
+	 }
+       } 
        int maxProduct = 0;
        for (int i = 0; i < words.length; i++) {
 	 for (int j = i + 1; j < words.length; j++) {
