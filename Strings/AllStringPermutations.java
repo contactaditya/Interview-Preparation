@@ -29,7 +29,7 @@ import java.util.*;
         return;
       }
       else {
-  	    getPermutation(string, index-1);
+  	getPermutation(string, index-1);
         int currentPosition = string.length() - index;
   	 
         for (int i = currentPosition+1; i < string.length(); i++) {
