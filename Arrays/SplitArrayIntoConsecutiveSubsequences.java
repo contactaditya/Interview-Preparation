@@ -31,7 +31,7 @@ import java.io.*;
           current3 = previous2 + Math.min(previous3, count - previous2 - previous1);
         } else {
           if (previous1 != 0 || previous2 != 0) {
-        	return false;
+            return false;
           }
           current1 = count;
           current3 = 0;
