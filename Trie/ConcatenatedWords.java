@@ -27,8 +27,8 @@ import java.io.*;
 
   public class ConcatenatedWords {
 	
-	public static List<String> findAllConcatenatedWordsInADictionary(String[] words) {
-	  List<String> result = new ArrayList<String>();
+    public static List<String> findAllConcatenatedWordsInADictionary(String[] words) {
+      List<String> result = new ArrayList<String>();
       if(words == null || words.length == 0) {
          return result;
       }	
@@ -54,21 +54,21 @@ import java.io.*;
         }
       }
 		
-	  return result;  
-	}
+      return result;  
+    }
 
-	private static void addToTrie(String word, TrieNode4 root) {
-	  TrieNode4 node = root;
-	  for(int i = 0; i < word.length(); i++) {
+    private static void addToTrie(String word, TrieNode4 root) {
+      TrieNode4 node = root;
+      for(int i = 0; i < word.length(); i++) {
         node = node.getNext(word.charAt(i) - 'a');
       }
-	  node.isWord = true;
-	}
+      node.isWord = true;
+    }
 
-	private static boolean isConcatenated(String word, TrieNode4 root, int start) {
+    private static boolean isConcatenated(String word, TrieNode4 root, int start) {
       if(start >= word.length()) {
-	    return true;
-	  }	
+	return true;
+      }	
       TrieNode4 node = root;
       for(int i = start; i < word.length(); i++) {
         int index = word.charAt(i) - 'a';
@@ -82,27 +82,27 @@ import java.io.*;
         }
       }
      
-	  return false;
-	}
+      return false;
+    }
 
-	public static void main(String[] args) {
-	  Scanner input = new Scanner(System.in);
-	  System.out.print("Enter number of words in the list: ");
-	  int numbersOfWords = input.nextInt();   
-	  String words[] = new String[numbersOfWords];
+    public static void main(String[] args) {
+      Scanner input = new Scanner(System.in);
+      System.out.print("Enter number of words in the list: ");
+      int numbersOfWords = input.nextInt();   
+      String words[] = new String[numbersOfWords];
 			    
       System.out.println();
-	  input.nextLine();
-	  System.out.print("Please enter the actual values in the array: ");
-	  System.out.println();
+      input.nextLine();
+      System.out.print("Please enter the actual values in the array: ");
+      System.out.println();
       for (int i = 0; i < numbersOfWords; i++) {
-		words[i] = input.nextLine(); 
-	  }
+	words[i] = input.nextLine(); 
+      }
 	   
-	  List<String> result = new ArrayList<String>();
-	  result = findAllConcatenatedWordsInADictionary(words);
-	  System.out.println();
-	  System.out.print("The solution set is: " + result);
+      List<String> result = new ArrayList<String>();
+      result = findAllConcatenatedWordsInADictionary(words);
+      System.out.println();
+      System.out.print("The solution set is: " + result);
 
-	}
+    }
   }
