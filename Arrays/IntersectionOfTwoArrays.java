@@ -48,7 +48,28 @@ import java.io.*;
 	}
 	        
 	return result;
-    } 	 
+    }
+	 
+    public int[] intersection(int[] array1, int[] array2) {
+       HashSet<Integer> set1 = new HashSet<Integer>();
+       HashSet<Integer> set2 = new HashSet<Integer>();
+         
+       for (int i = 0; i < array1.length; i++)  {
+          set1.add(array1[i]);
+       }
+         
+       for (int i = 0; i < array2.length; i++) { 
+         if (set1.contains(array2[i])) {
+            set2.add(array2[i]);
+         }
+       }
+       int[] result = new int[set2.size()];
+       int i = 0;
+       for(int n : set2) {
+         result[i++] = n;
+       }
+       return result;   
+    }	 
 
     public static void main(String[] args) {
 	Scanner input = new Scanner(System.in);
