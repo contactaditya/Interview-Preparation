@@ -50,7 +50,7 @@ import java.io.*;
 	return result;
     }
 	 
-    public int[] intersection(int[] array1, int[] array2) {
+    public int[] getIntersection1(int[] array1, int[] array2) {
        HashSet<Integer> set1 = new HashSet<Integer>();
        HashSet<Integer> set2 = new HashSet<Integer>();
          
