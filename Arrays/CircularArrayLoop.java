@@ -24,30 +24,30 @@ import java.util.*;
         }
       }
             
-	  return false;
+      return false;
     }	
 
     public static void main(String[] args) { 
-	  Scanner input = new Scanner(System.in);
-	  System.out.print("Enter number of elements in the array: ");
-	  int number = input.nextInt();  
-	  int array[] = new int[number];
+      Scanner input = new Scanner(System.in);
+      System.out.print("Enter number of elements in the array: ");
+      int number = input.nextInt();  
+      int array[] = new int[number];
 	
-	  System.out.println();	
-	  System.out.print("Please enter the elements of the array: ");
-	  for (int i = 0; i < array.length; i++) {
-	    array[i] = input.nextInt();
+      System.out.println();	
+      System.out.print("Please enter the elements of the array: ");
+      for (int i = 0; i < array.length; i++) {
+	array[i] = input.nextInt();
       }
 	  
-	  boolean circularArrayLoop = circularArrayLoop(array);
-	  System.out.println();	
+      boolean circularArrayLoop = circularArrayLoop(array);
+      System.out.println();	
 	  
-	  if(circularArrayLoop) {
-	    System.out.println("There is a circular array loop.");  
-	  }
-	  else {
-	    System.out.println("There is no circular array loop.");    
-	  }
+      if(circularArrayLoop) {
+	System.out.println("There is a circular array loop.");  
+      }
+      else {
+	System.out.println("There is no circular array loop.");    
+      }
     }
   }
 
