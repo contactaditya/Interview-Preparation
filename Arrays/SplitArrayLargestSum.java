@@ -3,8 +3,8 @@ import java.io.*;
 
   public class SplitArrayLargestSum {
 	  
-	public static int splitArray(int[] array, int m) {
-	  long left = 0;
+    public static int splitArray(int[] array, int m) {
+      long left = 0;
       long right = 0;        
       for (int i = 0; i < array.length; i++) {
         right += array[i];
@@ -34,26 +34,26 @@ import java.io.*;
       }
 	
       return (int) answer;  
-	}	  
+    }	  
 
-	public static void main(String[] args) { 	  
-	  Scanner input = new Scanner(System.in);
-	  System.out.print("Enter number of elements in the array: ");
-	  int numbers = input.nextInt();   
-	  int array[] = new int[numbers];
+    public static void main(String[] args) { 	  
+      Scanner input = new Scanner(System.in);
+      System.out.print("Enter number of elements in the array: ");
+      int numbers = input.nextInt();   
+      int array[] = new int[numbers];
 	    
-	  System.out.println();	
-	  System.out.print("Please enter the actual values in the array: ");
-	  for (int i = 0; i < numbers; i++) {
-		array[i] = input.nextInt(); 
-	  }
+      System.out.println();	
+      System.out.print("Please enter the actual values in the array: ");
+      for (int i = 0; i < numbers; i++) {
+	array[i] = input.nextInt(); 
+      }
 	  
-	  System.out.println();	
-	  System.out.print("Enter the number of times you want to split the array into non-empty continuous subarrays: ");
+      System.out.println();	
+      System.out.print("Enter the number of times you want to split the array into non-empty continuous subarrays: ");
       int m = input.nextInt();
 	  
-	  int minimumLargestSum = splitArray(array, m);
-	  System.out.println();	
-	  System.out.print("The minimum largest sum among these m subarrays is: " + minimumLargestSum);
-	}
+      int minimumLargestSum = splitArray(array, m);
+      System.out.println();	
+      System.out.print("The minimum largest sum among these m subarrays is: " + minimumLargestSum);
+    }
   }
