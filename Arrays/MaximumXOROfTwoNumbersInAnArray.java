@@ -3,8 +3,8 @@ import java.io.*;
 
   public class MaximumXOROfTwoNumbersInAnArray {
 	 
-	public static int findMaximumXOR(int[] array) {
-	  int max = 0, mask = 0;
+    public static int findMaximumXOR(int[] array) {
+      int max = 0, mask = 0;
       for(int i = 31; i >= 0; i--) {	
     	mask = mask | (1 << i);  
     	Set<Integer> set = new HashSet<Integer>();  
@@ -20,24 +20,24 @@ import java.io.*;
         }	
       }
       
-	  return max;      
-	}	  
+      return max;      
+    }	  
 
-	public static void main(String[] args) {   
-	  Scanner input = new Scanner(System.in);
-	  System.out.print("Enter number of elements in the array: ");
-	  int numbers = input.nextInt();   
-	  int array[] = new int[numbers];
+    public static void main(String[] args) {   
+      Scanner input = new Scanner(System.in);
+      System.out.print("Enter number of elements in the array: ");
+      int numbers = input.nextInt();   
+      int array[] = new int[numbers];
 	    
-	  System.out.println();
-	  System.out.print("Please enter the actual values in the array: ");
-	  for (int i = 0; i < numbers; i++) {
-		array[i] = input.nextInt(); 
-	  }
+      System.out.println();
+      System.out.print("Please enter the actual values in the array: ");
+      for (int i = 0; i < numbers; i++) {
+	array[i] = input.nextInt(); 
+      }
 	  
-	  int maximumXOR = findMaximumXOR(array);
-	  System.out.println();	
-	  System.out.print("The maximum XOR of two numbers in the array is: " + maximumXOR);
+      int maximumXOR = findMaximumXOR(array);
+      System.out.println();	
+      System.out.print("The maximum XOR of two numbers in the array is: " + maximumXOR);
 
-	}
+    }
   }
