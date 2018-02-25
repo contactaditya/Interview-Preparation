@@ -20,37 +20,37 @@ import java.io.*;
     	
       return distance[destination] < Integer.MAX_VALUE / 2 ? distance[destination] : -1;     
     }  
-
-	public static void main(String[] args) { 	  
-	  Scanner input = new Scanner(System.in);
-	  System.out.print("Please enter the cities connected by m flights: ");
-	  int n = input.nextInt();  
-	  System.out.println();
-	  System.out.print("Please enter the number of edges in the flights: ");
-	  int edges = input.nextInt();  
-	  int[][] flights = new int[edges][edges];
-	  System.out.println();
-	  System.out.println("Please enter the actual values in the edges: ");
-	  for(int i = 0; i < edges; i++) {
+ 
+    public static void main(String[] args) { 	  
+      Scanner input = new Scanner(System.in);
+      System.out.print("Please enter the cities connected by m flights: ");
+      int n = input.nextInt();  
+      System.out.println();
+      System.out.print("Please enter the number of edges in the flights: ");
+      int edges = input.nextInt();  
+      int[][] flights = new int[edges][edges];
+      System.out.println();
+      System.out.println("Please enter the actual values in the edges: ");
+      for(int i = 0; i < edges; i++) {
         for(int j = 0; j < edges; j++) {
           flights[i][j] = input.nextInt();
         }
       }
 	  
-	  System.out.println();
-	  System.out.print("Please enter the starting city: ");
-	  int source = input.nextInt();  
-	  System.out.println();
-	  System.out.print("Please enter the destination city: ");
-	  int destination = input.nextInt();  
+      System.out.println();
+      System.out.print("Please enter the starting city: ");
+      int source = input.nextInt();  
+      System.out.println();
+      System.out.print("Please enter the destination city: ");
+      int destination = input.nextInt();  
 	  
-	  System.out.println();
-	  System.out.print("Please enter the number of stops in the flight: ");
-	  int K = input.nextInt();  
+      System.out.println();
+      System.out.print("Please enter the number of stops in the flight: ");
+      int K = input.nextInt();  
 
-	  int cheapestPrice = findCheapestPrice(n, flights, source, destination, K);
-	  System.out.println();
-	  System.out.print("The cheapest price from " + source + " to " + destination +  " with up to " + K + " stops is: " + cheapestPrice);
+      int cheapestPrice = findCheapestPrice(n, flights, source, destination, K);
+      System.out.println();
+      System.out.print("The cheapest price from " + source + " to " + destination +  " with up to " + K + " stops is: " + cheapestPrice);
 
-	}
+    }
   }
