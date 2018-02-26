@@ -1,18 +1,17 @@
 import java.util.*;
 import java.io.*;
 
+  public class IsLinkedListAPalindrome { 
+     private static LinkedListNode head;
+     private static int size;  
 
-public class IsLinkedListAPalindrome { 
-   private static LinkedListNode head;
-   private static int size;  
-
-   public IsLinkedListAPalindrome() {
-      // this is an empty list, so the reference to the head node is set to a new node with no data				  
-      head = new LinkedListNode(null);
-      size = 0;
-   }
+     public IsLinkedListAPalindrome() {
+        // this is an empty list, so the reference to the head node is set to a new node with no data				  
+        head = new LinkedListNode(null);
+        size = 0;
+     }
 	
-   public static boolean isPalindrome(LinkedListNode node) {
+     public static boolean isPalindrome(LinkedListNode node) {
        LinkedListNode fast = head; 
        LinkedListNode slow = head;   
 	   
@@ -24,27 +23,27 @@ public class IsLinkedListAPalindrome {
           fast = fast.next.next;		   
        }
 	   
-	// Has odd numbers of elements, so skip the middle elements
+       // Has odd numbers of elements, so skip the middle elements
 	   
-	if(fast != null) {
+       if(fast != null) {
           slow = slow.next;
-	}
+       }
 	   
-	while(slow != null) {
-	   int top = stack.pop().intValue(); 
+       while(slow != null) {
+	  int top = stack.pop().intValue(); 
 		
-	   // If values are different, then it's not a palindrome
+	  // If values are different, then it's not a palindrome
 		 
-	   if(top != (int)slow.data) {
-	      return false;
-	   }
-	   slow = slow.next;  
-	}
+	  if(top != (int)slow.data) {
+	     return false;
+	  }
+	  slow = slow.next;  
+       }
 	   
-     return true;   
-   }	
+       return true;   
+     }	
 
-   public static void main(String[] args) {
+     public static void main(String[] args) {
        IsLinkedListAPalindrome list = new IsLinkedListAPalindrome();	
        list.head = new LinkedListNode(0);
        list.head.next = new LinkedListNode(1);
@@ -60,6 +59,5 @@ public class IsLinkedListAPalindrome {
        else {
 	 System.out.println("The linkedlist is not a palindrome.");    
        }	
-
-   }
- }
+     }
+  }
