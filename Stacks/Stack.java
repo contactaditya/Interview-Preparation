@@ -92,7 +92,7 @@ import java.util.*;
            choice = Integer.parseInt(br.readLine());
            switch (choice) {
              case 1:  System.out.println(); 
-		      System.out.println("Enter a element to insert in the stack: ");
+		      System.out.print("Enter a element to insert in the stack: ");
 	              BufferedReader br1 = new BufferedReader(new InputStreamReader(System.in));  	
 	              String element = br1.readLine();
 	     	      push(element);
