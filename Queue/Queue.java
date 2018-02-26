@@ -26,7 +26,8 @@ import java.util.*;
     public static boolean isEmpty() {
       /**
        *Test if the queue is empty.
-       */	
+       */
+       System.out.println();	    
        if(queue.isEmpty()) {	   
          System.out.println("The queue is currently empty and has no elements.");	 	  	   
        }
@@ -40,6 +41,7 @@ import java.util.*;
       /**
        * Returns the number of items currently in the queue.
        */
+       System.out.println();
        System.out.println("The size of the queue is: " + queue.size());	 
        return queue.size();
     }
@@ -48,6 +50,7 @@ import java.util.*;
       /**
        * Displays all the contents of the queue.
        */
+       System.out.println();	    
        System.out.println("Contents of the queue are: " + queue);
     }
  
@@ -77,11 +80,13 @@ import java.util.*;
     	System.out.println("6. For returning the front item from the queue without popping it.");
     	System.out.println("7. For exiting from the program.");
     	
-    	System.out.println("Enter your choice: ");
+    	System.out.println();
+    	System.out.print("Enter your choice: ");
     	BufferedReader br = new BufferedReader(new InputStreamReader(System.in));  
     	choice = Integer.parseInt(br.readLine());
     	switch (choice) {
-      	  case 1:  System.out.println("Enter a element to insert in the queue: ");
+      	  case 1:  System.out.println();
+		   System.out.println("Enter a element to insert in the queue: ");
       	       	   BufferedReader br1 = new BufferedReader(new InputStreamReader(System.in));  	
       	           String element = br1.readLine();
     	           enqueue(element);
