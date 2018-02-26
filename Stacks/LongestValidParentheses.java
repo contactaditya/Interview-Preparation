@@ -2,9 +2,9 @@ import java.io.*;
 import java.util.*;
 import java.util.Stack;
 
-public class LongestValidParentheses {
+ public class LongestValidParentheses {
 	
- public static int longestValidParentheses(String expression) {
+   public static int longestValidParentheses(String expression) {
      int longest = 0;
      Stack<Integer> stack = new Stack<Integer>(); 
      stack.push(-1);
@@ -13,17 +13,17 @@ public class LongestValidParentheses {
 	  stack.push(i);
        } else {
 	  stack.pop();
-       if (stack.empty()) {
-          stack.push(i);
-       } else {
-          longest = Math.max(longest, i - stack.peek());
-       }       
+          if (stack.empty()) {
+            stack.push(i);
+          } else {
+            longest = Math.max(longest, i - stack.peek());
+          }       
+       }
      }
+     return longest;
    }
-   return longest;
- }
 
- public static void main(String[] args) {   
+   public static void main(String[] args) {   
       Scanner input = new Scanner(System.in);
       String expression = new String();	
       System.out.print("Please enter an expression with only these characters (): ");
