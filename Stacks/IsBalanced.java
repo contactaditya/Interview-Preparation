@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 
-  public class IsBalanced {
+ public class IsBalanced {
       
    public static char[][] TOKENS = {{'(', ')'}};      
 
@@ -17,14 +17,14 @@ import java.io.*;
       	 }   
        }
      }
-                
-	 return stack.isEmpty();   
+                 
+     return stack.isEmpty();   
    }
    
    public static boolean matches(char openTerm, char closeTerm) {
      for(char[] array : TOKENS) {  
        if(array[0] == openTerm) {
-          return array[1] == closeTerm; 
+         return array[1] == closeTerm; 
        }    
      }
      return false;
@@ -40,18 +40,18 @@ import java.io.*;
    }
    
    public static void main(String[] args) { 	
-      Scanner input = new Scanner(System.in);
-	  String expression = new String();	
-	  System.out.print("Please enter an expression with only these characters (): ");
-	  expression = input.nextLine();
+     Scanner input = new Scanner(System.in); 
+     String expression = new String();	
+     System.out.print("Please enter an expression with only these characters (): ");
+     expression = input.nextLine();
 		  
-	  boolean isProperlyBalanced = isBalanced(expression);
-	  System.out.println();
-	  if(isProperlyBalanced) {
-		System.out.println("The expression " + expression + " is balanced.");
-	  }
-	  else {
-		System.out.println("The expression " + expression + " is not balanced.");	  
-	  }
-    }
-  }
+     boolean isProperlyBalanced = isBalanced(expression);
+     System.out.println();
+     if(isProperlyBalanced) {
+       System.out.println("The expression " + expression + " is balanced.");
+     }
+     else {
+       System.out.println("The expression " + expression + " is not balanced.");	  
+     }
+   }
+ }
