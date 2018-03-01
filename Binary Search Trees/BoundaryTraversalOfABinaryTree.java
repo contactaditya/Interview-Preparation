@@ -6,49 +6,44 @@ import java.util.*;
    Node previous;
    
    public void printBoundaryTraversalLeft(Node node) {
-		  
-      if (node != null) {
-	 if (node.left != null) {
-            System.out.print(node.data + " ");		
-	    printBoundaryTraversalLeft(node.left);	 
-	 }
-	 else if (node.right != null) {
-	    System.out.print(node.data + " ");		
-            printBoundaryTraversalLeft(node.right);	   		   
-	 }
-      }
+     if (node != null) {
+       if (node.left != null) {
+         System.out.print(node.data + " ");		
+	 printBoundaryTraversalLeft(node.left);	 
+       }
+       else if (node.right != null) {
+	 System.out.print(node.data + " ");		
+         printBoundaryTraversalLeft(node.right);	   		   
+       }
+     }
    } 
    
-   public void printBoundaryTraversalRight(Node node) {
-		 
+   public void printBoundaryTraversalRight(Node node) {	 
      if (node != null) {
        if (node.right != null) {
-          printBoundaryTraversalRight(node.right);	  
-          System.out.print(node.data + " ");		
+         printBoundaryTraversalRight(node.right);	  
+         System.out.print(node.data + " ");		
        }
        else if (node.left != null) {
-          printBoundaryTraversalRight(node.left);	   
-          System.out.print(node.data + " ");		  		   
+         printBoundaryTraversalRight(node.left);	   
+         System.out.print(node.data + " ");		  		   
        }
      }
    }
    
-   public void printLeaves(Node node) {
-		 	
+   public void printLeaves(Node node) {	 	
      if (node != null) {
        printLeaves(node.left);
 	     
-     if (node.left == null && node.right == null) {
-        System.out.print(node.data + " ");
-     }
+       if (node.left == null && node.right == null) {
+         System.out.print(node.data + " ");
+       }
 	 
-     printLeaves(node.right);
-		  
+       printLeaves(node.right);		  
      }
    }
    
    public void printBoundaryTraversal(Node node) {
-		 
      if (node == null) {
        return;
      }
