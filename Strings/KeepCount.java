@@ -3,7 +3,7 @@ import java.io.*;
 
   public class KeepCount {
 
-   public static List<String> keepWithCount(List<String> list, int n) {
+    public static List<String> keepWithCount(List<String> list, int n) {
       List<String> result = new ArrayList<String>(); 
       Map<String, Integer> map = new HashMap<String, Integer>(); // map to store count of each string
          
@@ -23,8 +23,8 @@ import java.io.*;
         }
       }
                 
-	  return result;   
-	}	  
+      return result;   
+    }	  
 
     public static void main(String[] args) { 	
       Scanner input = new Scanner(System.in);
@@ -33,20 +33,20 @@ import java.io.*;
       List<String> list = new ArrayList<String>();	
  			
       System.out.println();	
-	  input.nextLine();
+      input.nextLine();
       System.out.println("Please enter the elements of the list: ");
       for (int i = 0; i < number; i++) {
- 	    list.add(input.nextLine());
+ 	list.add(input.nextLine());
       }
     
- 	  System.out.println();
- 	  System.out.print("Enter a positive integer n: ");
- 	  int n = input.nextInt();  
+      System.out.println();
+      System.out.print("Enter a positive integer n: ");
+      int n = input.nextInt();  
  	   
- 	  List<String> result = new ArrayList<String>();
+      List<String> result = new ArrayList<String>();
  	   
- 	  result = keepWithCount(list, n);
- 	  System.out.println();
- 	  System.out.print("The list of string that appear exactly " + n + " times in the list are: " + result);
+      result = keepWithCount(list, n);
+      System.out.println();
+      System.out.print("The list of string that appear exactly " + n + " times in the list are: " + result);
     }
   }
