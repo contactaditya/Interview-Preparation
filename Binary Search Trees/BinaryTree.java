@@ -10,59 +10,59 @@ import java.io.*;
     //Node constructor
     
     public BSTNode(int value) {
-	  data = value;
+      data = value;
       left = null;
       right = null;
       parent = null;
     }
     
     public BSTNode(int value, BSTNode left, BSTNode right, BSTNode parent) {
-	  data = value;
-	  this.left = left;
-	  this.right = right;
-	  this.parent = parent;
+      data = value;
+      this.left = left;
+      this.right = right;
+      this.parent = parent;
     }
     
-	public int getData() {
-	  return data;
-	}
-	
-	public void setData(int data) {
-	  this.data = data;
-	}
-	
-	public BSTNode getLeft() {
-	  return left;
-	}
-	
-	public void setLeft(BSTNode left) {
-	  this.left = left;
-	  if (left != null) {
-		left.parent = this;
-	  }
+    public int getData() {
+      return data;
     }
 	
-	public BSTNode getParent() {
-	  return parent;
-	}
-		
-	public void setParent(BSTNode parent) {
-	  this.parent = parent;
-	}
+    public void setData(int data) {
+      this.data = data;
+    }
 	
-	public BSTNode getRight() {
-	  return right;
-	}
+    public BSTNode getLeft() {
+      return left;
+    }
+	
+    public void setLeft(BSTNode left) {
+      this.left = left;
+      if (left != null) {
+	left.parent = this;
+      }
+    }
+	
+    public BSTNode getParent() {
+      return parent;
+    }
+		
+    public void setParent(BSTNode parent) {
+      this.parent = parent;
+    }
+	
+    public BSTNode getRight() {
+      return right;
+    }
 			
-	public void setRight(BSTNode right) {
-	  this.right = right;
-	  if (right != null) {
-		 right.parent = this;
-	  }
-	}
+    public void setRight(BSTNode right) {
+      this.right = right;
+      if (right != null) {
+	right.parent = this;
+      }
+    }
   }
 
- public class BinaryTree {
+  public class BinaryTree {
 	
    public static BSTNode root;
 	  
@@ -71,7 +71,7 @@ import java.io.*;
    }
    
    public static void add(int data) {
-	  root = add(root, data);
+      root = add(root, data);
    }
 				  
    public static BSTNode add(BSTNode root, int data) {
@@ -104,12 +104,12 @@ import java.io.*;
       if(root == null) {	 
         System.out.println();    
         System.out.println("The binary search tree is currently empty and has no elements.");	 	
-	    return null;  
+	return null;  
       }
 	  
       if(node.right != null) {
-	    node.right = removeMaximum(node.right);
-	    return node;  
+	node.right = removeMaximum(node.right);
+	return node;  
       }
 	  
       else {
@@ -125,11 +125,11 @@ import java.io.*;
       if(root == null) {
     	System.out.println();	 
         System.out.println("The binary search tree is currently empty and has no elements.");	 	
-	    return null;  
+	return null;  
       }
   
       if(node.left != null) {
-	    node.left = removeMinimum(node.left);
+	node.left = removeMinimum(node.left);
         return node;  
       } 
   
@@ -204,7 +204,7 @@ import java.io.*;
       } 
        
       else { 
-	    return (size(root.left) + 1 + size(root.right));   
+        return (size(root.left) + 1 + size(root.right));   
       }
     }
 			 
@@ -218,7 +218,7 @@ import java.io.*;
       } 
        
       else {
-	    System.out.print(node.data + " ");	 		  
+	System.out.print(node.data + " ");	 		  
         displayPreOrder(node.left);
         displayPreOrder(node.right);
       }
@@ -230,7 +230,7 @@ import java.io.*;
       */
   
       if(root == null) {
-	    return;
+	return;
       }
 	   
       if(root != null) {	   	  
@@ -246,7 +246,7 @@ import java.io.*;
       */
 		   
       if(root == null) {	   
-	    return; 	  	   
+	return; 	  	   
       }
 			   
       else {
@@ -270,11 +270,11 @@ import java.io.*;
       }
    
       else if ((root.data) > (data)) {
-	    return(search(root.left, data));     
+	return(search(root.left, data));     
       }
 			   
       else {
-	    return(search(root.right, data));  	      
+	return(search(root.right, data));  	      
       }
     }  
      
@@ -284,12 +284,12 @@ import java.io.*;
       */
 		 	    
       if(root == null) {	   
-	    return 0;
+	return 0;
       }
 	   
       else {
     	return Math.max(maximumDepth(root.left), maximumDepth(root.right)) + 1;     	
-	  }
+      }
     }  
   
     public static BSTNode findMaximum(BSTNode node) {
@@ -317,7 +317,7 @@ import java.io.*;
 		 	    
       if(root == null) {	   
         System.out.println("The binary search tree is currently empty and has no elements.");
-	    return null;
+	return null;
       }
   
       if(node.left == null) {
@@ -360,7 +360,7 @@ import java.io.*;
       System.out.println();  
       int heightDifference = leftHeight - rightHeight;	
       if(Math.abs(heightDifference) <= 1 && isBalanced(node.left) && isBalanced(node.right)) {
-  	    System.out.println("The binary search tree is balanced.");  
+  	System.out.println("The binary search tree is balanced.");  
         return true;
       }
       
@@ -374,8 +374,8 @@ import java.io.*;
       */
 		 		 	    
       if(root == null) {	   
-	    System.out.println("The binary search tree is currently empty and has no elements.");
-	    return null;
+	System.out.println("The binary search tree is currently empty and has no elements.");
+	return null;
       }
 		  
       if(node.getLeft() != null) {	   
@@ -403,7 +403,7 @@ import java.io.*;
       }
   
       if(node.getRight() != null) {	   
-	    return findMinimum(node.right);
+	return findMinimum(node.right);
       }
 		  
       BSTNode p = node.parent;
@@ -420,94 +420,94 @@ import java.io.*;
       BinaryTree tree = new BinaryTree();
 	    
       do{	
-	     System.out.println("1. For inserting an element at the first position in the binary search tree.");
-	     System.out.println("2. For deleting the maximum element from the binary search tree.");
-	     System.out.println("3. For deleting the minimum element from the binary search tree.");
-	     System.out.println("4. For deleting an element from the binary search tree if it is present.");
-	     System.out.println("5. For displaying the binary search tree in preorder traversal.");
-	     System.out.println("6. For displaying the binary search tree in inorder traversal.");
-	     System.out.println("7. For displaying the binary search tree in postorder traversal.");
-	     System.out.println("8. For checking if the contents of the binary search tree are empty or not.");
-	     System.out.println("9. For checking the size of the binary search tree.");
-	     System.out.println("10. For searching the binary search tree.");
-	     System.out.println("11. For finding the maximum depth of the binary search tree.");
-	     System.out.println("12. For finding the smallest item of the binary search tree.");
-	     System.out.println("13. For finding the largest item of the binary search tree.");
-	     System.out.println("14. For checking if binary search tree is balanced or not.");
-	     System.out.println("15. For exiting from the program.");
+	  System.out.println("1. For inserting an element at the first position in the binary search tree.");
+	  System.out.println("2. For deleting the maximum element from the binary search tree.");
+	  System.out.println("3. For deleting the minimum element from the binary search tree.");
+	  System.out.println("4. For deleting an element from the binary search tree if it is present.");
+	  System.out.println("5. For displaying the binary search tree in preorder traversal.");
+	  System.out.println("6. For displaying the binary search tree in inorder traversal.");
+	  System.out.println("7. For displaying the binary search tree in postorder traversal.");
+	  System.out.println("8. For checking if the contents of the binary search tree are empty or not.");
+	  System.out.println("9. For checking the size of the binary search tree.");
+	  System.out.println("10. For searching the binary search tree.");
+	  System.out.println("11. For finding the maximum depth of the binary search tree.");
+	  System.out.println("12. For finding the smallest item of the binary search tree.");
+	  System.out.println("13. For finding the largest item of the binary search tree.");
+	  System.out.println("14. For checking if binary search tree is balanced or not.");
+	  System.out.println("15. For exiting from the program.");
 	 
-	     System.out.println();	
-	     System.out.print("Enter your choice: ");
-	     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));  
-	     choice = Integer.parseInt(br.readLine());
-	     switch (choice) {
+	  System.out.println();	
+	  System.out.print("Enter your choice: ");
+	  BufferedReader br = new BufferedReader(new InputStreamReader(System.in));  
+	  choice = Integer.parseInt(br.readLine());
+	  switch (choice) {
 	      case 1:  System.out.println();	
-	     	 	   System.out.print("Enter a element to insert in the binary search tree: ");
-	     	 	   int element = Integer.parseInt(br.readLine());
-	     	 	   add(element);
-	     	 	   break;
+	     	       System.out.print("Enter a element to insert in the binary search tree: ");
+	     	       int element = Integer.parseInt(br.readLine());
+	     	       add(element);
+	     	       break;
 	      case 2:  removeMaximum(tree.root);
-	         	   break;
+	               break;
 	      case 3:  removeMinimum(tree.root);
-	         	   break;  
+	               break;  
 	      case 4:  System.out.println();	
-		     	   System.out.print("Enter the value of the element in the binary search tree which needs to be deleted: ");
-		     	   int index2 = Integer.parseInt(br.readLine());
-		     	   remove(tree.root, index2);
-		     	   break;    		 
+		       System.out.print("Enter the value of the element in the binary search tree which needs to be deleted: ");
+		       int index2 = Integer.parseInt(br.readLine());
+		       remove(tree.root, index2);
+		       break;    		 
 	      case 5:  System.out.println();
-		 	 	   System.out.print("Preorder traversal of binary tree is: ");
-		 	 	   displayPreOrder(tree.root);
-		 	 	   System.out.println();	 
-		 	 	   break;  
+		       System.out.print("Preorder traversal of binary tree is: ");
+		       displayPreOrder(tree.root);
+		       System.out.println();	 
+		       break;  
 	      case 6:  System.out.println();
-		 	 	   System.out.print("Inorder traversal of binary tree is: ");
-		 	 	   displayInOrder(tree.root);
-		 	 	   System.out.println();	 
-		 	 	   break;       		 
+		       System.out.print("Inorder traversal of binary tree is: ");
+		       displayInOrder(tree.root);
+		       System.out.println();	 
+		       break;       		 
 	      case 7:  System.out.println();
-		 	 	   System.out.print("Postorder traversal of binary tree is: ");
-		 	 	   displayPostOrder(tree.root);
-		 	 	   System.out.println();	 
-		 	 	   break; 
+		       System.out.print("Postorder traversal of binary tree is: ");
+		       displayPostOrder(tree.root);
+		       System.out.println();	 
+		       break; 
 	      case 8:  isEmpty();
-		  	 	   break;  
+		       break;  
 	      case 9:  int size = size(tree.root);
-			 	   System.out.println();  
-			 	   System.out.println("The size of the binary search tree is: " + size); 
-			 	   break;  
+		       System.out.println();  
+		       System.out.println("The size of the binary search tree is: " + size); 
+		       break;  
 	     case 10:  System.out.println();	
-			 	   System.out.print("Enter a element to search in the binary search tree: ");
-			 	   int element5 = Integer.parseInt(br.readLine());
-			 	   boolean search = search(tree.root, element5);
-			 	   System.out.println();		
-			 	   if(search) {
-			 		 System.out.println("The element " + element5 + " is present in binary search tree.");		 
-			 	   }
-			 	   else {	 
-                     System.out.println("The element " + element5 + " is not present in binary search tree."); 
-			 	   }
-			 	   break;   
+                       System.out.print("Enter a element to search in the binary search tree: ");
+		       int element5 = Integer.parseInt(br.readLine());
+		       boolean search = search(tree.root, element5);
+		       System.out.println();		
+		       if(search) {
+			 System.out.println("The element " + element5 + " is present in binary search tree.");		 
+		       }
+		       else {	 
+                         System.out.println("The element " + element5 + " is not present in binary search tree."); 
+		       }
+		       break;   
 	     case 11:  int maximumDepth = maximumDepth(tree.root);
-	         	   System.out.println();	
-	         	   if(maximumDepth == 0) {
+	               System.out.println();	
+	               if(maximumDepth == 0) {
 	                 System.out.println("The binary search tree is currently empty and has no elements.");	 
-	         	   } else {
-	         		 System.out.println("The maximum depth of the binary search tree is " + maximumDepth);
-	         	   }
-	         	   break;
+	               } else {
+	         	 System.out.println("The maximum depth of the binary search tree is " + maximumDepth);
+	               }
+	               break;
 	     case 12:  BSTNode minimum = findMinimum(tree.root);
-			 	   System.out.println();  
-			 	   System.out.println("The smallest item of the binary search tree is: " + minimum.data); 
-			 	   break;
-	     case 13: BSTNode maximum = findMaximum(tree.root);
-	 	     	  System.out.println();  
-	 	     	  System.out.println("The largest item of the binary search tree is: " + maximum.data); 
-	 	     	  break;   
-	     case 14: isBalanced(tree.root);
-	 		 	  break; 
-	    }
-	     System.out.print("\n");
-	  } while(choice!=15);
-    }
-  }
+		       System.out.println();  
+		       System.out.println("The smallest item of the binary search tree is: " + minimum.data); 
+		       break;
+	     case 13:  BSTNode maximum = findMaximum(tree.root);
+	 	       System.out.println();  
+	 	       System.out.println("The largest item of the binary search tree is: " + maximum.data); 
+	 	       break;   
+	     case 14:  isBalanced(tree.root);
+	 	       break; 
+	  }
+	  System.out.print("\n");
+        } while(choice!=15);
+     }
+   }
