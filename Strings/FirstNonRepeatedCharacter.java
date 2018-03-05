@@ -3,7 +3,7 @@ import java.util.*;
 
 public class FirstNonRepeatedCharacter { 
 	
- public static Character firstNonRepeatedCharacter(String string) {
+  public static Character firstNonRepeatedCharacter(String string) {
     if(string == null) {
        return null;	
     }
@@ -25,10 +25,10 @@ public class FirstNonRepeatedCharacter {
 	  return character;
        }
     }
-  return null;
-}
+    return null;
+  }
 
-public static void main(String[] args) { 
+  public static void main(String[] args) { 
     String string = new String();	  
     Scanner input = new Scanner(System.in); 
     System.out.print("Enter the string: ");
