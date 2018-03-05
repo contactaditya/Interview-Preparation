@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 
- class Node1 {
+  class Node1 {
     char character;
     int value;
     Node1 left, mid, right;
@@ -12,33 +12,32 @@ import java.io.*;
       this.character = character;
       this.value = 0;
     } 
- }
+  }
 
   public class ShortestUniquePrefixToRepresentEachWord1 {
     private static Node1 root;
 	 
     public static ArrayList<String> prefix(ArrayList<String> a) {
-       if (a == null || a.size() <= 0) {
-	  return null;    
-       }	
-       ArrayList<String> result = new ArrayList<>();
-       for (String word : a) {
-	 put(word);
-       }
-       for (String word : a) {
-	  String prefix = getPrefix(word);
-	  result.add(prefix);
-       }
+      if (a == null || a.size() <= 0) {
+	return null;    
+      }	
+      ArrayList<String> result = new ArrayList<>();
+      for (String word : a) {
+	put(word);
+      }
+      for (String word : a) {
+	String prefix = getPrefix(word);
+	result.add(prefix);
+      }
       return result;
     }	
 	
-   public static String getPrefix(String string) {
+    public static String getPrefix(String string) {
       StringBuilder prefix = new StringBuilder();
       return get(root, string, 0, prefix);
-   }
+    }
 	
-   public static String get(Node1 node, String string, int index, StringBuilder prefix) {
-	    
+    public static String get(Node1 node, String string, int index, StringBuilder prefix) {    
       char c = string.charAt(index);
 	    
       if (c < node.character) {
@@ -52,20 +51,19 @@ import java.io.*;
 	 prefix.append(node.character);
 	 return get(node.mid, string, index + 1, prefix);
       }
-   }
+    }
 	
-   public static void put(String string) {
+    public static void put(String string) {
       root = put(root, string, 0);
-   } 
+    } 
 	
-   public static Node1 put(Node1 node, String string, int index) {
-	    
+    public static Node1 put(Node1 node, String string, int index) {    
       if (index == string.length()) {
-	 return node;
+	return node;
       }
 	    
       if (node == null) {
-	 node = new Node1(string.charAt(index));
+	node = new Node1(string.charAt(index));
       }
 	    
       char c = string.charAt(index);
@@ -80,9 +78,9 @@ import java.io.*;
       }
 	    
       return node;
-   }
+    }
 
-   public static void main(String[] args) {   
+    public static void main(String[] args) {   
       Scanner input = new Scanner(System.in);
       System.out.print("Enter the number of words in the list: ");
       int numberOfWords = input.nextInt();
@@ -96,7 +94,6 @@ import java.io.*;
       List<String> result = new ArrayList<String>();
       result = prefix(X);
       System.out.println();
-      System.out.println("The solution set with unique prefix is: " + result);
-	  
-   }
- }
+      System.out.println("The solution set with unique prefix is: " + result);  
+    }
+  }
