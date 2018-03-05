@@ -17,51 +17,51 @@ import java.io.*;
   }  
 	  
   public class ShortestUniquePrefixToRepresentEachWord {
-     TrieNode root;
+    TrieNode root;
 	
-     public ShortestUniquePrefixToRepresentEachWord() {
-        root = new TrieNode();
-     }  
+    public ShortestUniquePrefixToRepresentEachWord() {
+      root = new TrieNode();
+    }  
 	    
-     public void insertWord(String word) {
-	HashMap<Character, TrieNode> children = root.children;
-	for (int i = 0; i < word.length(); i++) {
-          char c = word.charAt(i);
-          TrieNode t;
-          if (children.containsKey(c)) {
-            t = children.get(c);
-            t.frequency++;
-          }
-          else {
-            t = new TrieNode(c);
-            children.put(c, t);
-          }
+    public void insertWord(String word) {
+      HashMap<Character, TrieNode> children = root.children;
+      for (int i = 0; i < word.length(); i++) {
+        char c = word.charAt(i);
+        TrieNode t;
+        if (children.containsKey(c)) {
+          t = children.get(c);
+          t.frequency++;
+        }
+        else {
+          t = new TrieNode(c);
+          children.put(c, t);
+        }
         children = t.children;
       }
-     }
+    }
 	
-     public String findPrefix(String word) {
-	if (word == null || word.length() <= 0) {
-	  return null;
-	}
-	StringBuilder prefix = new StringBuilder();
-	HashMap<Character, TrieNode> children = root.children;
-	for (int i = 0; i < word.length(); i++) {
-          char c = word.charAt(i);
-          TrieNode t;
-          if (children.containsKey(c)) {
-            t = children.get(c);
-            children = t.children;
-            prefix.append(c);
-            if (t.frequency == 1) {
-              return prefix.toString();
-            }
-          }
-          else {
-            return null;
-          }
-        } 	 	
-      return prefix.toString();
+    public String findPrefix(String word) {
+       if (word == null || word.length() <= 0) {
+	 return null;
+       }
+       StringBuilder prefix = new StringBuilder();
+       HashMap<Character, TrieNode> children = root.children;
+       for (int i = 0; i < word.length(); i++) {
+         char c = word.charAt(i);
+         TrieNode t;
+         if (children.containsKey(c)) {
+           t = children.get(c);
+           children = t.children;
+           prefix.append(c);
+           if (t.frequency == 1) {
+             return prefix.toString();
+           }
+         }
+         else {
+           return null;
+         }
+       } 	 	
+       return prefix.toString();
     }	  
 	 
     public static ArrayList<String> prefix(ArrayList<String> a) {
