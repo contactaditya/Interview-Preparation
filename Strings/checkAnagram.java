@@ -1,29 +1,29 @@
 import java.io.*;
 import java.util.*;
 
-public class checkAnagram {
+ public class checkAnagram {
 	
    public static boolean isAnagramString(String string1, String string2) {  
-      char[] charArray1 = string1.replaceAll(" ", "").toLowerCase().toCharArray();  
-      char[] charArray2 = string2.replaceAll(" ", "").toLowerCase().toCharArray();  
-      Arrays.sort(charArray1);  
-      Arrays.sort(charArray2);  
-      return Arrays.equals(charArray1, charArray2); 		    
+     char[] charArray1 = string1.replaceAll(" ", "").toLowerCase().toCharArray();  
+     char[] charArray2 = string2.replaceAll(" ", "").toLowerCase().toCharArray();  
+     Arrays.sort(charArray1);  
+     Arrays.sort(charArray2);  
+     return Arrays.equals(charArray1, charArray2); 		    
    }
    
    public static boolean checkAnagram(String smallString, String largeString) {  
-      boolean isAnagramSubString = false;
-      for (int i = 0; i < largeString.length() - smallString.length() + 1; i++) {   
-    	if (isAnagramString(smallString, largeString.substring(i, i + smallString.length()))) {  
-           isAnagramSubString = true;  
-           break;  
-        }  
-      }  
+     boolean isAnagramSubString = false;
+     for (int i = 0; i < largeString.length() - smallString.length() + 1; i++) {   
+       if (isAnagramString(smallString, largeString.substring(i, i + smallString.length()))) {  
+         isAnagramSubString = true;  
+         break;  
+       }  
+     }  
 
      return isAnagramSubString;   
    }
 
-  public static void main(String[] args) {  
+   public static void main(String[] args) {  
      String smallString = new String();	  
      Scanner input = new Scanner(System.in);
      System.out.print("Enter the smaller string: ");
@@ -44,5 +44,5 @@ public class checkAnagram {
      } else {
        System.out.println("Anagram of " + smallString + " is not substring of " + largeString);  
      }
-  }
-}
+   }
+ }
