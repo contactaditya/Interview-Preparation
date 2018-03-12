@@ -3,9 +3,9 @@ import java.io.*;
 
   public class CountNumberOfSubstringsWithExactlykDistinctCharacters { 
 	
-	public static int countNumberOfSubstringsWithExactlykDistinctCharacters(String string, int k) {
+    public static int countNumberOfSubstringsWithExactlykDistinctCharacters(String string, int k) {
       int result = 0;
-	  // To store count of characters from 'a' to 'z'
+      // To store count of characters from 'a' to 'z'
       int count[] = new int[26];
       
       // Consider all substrings beginning with string[i]
@@ -31,21 +31,21 @@ import java.io.*;
         }
       }
 	  
-	  return result;
-	}
+      return result;
+    }
 
-	public static void main(String[] args) {    
-	  String string = new String();	  
-	  Scanner input = new Scanner(System.in);
-	  System.out.print("Enter the string: ");
-	  string = input.next();  
+    public static void main(String[] args) {    
+      String string = new String();	  
+      Scanner input = new Scanner(System.in);
+      System.out.print("Enter the string: ");
+      string = input.next();  
   
-	  System.out.println();
-	  System.out.print("Enter a positive integer k: ");
-	  int k = input.nextInt();  
+      System.out.println();
+      System.out.print("Enter a positive integer k: ");
+      int k = input.nextInt();  
 		   
-	  int result = countNumberOfSubstringsWithExactlykDistinctCharacters(string, k);
-	  System.out.println();
-	  System.out.print("The total substrings with exactly " + k + " distinct characters are: " + result);
-	}
+      int result = countNumberOfSubstringsWithExactlykDistinctCharacters(string, k);
+      System.out.println();
+      System.out.print("The total substrings with exactly " + k + " distinct characters are: " + result);
+    }
   }
