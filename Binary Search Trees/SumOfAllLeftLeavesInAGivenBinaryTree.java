@@ -5,17 +5,16 @@ import java.io.*;
     Node root;	    
     Node previous;
 	
-   public static boolean isLeaf(Node node) {
-		 
+   public static boolean isLeaf(Node node) { 
       if (node == null) {
-	 return false;
+	return false;
       }
 	  
       if (node.left == null && node.right == null) {
-	 return true;
+	return true;
       }
 
-     return false;	
+      return false;	
    }
 	
    public static int leftLeavesSum(Node node) {
@@ -29,10 +28,10 @@ import java.io.*;
 	else {
 	  result += leftLeavesSum(node.left);
 	}
- 	 result += leftLeavesSum(node.right);		  
+ 	result += leftLeavesSum(node.right);		  
       }
 	
-     return result;	 
+      return result;	 
    }
 	
    public static void main(String[] args) {
@@ -48,8 +47,7 @@ import java.io.*;
       tree.root.right.right.left = new Node(50);
       
       int sum = leftLeavesSum(tree.root);
-  
+   
       System.out.print("The Sum of left leaves of the Binary Tree is: " + sum);
-
    }
  }
