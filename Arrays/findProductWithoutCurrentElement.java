@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class findProductWithoutCurrentElement {
 
- public static void findProductWithoutCurrentElement(int array[]) {
+  public static void findProductWithoutCurrentElement(int array[]) {
     int n = array.length;
     int product[] = new int[n];
     int multiplication = 1;
@@ -29,9 +29,9 @@ public class findProductWithoutCurrentElement {
     for(int i = 0; i < n; i++) {
       System.out.print(product[i] + " ");
     }
- }
+  }
  
- public static void findProductWithoutCurrentElement1(int array[]) {
+  public static void findProductWithoutCurrentElement1(int array[]) {
     int n = array.length;
     int product[] = new int[n];
     int multiplication = 1;
@@ -50,9 +50,9 @@ public class findProductWithoutCurrentElement {
     for(int i = 0; i < n; i++) {
       System.out.print(product[i] + " ");
     }
- } 
+  } 
 
- public static void main(String[] args) { 
+  public static void main(String[] args) { 
     Scanner input = new Scanner(System.in);
     System.out.print("Enter number of elements in the first array: ");
     int number = input.nextInt();  
@@ -69,6 +69,5 @@ public class findProductWithoutCurrentElement {
     findProductWithoutCurrentElement(array);
     System.out.println();	 
     findProductWithoutCurrentElement1(array);
-
   }
 }
