@@ -8,13 +8,13 @@ import java.io.*;
        int first = 0;
        int second = 0;
 	   
-       if(n < 2) {
+       if (n < 2) {
 	 System.out.print("Invalid size of the array.");   
        }
 	   
        first = second = Integer.MIN_VALUE;
 	    
-       for(int i = 0; i < n; i++) {
+       for (int i = 0; i < n; i++) {
 	 if(array[i] > first) {
 	   second = first;
 	   first = array[i]; 
@@ -47,6 +47,5 @@ import java.io.*;
 	  
       System.out.println();
       printSecondLargest(array);
-
     }
  }
