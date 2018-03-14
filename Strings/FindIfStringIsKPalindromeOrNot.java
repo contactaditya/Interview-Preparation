@@ -3,8 +3,7 @@ import java.io.*;
 
  public class FindIfStringIsKPalindromeOrNot {
 	 
-   public static int LongestCommonSubsequence(String string1, String string2, int m, int n) {
-		   
+   public static int LongestCommonSubsequence(String string1, String string2, int m, int n) {	   
       int lengths[][] = new int[string1.length() + 1][string2.length() + 1]; 
 				 
       if (string1 == null || string2 == null || string1.length() == 0 || string2.length() == 0) {
