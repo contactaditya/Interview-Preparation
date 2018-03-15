@@ -5,24 +5,23 @@ import java.io.*;
    Node root;	    
    Node previous;
 	
-   public boolean isFullTree(Node node) {
-		 
-      if (node == null) {
-        return true;
-      }
+   public boolean isFullTree(Node node) {	 
+     if (node == null) {
+       return true;
+     }
 	   
-      if (node.left == null && node.right == null) {
-	 return true;
-      }
+     if (node.left == null && node.right == null) {
+       return true;
+     }
 	   
-      if (node.left != null && node.right != null) {
-	 return (isFullTree(node.left) && isFullTree(node.right));
-      }	 
+     if (node.left != null && node.right != null) {
+       return (isFullTree(node.left) && isFullTree(node.right));
+     }	 
 	     
      return false;
    }
 
- public static void main(String[] args) {   
+   public static void main(String[] args) {   
      IsBinaryTreeAFullTree tree = new IsBinaryTreeAFullTree();
      tree.root = new Node(10);
      tree.root.left = new Node(20);
