@@ -3,7 +3,7 @@ import java.io.*;
 
   public class CustomSortString { 	
 	
-	public static String customSortString(String S, String T) {
+    public static String customSortString(String S, String T) {
       int[] count = new int[26];
       // count each char in T.
       for (char c : T.toCharArray()) { 
@@ -24,20 +24,20 @@ import java.io.*;
       }
       
       return sb.toString();      
-	}	  
+    }	  
  
-	public static void main(String[] args) { 	 
-	  String S = new String();	  
-	  Scanner input = new Scanner(System.in);
-	  System.out.print("Enter the string: ");
-	  S = input.nextLine();  
-	  System.out.println();	
-	  String T = new String();	  
-	  System.out.print("Enter the string: ");
-	  T = input.nextLine();
+    public static void main(String[] args) { 	 
+      String S = new String();	  
+      Scanner input = new Scanner(System.in);
+      System.out.print("Enter the string: ");
+      S = input.nextLine();  
+      System.out.println();	
+      String T = new String();	  
+      System.out.print("Enter the string: ");
+      T = input.nextLine();
 		  
-	  String sortedString = customSortString(S, T);
-	  System.out.println();
-	  System.out.println("The string " + T + " sorted in the custom order of string " + S + " is: " + sortedString); 
-	}
+      String sortedString = customSortString(S, T);
+      System.out.println();
+      System.out.println("The string " + T + " sorted in the custom order of string " + S + " is: " + sortedString); 
+    }
   }
