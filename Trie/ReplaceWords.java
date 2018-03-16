@@ -1,12 +1,12 @@
 import java.util.*;
 import java.io.*;
 
- class TrieNode3 {
+  class TrieNode3 {
     boolean isWord = false;
     TrieNode3[] children = new TrieNode3[26];
- }
+  }
 
- public class ReplaceWords {   
+  public class ReplaceWords {   
     public TrieNode3 root = new TrieNode3();	
  
     public void insert(String word) {
@@ -79,6 +79,5 @@ import java.io.*;
        String replaceWords = trie.replaceWords(dictionary, sentence); 
        System.out.println();
        System.out.println("The sentence after replacing all the successors in the sentence with the root forming it is: " + replaceWords);
-	
     }
- }
+  }
