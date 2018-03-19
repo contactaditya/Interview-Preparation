@@ -12,7 +12,7 @@ import java.util.*;
       return instance;
     }
  
-    public void getMessage(){
+    public void getMessage() {
       System.out.println("This is an example of Singleton Pattern."); 
     }
     
