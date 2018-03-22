@@ -8,7 +8,7 @@ import java.io.*;
       List<String> list = new ArrayList<String>();
       dfs(string, 0, list, result);
       return result;
-	}
+    }
     
     private static void dfs(String string, int position, List<String> list, List<List<String>> result) {
       if(position == string.length()) {
@@ -22,9 +22,9 @@ import java.io.*;
           }
     	}
       }
-	}
+    }
 
-	public static boolean isPalindrome(String string, int left, int right) {
+    public static boolean isPalindrome(String string, int left, int right) {
       if(left == right) {
     	return true;
       }
@@ -38,22 +38,22 @@ import java.io.*;
       return true;
     }
 	  
-	public static void main(String[] args) {  
-	  String string = new String();	  
-	  Scanner input = new Scanner(System.in);
-	  System.out.print("Enter the string: ");
-	  string = input.next();    
+    public static void main(String[] args) {  
+      String string = new String();	  
+      Scanner input = new Scanner(System.in);
+      System.out.print("Enter the string: ");
+      string = input.next();    
 	  
-	  System.out.println();
-	  List<List<String>> result = new ArrayList<List<String>>();
+      System.out.println();
+      List<List<String>> result = new ArrayList<List<String>>();
 	   
-	  result = partition(string); 
-	  System.out.println();
-	  System.out.println("All possible palindrome partitioning of the string are: ");
-	  System.out.println('[');
-	  for(List<String> innerList : result) {
-		System.out.println(innerList + " ");
-	  }
-	  System.out.println(']');
-	}
+      result = partition(string); 
+      System.out.println();
+      System.out.println("All possible palindrome partitioning of the string are: ");
+      System.out.println('[');
+      for(List<String> innerList : result) {
+	System.out.println(innerList + " ");
+      }
+      System.out.println(']');
+    }
   }  
