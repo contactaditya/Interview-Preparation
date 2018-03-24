@@ -1,6 +1,6 @@
 import java.util.*;
 
- public class Partition { 	
+  public class Partition { 	
     private static LinkedListNode head;
     private static int size;  
 
@@ -61,4 +61,4 @@ import java.util.*;
 	}
       }
     }
-}
+  }
