@@ -1,40 +1,40 @@
 import java.util.*;
 
  public class CheckBalanced {    
-     static Node root;	    
-     static Node previous;
+   static Node root;	    
+   static Node previous;
 	
    public static int checkHeight(Node root) {
-      if(root == null) {
-	return -1;
-      }
+     if(root == null) {
+       return -1;
+     }
 	  
-      int leftHeight = checkHeight(root.left);
+     int leftHeight = checkHeight(root.left);
 	 
-      if(leftHeight == Integer.MIN_VALUE) {
-	 return Integer.MIN_VALUE;	 
-      }
+     if(leftHeight == Integer.MIN_VALUE) {
+       return Integer.MIN_VALUE;	 
+     }
 	 
-      int rightHeight = checkHeight(root.right);
+     int rightHeight = checkHeight(root.right);
 	 
-      if(rightHeight == Integer.MIN_VALUE) {
-	 return Integer.MIN_VALUE;	 
-      }
+     if(rightHeight == Integer.MIN_VALUE) {
+       return Integer.MIN_VALUE;	 
+     }
 	 
-      int heightDifference = leftHeight - rightHeight;
+     int heightDifference = leftHeight - rightHeight;
 	 
-      if(Math.abs(heightDifference) > 1) {
-	 return Integer.MIN_VALUE;	 
-      } else {
-	 return Math.max(leftHeight, rightHeight) + 1;	  
-      }
+     if(Math.abs(heightDifference) > 1) {
+       return Integer.MIN_VALUE;	 
+     } else {
+       return Math.max(leftHeight, rightHeight) + 1;	  
+     }
    }	
    
    static boolean isBalanced(Node root) {
-       return checkHeight(root) != Integer.MIN_VALUE; 
+     return checkHeight(root) != Integer.MIN_VALUE; 
    }
 	 
- public static void main(String[] args) { 
+   public static void main(String[] args) { 
      CheckBalanced tree = new CheckBalanced();
      tree.root = new Node(3);
      tree.root.left = new Node(5);
