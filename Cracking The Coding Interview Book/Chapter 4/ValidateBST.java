@@ -1,30 +1,29 @@
 import java.util.*;
 
-public class ValidateBST {
+ public class ValidateBST {
    static Node root;	    
    static Node previous;
 	 
    public static boolean checkBST(Node node) {
-       return checkBST(node, null, null); 
+      return checkBST(node, null, null); 
    }
    
    public static boolean checkBST(Node node, Integer min, Integer max) {
-       if(node == null) {
-	  return true; 
-       }
+      if(node == null) {
+	return true; 
+      }
 	  
-       if((min != null && node.data <= min) || (max != null && node.data > max)) {
-	   return false;
-       }
+      if((min != null && node.data <= min) || (max != null && node.data > max)) {
+	return false;
+      }
 	  
-       if(!checkBST(node.left, min, node.data) || !checkBST(node.right, node.data, max)) {
-	   return false;
-       }
-	   
-    return true;
+      if(!checkBST(node.left, min, node.data) || !checkBST(node.right, node.data, max)) {
+	return false;
+      }   
+      return true;
    }
 
- public static void main(String[] args) { 	  
+   public static void main(String[] args) { 	  
      ValidateBST tree = new ValidateBST();
      tree.root = new Node(4);
      tree.root.left = new Node(2); 
@@ -40,4 +39,4 @@ public class ValidateBST {
        System.out.println("Tree is not a binary search tree.");
      }	  
    }
-}
+ }
