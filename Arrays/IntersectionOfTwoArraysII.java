@@ -37,7 +37,7 @@ import java.io.*;
     private static int[] listToArray(List<Integer> list) {
        int[] result = new int[list.size()];	        
        for (int i = 0; i < list.size(); i++) {
-	  result[i] = list.get(i);
+	 result[i] = list.get(i);
        }
        return result;
     } 	 
@@ -51,7 +51,7 @@ import java.io.*;
        System.out.println();	
        System.out.print("Please enter number: ");
        for (int i = 0; i < array.length; i++) {
-	  array[i] = input.nextInt();
+	 array[i] = input.nextInt();
        }
 		    
        System.out.println();	
@@ -62,7 +62,7 @@ import java.io.*;
        System.out.println();	
        System.out.print("Please enter number: ");
        for (int i = 0; i < array1.length; i++) {
-	  array1[i] = input.nextInt();
+	 array1[i] = input.nextInt();
        }
 		  
        int result[] = new int[array.length + array1.length];
@@ -71,7 +71,7 @@ import java.io.*;
        System.out.println();	
        System.out.print("The value of interection of the sorted arrays is: ");
        for(int i = 0; i < result.length; i++) {
-	  System.out.print(result[i] + " ");
+	 System.out.print(result[i] + " ");
        }	 
     }
  }
