@@ -4,7 +4,7 @@ import java.util.*;
  public class PythagoreanTripletInAnArray {
 	 
    private static boolean pythagoreanTriplet(int[] array, int length) {
-	 // Square array elements
+     // Square array elements
      for (int i=0; i<length; i++) {
         array[i] = array[i] * array[i];
      }
@@ -16,9 +16,9 @@ import java.util.*;
      for (int i = length - 1; i >= 2; i--) {
        int left = 0;
        int right = i - 1;
-       
+     
        while(left < right) {
-      // A triplet found
+         // A triplet found
     	 if(array[left] + array[right] == array[i]) {
     	    return true; 
     	 }
@@ -30,29 +30,28 @@ import java.util.*;
          }   
        } 
      }
-    return false;
-  }
+     return false;
+   }
 
-  public static void main(String[] args) { 
-      Scanner input = new Scanner(System.in);
-      System.out.print("Enter number of elements in the array: ");
-      int numbers = input.nextInt();   
-      int array[] = new int[numbers];
+   public static void main(String[] args) { 
+     Scanner input = new Scanner(System.in);
+     System.out.print("Enter number of elements in the array: ");
+     int numbers = input.nextInt();   
+     int array[] = new int[numbers];
 	    
-      System.out.print("\n");
-      System.out.print("Please enter the actual values in the array: ");
-      for (int i = 0; i < numbers; i++) {
-	 array[i] = input.nextInt(); 
-      }
+     System.out.print("\n");
+     System.out.print("Please enter the actual values in the array: ");
+     for (int i = 0; i < numbers; i++) {
+       array[i] = input.nextInt(); 
+     }
 	   
-      boolean isTriplet = pythagoreanTriplet(array, array.length); 
-	   
-      System.out.println();
-      if(isTriplet) {
-	 System.out.println("There is a Pythagorean Triplet");  
-      }
-      else {
-	 System.out.println("There is no Pythagorean Triplet");    
-      }
+     boolean isTriplet = pythagoreanTriplet(array, array.length); 
+     System.out.println();
+     if(isTriplet) {
+       System.out.println("There is a Pythagorean Triplet");  
+     }
+     else {
+       System.out.println("There is no Pythagorean Triplet");    
+     }
    }
  }
