@@ -3,17 +3,17 @@ import java.io.*;
 
   public class AdditiveNumber {
 	  
-	public static boolean isAdditiveNumber(String number) { 
-	  int n = number.length();
+    public static boolean isAdditiveNumber(String number) { 
+      int n = number.length();
       for (int i = 1; i <= n / 2; i++) {
         for (int j = 1; Math.max(j, i) <= n - i - j; j++)
           if (isValid(i, j, number)) {
-        	return true;
+            return true;
           }
       }
 	  
-	  return false;      
-	}	
+      return false;      
+    }	
   
     private static boolean isValid(int i, int j, String number) {
       if (number.charAt(0) == '0' && i > 1) {
@@ -34,23 +34,23 @@ import java.io.*;
         }
       }
       
-	  return true;
-	}
+      return true;
+    }
 
-	public static void main(String[] args) {   
-	  String number = new String();	  
-	  Scanner input = new Scanner(System.in);
-	  System.out.print("Enter the string: ");
-	  number = input.next();  
+    public static void main(String[] args) {   
+      String number = new String();	  
+      Scanner input = new Scanner(System.in);
+      System.out.print("Enter the string: ");
+      number = input.next();  
 	  	  
-	  boolean isAdditiveNumber = isAdditiveNumber(number);
+      boolean isAdditiveNumber = isAdditiveNumber(number);
 	  
-	  System.out.println(); 
-	  if(isAdditiveNumber) {
-		System.out.println("The number " + number + " is an additive number.");  
-	  }
+      System.out.println(); 
+      if(isAdditiveNumber) {
+	System.out.println("The number " + number + " is an additive number.");  
+      }
       else {
     	System.out.println("The number " + number + " is not an additive number.");  
-	  }
-	}
+      }
+    }
   }
