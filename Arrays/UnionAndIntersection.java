@@ -109,22 +109,22 @@ import java.util.*;
      System.out.println();	
 	    
      do{	
-	  System.out.println("1. To calculate the interection of the sorted arrays.");
-	  System.out.println("2. To calculate the union of the sorted arrays.");
-	  System.out.println("3. For exiting from the program.");
+	 System.out.println("1. To calculate the interection of the sorted arrays.");
+	 System.out.println("2. To calculate the union of the sorted arrays.");
+	 System.out.println("3. For exiting from the program.");
 	   
-	  System.out.println();	
+	 System.out.println();	
 	    	
-	  System.out.print("Enter your choice: ");
-	  BufferedReader br1 = new BufferedReader(new InputStreamReader(System.in));  
-	  choice = Integer.parseInt(br1.readLine());
-	  switch (choice) {
-	    case 1:  getIntersection(array, array1);
-	    	     break;
-	    case 2:  getUnion(array, array1);
-	             break;    
-	  }
-	  System.out.print("\n");
+	 System.out.print("Enter your choice: ");
+	 BufferedReader br1 = new BufferedReader(new InputStreamReader(System.in));  
+	 choice = Integer.parseInt(br1.readLine());
+	 switch (choice) {
+	   case 1:  getIntersection(array, array1);
+	    	    break;
+	   case 2:  getUnion(array, array1);
+	            break;    
+	 }
+	 System.out.print("\n");
        } while(choice!=3);
    }     
  }
