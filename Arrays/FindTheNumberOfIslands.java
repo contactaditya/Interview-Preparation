@@ -52,7 +52,7 @@ import java.io.*;
        System.out.println();
        System.out.println("Please enter the actual values in the matrix: ");
        for(int i=0; i < x; i++) {
-         for(int j=0; j < y; j++){
+         for(int j=0; j < y; j++) {
 	   array[i][j] = input.nextInt();
 	 }
        }
