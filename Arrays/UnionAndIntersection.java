@@ -1,89 +1,83 @@
 import java.io.*;
 import java.util.*;
 
-public class UnionAndIntersection {
+ public class UnionAndIntersection {
 	
- public static void getIntersection(int[] array, int[] array1) {
-	 
-   System.out.println();		 
-   int i = 0, j = 0;
-   int x = array.length;
-   int y = array1.length;
+   public static void getIntersection(int[] array, int[] array1) {	 
+      System.out.println();		 
+      int i = 0, j = 0;
+      int x = array.length;
+      int y = array1.length;
   
-   ArrayList<Integer> list = new ArrayList();
+      ArrayList<Integer> list = new ArrayList();
   
-   System.out.print("The value of interection of the sorted arrays is: ");   
+      System.out.print("The value of interection of the sorted arrays is: ");   
   
-   while(i < x && j < y) {
-     if(array[i] < array1[j]) {
-       i++;  
-     }
-   
-     else if(array[i] > array1[j]) {
-       j++;  
-     }
-   
-     else {
-       list.add(array[i]);
-       i++;
-       j++;
-     }
-   }
-  
-   for(Integer k : list) {
-     System.out.print(k + " ");
-   }
-  System.out.println();	 
- }	
- 
- public static void getUnion(int[] array, int[] array1) {
-    System.out.println();		 
-    int i = 0, j = 0;
-    int x = array.length;
-    int y = array1.length;
-  
-    ArrayList<Integer> list = new ArrayList();
- 
-    System.out.print("The value of union of the sorted arrays is: ");
-  
-    while(i < x && j < y) {
-      if(array[i] < array1[j]) {
-        list.add(array[i]);	
-        i++;  
+      while(i < x && j < y) {
+        if(array[i] < array1[j]) {
+          i++;  
+        }
+        else if(array[i] > array1[j]) {
+          j++;  
+        }
+        else {
+          list.add(array[i]);
+          i++;
+          j++;
+        }
       }
-	   
-      else if(array[i] > array1[j]) {
-        list.add(array1[j]);		
-        j++;  
+  
+      for(Integer k : list) {
+        System.out.print(k + " ");
       }
-	   
-      else {
-        list.add(array[i]);
+      System.out.println();	 
+   }	
+ 
+   public static void getUnion(int[] array, int[] array1) {
+      System.out.println();		 
+      int i = 0, j = 0;
+      int x = array.length;
+      int y = array1.length;
+  
+      ArrayList<Integer> list = new ArrayList();
+ 
+      System.out.print("The value of union of the sorted arrays is: ");
+  
+      while(i < x && j < y) {
+        if(array[i] < array1[j]) {
+          list.add(array[i]);	
+          i++;  
+        }
+	else if(array[i] > array1[j]) {
+          list.add(array1[j]);		
+          j++;  
+        }   
+        else {
+          list.add(array[i]);
+          i++;
+          j++;
+        }
+      }
+  
+      while (i < array.length) {
+        list.add(array[i]);	  
         i++;
+      }
+  
+      while (j < array1.length) {
+        list.add(array1[j]);
         j++;
       }
-    }
   
-    while (i < array.length) {
-      list.add(array[i]);	  
-      i++;
-    }
+      Set<Integer> uniqueSet = new TreeSet<Integer>(list);
   
-    while (j < array1.length) {
-      list.add(array1[j]);
-      j++;
-    }
-  
-    Set<Integer> uniqueSet = new TreeSet<Integer>(list);
-  
-    for(Integer k : uniqueSet) {
-      System.out.print(k + " ");
-    }
-    System.out.println();	
-  }
+      for(Integer k : uniqueSet) {
+        System.out.print(k + " ");
+      }
+      System.out.println();	
+   }
  
-  public static void main(String[] args) throws NumberFormatException, IOException {
-	  
+   public static void main(String[] args) throws NumberFormatException, IOException {	  
      Scanner input = new Scanner(System.in);
      System.out.print("Enter number of elements in the first array: ");
      int number = input.nextInt();  
@@ -114,7 +108,7 @@ public class UnionAndIntersection {
      int choice = 0;
      System.out.println();	
 	    
-     do {	
+     do{	
 	  System.out.println("1. To calculate the interection of the sorted arrays.");
 	  System.out.println("2. To calculate the union of the sorted arrays.");
 	  System.out.println("3. For exiting from the program.");
@@ -130,7 +124,7 @@ public class UnionAndIntersection {
 	    case 2:  getUnion(array, array1);
 	             break;    
 	  }
-	 System.out.print("\n");
-     } while(choice!=3);
-  }     
-}
+	  System.out.print("\n");
+       } while(choice!=3);
+   }     
+ }
