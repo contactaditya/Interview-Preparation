@@ -27,27 +27,27 @@ import java.io.*;
     }
 
     public static void main(String[] args) {   
-       Scanner input = new Scanner(System.in);
-       System.out.print("Enter number of elements in the array: ");
-       int numbers = input.nextInt();   
-       int array[] = new int[numbers];
+      Scanner input = new Scanner(System.in);
+      System.out.print("Enter number of elements in the array: ");
+      int numbers = input.nextInt();   
+      int array[] = new int[numbers];
 	    
-       System.out.print("\n");
-       System.out.print("Please enter the actual values in the array: ");
-       for (int i = 0; i < numbers; i++) {
-	 array[i] = input.nextInt(); 
-       }
+      System.out.print("\n");
+      System.out.print("Please enter the actual values in the array: ");
+      for (int i = 0; i < numbers; i++) {
+	array[i] = input.nextInt(); 
+      }
 	  
-       System.out.println();	
-       System.out.print("Please enter a number k which is smaller than the size of the array: ");
-       int k = input.nextInt();   
-       boolean checkDuplicates = checkDuplicatesWithinKDistance(array, k);
-       System.out.println();
-       if(checkDuplicates) {
-	 System.out.println("There are duplicates which are within k distance.");
-       }
-       else {
-	 System.out.println("All duplicates are more than k distance away.");  
-       }
+      System.out.println();	
+      System.out.print("Please enter a number k which is smaller than the size of the array: ");
+      int k = input.nextInt();   
+      boolean checkDuplicates = checkDuplicatesWithinKDistance(array, k);
+      System.out.println();
+      if(checkDuplicates) {
+	System.out.println("There are duplicates which are within k distance.");
+      }
+      else {
+	System.out.println("All duplicates are more than k distance away.");  
+      }
     }
   }
