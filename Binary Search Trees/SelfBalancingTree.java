@@ -1,21 +1,20 @@
 import java.util.*;
 import java.io.*;
 
-  class AVLNode {
-    int data;
-    int height;
-    AVLNode left;
-    AVLNode right;
+ class AVLNode {
+   int data;
+   int height;
+   AVLNode left;
+   AVLNode right;
 		   
-    public AVLNode(int item) {
-       data = item;
-       int height = 1;
-       left = right = null;
-    }
-  }
+   public AVLNode(int item) {
+     data = item;
+     int height = 1;
+     left = right = null;
+   }
+ }
 
  public class SelfBalancingTree {
-	
    AVLNode root;	    
    AVLNode previous;
    
@@ -66,55 +65,54 @@ import java.io.*;
    }  
    
    public AVLNode insert(AVLNode root, int value) {
-      if(root == null) {	   
-	 AVLNode node = new AVLNode(value);
-	 root = node;
-      }    	          
-      if (root.data > value) {    
-	root.left = insert(root.left, value);
-      }
-      else if (root.data < value) { 
-	root.right = insert(root.right, value);
-      } 
-      else {
-	return root;	 
-      }
+     if(root == null) {	   
+       AVLNode node = new AVLNode(value);
+       root = node;
+     }    	          
+     if (root.data > value) {    
+       root.left = insert(root.left, value);
+     }
+     else if (root.data < value) { 
+       root.right = insert(root.right, value);
+     } 
+     else {
+       return root;	 
+     }
 	 
-      /* Update height of this ancestor node */
-      root.height = 1 + Math.max(height(root.left), height(root.right));
+     /* Update height of this ancestor node */
+     root.height = 1 + Math.max(height(root.left), height(root.right));
 	 
-      /* Get the balance factor of this ancestor node to check whether this node became unbalanced */
-      int balance = getBalance(root);
+     /* Get the balance factor of this ancestor node to check whether this node became unbalanced */
+     int balance = getBalance(root);
 	 
-      // If this node becomes unbalanced, then there are 4 cases:
+     // If this node becomes unbalanced, then there are 4 cases:
 	 
-      // Left Left Case y is left child of z and x is left child of y 
-      if (balance > 1 && value < root.left.data) {
-	 return rightRotate(root); 
-      }
+     // Left Left Case y is left child of z and x is left child of y 
+     if (balance > 1 && value < root.left.data) {
+       return rightRotate(root); 
+     }
 	 
-      // Right Right Case y is right child of z and x is right child of y 
-      if (balance < -1 && value > root.right.data) {
-	 return leftRotate(root); 
-      }
+     // Right Right Case y is right child of z and x is right child of y 
+     if (balance < -1 && value > root.right.data) {
+       return leftRotate(root); 
+     }
 	 
-      // Left Right Case  y is left child of z and x is right child of y
-      if (balance > 1 && value > root.left.data) {
-	 root.left = leftRotate(root.left); 
-	 return rightRotate(root); 
-      }
+     // Left Right Case  y is left child of z and x is right child of y
+     if (balance > 1 && value > root.left.data) {
+       root.left = leftRotate(root.left); 
+       return rightRotate(root); 
+     }
 	 
-      // Right Left Case y is right child of z and x is left child of y
-      if (balance < -1 && value < root.right.data) {
-	 root.right = rightRotate(root.right);  
-	 return leftRotate(root); 
-      }
+     // Right Left Case y is right child of z and x is left child of y
+     if (balance < -1 && value < root.right.data) {
+       root.right = rightRotate(root.right);  
+       return leftRotate(root); 
+     }
 	 
      return root;   
    }
    
-   public void printInorderTraversal(AVLNode node) {
-		 
+   public void printInorderTraversal(AVLNode node) {		 
      if (node == null) {
        return;
      }
@@ -133,6 +131,5 @@ import java.io.*;
 	     
      System.out.print("Inorder traversal of binary tree is: ");
      tree.printInorderTraversal(tree.root);	
-
    }
  }
