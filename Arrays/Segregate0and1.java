@@ -6,7 +6,7 @@ import java.util.*;
     public static void segregate0and1(int[] array) {
       int left = 0, right = array.length - 1;
       while(left < right) {
-   	    /* Increment left index while we see 0 at left */
+   	/* Increment left index while we see 0 at left */
         while (array[left] % 2 == 0 && left < right) {
           left++; 
         }
@@ -25,24 +25,23 @@ import java.util.*;
     }	 
 	
     public static void main(String[] args) {
-       Scanner input = new Scanner(System.in);
-       System.out.print("Enter number of elements in the array: ");
-       int number = input.nextInt();  
-       int array[] = new int[number];
+      Scanner input = new Scanner(System.in);
+      System.out.print("Enter number of elements in the array: ");
+      int number = input.nextInt();  
+      int array[] = new int[number];
 			
-       System.out.println();	
-       System.out.print("Please enter the actual values in the array which are either 0 or 1: ");
-       for (int i = 0; i < array.length; i++) {
-	  array[i] = input.nextInt();
-       }
+      System.out.println();	
+      System.out.print("Please enter the actual values in the array which are either 0 or 1: ");
+      for (int i = 0; i < array.length; i++) {
+	array[i] = input.nextInt();
+      }
 				
-       segregate0and1(array);
-       System.out.print("\n");
+      segregate0and1(array);
+      System.out.print("\n");
 			    
-       System.out.print("The array after segregation is: ");
-       for (int i = 0; i < array.length; i++) {
-	 System.out.print(array[i] + " ");
-       }
-
+      System.out.print("The array after segregation is: ");
+      for (int i = 0; i < array.length; i++) {
+	System.out.print(array[i] + " ");
+      }
     }
   }
