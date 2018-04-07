@@ -2,28 +2,28 @@ import java.util.*;
 import java.io.*;
   
   class BinaryTreeNode {
-     int data;
-     BinaryTreeNode left;
-     BinaryTreeNode right;
-     BinaryTreeNode nextRight;
+    int data;
+    BinaryTreeNode left;
+    BinaryTreeNode right;
+    BinaryTreeNode nextRight;
 	   
-     public BinaryTreeNode(int item) {
-	data = item;
-	left = right = nextRight = null;
-     } 
+    public BinaryTreeNode(int item) {
+      data = item;
+      left = right = nextRight = null;
+    } 
   }
 
   public class ConnectNodesAtSameLevelInABinaryTree {
-      BinaryTreeNode root;	    
-      BinaryTreeNode previous;
+    BinaryTreeNode root;	    
+    BinaryTreeNode previous;
 	 
-      public static void connect(BinaryTreeNode node) {
+    public static void connect(BinaryTreeNode node) {
 	// Set the nextRight for root
 	node.nextRight = null;
 	  
         // Set the next right for rest of the nodes (other than root)
-	connectRecursion(node);
-      }
+        connectRecursion(node);
+    }
 	 
       public static void connectRecursion(BinaryTreeNode node) {
 	 // Base case
