@@ -18,32 +18,32 @@ import java.io.*;
     BinaryTreeNode previous;
 	 
     public static void connect(BinaryTreeNode node) {
-	// Set the nextRight for root
-	node.nextRight = null;
+      // Set the nextRight for root
+      node.nextRight = null;
 	  
-        // Set the next right for rest of the nodes (other than root)
-        connectRecursion(node);
+      // Set the next right for rest of the nodes (other than root)
+      connectRecursion(node);
     }
 	 
-      public static void connectRecursion(BinaryTreeNode node) {
-	 // Base case
-	 if (node == null) {
-	   return;
-	 }
+    public static void connectRecursion(BinaryTreeNode node) {
+      // Base case
+      if (node == null) {
+	return;
+      }
 	    
-	 if (node.left != null) {
-           node.left.nextRight = node.right;
-	 }
+      if (node.left != null) {
+        node.left.nextRight = node.right;
+      }
 		  
-	 if(node.right != null) {
-	    node.right.nextRight = (node.nextRight != null) ? node.nextRight.left : null;
-	 }
-		
-	 connectRecursion(node.left);
-	 connectRecursion(node.right);
-     }	 
+      if(node.right != null) {
+	node.right.nextRight = (node.nextRight != null) ? node.nextRight.left : null;
+      }
+		 
+      connectRecursion(node.left); 
+      connectRecursion(node.right);
+    }	 
 	 
-  public static void main(String[] args) { 
+    public static void main(String[] args) { 
       ConnectNodesAtSameLevelInABinaryTree tree = new ConnectNodesAtSameLevelInABinaryTree();
       tree.root = new BinaryTreeNode(10);
       tree.root.left = new BinaryTreeNode(8);
@@ -65,5 +65,5 @@ import java.io.*;
       int d = tree.root.left.left.nextRight != null ? tree.root.left.left.nextRight.data : -1;
       System.out.println();
       System.out.println("nextRight of " + tree.root.left.left.data + " is " + d);
+    }
   }
-}
