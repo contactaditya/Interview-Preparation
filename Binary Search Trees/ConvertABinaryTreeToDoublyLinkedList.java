@@ -26,7 +26,7 @@ import java.util.*;
       ConvertABinaryTreeToDoublyLinkedList(node.right); 
     }	
   
-    public static void printInorderTraversal(Node node) {	 
+    public static void printInorderTraversal(Node node){	 
       if (node == null) {
         return;
       }
