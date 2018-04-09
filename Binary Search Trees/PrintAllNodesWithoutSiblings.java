@@ -1,30 +1,27 @@
 import java.util.*;
 
- public class PrintAllNodesWithoutSiblings {    
-     Node root;	    
-     Node previous;
+  public class PrintAllNodesWithoutSiblings {    
+    Node root;	    
+    Node previous;
 
- public void printSingles(Node node) {	
-		 
-    if (node == null) {
-       return;
-    }
+    public void printSingles(Node node) {		 
+      if (node == null) {
+        return;
+      }
 	
-    if (node.left != null && node.right != null) {
+      if (node.left != null && node.right != null) {
         printSingles(node.left);
 	printSingles(node.right);
-    }
-	
-    else if (node.right != null) {
+      } 
+      else if (node.right != null) {
         System.out.print(node.right.data + " ");
         printSingles(node.right);
-    }
-	
-    else if (node.left != null) {
+      }
+      else if (node.left != null) {
        System.out.print( node.left.data + " ");
        printSingles(node.left);
     }	
- }
+  }
 
   public static void main(String[] args) { 	
     PrintAllNodesWithoutSiblings tree = new PrintAllNodesWithoutSiblings();
