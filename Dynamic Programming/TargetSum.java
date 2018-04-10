@@ -6,24 +6,24 @@ import java.io.*;
     public static int findTargetSumWays(int[] array, int targetSum) {
       int sum = 0; 
       for(int i: array) {
-    	 sum+=i;
+    	sum += i;
       }
-      if(targetSum>sum || targetSum<-sum) {
-    	 return 0;
+      if(targetSum > sum || targetSum <- sum) {
+    	return 0;
       }
-      int[] dp = new int[2*sum+1];
-      dp[0+sum] = 1;
-      for(int i = 0; i<array.length; i++) {
-        int[] next = new int[2*sum+1];
-        for(int k = 0; k<2*sum+1; k++) {
-          if(dp[k]!=0) {
+      int[] dp = new int[2 * sum + 1];
+      dp[0 + sum] = 1;
+      for(int i = 0; i < array.length; i++) {
+        int[] next = new int[2 * sum + 1];
+        for(int k = 0; k < 2 * sum + 1; k++) {
+          if(dp[k] != 0) {
             next[k + array[i]] += dp[k];
             next[k - array[i]] += dp[k];
           }
         }
         dp = next;
       }
-      return dp[sum+targetSum];        
+      return dp[sum + targetSum];        
     }	  
 
     public static void main(String[] args) { 	  
@@ -35,7 +35,7 @@ import java.io.*;
       System.out.println();
       System.out.print("Please enter the actual values in the array: "); 
       for (int i = 0; i < numbers; i++) {
-	 array[i] = input.nextInt(); 
+	array[i] = input.nextInt(); 
       }
       System.out.println();
       System.out.print("Enter the target sum: ");
@@ -43,7 +43,6 @@ import java.io.*;
 
       int result = findTargetSumWays(array, sum);
       System.out.println();
-      System.out.print("The number of ways to assign symbols to make sum of integers equal to target " + sum + " is: " + result);	
-	  
+      System.out.print("The number of ways to assign symbols to make sum of integers equal to target " + sum + " is: " + result);  
     }
   }
