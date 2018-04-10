@@ -19,9 +19,9 @@ public class AllPossiblePathsInABoard {
   
     // Calculating the total possible paths in which a player can complete the game
     for (int i = 1; i < rows; i++) {
-     for (int j = 1; j < columns; j++) {
-       count[i][j] = count[i-1][j] + count[i][j-1] + count[i-1][j-1];    
-     }          
+      for (int j = 1; j < columns; j++) {
+        count[i][j] = count[i-1][j] + count[i][j-1] + count[i-1][j-1];    
+      }          
     } 
 
     return count[rows-1][columns-1];
