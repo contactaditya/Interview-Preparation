@@ -4,18 +4,17 @@ import java.util.*;
 public class DijkstrasAlgorithm {
   public static final int vertices=9;	
   
-  // A function to find the vertex with minimum distance value, from the set of vertices not yet included in shortest path tree
-  
+  // A function to find the vertex with minimum distance value, from the set of vertices not yet included in shortest path tre
   public int minimumDistance(int distance[], Boolean shortestPathTreeSet[]) {
-     int minimum = Integer.MAX_VALUE;
-     int minimumIndex = -1;
+    int minimum = Integer.MAX_VALUE;
+    int minimumIndex = -1;
 	
-     for (int v = 0; v < vertices; v++) {
-	if (shortestPathTreeSet[v] == false && distance[v] <= minimum) {
-	   minimum = distance[v];
-	   minimumIndex = v;
-        }			
-     }
+    for (int v = 0; v < vertices; v++) {
+      if (shortestPathTreeSet[v] == false && distance[v] <= minimum) {
+	minimum = distance[v];
+	minimumIndex = v;
+      }			
+    }
 	  
     return minimumIndex;	  
   }
@@ -31,29 +30,27 @@ public class DijkstrasAlgorithm {
     int distance[] = new int[vertices];
     Boolean shortestPathTreeSet[] = new Boolean[vertices];
     
-    // Initialize all distances as INFINITE and shortestPathTreeSet[] as false
-    
+    // Initialize all distances as INFINITE and shortestPathTreeSet[] as false  
     for (int i = 0; i < vertices; i++) {
       distance[i] = Integer.MAX_VALUE;
       shortestPathTreeSet[i] = false;
     }
     
     // Distance of source vertex from itself is always 0
-    
     distance[source] = 0;
      
     for (int count = 0; count < vertices-1; count++) {
-     // Pick the minimum distance vertex from the set of vertices not yet processed. u is always equal to source in first iteration.	
+      // Pick the minimum distance vertex from the set of vertices not yet processed. u is always equal to source in first iteration.	
       int u = minimumDistance(distance, shortestPathTreeSet);	
-     // Mark the picked vertex as processed
+      // Mark the picked vertex as processed
       shortestPathTreeSet[u] = true;
       
-     // Update distance[v] only if is not in shortestPathTreeSet, there is an edge from u to v, and total weight of path from source to v through u is smaller than current value of distance[v] 
+      // Update distance[v] only if is not in shortestPathTreeSet, there is an edge from u to v, and total weight of path from source to v through u is smaller than current value of distance[v] 
       
       for (int v = 0; v < vertices; v++) {
-       if (!shortestPathTreeSet[v] && graph[u][v]!=0 && distance[u] != Integer.MAX_VALUE && distance[u]+graph[u][v] < distance[v])
-    	 distance[v] = distance[u] + graph[u][v]; 
-       }	
+        if (!shortestPathTreeSet[v] && graph[u][v]!=0 && distance[u] != Integer.MAX_VALUE && distance[u]+graph[u][v] < distance[v])
+    	  distance[v] = distance[u] + graph[u][v]; 
+      }	
     }  
     printSolution(distance, vertices);
   }
@@ -71,5 +68,5 @@ public class DijkstrasAlgorithm {
     
     DijkstrasAlgorithm d = new DijkstrasAlgorithm();
     d.dijkstra(graph, 0);
- }
+  }
 }
