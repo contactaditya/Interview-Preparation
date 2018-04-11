@@ -5,16 +5,16 @@ import java.io.*;
 	  
     public static String reverseWords(String string, int k) {  
       if (string == null || string.length() == 0) {
-	 return "";
+	return "";
       }
 			 
       char[] array = string.toCharArray();
       int n = array.length;
       int i = 0;
       while(i < n) {
-    	 int j = Math.min(i + k - 1, n - 1);
-         swap(array, i, j);
-         i += 2 * k;    
+    	int j = Math.min(i + k - 1, n - 1);
+        swap(array, i, j);
+        i += 2 * k;    
       }
       return string.valueOf(array);
     }  
@@ -28,17 +28,17 @@ import java.io.*;
     }	
 
     public static void main(String[] args) {
-       String string = new String();	  	
-       Scanner input = new Scanner(System.in);
-       System.out.print("Enter the string: ");
-       string = input.nextLine(); 
+      String string = new String();	  	
+      Scanner input = new Scanner(System.in);
+      System.out.print("Enter the string: ");
+      string = input.nextLine(); 
 		  
-       System.out.println();
-       System.out.print("Enter how many characters you want to reverse: ");
-       int k = input.nextInt();  
+      System.out.println();
+      System.out.print("Enter how many characters you want to reverse: ");
+      int k = input.nextInt();  
 		  
-       String reverse = reverseWords(string,k);
-       System.out.println();
-       System.out.println("The string after reversing " + k + " characters is: " + reverse);	
+      String reverse = reverseWords(string,k);
+      System.out.println();
+      System.out.println("The string after reversing " + k + " characters is: " + reverse);	
     }
   }
