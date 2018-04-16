@@ -41,32 +41,31 @@ import java.io.*;
     	  }
     	}
       }
-    		 
-	  return result;
-	}	
+      return result;
+    }	
 
-	public static void main(String[] args) {  
-	  Scanner input = new Scanner(System.in);
-	  System.out.print("Enter number of elements in the array: ");
-	  int numbers = input.nextInt();   
-	  int array[] = new int[numbers];
+    public static void main(String[] args) {  
+      Scanner input = new Scanner(System.in);
+      System.out.print("Enter number of elements in the array: ");
+      int numbers = input.nextInt();   
+      int array[] = new int[numbers];
 	    
-	  System.out.print("\n");
-	  System.out.print("Please enter the actual values in the array: ");
-	  for (int i = 0; i < numbers; i++) {
-		array[i] = input.nextInt(); 
-	  }
+      System.out.print("\n");
+      System.out.print("Please enter the actual values in the array: ");
+      for (int i = 0; i < numbers; i++) {
+	array[i] = input.nextInt(); 
+      }
 	   
-	  System.out.println();
-	  List<List<Integer>> result = new ArrayList<List<Integer>>();
+      System.out.println();
+      List<List<Integer>> result = new ArrayList<List<Integer>>();
 	   
-	  result = threeSum(array); 
-	  System.out.println();
-	  System.out.println("A solution set is: ");
-	  System.out.println('[');
-	  for(List<Integer> innerList : result) {
-		System.out.println(innerList + " ");
-	  }
-	  System.out.println(']');
-	}
+      result = threeSum(array); 
+      System.out.println();
+      System.out.println("A solution set is: ");
+      System.out.println('[');
+      for(List<Integer> innerList : result) {
+	System.out.println(innerList + " ");
+      }
+      System.out.println(']');
+    }
  }
