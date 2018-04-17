@@ -3,47 +3,46 @@ import java.util.*;
  public class LongestIncreasingSubsequence {
 
    public static void LongestIncreasingSubsequence(int[] array) {
-      if(array.length == 0 || array == null) {
-        return;  
-      }
+     if(array.length == 0 || array == null) {
+       return;  
+     }
   
-      int n = array.length; 
-      int LIS[] = new int[n];
-      int max = 0;
-      ArrayList<Integer> elements = new ArrayList<>();
+     int n = array.length; 
+     int LIS[] = new int[n];
+     int max = 0;
+     ArrayList<Integer> elements = new ArrayList<>();
  
-      for (int i = 0; i < n; i++ ) {
-        LIS[i] = 1;
-      } 
+     for (int i = 0; i < n; i++ ) {
+       LIS[i] = 1;
+     } 
   
-      for(int i = 1; i < n; i++) {
+     for(int i = 1; i < n; i++) {
        for (int j = 0; j < i; j++) {
          if(array[i] > array[j] && LIS[i] < LIS[j] + 1) {
            LIS[i] = LIS[j] + 1; 
          }	   
        }
-      }
+     }
  
-      for(int i = 0; i < n; i++) {
-        if(LIS[i] > max) {
-          max = LIS[i];  
-        }
-      }
+     for(int i = 0; i < n; i++) {
+       if(LIS[i] > max) {
+         max = LIS[i];  
+       }
+     }
    
-      for(int i = n-1; i >= 0; i--) {
-        if(LIS[i] == max) {
-          elements.add(array[i]);   
-          max = max - 1;
-          if(max == 0) {
-            break;
-          }
-        }
-      }	
+     for(int i = n-1; i >= 0; i--) {
+       if(LIS[i] == max) {
+         elements.add(array[i]);   
+         max = max - 1;
+         if(max == 0) {
+           break;
+         }
+       }
+     }	
  
-      Collections.reverse(elements);
-      System.out.println(); 
-      System.out.print("The Longest Increasing Subsequence is: " + elements); 
- 
+     Collections.reverse(elements);
+     System.out.println(); 
+     System.out.print("The Longest Increasing Subsequence is: " + elements);
    }
  
    public static void LongestIncreasingSubsequence1(int[] array) {
@@ -72,7 +71,6 @@ import java.util.*;
    } 
   
    public static void LongestIncreasingSubsequence2(int array[]) {
-  
      int parent[]= new int[array.length]; //Tracking the predecessors/parents of elements of each subsequence.
      int increasingSub[]= new int[array.length + 1]; //Tracking ends of each increasing subsequence.
      int length = 0; //Length of longest subsequence.
@@ -99,7 +97,7 @@ import java.util.*;
           
        //Update the length of the longest subsequence.
        if(position > length) {
-        length = position;
+         length = position;
        }
      }
       
