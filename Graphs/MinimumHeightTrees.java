@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 
- public class MinimumHeightTrees { 	
+  public class MinimumHeightTrees { 	
     Node root;	    
     Node previous; 
     
@@ -77,4 +77,4 @@ import java.io.*;
       result = findMinHeightTrees(n, edges); 
       System.out.println("A list of the root labels of all the minimum height trees is as follows: " + result);
     }
- }
+  }
