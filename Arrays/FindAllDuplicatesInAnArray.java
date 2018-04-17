@@ -4,14 +4,14 @@ import java.util.*;
  public class FindAllDuplicatesInAnArray {
 	
    public static List<Integer> findDuplicates(int array[]) {
-       List<Integer> result = new ArrayList<Integer>();
-       for (int i = 0; i < array.length; ++i) {
-         int index = Math.abs(array[i])-1;
-         if (array[index] < 0) {
-            result.add(Math.abs(index+1));
-         }
-         array[index] = -array[index];
+     List<Integer> result = new ArrayList<Integer>();
+     for (int i = 0; i < array.length; ++i) {
+       int index = Math.abs(array[i])-1;
+       if (array[index] < 0) {
+         result.add(Math.abs(index+1));
        }
+       array[index] = -array[index];
+     }
      return result;
    }
 
@@ -24,7 +24,7 @@ import java.util.*;
      System.out.println();	
      System.out.print("Please enter the actual numbers in the array: ");
      for (int i = 0; i < array.length; i++) {
-        array[i] = input.nextInt();
+       array[i] = input.nextInt();
      }
      List<Integer> duplicates = new ArrayList<Integer>();
      duplicates = findDuplicates(array);  
