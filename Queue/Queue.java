@@ -2,70 +2,69 @@ import java.io.*;
 import java.util.*;
 
   public class Queue {
-	
     private static LinkedList<Object> queue = new LinkedList<Object>();
 	
     public static void enqueue(Object object) {
-      /**
-       * Add an item to back of queue.
-       */
-       queue.addLast(object);
+     /**
+      * Add an item to back of queue.
+      */
+      queue.addLast(object);
     }
 
     public static Object dequeue() {
-      /**
-       * Removes the next item from the front of the queue.	 
-       */	 
-       if(queue.isEmpty()) {
-         System.out.println("The queue is already empty. No element can be removed from the queue.");  
-         return -1;
-       }
-       return queue.removeFirst();
+     /**
+      * Removes the next item from the front of the queue.	 
+      */	 
+      if(queue.isEmpty()) {
+        System.out.println("The queue is already empty. No element can be removed from the queue.");  
+        return -1;
+      }
+      return queue.removeFirst();
     }
 
     public static boolean isEmpty() {
-      /**
-       *Test if the queue is empty.
-       */
-       System.out.println();	    
-       if(queue.isEmpty()) {	   
-         System.out.println("The queue is currently empty and has no elements.");	 	  	   
-       }
-       else {
-         System.out.println("The queue is currently not empty.");	 		   
-       }
-       return queue.isEmpty();
+     /**
+      *Test if the queue is empty.
+      */
+      System.out.println();	    
+      if(queue.isEmpty()) {	   
+        System.out.println("The queue is currently empty and has no elements.");	 	  	   
+      }
+      else {
+        System.out.println("The queue is currently not empty.");	 		   
+      }
+      return queue.isEmpty();
     }
  
     public static int size() {
-      /**
-       * Returns the number of items currently in the queue.
-       */
-       System.out.println();
-       System.out.println("The size of the queue is: " + queue.size());	 
-       return queue.size();
+     /**
+      * Returns the number of items currently in the queue.
+      */
+      System.out.println();
+      System.out.println("The size of the queue is: " + queue.size());	 
+      return queue.size();
     }
  
     public static void display() {
-      /**
-       * Displays all the contents of the queue.
-       */
-       System.out.println();	    
-       System.out.println("Contents of the queue are: " + queue);
+     /**
+      * Displays all the contents of the queue.
+      */
+      System.out.println();	    
+      System.out.println("Contents of the queue are: " + queue);
     }
  
     public static Object peek() {
-      /**
-       * Returns the front item from the queue without popping it.
-       */	 
-       if(queue.isEmpty()) {  
-         System.out.println("The queue is empty so we can't see the front item of the queue.");  
-         return -1;
-       }	 
-       else {
-         System.out.println("The following element is the top element of the queue:" + queue.getFirst());  	  
-       }
-       return queue.getFirst();
+     /**
+      * Returns the front item from the queue without popping it.
+      */	 
+      if(queue.isEmpty()) {  
+        System.out.println("The queue is empty so we can't see the front item of the queue.");  
+        return -1;
+      }	 
+      else {
+        System.out.println("The following element is the top element of the queue:" + queue.getFirst());  	  
+      }
+      return queue.getFirst();
     }
  	
     public static void main(String[] args) throws NumberFormatException, IOException {  
