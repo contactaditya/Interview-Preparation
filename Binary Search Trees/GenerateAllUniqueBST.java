@@ -11,28 +11,27 @@ import java.io.*;
     }   
     
     public static List<Node> generate(int min, int max) { 
-       List<Node> result = new ArrayList<Node>();
-       if(min > max) {
-   	 result.add(null);
-         return result;    
-       }
-       for(int i=min; i<=max; i++) {
+      List<Node> result = new ArrayList<Node>();
+      if(min > max) {
+   	result.add(null);
+        return result;    
+      }
+      for(int i=min; i<=max; i++) {
         List<Node> left = generate(min, i-1);
         List<Node> right = generate(i+1, max);
         for(Node l: left) {
-         for(Node r: right) {
-           Node root = new Node(i);  
-           root.left = l;
-           root.right = r;
-           result.add(root);
-         }
+          for(Node r: right) {
+            Node root = new Node(i);  
+            root.left = l;
+            root.right = r;
+            result.add(root);
+          }
         }
-       }
+      }
       return result;
     }
     
-    public static void printPreorderTraversal(Node node) {
-		 
+    public static void printPreorderTraversal(Node node) {	 
       if (node == null) {
     	return;
       }
