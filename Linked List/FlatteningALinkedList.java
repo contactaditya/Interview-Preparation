@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 
- class LinkedListNode1 {
+   class LinkedListNode1 {
      public Object data; 
      public LinkedListNode1 right;
      public LinkedListNode1 down;
@@ -43,9 +43,9 @@ import java.io.*;
      public void setDown(LinkedListNode1 down) {
 	this.down = down;
      }
-  }
+   }
 
-  public class FlatteningALinkedList {
+   public class FlatteningALinkedList {
      private static LinkedListNode1 head;
      private static int size;  
     
@@ -64,50 +64,47 @@ import java.io.*;
        return root;
      }
     
-    public static LinkedListNode1 MergeLists(LinkedListNode1 headA, LinkedListNode1 headB) {
-        LinkedListNode1 list = headA;
- 	LinkedListNode1 list1 = headB;
+     public static LinkedListNode1 MergeLists(LinkedListNode1 headA, LinkedListNode1 headB) {
+       LinkedListNode1 list = headA;
+       LinkedListNode1 list1 = headB;
  	       
- 	if (list == null && list1 == null) {
- 	   return null; 
- 	}
+       if (list == null && list1 == null) {
+ 	 return null; 
+       }
  	   
- 	// If first linked list is empty then second linked list is the answer
- 	      
- 	if (list == null) {
- 	   return list1; 
- 	}
+       // If first linked list is empty then second linked list is the answer
+       if (list == null) {
+ 	 return list1; 
+       }
  	   
- 	// If second linked list is empty then first linked list is the answer
- 	    	   
- 	if (list1 == null) {
- 	   return list;
- 	}
+       // If second linked list is empty then first linked list is the answer
+       if (list1 == null) {
+ 	 return list;
+       }
  	   
- 	// Compare the data members of the two linked lists and put the larger one in the result
- 	   
- 	LinkedListNode1 result;
+       // Compare the data members of the two linked lists and put the larger one in the result
+       LinkedListNode1 result;
 
- 	if ((int)list.data < (int)list1.data) {
- 	   result = list;  
- 	   list.down = MergeLists(list.down, list1);
- 	} else {
-           result = list1;  
- 	   list1.down = MergeLists(list1.down, list);
- 	}
+       if ((int)list.data < (int)list1.data) {
+ 	 result = list;  
+ 	 list.down = MergeLists(list.down, list1);
+       } else {
+         result = list1;  
+ 	 list1.down = MergeLists(list1.down, list);
+       }
  	   
        return result;
-    }
+     }
     
-    public static void PrintElementsOfALinkedList(LinkedListNode1 head) {	 
+     public static void PrintElementsOfALinkedList(LinkedListNode1 head) {	 
        LinkedListNode1 current = head; 
        while(current != null) {	   
-	  System.out.print(current.getData() + " ");	 	
-          current = current.down;
+	 System.out.print(current.getData() + " ");	 	
+         current = current.down;
        }
-    } 		
+     } 		
 
-    public static void main(String[] args) {
+     public static void main(String[] args) {
        FlatteningALinkedList list = new FlatteningALinkedList();
        list.head = new LinkedListNode1(5);
        list.head.down = new LinkedListNode1(7);
@@ -127,5 +124,5 @@ import java.io.*;
 		  
        System.out.print("Linked List after flattening is: ");	 
        list.PrintElementsOfALinkedList(head);
-    }
- }
+     }
+   }
