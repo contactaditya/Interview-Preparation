@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 
-  public class FlattenBinaryTreeToLinkedList { 
+   public class FlattenBinaryTreeToLinkedList { 
      static Node root;	    
      static Node previous;
 	 
@@ -27,43 +27,42 @@ import java.io.*;
      }
 	 
      public static void getFlatten1(Node root) {
-	if(root == null) {
-	  return; 
-	}
+       if(root == null) {
+	 return; 
+       }
 			  
-	Stack<Node> stack = new Stack<Node>();
-        stack.push(root);
+       Stack<Node> stack = new Stack<Node>();
+       stack.push(root);
         
-        while (!stack.empty()) {
-          Node node = stack.pop();
-          if (node.right != null) {
-            stack.push(node.right);
-          }
-          if (node.left != null) {
-            stack.push(node.left);
-          }
+       while (!stack.empty()) {
+         Node node = stack.pop();
+         if (node.right != null) {
+           stack.push(node.right);
+         }
+         if (node.left != null) {
+           stack.push(node.left);
+         }
           
-          node.left = null;
-          if (stack.empty()) {
-            node.right = null;
-          } else {
-            node.right = stack.peek();
-          } 
-        }
+         node.left = null;
+         if (stack.empty()) {
+           node.right = null;
+         } else {
+           node.right = stack.peek();
+         } 
+       }
      }
 	 
-    public void printInorderTraversal(Node node) {
-		 
+     public void printInorderTraversal(Node node) {	 
        if (node == null) {
-	  return;
+	 return;
        }
 		 
        printInorderTraversal(node.left);
        System.out.print(node.data + " ");	
        printInorderTraversal(node.right); 
-    }
+     }
 	  
-    public static void main(String[] args) { 
+     public static void main(String[] args) { 
        FlattenBinaryTreeToLinkedList tree = new FlattenBinaryTreeToLinkedList();
        tree.root = new Node(1);
        tree.root.left = new Node(2);
@@ -75,6 +74,5 @@ import java.io.*;
        tree.getFlatten(tree.root);	
        System.out.print("Inorder traversal of binary tree is: ");
        tree.printInorderTraversal(tree.root);		
-
-    }
-  }
+     }
+   }
