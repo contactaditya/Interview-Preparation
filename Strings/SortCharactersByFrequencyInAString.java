@@ -1,11 +1,11 @@
 import java.util.*;
 import java.io.*;
 
- public class SortCharactersByFrequencyInAString {
+  public class SortCharactersByFrequencyInAString {
 	
     public static String frequencySort(String string) {
       if(string == null || string.length() <= 1) {
-         return string;	
+        return string;	
       }
       Map<Character, Integer> map = new HashMap<>();
       for (char c : string.toCharArray()) {
@@ -38,12 +38,12 @@ import java.io.*;
     }	 
 
     public static void main(String[] args) {   
-       String string = new String();	  
-       Scanner input = new Scanner(System.in);
-       System.out.print("Enter the string: ");
-       string = input.nextLine(); 
-       String result = frequencySort(string);
-       System.out.println();
-       System.out.println("The string in decreasing order based on the frequency of characters is: " + result);
+      String string = new String();	  
+      Scanner input = new Scanner(System.in);
+      System.out.print("Enter the string: ");
+      string = input.nextLine(); 
+      String result = frequencySort(string);
+      System.out.println();
+      System.out.println("The string in decreasing order based on the frequency of characters is: " + result);
     }
- }
+  }
