@@ -29,7 +29,7 @@ import java.io.*;
       System.out.println();
       System.out.println("Please enter the actual values of the points: ");
       for(int i=0; i < x; i++) {
-        for(int j=0; j < 2; j++){
+        for(int j=0; j < 2; j++) {
           points[i][j] = input.nextInt();
         }
       }
