@@ -16,15 +16,13 @@ import java.util.*;
         return node;
       }
 	    
-      // If current nodes is a half node with left child NULL left, then it's right child is returned and replaces it in the given tree.
-	    
+      // If current nodes is a half node with left child NULL left, then it's right child is returned and replaces it in the given tree.  
       if (node.left == null) {
         Node newRoot = node.right;
         return newRoot;
       }
 	    
       // If current nodes is a half node with right child NULL right, then it's left child is returned and replaces it in the given tree.
-	     
       if (node.right == null) {
 	Node newRoot = node.left;
         return newRoot;
