@@ -3,24 +3,24 @@ import java.io.*;
 
   public class OptimalDivision {
 	  
-	public static String optimalDivision(int[] array) {   
-	  if (array.length == 1) {
+    public static String optimalDivision(int[] array) {   
+      if (array.length == 1) {
         return array[0] + "";
-	  }
-	  if (array.length == 2) {
+      }
+      if (array.length == 2) {
         return array[0] + "/" + array[1];
-	  }
-	  StringBuilder result = new StringBuilder(array[0] + "/(" + array[1]);
-	  for (int i = 2; i < array.length; i++) {
+      }
+      StringBuilder result = new StringBuilder(array[0] + "/(" + array[1]);
+      for (int i = 2; i < array.length; i++) {
         result.append("/" + array[i]);
       }
-	  result.append(")");
+      result.append(")");
 		
-	  return result.toString();      
-	}	  
+      return result.toString();      
+    }	  
 
-	public static void main(String[] args) {    
-	  Scanner input = new Scanner(System.in);
+    public static void main(String[] args) {    
+      Scanner input = new Scanner(System.in);
       System.out.print("Enter number of elements in the array: ");
       int number = input.nextInt();  
       int array[] = new int[number];
@@ -34,5 +34,5 @@ import java.io.*;
       String maxResult = optimalDivision(array);
       System.out.println();	
       System.out.print("The corresponding expression that gives the maximum result in string format is: " + maxResult);
-	}
+    }
   }
