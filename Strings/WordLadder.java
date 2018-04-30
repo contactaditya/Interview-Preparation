@@ -3,8 +3,8 @@ import java.io.*;
 
   public class WordLadder {
 	  
-	public static int ladderLength(String beginWord, String endWord, List<String> wordList) {   
-	  HashSet<String> wordDictionary = new HashSet<String>(wordList);
+    public static int ladderLength(String beginWord, String endWord, List<String> wordList) {   
+      HashSet<String> wordDictionary = new HashSet<String>(wordList);
       if(!wordDictionary.contains(endWord)) {
     	return 0;
       }
@@ -45,28 +45,28 @@ import java.io.*;
       return 0; 
     }	  
 
-	public static void main(String[] args) {       
-	  String beginWord = new String();	  
-	  Scanner input = new Scanner(System.in);
-	  System.out.print("Enter the begin word: ");
-	  beginWord = input.nextLine();  
-	  System.out.println();	
-	  String endWord = new String();	  
-	  System.out.print("Enter the end word: ");
-	  endWord = input.nextLine();
-	  System.out.println();	
-	  System.out.print("Enter the number of words in the word list: ");
-	  int numberOfWords = input.nextInt();
-	  System.out.println();
-	  input.nextLine();
-	  System.out.println("Please enter the actual words in the word list: ");
-	  List<String> wordList = new ArrayList<String>();
-	  for (int i = 0; i < numberOfWords; i++) {
-		wordList.add(input.nextLine());
-	  }		 
+    public static void main(String[] args) {       
+      String beginWord = new String();	  
+      Scanner input = new Scanner(System.in);
+      System.out.print("Enter the begin word: ");
+      beginWord = input.nextLine();  
+      System.out.println();	
+      String endWord = new String();	  
+      System.out.print("Enter the end word: ");
+      endWord = input.nextLine();
+      System.out.println();	
+      System.out.print("Enter the number of words in the word list: ");
+      int numberOfWords = input.nextInt();
+      System.out.println();
+      input.nextLine();
+      System.out.println("Please enter the actual words in the word list: ");
+      List<String> wordList = new ArrayList<String>();
+      for (int i = 0; i < numberOfWords; i++) {
+	wordList.add(input.nextLine());
+      }		 
 	  
-	  int lengthOfSequence = ladderLength(beginWord, endWord, wordList);
-	  System.out.println();
-	  System.out.println("The length of shortest transformation sequence from " + beginWord + " to " + endWord + " is: " + lengthOfSequence);
-	}
+      int lengthOfSequence = ladderLength(beginWord, endWord, wordList);
+      System.out.println();
+      System.out.println("The length of shortest transformation sequence from " + beginWord + " to " + endWord + " is: " + lengthOfSequence);
+    }
   }
