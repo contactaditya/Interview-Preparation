@@ -4,7 +4,7 @@ import java.io.*;
   public class MinimumAbsoluteDifferenceInBST {
     Node root;	     
     int min = Integer.MAX_VALUE;
-    integer previous = null;
+    Integer previous = null;
 
     public int getMinimumDifference(Node root) {		 
       if (root == null) {
