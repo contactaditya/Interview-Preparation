@@ -3,7 +3,7 @@ import java.io.*;
 
   public class AccountsMerge {
 	  
-	public static List<List<String>> accountsMerge(List<List<String>> accounts) {  
+    public static List<List<String>> accountsMerge(List<List<String>> accounts) {  
       int n = accounts.size(); //how many group at most
       int[] union = new int[n];
       Arrays.fill(union, -1); 
@@ -45,36 +45,36 @@ import java.io.*;
       }
       
       return result;
-	}  
+    }  
 
-	private static int find(int x, int[] union) {
+    private static int find(int x, int[] union) {
       while(x != union[x]) {
-	    x = union[x];
-	    union[x] = union[union[x]];
-	  }
-	  return x;
-	}
+	x = union[x];
+	union[x] = union[union[x]];
+      }
+      return x;
+    }
 
-	public static void main(String[] args) {   
-	  Scanner input = new Scanner(System.in);
-	  System.out.print("Enter the total number of accounts: ");
-	  int numberofAccounts = input.nextInt();   
-	  input.nextLine();
+    public static void main(String[] args) {   
+      Scanner input = new Scanner(System.in);
+      System.out.print("Enter the total number of accounts: ");
+      int numberofAccounts = input.nextInt();   
+      input.nextLine();
 		 	   
-	  List<List<String>> accounts = new ArrayList<List<String>>();
+      List<List<String>> accounts = new ArrayList<List<String>>();
       for (int i = 0; i < numberofAccounts; i++) {
-	    List<String> account = new ArrayList<String>();  
-		System.out.println(); 
-		System.out.print("Please enter the number of entries in the account: ");	  
-		int numberofEntries = input.nextInt();  
-		System.out.println(); 
-		input.nextLine();
-		System.out.println("Please enter the actual values of entries in the account: ");	
-		for (int j = 0; j < numberofEntries; j++) {
-		  account.add(input.nextLine());
-		}
-		accounts.add(account);
-	  }
+	List<String> account = new ArrayList<String>();  
+	System.out.println(); 
+	System.out.print("Please enter the number of entries in the account: ");	  
+	int numberofEntries = input.nextInt();  
+	System.out.println(); 
+	input.nextLine();
+	System.out.println("Please enter the actual values of entries in the account: ");	
+	for (int j = 0; j < numberofEntries; j++) {
+	  account.add(input.nextLine());
+	} 
+	accounts.add(account);
+      }
 	   	   
       List<List<String>> result = new ArrayList<List<String>>();
 	   
@@ -87,5 +87,5 @@ import java.io.*;
         System.out.println(" " + innerList);
       }
       System.out.println(']');
-	}
+    }
   }
