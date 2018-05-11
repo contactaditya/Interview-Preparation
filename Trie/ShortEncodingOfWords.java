@@ -20,8 +20,8 @@ import java.io.*;
 
   public class ShortEncodingOfWords {
 	  
-	public static int minimumLengthEncoding(String[] words) {   
-	  TrieNode5 trie = new TrieNode5();
+    public static int minimumLengthEncoding(String[] words) {   
+      TrieNode5 trie = new TrieNode5();
       Map<TrieNode5, Integer> nodes = new HashMap<TrieNode5, Integer>();
       for (int i = 0; i < words.length; i++) {
         String word = words[i];
@@ -40,23 +40,23 @@ import java.io.*;
       }
       
       return answer;
-	}	  
+    }	  
 
-	public static void main(String[] args) { 	 
-	  Scanner input = new Scanner(System.in); 
-	  System.out.print("Enter number of words in the list: ");
-	  int numbers = input.nextInt();   
-	  String words[] = new String[numbers];
+    public static void main(String[] args) { 	 
+      Scanner input = new Scanner(System.in); 
+      System.out.print("Enter number of words in the list: ");
+      int numbers = input.nextInt();   
+      String words[] = new String[numbers];
 		    
-	  System.out.println();
-	  input.nextLine();
-	  System.out.print("Please enter the actual words: ");
-	  System.out.println();
-	  for (int i = 0; i < numbers; i++) {
-		words[i] = input.nextLine(); 
-	  }
-	  int lengthOfShortestReferenceString = minimumLengthEncoding(words); 
-	  System.out.println();
-	  System.out.println("The length of the shortest reference string possible that encodes the given words is: " + lengthOfShortestReferenceString);
-	}
+      System.out.println();
+      input.nextLine();
+      System.out.print("Please enter the actual words: ");
+      System.out.println();
+      for (int i = 0; i < numbers; i++) {
+	words[i] = input.nextLine(); 
+      }
+      int lengthOfShortestReferenceString = minimumLengthEncoding(words); 
+      System.out.println();
+      System.out.println("The length of the shortest reference string possible that encodes the given words is: " + lengthOfShortestReferenceString);
+    }
   }
