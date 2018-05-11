@@ -3,8 +3,8 @@ import java.io.*;
 
   public class GoatLatin {
 	  
-	public static String toGoatLatin(String string) {   
-	  Set<Character> vowel = new HashSet<Character>();
+    public static String toGoatLatin(String string) {   
+      Set<Character> vowel = new HashSet<Character>();
       for (char c: new char[]{'a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'}) {
         vowel.add(c);
       }
@@ -30,14 +30,14 @@ import java.io.*;
       return answer.toString();
     }	  
 
-	public static void main(String[] args) {  
-	  Scanner input = new Scanner(System.in);
-	  String string = new String();	
-	  System.out.print("Enter the sentence: ");
-	  string = input.nextLine();  
+    public static void main(String[] args) {  
+      Scanner input = new Scanner(System.in);
+      String string = new String();	
+      System.out.print("Enter the sentence: ");
+      string = input.nextLine();  
 	  
-	  String result = toGoatLatin(string);
-	  System.out.println();
-	  System.out.print("The final sentence representing the conversion from " + string + " to Goat Latin is: " + result);
-	}
+      String result = toGoatLatin(string);
+      System.out.println();
+      System.out.print("The final sentence representing the conversion from " + string + " to Goat Latin is: " + result);
+    }
   }
