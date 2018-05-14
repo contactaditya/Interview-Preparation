@@ -3,12 +3,12 @@ import java.io.*;
 
   public class ZeroOneMatrix {
 	  
-	public static int[][] updateMatrix(int[][] matrix) {
-	  int rows = matrix.length;
+    public static int[][] updateMatrix(int[][] matrix) {
+      int rows = matrix.length;
       int columns = matrix[0].length;
-	  if (rows == 0 || matrix[0].length == 0) {
-		return matrix;
-	  }
+      if (rows == 0 || matrix[0].length == 0) {
+	return matrix;
+      }
       
       //First pass: check for left and top
       for (int i = 0; i < rows; i++) {
@@ -32,32 +32,32 @@ import java.io.*;
         }
       }
 		
-	  return matrix;      
-	}  
+      return matrix;      
+    }  
 	   
-	public static void main(String[] args) { 	
-	  Scanner input = new Scanner(System.in);
-	  System.out.print("Please enter the number of rows in the matrix: ");
-	  int x = input.nextInt();  
-	  System.out.println();
-	  System.out.print("Please enter the number of columns in the matrix: ");
-	  int y = input.nextInt();  
-	  int[][] array = new int[x][y];
-	  System.out.println();
-	  System.out.println("Please enter the actual values in the matrix: ");
-	  for(int i=0; i < x; i++) {
-        for(int j=0; j < y; j++){
+    public static void main(String[] args) { 	
+      Scanner input = new Scanner(System.in);
+      System.out.print("Please enter the number of rows in the matrix: ");
+      int x = input.nextInt();  
+      System.out.println();
+      System.out.print("Please enter the number of columns in the matrix: ");
+      int y = input.nextInt();  
+      int[][] array = new int[x][y];
+      System.out.println();
+      System.out.println("Please enter the actual values in the matrix: ");
+      for(int i=0; i < x; i++) {
+        for(int j=0; j < y; j++) {
          array[i][j] = input.nextInt();
         }
       }
-	  int result[][] = updateMatrix(array);	  
+      int result[][] = updateMatrix(array);	  
       System.out.println();
-      System.out.println("The distance of the nearest 0 for each cell in the updated matrix is: " );
+      System.out.println("The distance of the nearest 0 for each cell in the updated matrix is: ");
       for(int i = 0; i < result.length; i++) {
-	    for(int j = 0; j < result[i].length; j++) {
-	      System.out.print(result[i][j] + " "); 
-	    }
-	    System.out.println();
-      }
+        for(int j = 0; j < result[i].length; j++) {
+	  System.out.print(result[i][j] + " "); 
 	}
+        System.out.println();
+      }
+    }
   }
