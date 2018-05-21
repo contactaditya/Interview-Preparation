@@ -3,8 +3,8 @@ import java.io.*;
 
   public class FindAndReplaceInString {
 	  
-	public static String findReplaceString(String string, int[] indexes, String[] sources, String[] targets) {
-	  StringBuilder ans = new StringBuilder(string);
+    public static String findReplaceString(String string, int[] indexes, String[] sources, String[] targets) {
+      StringBuilder ans = new StringBuilder(string);
       int[] match = new int[string.length()];
       Arrays.fill(match, -1);
       
@@ -22,16 +22,16 @@ import java.io.*;
         }
       } 
 		
-	  return ans.toString();       
-	}	  
+      return ans.toString();       
+    }	  
 
-	public static void main(String[] args) { 	 
-	  Scanner input = new Scanner(System.in);
-	  String string = new String();	
-	  System.out.print("Enter a string: ");
-	  string = input.nextLine();  
+    public static void main(String[] args) { 	 
+      Scanner input = new Scanner(System.in);
+      String string = new String();	
+      System.out.print("Enter a string: ");
+      string = input.nextLine();  
 	  
-	  System.out.println();	
+      System.out.println();	
       System.out.print("Enter number of elements in the indexes: ");
       int number = input.nextInt();  
       int indexes[] = new int[number];
@@ -49,7 +49,7 @@ import java.io.*;
       System.out.print("Please enter the actual sources: ");
       System.out.println();
       for (int i = 0; i < number; i++) {
-	    sources[i] = input.nextLine(); 
+	sources[i] = input.nextLine(); 
       }
       
       String targets[] = new String[number];
@@ -62,8 +62,8 @@ import java.io.*;
         targets[i] = input.nextLine(); 
       }
 	
-	  String result = findReplaceString(string, indexes, sources, targets); 
-	  System.out.println();
-	  System.out.println("The string after replacement is: " + result);
-	}
+      String result = findReplaceString(string, indexes, sources, targets); 
+      System.out.println();
+      System.out.println("The string after replacement is: " + result);
+    }
   }
