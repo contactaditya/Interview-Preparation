@@ -3,24 +3,24 @@ import java.io.*;
 
   public class RomanToInteger {
 	  
-	public static int romanToInt(String string) { 
+    public static int romanToInt(String string) { 
       int array[] = new int[string.length()];
       for(int i = 0; i < string.length(); i++) {	
         switch(string.charAt(i)) {
           case 'M': array[i] = 1000;
                     break;
           case 'D': array[i] = 500;
-          			break;
+          	    break;
           case 'C': array[i] = 100;
-          			break;
+          	    break;
           case 'L': array[i] = 50;
-          			break;
+          	    break;
           case 'X': array[i] = 10;
-          			break;
+          	    break;
           case 'V': array[i] = 5;
-          			break;
+          	    break;
           case 'I': array[i] = 1;
-          			break;
+          	    break;
         }
       }
       int sum=0;
@@ -33,10 +33,10 @@ import java.io.*;
         }
       }
       return sum + array[array.length-1];
-	}
+    }
 
-	public static void main(String[] args) {     
-	  Scanner input = new Scanner(System.in);
+    public static void main(String[] args) {     
+      Scanner input = new Scanner(System.in);
       String string = new String();	
       System.out.print("Enter the string: ");
       string = input.nextLine(); 
@@ -44,5 +44,5 @@ import java.io.*;
       int result = romanToInt(string);
       System.out.println();
       System.out.print("The roman numeral " + string + " in integer form is: " + result);
-	}
+    }
   }
