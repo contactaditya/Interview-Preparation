@@ -3,12 +3,12 @@ import java.io.*;
 
   public class SimilarStringGroups {
 	  
-	public static int numSimilarGroups(String[] array) {  
-	  if(array == null || array.length == 0) {
+    public static int numSimilarGroups(String[] array) {  
+      if(array == null || array.length == 0) {
         return 0;
       }
-	  int result = 0;
-	  for(int i=0; i < array.length; i++){
+      int result = 0;
+      for(int i=0; i < array.length; i++){
         if(array[i] == null) {
           continue;
         }
@@ -18,11 +18,11 @@ import java.io.*;
         dfs(array, string);
       }
 		
-	  return result;      
-	}	  
+      return result;      
+    }	  
 	
-	private static void dfs(String[] array, String string) {
-	  for(int i=0; i < array.length; i++) {
+    private static void dfs(String[] array, String string) {
+      for(int i=0; i < array.length; i++) {
         if(array[i] == null) {
           continue;
         }
@@ -32,22 +32,22 @@ import java.io.*;
           dfs(array,s);
         }
       }	
-	}
+    }
 	
-	private static boolean helper(String s, String t) {
-	  int result = 0, i = 0;
-	  while(result <= 2 && i < s.length()) {
-	    if(s.charAt(i) != t.charAt(i)) {
-	      result++;
-	    }
-	    i++;
-	  }
-	        
-	  return result == 2;
+    private static boolean helper(String s, String t) {
+      int result = 0, i = 0;
+      while(result <= 2 && i < s.length()) {
+        if(s.charAt(i) != t.charAt(i)) {
+	  result++;
 	}
+	i++;
+      }
+	        
+      return result == 2;
+    }
 
-	public static void main(String[] args) {       
-	  Scanner input = new Scanner(System.in);
+    public static void main(String[] args) {       
+      Scanner input = new Scanner(System.in);
       System.out.print("Enter number of elements in the array: ");
       int numbers = input.nextInt();   
       String array[] = new String[numbers];
@@ -62,5 +62,5 @@ import java.io.*;
 	   
       System.out.println();
       System.out.print("The number of groups in the list of unique strings are: " + result);	
-	}
+    }
   }
