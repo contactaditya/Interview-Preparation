@@ -8,7 +8,7 @@ import java.io.*;
       for (int r = 0; r < grid.length-2; r++) {
         for (int c = 0; c < grid[0].length-2; c++) {
           if (magic(grid[r][c], grid[r][c+1], grid[r][c+2], grid[r+1][c], grid[r+1][c+1], grid[r+1][c+2], grid[r+2][c], grid[r+2][c+1], grid[r+2][c+2])) {
-        	numberOfMagicSqauresInside++;	 
+            numberOfMagicSqauresInside++;	 
           }
         }
       }
