@@ -3,10 +3,10 @@ import java.io.*;
 
   public class WordLadderII {
 	  
-	public static List<List<String>> findLadders(String beginWord, String endWord, List<String> wordList) {
-	  List<List<String>> result = new ArrayList<List<String>>(); 
-	  Set<String> dictionary = new HashSet<String>();
-	  dictionary.addAll(wordList);	
+    public static List<List<String>> findLadders(String beginWord, String endWord, List<String> wordList) {
+      List<List<String>> result = new ArrayList<List<String>>();  
+      Set<String> dictionary = new HashSet<String>();
+      dictionary.addAll(wordList);	
       if(!dictionary.contains(endWord)) {
         return result;
       }
@@ -23,13 +23,13 @@ import java.io.*;
       dfs(result, temp, map, beginWord, endWord);
 		
       return result;      
-	}	  
+    }	  
 
-	private static void dfs(List<List<String>> result, List<String> temp, Map<String, List<String>> map, String beginWord, String endWord) {
+    private static void dfs(List<List<String>> result, List<String> temp, Map<String, List<String>> map, String beginWord, String endWord) {
       if(beginWord.equals(endWord)) {
-	    result.add(new ArrayList<String>(temp));
-	    return;
-	  }
+	result.add(new ArrayList<String>(temp));
+	return;
+      }
       if(map.containsKey(beginWord)) {
         for(String string : map.get(beginWord)) { 
           temp.add(string);
@@ -37,9 +37,9 @@ import java.io.*;
           temp.remove(temp.size() - 1);
         }
       }
-	}
+    }
 
-	private static boolean bfs(Set<String> left, Set<String> right, Set<String> dictionary, Map<String, List<String>> map, boolean b) {
+    private static boolean bfs(Set<String> left, Set<String> right, Set<String> dictionary, Map<String, List<String>> map, boolean b) {
       if(left.size() > right.size()) {
         return bfs(right, left, dictionary, map, !b);
       }
@@ -52,10 +52,10 @@ import java.io.*;
         for(int i = 0; i < sa.length; i++) {
           char co = sa[i];
           for(char c = 'a'; c <= 'z'; c++) {
-        	if(c == co) {
+            if(c == co) {
               continue;
             }
-        	sa[i] = c;
+            sa[i] = c;
             String temp = new String(sa);
             if(right.contains(temp) || (!find && dictionary.contains(temp))) {
               if(right.contains(temp)) {
@@ -81,37 +81,37 @@ import java.io.*;
       } else {
         return false;
       }
-	}
+    }
 
-	public static void main(String[] args) { 	 
-	  String beginWord = new String();	  
-	  Scanner input = new Scanner(System.in);
-	  System.out.print("Enter the begin word: ");
-	  beginWord = input.nextLine();  
-	  System.out.println();	
-	  String endWord = new String();	  
-	  System.out.print("Enter the end word: ");
-	  endWord = input.nextLine();
-	  System.out.println();	
-	  System.out.print("Enter the number of words in the word list: ");
-	  int numberOfWords = input.nextInt();
-	  System.out.println();
-	  input.nextLine();
-	  System.out.println("Please enter the actual words in the word list: ");
-	  List<String> wordList = new ArrayList<String>();
-	  for (int i = 0; i < numberOfWords; i++) {
-		wordList.add(input.nextLine());
-	  }		 
+    public static void main(String[] args) { 	 
+      String beginWord = new String();	  
+      Scanner input = new Scanner(System.in);
+      System.out.print("Enter the begin word: ");
+      beginWord = input.nextLine();  
+      System.out.println();	
+      String endWord = new String();	  
+      System.out.print("Enter the end word: ");
+      endWord = input.nextLine();
+      System.out.println();	
+      System.out.print("Enter the number of words in the word list: ");
+      int numberOfWords = input.nextInt();
+      System.out.println();
+      input.nextLine();
+      System.out.println("Please enter the actual words in the word list: ");
+      List<String> wordList = new ArrayList<String>();
+      for (int i = 0; i < numberOfWords; i++) {
+	wordList.add(input.nextLine());
+      }		 
 	  
-	  List<List<String>> result = new ArrayList<List<String>>(); 
-	  result = findLadders(beginWord, endWord, wordList); 
+      List<List<String>> result = new ArrayList<List<String>>(); 
+      result = findLadders(beginWord, endWord, wordList); 
 		   
-	  System.out.println();
-	  System.out.println("A solution set is: ");
-	  System.out.println('[');
-	  for(List<String> innerList : result) {
-	    System.out.println(" " + innerList);
-	  }
-	  System.out.println(']');
-	}
+      System.out.println();
+      System.out.println("A solution set is: ");
+      System.out.println('[');
+      for(List<String> innerList : result) {
+	System.out.println(" " + innerList);
+      }
+      System.out.println(']');
+    }
   }
