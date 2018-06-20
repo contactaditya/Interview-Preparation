@@ -2,8 +2,7 @@ import java.util.Scanner;
 
  public class LongestCommonSubsequence { 
  
-   public static String LongestCommonSubsequence(String string1, String string2) {
-	   
+   public static String LongestCommonSubsequence(String string1, String string2) {   
      int lengths[][] = new int[string1.length() + 1][string2.length() + 1]; 
 		 
      if (string1 == null || string2 == null || string1.length() == 0 || string2.length() == 0) {
@@ -48,7 +47,6 @@ import java.util.Scanner;
    }
 		
    public static void main(String[] args) { 
-	 
      String string1 = new String();	  
      Scanner input1 = new Scanner(System.in);
      System.out.print("Enter the first string: ");
@@ -65,6 +63,5 @@ import java.util.Scanner;
      System.out.println();	
      System.out.println("The longest common subsequence of the two strings is: " + subsequence);	
      System.out.println();	
-	 
    }
  }
