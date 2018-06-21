@@ -1,45 +1,45 @@
 import java.util.*;
 import java.io.*;
 
- public class LongestCommonPrefix { 
+  public class LongestCommonPrefix { 
 	
     public static String commonPrefix(String[] array, int n) {
-       if (array == null || array.length == 0) {
-         return "";  
-       }	
-       int index = findMinLength(array, n);
-       String prefix = null; // Our resultant string
+      if (array == null || array.length == 0) {
+        return "";  
+      }	
+      int index = findMinLength(array, n);
+      String prefix = null; // Our resultant string
       
-       int low = 0, high = index;
-       while(low <= high) {
-    	 int mid = low + (high - low) / 2;
-    	 if (isCommonPrefix(array, mid)) {
-    	   low = mid + 1;
-    	 }
-         else {
-    	   high = mid - 1;	
-    	 }   
-       }
-       return array[0].substring(0, (low + high) / 2);	 
+      int low = 0, high = index;
+      while(low <= high) {
+    	int mid = low + (high - low) / 2;
+    	if (isCommonPrefix(array, mid)) {
+    	  low = mid + 1;
+    	}
+        else {
+    	  high = mid - 1;	
+    	}   
+      }
+      return array[0].substring(0, (low + high) / 2);	 
     }
 
     private static boolean isCommonPrefix(String[] array, int length) {
-       String string = array[0].substring(0,length);
-       for (int i = 1; i < array.length; i++) {
-	 if (!array[i].startsWith(string)) {
-	   return false;
-	 }
-       }
+      String string = array[0].substring(0,length);
+      for (int i = 1; i < array.length; i++) {
+	if (!array[i].startsWith(string)) {
+	  return false;
+	}
+      }
 	 
-       return true;
+      return true;
     }
 
     private static int findMinLength(String[] array, int n) {
-       int minLength = Integer.MAX_VALUE;
-       for (String str : array) {
-	  minLength = Math.min(minLength, str.length());
-       }
-       return minLength;
+      int minLength = Integer.MAX_VALUE;
+      for (String str : array) {
+	minLength = Math.min(minLength, str.length());
+      }
+      return minLength;
     }
 
     public static void main(String[] args) {  
@@ -62,4 +62,4 @@ import java.io.*;
 	System.out.println("There is no common prefix.");  
       }
     }
- }
+  }
