@@ -23,18 +23,17 @@ import java.io.*;
     }
 
     public static void main(String[] args) {
-       String haystack = new String();	  
-       Scanner input = new Scanner(System.in);
-       System.out.print("Enter the string which is a haystack: ");
-       haystack = input.nextLine();   
-       System.out.println();  
-       String needle = new String();	  
-       System.out.print("Enter the string which is a needle: ");
-       needle = input.nextLine(); 
+      String haystack = new String();	  
+      Scanner input = new Scanner(System.in);
+      System.out.print("Enter the string which is a haystack: ");
+      haystack = input.nextLine();   
+      System.out.println();  
+      String needle = new String();	  
+      System.out.print("Enter the string which is a needle: ");
+      needle = input.nextLine(); 
 		  
-       int firstIndex = strStr(haystack, needle);	
-       System.out.println();  
-       System.out.println("The index of the first occurrence of " + needle + " in " + haystack + " is: " + firstIndex);  
-         
+      int firstIndex = strStr(haystack, needle);	
+      System.out.println();  
+      System.out.println("The index of the first occurrence of " + needle + " in " + haystack + " is: " + firstIndex);    
     }
- }
+  }
