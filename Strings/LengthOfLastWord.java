@@ -3,9 +3,9 @@ import java.io.*;
 
  public class LengthOfLastWord {   
 
-  public static int lengthOfLastWord(String string) {  
+   public static int lengthOfLastWord(String string) {  
      if (string == null || string.length() == 0) {
-	return 0;
+       return 0;
      }
 	 
      int count = 0;
@@ -13,18 +13,18 @@ import java.io.*;
 	 
      // from end of string, eliminate ' ' character
      while (length >= 0 && string.charAt(length) == ' ') {
- 	length--;
+       length--;
      }
  	
      while (length >= 0 && string.charAt(length) != ' ') {
-	count++;
-	length--;
+       count++;
+       length--;
      }
 	
-    return count;
+     return count;
    }
 
-  public static void main(String[] args) { 	  
+   public static void main(String[] args) { 	  
      String string = new String();	  	 
      Scanner input = new Scanner(System.in);
      System.out.print("Enter the string: ");
@@ -33,6 +33,5 @@ import java.io.*;
      int length = lengthOfLastWord(string);
      System.out.println();
      System.out.println("The length of the last word in the string is: " + length);
-
-    }
+   }
  }
