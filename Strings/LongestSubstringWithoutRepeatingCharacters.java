@@ -4,21 +4,21 @@ import java.io.*;
  public class LongestSubstringWithoutRepeatingCharacters {
 	
    public static int lengthOfLongestSubstring(String string) {
-      int n = string.length();
-      Set<Character> set = new HashSet<>();
-      int ans = 0, i = 0, j = 0;
+     int n = string.length();
+     Set<Character> set = new HashSet<>();
+     int ans = 0, i = 0, j = 0;
       
-      while (i < n && j < n) {  	  
+     while (i < n && j < n) {  	  
        // Trying to extend the range [i, j]
-        if (!set.contains(string.charAt(j))) {
-          set.add(string.charAt(j++));
-          ans = Math.max(ans, j - i);
-        }
-        else {
-           set.remove(string.charAt(i++));
-        } 	  
-      }
-      return ans;
+       if (!set.contains(string.charAt(j))) {
+         set.add(string.charAt(j++));
+         ans = Math.max(ans, j - i);
+       }
+       else {
+         set.remove(string.charAt(i++));
+       } 	  
+     }
+     return ans;
    }
    
    public static int lengthOfLongestSubstringOptimized(String string) {
@@ -45,4 +45,4 @@ import java.io.*;
      System.out.println();
      System.out.println("The longest substring without repeating characters is: " + length);  
    }
-}
+ }
