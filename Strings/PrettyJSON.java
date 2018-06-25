@@ -71,6 +71,8 @@ import java.io.*;
 	  result = prettyJSON(a);
 	  System.out.println();
 	  System.out.println("The JSON object using proper indentation and pretty print is: ");
-	  System.out.println(result);
+	  for(String string : result) {
+		System.out.println(string + " ");
+      }
 	}
   }
