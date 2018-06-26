@@ -3,25 +3,25 @@ import java.io.*;
 
   public class IPAddress {
 	  
-	public static List<String> restoreIpAddresses(String string) {  
-	  if (string.length() < 3 || string.length() > 12) {
-	    return new ArrayList<String>();
-	  }
-	  return convert(string);
-	}	
+    public static List<String> restoreIpAddresses(String string) {  
+      if (string.length() < 3 || string.length() > 12) {
+	return new ArrayList<String>();
+      }
+      return convert(string);
+    }	
 
-	private static List<String> convert(String string) {
-	  List<String> list = new ArrayList<String>();
+    private static List<String> convert(String string) {
+      List<String> list = new ArrayList<String>();
       int size = string.length();
 
       String stringNew = string;
       for (int i = 1; i < size - 2; i++) {
     	for (int j = i + 1; j < size - 1; j++) {
     	  for (int k = j + 1; k < size; k++) {
-    		stringNew = stringNew.substring(0, k) + "." + stringNew.substring(k);
-    		stringNew = stringNew.substring(0, j) + "." + stringNew.substring(j);
-    		stringNew = stringNew.substring(0, i) + "." + stringNew.substring(i); 
-    		if (isValid(stringNew)) {
+    	    stringNew = stringNew.substring(0, k) + "." + stringNew.substring(k);
+    	    stringNew = stringNew.substring(0, j) + "." + stringNew.substring(j);
+    	    stringNew = stringNew.substring(0, i) + "." + stringNew.substring(i); 
+            if (isValid(stringNew)) {
               list.add(stringNew);
             }
             stringNew = string;
@@ -40,12 +40,12 @@ import java.io.*;
     	  return result;
     	}
       });
-      
-	  return list;
-	}
+       
+      return list;
+    }
 	
-	private static boolean isValid(String ip) {  
-	  String array[] = ip.split("[.]");
+    private static boolean isValid(String ip) {  
+      String array[] = ip.split("[.]");
       for (String string : array) {
         int i = Integer.parseInt(string);
         if (string.length() > 3 || i < 0 || i > 255) {
@@ -59,11 +59,11 @@ import java.io.*;
         }
       }
 		 
-	  return true;
-	}
+      return true;
+    }
 
-	public static void main(String[] args) {     
-	  String string = new String();	  
+    public static void main(String[] args) {     
+      String string = new String();	  
       Scanner input = new Scanner(System.in);
       System.out.print("Enter the string: ");
       string = input.nextLine(); 
@@ -73,6 +73,6 @@ import java.io.*;
       result = restoreIpAddresses(string);
 	  
       System.out.println(); 
-	  System.out.println("All possible valid IP address combinations from the given string " + string + " are: " + result);  
-	}
+      System.out.println("All possible valid IP address combinations from the given string " + string + " are: " + result);  
+    }
   }
