@@ -3,11 +3,11 @@ import java.io.*;
 
   public class CompareVersion { 	
 	  
-	public static int compareVersion(String version1, String version2) {     
-	  if (version1 == null || version2 == null || version1.length() == 0 || version2.length() == 0) {
-		return 0;
-	  }
-	  int i = 0;
+    public static int compareVersion(String version1, String version2) {     
+      if (version1 == null || version2 == null || version1.length() == 0 || version2.length() == 0) {
+	return 0;
+      }
+      int i = 0;
       int j = 0;
       while (i < version1.length() || j < version2.length()) {   
         double val1 = 0, val2 = 0;
@@ -29,27 +29,27 @@ import java.io.*;
         j++;  
       }
 
-	  return 0;
+      return 0;
     }  
 	  
-	public static int compareVersion1(String version1, String version2) {  
-	  String[] levels1 = version1.split("\\.");
-	  String[] levels2 = version2.split("\\.");
-	  int length = Math.max(levels1.length, levels2.length);
-	  for (int i=0; i < length; i++) {
-	    Integer v1 = i < levels1.length ? Integer.parseInt(levels1[i]) : 0;
-	    Integer v2 = i < levels2.length ? Integer.parseInt(levels2[i]) : 0;
-	    int compare = v1.compareTo(v2);
-	    if (compare != 0) {
-	      return compare;
-	    }  
-	  }
+    public static int compareVersion1(String version1, String version2) {  
+      String[] levels1 = version1.split("\\.");
+      String[] levels2 = version2.split("\\.");
+      int length = Math.max(levels1.length, levels2.length);
+      for (int i=0; i < length; i++) {
+	Integer v1 = i < levels1.length ? Integer.parseInt(levels1[i]) : 0;
+	Integer v2 = i < levels2.length ? Integer.parseInt(levels2[i]) : 0;
+	int compare = v1.compareTo(v2);
+	if (compare != 0) {
+	  return compare;
+	}  
+      }
 
-	  return 0;
+      return 0;
     }  
 
-	public static void main(String[] args) {       
-	  String a = new String();	  
+    public static void main(String[] args) {       
+      String a = new String();	  
       Scanner input = new Scanner(System.in);
       System.out.print("Enter the first version: ");
       a = input.nextLine();  
@@ -67,5 +67,5 @@ import java.io.*;
       } else {
     	System.out.println("Version 1 is same as Version 2.");  
       }
-	}
+    }
   }
