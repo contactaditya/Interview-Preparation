@@ -36,8 +36,8 @@ import java.io.*;
       }
     }
 
-	public static void main(String[] args) {   
-	  String A = new String();	  
+    public static void main(String[] args) {   
+      String A = new String();	  
       Scanner input = new Scanner(System.in);
       System.out.print("Enter the first string: ");
       A = input.nextLine();  
@@ -48,11 +48,11 @@ import java.io.*;
 	  
       boolean result = buddyStrings(A, B);
       System.out.println();
-	  if(result) {
-		System.out.println("Yes we can swap two letters in " + A + " so that the result equals " + B);  
-	  }
+      if(result) {
+	System.out.println("Yes we can swap two letters in " + A + " so that the result equals " + B);  
+      }
       else {
-		System.out.println("No we cannot swap two letters in " + A + " so that the result equals " + B);  
-	  }
-	}
+	System.out.println("No we cannot swap two letters in " + A + " so that the result equals " + B);  
+      }
+    }
   }
