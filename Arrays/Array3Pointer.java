@@ -3,8 +3,8 @@ import java.io.*;
 
   public class Array3Pointer {
 	  
-	public static int minimize(final List<Integer> A, final List<Integer> B, final List<Integer> C) {  
-	  int difference = Integer.MAX_VALUE; // Initialize min difference
+    public static int minimize(final List<Integer> A, final List<Integer> B, final List<Integer> C) {  
+      int difference = Integer.MAX_VALUE; // Initialize min difference
      
       // Initialize result
       int resultI = 0, resultJ = 0, resultK = 0;
@@ -36,13 +36,12 @@ import java.io.*;
           k++;
         }
       }
-		
-		
-	  return difference;
-	}	  
+	    
+      return difference;
+    }	  
 
-	public static void main(String[] args) { 	  
-	  Scanner input = new Scanner(System.in);
+    public static void main(String[] args) { 	  
+      Scanner input = new Scanner(System.in);
       System.out.print("Enter number of elements in the first list: ");
       int number = input.nextInt();  
       ArrayList<Integer> A = new ArrayList<Integer>();	
@@ -50,7 +49,7 @@ import java.io.*;
       System.out.println();	
       System.out.print("Please enter the elements of the first list: ");
       for (int i = 0; i < number; i++) {
-	    A.add(input.nextInt());
+	A.add(input.nextInt());
       }
       
       System.out.println();	
@@ -61,7 +60,7 @@ import java.io.*;
       System.out.println();	
       System.out.print("Please enter the elements of the second list: ");
       for (int i = 0; i < number1; i++) {
-	    B.add(input.nextInt());
+	B.add(input.nextInt());
       }
       
       System.out.println();	
@@ -72,11 +71,11 @@ import java.io.*;
       System.out.println();	
       System.out.print("Please enter the elements of the third list: ");
       for (int i = 0; i < number2; i++) {
-	    C.add(input.nextInt());
+	C.add(input.nextInt());
       }
       
       int result = minimize(A, B, C);
       System.out.println();	
       System.out.print("The minimum value of max(abs(A[i] - B[j]), abs(B[j] - C[k]), abs(C[k] - A[i])) is: " + result);
-	}
+    }
   }
