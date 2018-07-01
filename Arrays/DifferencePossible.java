@@ -2,7 +2,7 @@ import java.util.*;
 
   public class DifferencePossible {
 	  
-	public static int diffPossible(ArrayList<Integer> list, int value) {
+    public static int diffPossible(ArrayList<Integer> list, int value) {
       // Initialize positions of two elements
       int i = 0, j = 1;
  
@@ -19,11 +19,11 @@ import java.util.*;
         }
       }
 	  
-	  return 0;
+      return 0;
     }	  
 
-	public static void main(String[] args) {   
-	  Scanner input = new Scanner(System.in);
+    public static void main(String[] args) {    
+      Scanner input = new Scanner(System.in);
       System.out.print("Enter number of elements in the list: ");
       int number = input.nextInt();  
       ArrayList<Integer> list = new ArrayList<Integer>();	
@@ -31,12 +31,12 @@ import java.util.*;
       System.out.println();	
       System.out.print("Please enter the elements of the list: ");
       for (int i = 0; i < number; i++) {
-	    list.add(input.nextInt());
+	list.add(input.nextInt());
       }
       
-	  System.out.println();	
-	  System.out.print("Enter a value which remove all the instances of that place in the array: ");
-	  int value = input.nextInt();  
+      System.out.println();	
+      System.out.print("Enter a value which remove all the instances of that place in the array: ");
+      int value = input.nextInt();  
 	  
       input.close();
       
@@ -48,5 +48,5 @@ import java.util.*;
       else {
     	System.out.print("No there are no 2 indices i and j such that A[i] - A[j] = " + value + ", i != j");  
       }
-	}
+    }
   }
