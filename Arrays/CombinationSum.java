@@ -5,20 +5,20 @@ import java.io.*;
 	 
    public static List<List<Integer>> combinationSum(int[] array, int target) {
      List<List<Integer>> result = new ArrayList<List<Integer>>();	
-     if(array == null || array.length<0) {
+     if(array == null || array.length < 0) {
        return result;
      }
      Arrays.sort(array);
-     backtrack(result, new ArrayList<>(), array, target, 0);	
+     backtrack(result, new ArrayList<Integer>(), array, target, 0);	
      return result;    
    } 
 
-   private static void backtrack(List<List<Integer>> result, ArrayList tempList, int[] array, int remain, int start) {
+   private static void backtrack(List<List<Integer>> result, ArrayList<Integer> tempList, int[] array, int remain, int start) {
      if(remain < 0) {
        return; 
      }
      else if(remain == 0) {
-       result.add(new ArrayList<>(tempList));  
+       result.add(new ArrayList<Integer>(tempList));  
      }
      else {
        for(int i = start; i < array.length; i++) {
