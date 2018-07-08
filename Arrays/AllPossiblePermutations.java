@@ -8,13 +8,13 @@ import java.io.*;
       if (array == null || array.length == 0) {
         return result;
       }
-      backtrack(result, new ArrayList<>(), array);	
+      backtrack(result, new ArrayList<Integer>(), array);	
       return result;    
     }	 
 
     private static void backtrack(List<List<Integer>> result, List<Integer> list, int[] array) {
       if(list.size() == array.length) {
-	result.add(new ArrayList<>(list));
+	result.add(new ArrayList<Integer>(list));
       } 
       else {
 	for(int i = 0; i < array.length; i++) { 
