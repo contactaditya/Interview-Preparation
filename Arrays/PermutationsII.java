@@ -9,13 +9,13 @@ import java.io.*;
        return result;
      }
      Arrays.sort(array);
-     backtrack(result, new ArrayList<>(), array, new boolean[array.length]);	
+     backtrack(result, new ArrayList<Integer>(), array, new boolean[array.length]);	
      return result;    
    }	 
 
    private static void backtrack(List<List<Integer>> result, List<Integer> list, int[] array, boolean[] used) {
      if(list.size() == array.length) {
-       result.add(new ArrayList<>(list));
+       result.add(new ArrayList<Integer>(list));
      } 
      else {
        for(int i = 0; i < array.length; i++) { 
@@ -43,11 +43,11 @@ import java.io.*;
 
    private static void backtrack1(int[] array, List<List<Integer>> result, int begin, int end) {
      if(begin > end) {
-	result.add(new ArrayList<Integer>() {{ 
-	for (int i : array) { 
+       result.add(new ArrayList<Integer>() {{ 
+         for (int i : array) { 
 	   add(i);
-	}
-	}});
+         }
+       }});
      }
      else {
        for(int i = begin; i <= end; i++) { 
