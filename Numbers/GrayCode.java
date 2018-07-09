@@ -14,7 +14,7 @@ import java.io.*;
 
     public static void main(String[] args) {   
       Scanner input = new Scanner(System.in);
-      System.out.print("Enter the number: ");
+      System.out.print("Enter the total number of bits in the code: ");
       int number = input.nextInt();   
 	
       List<Integer> result = new ArrayList<Integer>();
