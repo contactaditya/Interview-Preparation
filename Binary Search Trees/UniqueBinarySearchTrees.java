@@ -18,11 +18,11 @@ import java.io.*;
    } 
 
    public static void main(String[] args) {
-      Scanner input = new Scanner(System.in);
-      System.out.print("Enter the number: ");
-      int n = input.nextInt();
-      int result = numTrees(n);
-      System.out.println();  
-      System.out.print("The total number of unique BST are: " + result);
+     Scanner input = new Scanner(System.in);
+     System.out.print("Enter the number: ");
+     int n = input.nextInt();
+     int result = numTrees(n);
+     System.out.println();  
+     System.out.print("The total number of unique BST are: " + result);
    }
  }
