@@ -23,7 +23,6 @@ import java.io.*;
       int right = maxDepth(root.right);
 	        
       max = Math.max(max, left + right);
-	        
       return Math.max(left, right) + 1;
     }
 
