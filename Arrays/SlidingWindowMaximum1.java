@@ -18,11 +18,11 @@ import java.util.*;
       for (int i = 0; i < n; i++) { 
         // remove numbers out of range k   
         while (!queue.isEmpty() && queue.peek() < i - sizeOfSlidingWindow + 1) {
-  	      queue.poll();
+  	  queue.poll();
         }
         // remove smaller numbers in k range as they are useless
         while (!queue.isEmpty() && list.get(queue.peekLast()) < list.get(i)) {
-  	      queue.removeLast();
+  	  queue.removeLast();
         } 
         // queue contains index... r contains content
         queue.offer(i);
