@@ -3,8 +3,8 @@ import java.util.*;
 
   public class SlidingWindowMaximum1 {
 	  
-	public static ArrayList<Integer> slidingMaximum(final List<Integer> list, int sizeOfSlidingWindow) { 	 
-	  if (list == null || sizeOfSlidingWindow <= 0) {
+    public static ArrayList<Integer> slidingMaximum(final List<Integer> list, int sizeOfSlidingWindow) { 	 
+      if (list == null || sizeOfSlidingWindow <= 0) {
         return new ArrayList<Integer>();
       }	
   	   
@@ -27,14 +27,14 @@ import java.util.*;
         // queue contains index... r contains content
         queue.offer(i);
         if(i >= sizeOfSlidingWindow - 1) {
-   	      result.add(list.get(queue.peek()));
+   	  result.add(list.get(queue.peek()));
         }	      
       }
-      return result;
-	}  
+      return result; 
+    }  
 
-	public static void main(String[] args) { 	
-	  Scanner input = new Scanner(System.in);
+    public static void main(String[] args) { 	
+      Scanner input = new Scanner(System.in);
       System.out.print("Enter number of elements in the list: ");
       int number = input.nextInt();  
       ArrayList<Integer> list = new ArrayList<Integer>();	
@@ -42,16 +42,16 @@ import java.util.*;
       System.out.println();	
       System.out.print("Please enter the elements of the list: ");
       for (int i = 0; i < number; i++) {
-	    list.add(input.nextInt());
+	list.add(input.nextInt());
       }
       
       System.out.println();	
       System.out.print("Enter the size of the sliding window: ");
       int sizeOfSlidingWindow = input.nextInt();      
-	  ArrayList<Integer> result = new ArrayList<Integer>();	 
+      ArrayList<Integer> result = new ArrayList<Integer>();	 
       
-	  result = slidingMaximum(list, sizeOfSlidingWindow); 
-	  System.out.println();	
-	  System.out.print("The maximum sliding window is: " + result);
-	}
+      result = slidingMaximum(list, sizeOfSlidingWindow); 
+      System.out.println();	
+      System.out.print("The maximum sliding window is: " + result);
+    }
   }
