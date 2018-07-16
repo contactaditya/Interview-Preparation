@@ -32,14 +32,14 @@ import java.io.*;
       }
 	 
       for(int i = 0; i < n; i++) {
-	    p2 = p2.next;
+	p2 = p2.next;
       }
 		  
       // Now, move p1 and p2 at the same speed. When p2 hits the end, p1 will be at the right element.
       while(p2 != null && p2.next != null) {
-	    p1 = p1.next;
-	    p2 = p2.next;	  
-	  }
+	p1 = p1.next;
+	p2 = p2.next;	  
+      }
       
       if (p2 == null) {
         head = head.next;
@@ -54,33 +54,33 @@ import java.io.*;
       LinkedListNode current = head; 		    
       while(current != null) {	   
         System.out.print(current.getData() + " ");	 	
-	    current = current.getNext();
+	current = current.getNext();
       }
     } 	
 
-	public static void main(String[] args) {   
-	  RemoveNthNodeFromEndofLinkedList list = new RemoveNthNodeFromEndofLinkedList();
-	  list.head = new LinkedListNode(3);
-	  list.head.next = new LinkedListNode(5);
-	  list.head.next.next = new LinkedListNode(8);
-	  list.head.next.next.next = new LinkedListNode(5);
-	  list.head.next.next.next.next = new LinkedListNode(10);
-	  list.head.next.next.next.next.next = new LinkedListNode(2);
-	  list.head.next.next.next.next.next.next = new LinkedListNode(1);
+    public static void main(String[] args) {   
+      RemoveNthNodeFromEndofLinkedList list = new RemoveNthNodeFromEndofLinkedList();
+      list.head = new LinkedListNode(3);
+      list.head.next = new LinkedListNode(5);
+      list.head.next.next = new LinkedListNode(8);
+      list.head.next.next.next = new LinkedListNode(5);
+      list.head.next.next.next.next = new LinkedListNode(10);
+      list.head.next.next.next.next.next = new LinkedListNode(2);
+      list.head.next.next.next.next.next.next = new LinkedListNode(1);
 	   
-	  size = 7;
+      size = 7;
 	   
-	  Scanner input = new Scanner(System.in);
-	  System.out.print("Enter the index of the nth to last element in the linkedlist that you want to remove: ");
-	  int index = input.nextInt(); 
-	  System.out.println();
+      Scanner input = new Scanner(System.in);
+      System.out.print("Enter the index of the nth to last element in the linkedlist that you want to remove: ");
+      int index = input.nextInt(); 
+      System.out.println();
 	 
-	  System.out.print("Contents of the linked list before removing the node is: ");	 
-	  list.PrintElementsOfALinkedList(head);
-	  LinkedListNode newLinkedList = removeNthFromEnd(head, index); 
-	  System.out.println();
-	  System.out.println();
-	  System.out.print("Contents of the linked list after removing the node is: ");	 
-	  list.PrintElementsOfALinkedList(head);
-	}
+      System.out.print("Contents of the linked list before removing the node is: ");	 
+      list.PrintElementsOfALinkedList(head);
+      LinkedListNode newLinkedList = removeNthFromEnd(head, index); 
+      System.out.println();
+      System.out.println();
+      System.out.print("Contents of the linked list after removing the node is: ");	 
+      list.PrintElementsOfALinkedList(head);
+    }
   }
