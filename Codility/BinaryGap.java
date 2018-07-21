@@ -20,30 +20,30 @@ import java.io.*;
     }
 	
     public static int getBinaryGap1(int number) {
-       int currentGap = 0;
-       int maxGap = 0;
+      int currentGap = 0;
+      int maxGap = 0;
   
-       while(number > 0) {
-	 if (number % 2 == 0) {
-	   currentGap++;
-	 }
-	 else {
-	   maxGap = Math.max(maxGap, currentGap);
-	   currentGap = 0;
-	 }
-	 number /= 2;    
-       }
+      while(number > 0) {
+	if (number % 2 == 0) {
+	  currentGap++;
+	}
+	else {
+	  maxGap = Math.max(maxGap, currentGap);
+	  currentGap = 0;
+	}
+	number /= 2;    
+      }
 	  
-       return maxGap;
+      return maxGap;
     } 
 
     public static void main(String[] args) { 	  
-       Scanner input = new Scanner(System.in);
-       System.out.print("Enter the number: ");
-       int number = input.nextInt();  
+      Scanner input = new Scanner(System.in);
+      System.out.print("Enter the number: ");
+      int number = input.nextInt();  
 
-       int longestBinaryGap = getBinaryGap1(number);
-       System.out.println();	
-       System.out.print("The length of the longest binary gap is: " + longestBinaryGap);
+      int longestBinaryGap = getBinaryGap1(number);
+      System.out.println();	
+      System.out.print("The length of the longest binary gap is: " + longestBinaryGap);
     }
   }
