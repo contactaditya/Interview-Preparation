@@ -9,7 +9,6 @@ import java.util.Hashtable;
     public Node next;
 
     //Node constructor
-    
     public Node(Object data) {
       this.data = data;
       next = null;
@@ -38,13 +37,11 @@ import java.util.Hashtable;
   }
 
   public class LinkList {
-  
     private static Node head;
     private static int size;
   
     public LinkList() {
       // this is an empty list, so the reference to the head node is set to a new node with no data
-	  
       head = new Node(null);
       size = 0;
     }
@@ -72,7 +69,6 @@ import java.util.Hashtable;
      /**
       * Add an item on a specific index in the linkedlist.
       */
-	  
       Node temp = new Node(object);
       Node current = head;	
   
@@ -132,8 +128,7 @@ import java.util.Hashtable;
     public static Object removeFirst() {
      /**
       * Removes the first item from the linked list.	 
-      */	 
-	  
+      */	   
       System.out.println();	 	
       if(size==0) {	   
         System.out.println("The linked list is currently empty and has no elements.");	 	
@@ -152,7 +147,6 @@ import java.util.Hashtable;
      /**
       * Removes the last item from the linked list.	 
       */	 
-	  
       System.out.println();	 	
       if(size==0) {	   
         System.out.println("The linked list is currently empty and has no elements.");	 	
@@ -176,8 +170,7 @@ import java.util.Hashtable;
     public static Object skipAndRemove(int number, int index) {
      /**
       * Removes the last item from the linked list.	 
-      */	 
-		   	
+      */	   	
       if(size==0) {
         System.out.println();	   
         System.out.println("The linked list is currently empty and has no elements.");	 	
@@ -227,7 +220,6 @@ import java.util.Hashtable;
      /**
       * Removes the item at the specified place in the linked list.	 
       */	 
-	  
       System.out.println();	
   
       Node current = head;
@@ -272,8 +264,7 @@ import java.util.Hashtable;
     public static void removeDuplicates() {
      /**
       * Removes the duplicates from the linked list.	 
-      */	 
-		    
+      */	    
       HashSet<Object> set = new HashSet<Object>();
       Node previous = null;
       Node current = head;
@@ -299,8 +290,7 @@ import java.util.Hashtable;
     public static boolean isEmpty() {
      /**
       * Test if the link list is empty.
-      */	
-	  
+      */  
       System.out.println();	 	  
       if(size==0) {	   
         System.out.println("The linked list is currently empty and has no elements.");	 	  	   
@@ -322,8 +312,7 @@ import java.util.Hashtable;
     public static void display() {
       /**
        * Displays all the contents of the link list.
-       */
-	  
+       */  
        System.out.println();	   
        if(size==0) {	   
          System.out.println("The linked list is currently empty and has no elements.");	 	  	   
@@ -344,7 +333,6 @@ import java.util.Hashtable;
       /**
        * Displays the first element of the linked list.
        */
-
        System.out.println();	  
 	  
        if(size==0) {	   
@@ -361,7 +349,6 @@ import java.util.Hashtable;
       /**
        * Displays the last element of the linked list.
        */
-
        System.out.println();	 	  
 	  
        if(size==0) {	   
@@ -381,7 +368,6 @@ import java.util.Hashtable;
       /**
        * Displays the element at the specified position in the linked list.
        */
-	 
        System.out.println();	
   
        Node current = head;
@@ -425,8 +411,7 @@ import java.util.Hashtable;
     public static void displayNthToLast(int k) {
       /**
        * Displays the kth to last element of a singly linked list.
-       */
-		 
+       */	 
        System.out.println();	
        Node p1 = head;
        Node p2 = head;
@@ -469,8 +454,7 @@ import java.util.Hashtable;
     public static void reverse() {
       /**
        * Sorts the elements of the linked list in an ascending order.
-       */
-	  
+       */ 
        Node current = head;	  
        Node previous = null;
  	    
@@ -491,7 +475,6 @@ import java.util.Hashtable;
     }
 
     public static void main(String[] args) throws NumberFormatException, IOException {
- 
       int choice = 0;
 	    
       do{	
