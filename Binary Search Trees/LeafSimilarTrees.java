@@ -2,8 +2,8 @@ import java.util.*;
 import java.io.*;
 
   public class LeafSimilarTrees {
-	private Node root1;	
-	private Node root2;	
+    private Node root1;	
+    private Node root2;	
 	
     public static boolean leafSimilar(Node root1, Node root2) {
       List<Integer> leaves1 = new ArrayList<Integer>();
@@ -13,19 +13,19 @@ import java.io.*;
       return leaves1.equals(leaves2);  
     }
 
-	private static void dfs(Node node, List<Integer> leafValues) {  
-	  if (node == null) {
-		return;
-	  }
-	  if (node.left == null && node.right == null) {
+    private static void dfs(Node node, List<Integer> leafValues) {  
+      if (node == null) {
+	return;
+      }
+      if (node.left == null && node.right == null) {
         leafValues.add(node.data);
-	  }
-	  dfs(node.left, leafValues);
+      }
+      dfs(node.left, leafValues);
       dfs(node.right, leafValues);
-	}
+    }
 
-	public static void main(String[] args) {    
-	  LeafSimilarTrees tree = new LeafSimilarTrees();
+    public static void main(String[] args) {    
+      LeafSimilarTrees tree = new LeafSimilarTrees();
       tree.root1 = new Node(1);
       tree.root1.left = new Node(2);
       tree.root1.right = new Node(3);
@@ -44,5 +44,5 @@ import java.io.*;
       else {
   	    System.out.println("The two binary trees are not leaf similar.");
       }
-	}
+    }
   }
