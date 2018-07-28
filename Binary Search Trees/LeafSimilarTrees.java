@@ -39,10 +39,10 @@ import java.io.*;
       tree.root2.left.right = new Node(5);
 		 
       if (leafSimilar(tree.root1, tree.root2) == true) {
-	    System.out.println("The two binary trees are leaf similar.");
+	System.out.println("The two binary trees are leaf similar.");
       }
       else {
-  	    System.out.println("The two binary trees are not leaf similar.");
+  	System.out.println("The two binary trees are not leaf similar.");
       }
     }
   }
