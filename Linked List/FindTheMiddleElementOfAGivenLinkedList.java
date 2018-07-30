@@ -34,6 +34,5 @@ import java.io.*;
 	  
       LinkedListNode middleElement = list.getMiddleElement();
       System.out.print("The middle element in the linked list is: " + middleElement.data);	 	
-
     }
   }
