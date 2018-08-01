@@ -19,7 +19,7 @@ import java.io.*;
           else if(sum > array[i]) {
             high--;
           }
-          else{
+          else {
             dp[high][i] = Math.max(dp[high][i], dp[low][high] == 0 ? 3 : dp[low][high] + 1);
             result = Math.max(result, dp[high][i]);
             low++;
@@ -28,10 +28,10 @@ import java.io.*;
       }
     	
       return result;      
-	}
+    }
 
-	public static void main(String[] args) {     
-	  Scanner input = new Scanner(System.in);
+    public static void main(String[] args) {     
+      Scanner input = new Scanner(System.in);
       System.out.print("Enter number of elements in the array: ");
       int number = input.nextInt();  
       int array[] = new int[number];
@@ -45,5 +45,5 @@ import java.io.*;
       
       System.out.println();	
       System.out.print("The length of the longest fibonacci-like subsequence of the array is: " + result);
-	}
+    }
   }
