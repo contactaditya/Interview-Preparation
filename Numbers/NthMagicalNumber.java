@@ -3,10 +3,10 @@ import java.io.*;
 
   public class NthMagicalNumber {
 	  
-	public static int nthMagicalNumber(int N, int A, int B) {
-	  int MOD = 1_000_000_007;
-	  int LCM = A/gcd(A, B) * B;	
-	  long low = 0;
+    public static int nthMagicalNumber(int N, int A, int B) {
+      int MOD = 1_000_000_007;
+      int LCM = A/gcd(A, B) * B;	
+      long low = 0;
       long high = (long) 1e15;
       while (low < high) {
         long mid = low + (high - low) / 2;
@@ -19,8 +19,8 @@ import java.io.*;
         }
       }
 		
-	  return (int) (low % MOD);      
-	}  
+      return (int) (low % MOD);      
+    }  
 	
     public static int gcd(int x, int y) {
       if (x == 0) {
@@ -30,7 +30,7 @@ import java.io.*;
       return gcd(y % x, x);
     }
 
-	public static void main(String[] args) {   
+    public static void main(String[] args) {   
       Scanner input = new Scanner(System.in);
       System.out.print("Enter the first number: ");
       int N = input.nextInt();  
