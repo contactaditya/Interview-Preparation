@@ -3,18 +3,18 @@ import java.io.*;
 
   public class MaximumSumOf3NonOverlappingSubarrays {  
 	
-	public static int[] maxSumOfThreeSubarrays(int[] array, int K) {
-	  int sum1 = 0, sum2 = 0, sum3 = 0;
-	  for (int i = 0; i < K; i++) {
-	    sum1 += array[i];
-	  }
-	  for (int i = K; i < K*2; i++) {
-	    sum2 += array[i];
-	  } 
-	  for (int i = K*2; i < K*3; i++) {
-	    sum3 += array[i];
-	  }
-	  int seq1 = sum1, seq2 = sum1 + sum2, seq3 = sum1 + sum2 + sum3;
+    public static int[] maxSumOfThreeSubarrays(int[] array, int K) {
+      int sum1 = 0, sum2 = 0, sum3 = 0;
+      for (int i = 0; i < K; i++) {
+	sum1 += array[i];
+      }
+      for (int i = K; i < K*2; i++) {
+	sum2 += array[i];
+      } 
+      for (int i = K*2; i < K*3; i++) {
+	sum3 += array[i];
+      }
+      int seq1 = sum1, seq2 = sum1 + sum2, seq3 = sum1 + sum2 + sum3;
       int index1 = 0;
       int[] index2 = new int[]{0, K}, index3 = new int[]{0, K, K*2};
       
@@ -42,27 +42,27 @@ import java.io.*;
       return index3;
     }
 
-	public static void main(String[] args) {  
-	  Scanner input = new Scanner(System.in);
-	  System.out.print("Enter number of elements in the array: ");
-	  int number = input.nextInt();  
-	  int array[] = new int[number];
+    public static void main(String[] args) {  
+      Scanner input = new Scanner(System.in);
+      System.out.print("Enter number of elements in the array: ");
+      int number = input.nextInt();  
+      int array[] = new int[number];
 		
-	  System.out.println();	
-	  System.out.print("Please enter the elements of the array: ");
-	  for (int i = 0; i < array.length; i++) {
-	    array[i] = input.nextInt();
-	  }
+      System.out.println();	
+      System.out.print("Please enter the elements of the array: ");
+      for (int i = 0; i < array.length; i++) {
+	array[i] = input.nextInt();
+      }
 	  
-	  System.out.println();	
-	  System.out.print("Enter the size of each subarray: ");
-	  int k = input.nextInt();  
+      System.out.println();	
+      System.out.print("Enter the size of each subarray: ");
+      int k = input.nextInt();  
 			
       int result[] = maxSumOfThreeSubarrays(array, k);
       System.out.println();	
-	  System.out.print("The list of indices containing the starting position of each interval (0-indexed) representing three non-overlapping subarrays with maximum sum is: ");
-	  for (int i=0; i < result.length; i++) {
-		System.out.print(result[i] + " ");
-	  }
-	}
+      System.out.print("The list of indices containing the starting position of each interval (0-indexed) representing three non-overlapping subarrays with maximum sum is: ");
+      for (int i=0; i < result.length; i++) {
+	System.out.print(result[i] + " ");
+      }
+    }
   }
