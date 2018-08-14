@@ -3,10 +3,10 @@ import java.io.*;
 
   public class DecodedStringAtIndex {
 	  
-	public static String decodeAtIndex(String string, int K) {
-	  long size = 0;
+    public static String decodeAtIndex(String string, int K) {
+      long size = 0;
 	  
-	  // Find size = length of decoded string
+      // Find size = length of decoded string
       for (int i = 0; i < string.length(); i++) {
         char c = string.charAt(i);
         if (Character.isDigit(c)) {
@@ -33,20 +33,20 @@ import java.io.*;
       }
 		
       throw null;    
-	}
+    }
 
-	public static void main(String[] args) {   
-	  String string = new String();	  
-	  Scanner input = new Scanner(System.in);
-	  System.out.print("Enter the string: ");
-	  string = input.nextLine(); 
-	  System.out.println();
-	  System.out.print("Enter the index: ");
-	  int K = input.nextInt(); 
+    public static void main(String[] args) {   
+      String string = new String();	  
+      Scanner input = new Scanner(System.in);
+      System.out.print("Enter the string: ");
+      string = input.nextLine(); 
+      System.out.println();
+      System.out.print("Enter the index: ");
+      int K = input.nextInt(); 
 	  	  
-	  String result = decodeAtIndex(string, K);
-	  System.out.println();
-	  System.out.println("The K-th letter (1 indexed) in the decoded string is: " + result);  
-	  input.close();
-	}
+      String result = decodeAtIndex(string, K);
+      System.out.println();
+      System.out.println("The K-th letter (1 indexed) in the decoded string is: " + result);  
+      input.close();
+    }
   }
