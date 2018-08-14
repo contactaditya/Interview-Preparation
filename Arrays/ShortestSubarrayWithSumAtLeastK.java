@@ -3,8 +3,8 @@ import java.io.*;
 
   public class ShortestSubarrayWithSumAtLeastK {
 	
-	public static int shortestSubarray(int[] array, int K) {
-	  int n = array.length;	
+    public static int shortestSubarray(int[] array, int K) {
+      int n = array.length;	
       int s[] = new int[n + 1]; 
       for (int i = 0; i < n; i++) {
         s[i + 1] = s[i] + array[i];
@@ -25,26 +25,26 @@ import java.io.*;
       }
  
       return result <= n ? result : -1;
-	}
+    }
 
-	public static void main(String[] args) {  
-	  Scanner input = new Scanner(System.in);
-	  System.out.print("Enter number of elements in the array: ");
-	  int number = input.nextInt();  
-	  int array[] = new int[number];
+    public static void main(String[] args) {  
+      Scanner input = new Scanner(System.in);
+      System.out.print("Enter number of elements in the array: ");
+      int number = input.nextInt();  
+      int array[] = new int[number];
 		
-	  System.out.println();	
-	  System.out.print("Please enter the elements of the array: ");
-	  for (int i = 0; i < array.length; i++) {
-	    array[i] = input.nextInt();
-	  }
-	  
-	  System.out.println();	
-	  System.out.print("Enter the sum of the subarray: ");
-	  int k = input.nextInt();  
+      System.out.println();	
+      System.out.print("Please enter the elements of the array: ");
+      for (int i = 0; i < array.length; i++) {
+	array[i] = input.nextInt();
+      }
+	   
+      System.out.println();	
+      System.out.print("Enter the sum of the subarray: ");
+      int k = input.nextInt();  
 			
       int result = shortestSubarray(array, k);
       System.out.println();	
-   	  System.out.print("The length of the shortest, non-empty, contiguous subarray of array with sum at least " + k + " is: " + result);
-	}
+      System.out.print("The length of the shortest, non-empty, contiguous subarray of array with sum at least " + k + " is: " + result);
+    }
   }
