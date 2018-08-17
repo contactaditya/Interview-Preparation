@@ -21,8 +21,7 @@ import java.io.*;
 	// Check if we found a required element
 	if (leftMax[i] < array[i] && rightMin > array[i]) {
 	  return array[i];
-	}
-	 
+	} 
 	// Update right minimum
 	rightMin = Math.min(rightMin, array[i]);
       } 
