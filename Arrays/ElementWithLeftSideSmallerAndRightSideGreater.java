@@ -25,8 +25,7 @@ import java.io.*;
 	 
 	// Update right minimum
 	rightMin = Math.min(rightMin, array[i]);
-      }
-	 
+      } 
       // If there was no element matching criteria
       return -1;
     }
@@ -46,6 +45,5 @@ import java.io.*;
       int element = findElement(array);
       System.out.println();
       System.out.print("The element before which all elements are smaller than it, and after which all are greater than it is: " + element);
-
     }
   }
