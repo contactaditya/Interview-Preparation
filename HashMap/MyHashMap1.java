@@ -82,63 +82,63 @@ import java.io.*;
       }   
     }
     
-    private void rehash() {
-      HashItem[] oldList = list;
-      list = new HashItem[list.length * 2];
-      for (int i = 0; i < oldList.length; i++) {
-        HashItem current = oldList[i];
-        while (current != null) {
-          put(current.key, current.value);
-          current = current.next;
-        }
-      }
-    }
+   private void rehash() {
+     HashItem[] oldList = list;
+     list = new HashItem[list.length * 2];
+     for (int i = 0; i < oldList.length; i++) {
+       HashItem current = oldList[i];
+       while (current != null) {
+         put(current.key, current.value);
+         current = current.next;
+       }
+     }
+   }
 	     
-    public static void main(String[] args) throws IOException {   
-      int choice = 0;
-      MyHashMap1 hashmap = new MyHashMap1();
+   public static void main(String[] args) throws IOException {   
+     int choice = 0;
+     MyHashMap1 hashmap = new MyHashMap1();
 	    
-      do{	
-	  System.out.println("1. For inserting an element in the HashMap.");
-	  System.out.println("2. For checking if the HashMap contains a specific key.");
-          System.out.println("3. For deleting an element from the HashMap.");
-	  System.out.println("4. For exiting from the program.");
+     do{
+	 System.out.println("1. For inserting an element in the HashMap.");
+	 System.out.println("2. For checking if the HashMap contains a specific key.");
+         System.out.println("3. For deleting an element from the HashMap.");
+	 System.out.println("4. For exiting from the program.");
  
-	  System.out.println();
-	  System.out.print("Enter your choice: ");
-	  BufferedReader br = new BufferedReader(new InputStreamReader(System.in));  
-	  choice = Integer.parseInt(br.readLine());
-	  switch (choice) {
-	    case 1:  System.out.println();
- 	     	     System.out.print("Enter the key that you want to insert in the HashMap: ");
-	             int key = br.read();
-	   	     System.out.println();
-	   	     br.readLine();
-	             System.out.print("Enter the value that you want to insert in the HashMap: ");
-	             int value = br.read();
-	             hashmap.put(key, value);
- 	  	     break;  
+	 System.out.println();
+	 System.out.print("Enter your choice: ");
+	 BufferedReader br = new BufferedReader(new InputStreamReader(System.in));  
+	 choice = Integer.parseInt(br.readLine());
+	 switch (choice) {
+	   case 1:  System.out.println();
+ 	     	    System.out.print("Enter the key that you want to insert in the HashMap: ");
+	            int key = br.read();
+	   	    System.out.println();
+	   	    br.readLine();
+	            System.out.print("Enter the value that you want to insert in the HashMap: ");
+	            int value = br.read();
+	            hashmap.put(key, value);
+ 	  	    break;  
  	  	   		      
-	    case 2:  System.out.println();
-	   	     System.out.print("Enter the key whose value you want to return from the HashMap: ");
-	   	     int key1 = br.read();
-	             int value1 = hashmap.get(key1);
-	   	     System.out.println();  
-	   	     if(value1 == -1) { 
-	   	       System.out.println("This map contains no mapping for the key.");    
-		     } else {
-	   	       System.out.println("The value to which the specified key is mapped is: " + value1);
-	   	     }
-	             break;     
+	   case 2:  System.out.println();
+	   	    System.out.print("Enter the key whose value you want to return from the HashMap: ");
+	   	    int key1 = br.read();
+	            int value1 = hashmap.get(key1);
+	   	    System.out.println();  
+	   	    if(value1 == -1) { 
+	   	      System.out.println("This map contains no mapping for the key.");    
+		    } else {
+	   	      System.out.println("The value to which the specified key is mapped is: " + value1);
+	   	    }
+	            break;     
  	  	   		      
-	    case 3:  System.out.println(); 
-		     System.out.print("Enter the key whose mapping you want to remove for the value key: ");
-		     int key2 = br.read();
-		     hashmap.remove(key2);
-   	   	     break;
+	   case 3:  System.out.println(); 
+		    System.out.print("Enter the key whose mapping you want to remove for the value key: ");
+		    int key2 = br.read();
+		    hashmap.remove(key2);
+   	   	    break;
          }
 	 System.out.println(); 
-        } while(choice != 4);
-      }
+      } while(choice != 4);
     }
-  
+  }
+ 
