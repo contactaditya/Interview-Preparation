@@ -2,12 +2,12 @@ import java.util.*;
 import java.io.*;
 
   public class ConstructFullBinaryTreeFromPreorderAndPostorderTraversal {
-	static int preindex;
+    static int preindex;
 	  
-	public Node constructFromPrePost(int[] pre, int[] post) {
-	  int size = pre.length;
-	  return buildTree(pre, post, 0, size - 1, size);	   
-	}
+    public Node constructFromPrePost(int[] pre, int[] post) {
+      int size = pre.length;
+      return buildTree(pre, post, 0, size - 1, size);	   
+    }
 	
     private Node buildTree(int[] pre, int[] post, int low, int high, int size) {
       if (preindex >= size || low > high) {
@@ -37,10 +37,10 @@ import java.io.*;
         root.right = buildTree(pre, post, i + 1, high, size); 
       }
       
-	  return root;
-	}
+      return root;
+    }
 
-	public void printInorderTraversal(Node node) { 
+    public void printInorderTraversal(Node node) { 
       if (node == null) {
         return;
       }
@@ -50,8 +50,8 @@ import java.io.*;
       printInorderTraversal(node.right);
     }
 	
-	public static void main(String[] args) {      
-	  ConstructFullBinaryTreeFromPreorderAndPostorderTraversal tree = new ConstructFullBinaryTreeFromPreorderAndPostorderTraversal();	
+    public static void main(String[] args) {      
+      ConstructFullBinaryTreeFromPreorderAndPostorderTraversal tree = new ConstructFullBinaryTreeFromPreorderAndPostorderTraversal();	
       int preOrder[] = {1, 2, 4, 8, 9, 5, 3, 6, 7};
       int postOrder[] = {8, 9, 4, 5, 2, 6, 7, 3, 1};
 	        
@@ -59,5 +59,5 @@ import java.io.*;
 	  
       System.out.print("Inorder traversal of constructed tree is: ");
       tree.printInorderTraversal(node);	
-	}
+    }
   }
