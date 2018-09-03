@@ -3,14 +3,14 @@ import java.io.*;
 
   public class LargestNumber {
 	  
-	public static String largestNumber(int[] array) {
-	  if(array == null || array.length == 0) {
-		return "";
+    public static String largestNumber(int[] array) {
+      if(array == null || array.length == 0) {
+	return "";
       }
-	  // Get input integers as strings.
-	  String result[] = new String[array.length];
+      // Get input integers as strings.
+      String result[] = new String[array.length];
       for(int i=0; i < array.length; i++) {
-		result[i] = String.valueOf(array[i]);
+	result[i] = String.valueOf(array[i]);
       } 
       Arrays.sort(result , new Comparator<String>() {
         @Override
@@ -33,22 +33,22 @@ import java.io.*;
       }
       
       return sb.toString();
-	}
+    }
 
-	public static void main(String[] args) { 	
-	  Scanner input = new Scanner(System.in);
-	  System.out.print("Enter number of elements in the array: ");
-	  int numbers = input.nextInt();   
-	  int array[] = new int[numbers];
-		    
-	  System.out.println();
-	  System.out.print("Please enter the actual values in the array: ");
+    public static void main(String[] args) { 	
+      Scanner input = new Scanner(System.in);
+      System.out.print("Enter number of elements in the array: ");
+      int numbers = input.nextInt();   
+      int array[] = new int[numbers];
+		     
+      System.out.println();
+      System.out.print("Please enter the actual values in the array: ");
       for (int i = 0; i < numbers; i++) {
-		array[i] = input.nextInt(); 
-	  }
+	array[i] = input.nextInt(); 
+      }
 		   
-	  String largestElement = largestNumber(array);
-	  System.out.println();
-	  System.out.println("The largest number that can be formed from the element in the array is: " + largestElement);
-	}
+      String largestElement = largestNumber(array);
+      System.out.println();
+      System.out.println("The largest number that can be formed from the element in the array is: " + largestElement);
+    }
   }
