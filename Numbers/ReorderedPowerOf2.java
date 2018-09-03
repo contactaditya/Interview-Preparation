@@ -6,10 +6,10 @@ import java.io.*;
     public static boolean reorderedPowerOf2(int number) {
       int[] array = count(number);
       for (int i = 0; i < 31; i++) {
-	// The left-shift of 1 by i is equivalent to 2 raised to power i. 
-	if (Arrays.equals(array, count(1 << i))) {
-	  return true;
-	}
+	 // The left-shift of 1 by i is equivalent to 2 raised to power i. 
+	 if (Arrays.equals(array, count(1 << i))) {
+	   return true;
+	 }
       }
       return false;     
     }
@@ -17,8 +17,8 @@ import java.io.*;
     public static int[] count(int number) {
       int[] ans = new int[10];
       while (number > 0) {
-	ans[number % 10]++;
-	number /= 10;
+	 ans[number % 10]++;
+	 number /= 10;
       }
       return ans;
     }	
