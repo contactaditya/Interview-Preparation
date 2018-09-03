@@ -3,10 +3,10 @@ import java.io.*;
 
   public class ConstructBinaryTreeFromPreorderAndPostorderTraversal {   
 	
-	public static Node constructFromPrePost(int[] pre, int[] post) {
+    public static Node constructFromPrePost(int[] pre, int[] post) {
       int n = pre.length;
-	  return buildTree(pre, 0, n - 1, post, 0, n - 1);	   
-	}
+      return buildTree(pre, 0, n - 1, post, 0, n - 1);	   
+    }
 	
     private static Node buildTree(int[] pre, int l1, int r1, int[] post, int l2, int r2) {
       if (l1 > r1) {
@@ -27,10 +27,10 @@ import java.io.*;
       root.left = left;
       root.right = right;
       return root;
-	}
+    }
 
-	public static void main(String[] args) { 	  
-	  ConstructFullBinaryTreeFromPreorderAndPostorderTraversal tree = new ConstructFullBinaryTreeFromPreorderAndPostorderTraversal();	
+    public static void main(String[] args) { 	  
+      ConstructFullBinaryTreeFromPreorderAndPostorderTraversal tree = new ConstructFullBinaryTreeFromPreorderAndPostorderTraversal();	
       int preOrder[] = {1, 2, 4, 5, 3, 6, 7};
       int postOrder[] = {4, 5, 2, 6, 7, 3, 1};
 	        
@@ -38,5 +38,5 @@ import java.io.*;
 	  
       System.out.print("Inorder traversal of constructed tree is: ");
       tree.printInorderTraversal(node);	
-	}
+    }
   }
