@@ -31,10 +31,10 @@ import java.io.*;
       boolean result = reorderedPowerOf2(number);
       System.out.println();
       if(result) {
-	System.out.println("Yes we can reorder the digits in a way such that the resulting number is a power of 2.");  
+	 System.out.println("Yes we can reorder the digits in a way such that the resulting number is a power of 2.");  
       }
       else {
-	System.out.println("No we cannot reorder the digits in a way such that the resulting number is a power of 2. ");  
+	 System.out.println("No we cannot reorder the digits in a way such that the resulting number is a power of 2. ");  
       }
     }
   }
