@@ -32,7 +32,6 @@ import java.io.*;
     }	
 
     public static void main(String[] args) {   
-      ShuffleAnArray arrayshuffle  = new ShuffleAnArray();	
       Scanner input = new Scanner(System.in);
       System.out.print("Enter number of elements in the array: ");
       int lengthOfArray = input.nextInt();  
