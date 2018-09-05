@@ -50,7 +50,6 @@ import java.util.*;
 	  
       ShuffleAnArray arrayshuffle  = new ShuffleAnArray(array);	  
       int result[] = new int[array.length];
-		
       result = arrayshuffle.shuffle();
       System.out.println();	
       System.out.print("The array after shuffling is: ");
