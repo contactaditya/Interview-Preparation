@@ -20,17 +20,6 @@ import java.io.*;
       return array[low];
     }
 	
-    public static void rotate(int[] array, int k) { 
-      if(k > array.length) {
-	k = k % array.length;
-      }
-      int[] result = new int[array.length];   
-			    
-      for(int i = 0; i < array.length; i++) {
-        result[(i + k) % array.length] = array[i];  
-      }
-    }	
-
     public static void main(String[] args) {   
       Scanner input = new Scanner(System.in);
       System.out.print("Enter number of elements in the array: ");
@@ -51,7 +40,7 @@ import java.io.*;
       int[] result = new int[array.length];   
  		    
       for(int i=0; i<array.length; i++) {
- 	result[(i+array.length-k)%array.length] = array[i];  
+ 	result[(i + array.length - k) % array.length] = array[i];  
       }
       System.out.println();	
       System.out.print("The contents of the array after rotation are: ");
