@@ -48,6 +48,5 @@ import java.io.*;
       int minDifference = findMinDifference(timePoints); 
       System.out.println();
       System.out.println("The minimum minutes difference between any two time points in the list is: " + minDifference);
-
     }
   }
