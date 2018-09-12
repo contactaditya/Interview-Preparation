@@ -1,8 +1,7 @@
 import java.util.*;
 import java.io.*;
 
- public class IsBalanced {
-      
+ public class IsBalanced {   
    public static char[][] TOKENS = {{'(', ')'}};      
 
    public static boolean isBalanced(String string) {
