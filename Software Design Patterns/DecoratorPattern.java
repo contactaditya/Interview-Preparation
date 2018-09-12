@@ -37,7 +37,6 @@ import java.util.*;
    }
 	
    // Decorator WithMilk mixes milk into coffee.
-
    static class WithMilk extends CoffeeDecorator {
      public WithMilk(Coffee c) {
        super(c);
@@ -53,7 +52,6 @@ import java.util.*;
    }
 	 
    // Decorator WithSprinkles mixes sprinkles onto coffee.
-
    static class WithSprinkles extends CoffeeDecorator {
      public WithSprinkles(Coffee c) {
        super(c);
