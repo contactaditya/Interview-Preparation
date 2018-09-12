@@ -9,13 +9,13 @@ import java.io.*;
      }
      int[] count = new int[26];
      char[] array1 = s1.toCharArray();
-     for(int i=0;i<array1.length;i++) {
+     for(int i=0; i < array1.length; i++) {
        count[array1[i]-'a']++;
      }
      char[] array2 = s2.toCharArray();
      int start = 0;
       
-     for(int i=0;i<array2.length;i++) {
+     for(int i = 0; i < array2.length; i++) {
        count[array2[i]-'a']--;
           
        while(count[array2[i]-'a'] < 0) {
@@ -23,7 +23,7 @@ import java.io.*;
          start++;
        }
           
-       if(i-start+1==array1.length) {
+       if(i - start + 1 == array1.length) {
          return true;
        }
      }
