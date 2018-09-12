@@ -3,8 +3,8 @@ import java.io.*;
 
   public class FairCandySwap {
 	  
-	public static int[] fairCandySwap(int[] A, int[] B) { 
-	  int sumA = 0, sumB = 0;  // sum of A, B respectively
+    public static int[] fairCandySwap(int[] A, int[] B) { 
+      int sumA = 0, sumB = 0;  // sum of A, B respectively
       for (int x : A) {
     	sumA += x;
       }
@@ -25,10 +25,10 @@ import java.io.*;
       }
 	  
       throw null;      
-	}
+    }
 
-	public static void main(String[] args) {      
-	  Scanner input = new Scanner(System.in);
+    public static void main(String[] args) {      
+      Scanner input = new Scanner(System.in);
       System.out.print("Enter number of candy bars that Alice has: ");
       int number = input.nextInt();  
       int array[] = new int[number];
@@ -36,7 +36,7 @@ import java.io.*;
       System.out.println();	
       System.out.print("Please enter the actual values of candy bars: ");
       for (int i = 0; i < array.length; i++) {
-	    array[i] = input.nextInt();
+	array[i] = input.nextInt();
       }
 		    
       System.out.println();	
@@ -47,7 +47,7 @@ import java.io.*;
       System.out.println();	
       System.out.print("Please enter the actual values of candy bars: ");
       for (int i = 0; i < array1.length; i++) {
-	    array1[i] = input.nextInt();
+	array1[i] = input.nextInt();
       }
 		  
       int result[] = new int[array.length + array1.length];
@@ -56,7 +56,7 @@ import java.io.*;
       System.out.println();	
       System.out.print("An integer array where array[0] is the size of the candy bar that Alice must exchange, and array[1] is the size of the candy bar that Bob must exchange is: ");
       for(int i = 0; i < result.length; i++) {
-	    System.out.print(result[i] + " ");
+	System.out.print(result[i] + " ");
       }
-	}
+    }
   }
