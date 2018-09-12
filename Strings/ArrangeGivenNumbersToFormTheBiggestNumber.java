@@ -22,7 +22,7 @@ import java.io.*;
 	   
       String result = sb.toString();
       if (result.length() > 0 && result.charAt(0) == '0') {
-         return "0";
+        return "0";
       }
 	   
       return result;
