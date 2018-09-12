@@ -12,7 +12,7 @@ import java.io.*;
        
       // Run through all bars of given histogram
       while(i < n) {
-    	// If this bar is higher than the bar on top stack, push it to stack  
+        // If this bar is higher than the bar on top stack, push it to stack  
     	if (stack.empty() || histogram[stack.peek()] <= histogram[i]) {
     	  stack.push(i++);	  
     	}
