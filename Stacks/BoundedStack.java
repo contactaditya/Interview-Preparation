@@ -64,8 +64,7 @@ import java.util.*;
      /** 
       * Displays all the contents of the stack.
       */
-      System.out.println();		 
-	 
+      System.out.println();		 	 
       System.out.print("Contents of the stack are: ");	
 	 
       for(int i = 0; i< array.length; i++) {	 		   
@@ -101,40 +100,40 @@ import java.util.*;
       int choice = 0;
       System.out.println();	
 	    
-      do {	
-           System.out.println("1. For inserting an element in the stack.");
-           System.out.println("2. For deleting an element from the stack.");
-       	   System.out.println("3. For displaying the contents of the stack.");
-           System.out.println("4. For checking the contents of the stack are empty or not");
-           System.out.println("5. For checking the size of the stack");
-           System.out.println("6. For returning the last element from the stack without popping it.");
-           System.out.println("7. For exiting from the program.");
-	   
-           System.out.println();	
+      do{	
+          System.out.println("1. For inserting an element in the stack.");
+          System.out.println("2. For deleting an element from the stack.");
+       	  System.out.println("3. For displaying the contents of the stack.");
+          System.out.println("4. For checking the contents of the stack are empty or not");
+          System.out.println("5. For checking the size of the stack");
+          System.out.println("6. For returning the last element from the stack without popping it.");
+          System.out.println("7. For exiting from the program.");
+	  
+          System.out.println();	
 	    	
-           System.out.print("Enter your choice: ");
-           BufferedReader br1 = new BufferedReader(new InputStreamReader(System.in));  
-           choice = Integer.parseInt(br1.readLine());
-           switch (choice) {
-	     case 1:  System.out.println();	
-	    	      System.out.print("Enter a element to insert in the stack: ");
-	      	      BufferedReader br2 = new BufferedReader(new InputStreamReader(System.in));  	
-	      	      String element = br2.readLine();
-	    	      push(element);
-	    	      break;
-	     case 2:  pop();
-	              break;
-	     case 3:  display();
-	              break;
-	     case 4:  isEmpty();
-	              break;
-	     case 5:  size();
-	      	      break;  
-	     case 6:  peek();
-		      break;     
-           }
-           System.out.print("\n");
-         } while(choice!=7);
-    }
- }
+          System.out.print("Enter your choice: ");
+          BufferedReader br1 = new BufferedReader(new InputStreamReader(System.in));  
+          choice = Integer.parseInt(br1.readLine());
+          switch (choice) {
+	    case 1:  System.out.println();	
+	    	     System.out.print("Enter a element to insert in the stack: ");
+	      	     BufferedReader br2 = new BufferedReader(new InputStreamReader(System.in));  	
+	      	     String element = br2.readLine();
+	    	     push(element);
+	    	     break;
+	    case 2:  pop();
+	             break;
+	    case 3:  display();
+	             break;
+	    case 4:  isEmpty();
+	             break;
+	    case 5:  size();
+	      	     break;  
+	    case 6:  peek();
+		     break;     
+          }
+          System.out.print("\n");
+        } while(choice!=7);
+     }
+  }
 	
