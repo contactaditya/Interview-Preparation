@@ -4,23 +4,23 @@ import java.io.*;
   public class ShortestPalindrome {
 	  
      public static String shortestPalindrome(String string) {
-        if (string == null || string.length() < 2) {
-	  return string;	
-	}
-	char[] array = string.toCharArray(); 
-	int j = array.length - 1;
-	int i = 0;
-	while (j >= 0) {
-	  if (array[j] == array[i]) {
-	    i++;
-	  }
-	  j--;
-	}
-	if (i == array.length) {
-	  return string;
-	}
-	reverse(array, i, array.length - 1);
-	return (new String(array, i, array.length - i)) + shortestPalindrome(string.substring(0, i)) + string.substring(i);
+       if (string == null || string.length() < 2) {
+	 return string;	
+       }
+       char[] array = string.toCharArray(); 
+       int j = array.length - 1;
+       int i = 0;
+       while (j >= 0) {
+	 if (array[j] == array[i]) {
+	   i++;
+	 }
+	 j--;
+       }
+       if (i == array.length) {
+	 return string;
+       }
+       reverse(array, i, array.length - 1);
+       return (new String(array, i, array.length - i)) + shortestPalindrome(string.substring(0, i)) + string.substring(i);
      }
 	    
      private static void reverse(char[] array, int start, int end) {
