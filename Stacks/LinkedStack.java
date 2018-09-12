@@ -18,16 +18,14 @@ import java.util.*;
     public static void push(Object object) {
      /**
       * Add an item to back of stack.
-      */
-		   
+      */ 
       top = new Node(object, top);
     }
 
     public static Object pop() {
      /**
       * Removes the next item from the front of the stack.	 
-      */	 
-	
+      */	
       if(top == null) {
         System.out.println("The stack is already empty. No element can be removed from the stack.");  
         return -1;
@@ -44,11 +42,9 @@ import java.util.*;
        */
 	
        System.out.println();	
-	
        if(top == null) {	 
          System.out.println("The stack is currently empty and has no elements.");	 	  	   
        }
-		   
        else {	
          System.out.println("The stack is currently not empty.");	 		   
        }
@@ -74,9 +70,7 @@ import java.util.*;
      /**
       * Displays all the contents of the stack.
       */
-	
       System.out.println();		
-	
       System.out.print("Contents of the stack are: ");   	
 	
       for (Node node = top; node != null; node = node.next) {
@@ -90,14 +84,12 @@ import java.util.*;
      /**
       * Returns the front item from the stack without popping it.
       */	 
-	
       System.out.println();	
 	
       if(top == null) {  	 
         System.out.print("The stack is empty so we can't see the last item of the stack.");  
         return -1;
-      }	 
-		  
+      }	  
       else { 
         System.out.print("The following element is the last element of the stack: " + top.data);  	  
       }
