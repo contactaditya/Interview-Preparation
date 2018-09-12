@@ -12,27 +12,27 @@ import java.util.Stack;
        if (expression.charAt(i) == '(') {
 	  stack.push(i);
        } else {
-	  stack.pop();
-          if (stack.empty()) {
-            stack.push(i);
-          } else {
-            longest = Math.max(longest, i - stack.peek());
-          }       
+	 stack.pop();
+         if (stack.empty()) {
+           stack.push(i);
+         } else {
+           longest = Math.max(longest, i - stack.peek());
+         }       
        }
      }
      return longest;
    }
 
    public static void main(String[] args) {   
-      Scanner input = new Scanner(System.in);
-      String expression = new String();	
-      System.out.print("Please enter an expression with only these characters (): ");
-      expression = input.next();  
+     Scanner input = new Scanner(System.in);
+     String expression = new String();	
+     System.out.print("Please enter an expression with only these characters (): ");
+     expression = input.next();  
 	  
-      int longest = longestValidParentheses(expression);
+     int longest = longestValidParentheses(expression);
 	 
-      System.out.println();
-      System.out.println("The length of the largest valid substring of parentheses from a given string is: " + longest);	 
+     System.out.println();
+     System.out.println("The length of the largest valid substring of parentheses from a given string is: " + longest);	 
    }
  }
 
