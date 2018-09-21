@@ -22,21 +22,21 @@ import java.io.*;
       return result;  
     }
     
-	public static void main(String[] args) {   
-	  Scanner input = new Scanner(System.in);
-	  System.out.print("Enter number of elements in the array: ");
-	  int numbers = input.nextInt();   
-	  int array[] = new int[numbers];
+    public static void main(String[] args) {   
+      Scanner input = new Scanner(System.in);
+      System.out.print("Enter number of elements in the array: ");
+      int numbers = input.nextInt();   
+      int array[] = new int[numbers];
 
-	  System.out.println();	
-	  System.out.print("Please enter the actual values in the array: ");
-	  for (int i = 0; i < numbers; i++) {
-		array[i] = input.nextInt();
-	  }
+      System.out.println();	
+      System.out.print("Please enter the actual values in the array: ");
+      for (int i = 0; i < numbers; i++) {
+	array[i] = input.nextInt();
+      }
 		  
-	  input.close();
-	  int result = sumSubarrayMins(array); 
-	  System.out.println();	
-	  System.out.print("The sum of subarray minimums is: " + result);  
-	}
+      input.close();
+      int result = sumSubarrayMins(array); 
+      System.out.println();	
+      System.out.print("The sum of subarray minimums is: " + result);  
+    }
   }
