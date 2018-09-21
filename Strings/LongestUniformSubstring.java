@@ -3,7 +3,7 @@ import java.io.*;
 
   public class LongestUniformSubstring {
 	  
-	public static int lengthOfUniformSubstring(String string) {
+    public static int lengthOfUniformSubstring(String string) {
       char result[] = string.toCharArray();
       int count = 1;
       int maxCount = 0;
@@ -20,16 +20,16 @@ import java.io.*;
     	}
       }
 
-	  return maxCount;
-	}
+      return maxCount;
+    }
 	
-	public static void main(String[] args) {   
-	  String string = new String();	  
-	  Scanner input = new Scanner(System.in);
-	  System.out.print("Enter the string: ");
-	  string = input.next(); 
-	  int length = lengthOfUniformSubstring(string);
-	  System.out.println();
-	  System.out.print("The length of the maximum consecutive repeating character in string is: " + length);
-	}
+    public static void main(String[] args) {   
+      String string = new String();	  
+      Scanner input = new Scanner(System.in);
+      System.out.print("Enter the string: ");
+      string = input.next(); 
+      int length = lengthOfUniformSubstring(string);
+      System.out.println();
+      System.out.print("The length of the maximum consecutive repeating character in string is: " + length);
+    }
   }
