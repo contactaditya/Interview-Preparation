@@ -3,7 +3,7 @@ import java.util.*;
 
   public class WordSubsets {
 	  
-	public static List<String> wordSubsets(String[] A, String[] B) {
+    public static List<String> wordSubsets(String[] A, String[] B) {
       List<String> result = new ArrayList<String>();
       int[] bmax = count("");
       for (String b : B) {
@@ -23,8 +23,8 @@ import java.util.*;
         result.add(a);
       }
       
-	  return result;      
-	}	  
+      return result;      
+    }	  
 	
     public static int[] count(String string) {
       int[] answer = new int[26];
@@ -34,8 +34,8 @@ import java.util.*;
       return answer;
     }	
 
-	public static void main(String[] args) {     
-	  Scanner input = new Scanner(System.in);
+    public static void main(String[] args) {     
+      Scanner input = new Scanner(System.in);
       System.out.print("Enter number of elements in the array: ");
       int numbersA = input.nextInt();   
       String A[] = new String[numbersA];
@@ -45,7 +45,7 @@ import java.util.*;
       System.out.print("Please enter the actual values in the array: ");
       System.out.println();
       for (int i = 0; i < numbersA; i++) {
-	    A[i] = input.nextLine(); 
+	A[i] = input.nextLine(); 
       }
       
       System.out.println();
@@ -58,13 +58,13 @@ import java.util.*;
       System.out.print("Please enter the actual values in the array: ");
       System.out.println();
       for (int i = 0; i < numbersB; i++) {
-	    B[i] = input.nextLine(); 
+	B[i] = input.nextLine(); 
       }
       
       List<String> result = new ArrayList<String>();
       result = wordSubsets(A, B);
       System.out.println();
-	  System.out.println("The list of all universal words in the array A is: " + result);
-	  input.close();
-	}
+      System.out.println("The list of all universal words in the array A is: " + result);
+      input.close();
+    }
   }
