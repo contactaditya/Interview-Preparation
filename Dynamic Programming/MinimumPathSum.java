@@ -6,8 +6,7 @@ public class MinimumPathSum {
   public static int findMinimumPathSum(int[][] array) {
     if(array == null || array.length==0) {
        return 0;	
-    }
-	    
+    }	    
     int m = array.length;
     int n = array[0].length;
 	    
@@ -51,7 +50,6 @@ public class MinimumPathSum {
 	  
     int sum = findMinimumPathSum(array); 
     System.out.println();
-    System.out.println("The minimum sum of all numbers along its path are: " + sum);
-	  
+    System.out.println("The minimum sum of all numbers along its path are: " + sum);  
   }
 }
