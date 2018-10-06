@@ -26,7 +26,6 @@ import java.io.*;
 	
     public static int coverPoints1(ArrayList<Integer> X, ArrayList<Integer> Y) {
       int length = 0;
-	   
       for (int i = 1; i < X.size(); i++) {
 	length += Math.max(Math.abs(X.get(i) - X.get(i-1)), Math.abs(Y.get(i) - Y.get(i-1))); 
       }
