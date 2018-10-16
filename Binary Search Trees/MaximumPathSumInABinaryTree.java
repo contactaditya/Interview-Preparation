@@ -2,8 +2,8 @@ import java.util.*;
 import java.io.*;
 
   public class MaximumPathSumInABinaryTree {
-	Node root;
-	int maxValue;
+    Node root;
+    int maxValue;
 	
     public int findMaximumSum(Node node) {
       maxValue = Integer.MIN_VALUE;
@@ -13,7 +13,7 @@ import java.io.*;
 	
     public int maxPathDown(Node node) {
       if (node == null) {
-	    return 0;
+	return 0;
       } 
       int left = Math.max(0, maxPathDown(node.left));
       int right = Math.max(0, maxPathDown(node.right));
