@@ -43,8 +43,7 @@ import java.util.*;
      }
 			
      int max = maxSubArrayProduct(array);
-     System.out.print("\n");
-		    
+     System.out.println();    
      System.out.println("The value of the product of the maximum product subarray within an array is: " + max);
    }
  }
