@@ -1,8 +1,8 @@
 import java.util.*;
 
  public class CheckBalanced {    
-   static Node root;	    
-   static Node previous;
+   Node root;	    
+   Node previous;
 	
    public static int checkHeight(Node root) {
      if(root == null) {
