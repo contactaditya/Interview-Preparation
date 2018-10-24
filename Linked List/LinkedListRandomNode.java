@@ -1,14 +1,13 @@
 import java.util.*;
 import java.io.*;
 
-  public class LinkedListRandomNode {
-	  
+  public class LinkedListRandomNode {  
     private static LinkedListNode head;
     Random random;
     
     public LinkedListRandomNode (LinkedListNode head) {
-       this.head = head;       
-       random = new Random();        
+      this.head = head;       
+      random = new Random();        
     }
     
     /** Returns a random node's value. */
@@ -25,13 +24,12 @@ import java.io.*;
     }
     
     public static void main(String[] args) {   
-       LinkedListRandomNode list = new LinkedListRandomNode(head);
-       list.head = new LinkedListNode(1);
-       list.head.next = new LinkedListNode(2);
-       list.head.next.next = new LinkedListNode(3);
+      LinkedListRandomNode list = new LinkedListRandomNode(head);
+      list.head = new LinkedListNode(1);
+      list.head.next = new LinkedListNode(2);
+      list.head.next.next = new LinkedListNode(3);
 
-       int randomValue = list.getRandom();
-       System.out.print("The random's node value from the linked list is: " + randomValue);	 
-
+      int randomValue = list.getRandom();
+      System.out.print("The random's node value from the linked list is: " + randomValue);	 
     }
   }
