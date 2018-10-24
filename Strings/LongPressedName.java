@@ -4,12 +4,12 @@ import java.io.*;
   public class LongPressedName {
 
     public static boolean isLongPressedName(String name, String typed) {
-	  int j = 0;
-	  for (char c : name.toCharArray()) {
-	    if (j == typed.length()) {
+      int j = 0;
+      for (char c : name.toCharArray()) {
+	if (j == typed.length()) {
           return false; 
-	    }
-	    // If mismatch...
+	}
+	// If mismatch...
         if (typed.charAt(j) != c) {
           // If it's the first char of the block, ans is false.
           if (j == 0 || typed.charAt(j-1) != typed.charAt(j)) {
@@ -26,14 +26,14 @@ import java.io.*;
           }
         }
         j++;
-	  }
+      }
     	
       return true;  
     }
 
-	public static void main(String[] args) {  
-	  Scanner input = new Scanner(System.in);	
-	  String name = new String();	  
+    public static void main(String[] args) {  
+      Scanner input = new Scanner(System.in);	
+      String name = new String();	  
       System.out.print("Enter the name: ");
       name = input.next();  
 	  
@@ -45,11 +45,11 @@ import java.io.*;
       boolean isLongPressedName = isLongPressedName(name, typed);
       System.out.println();
       if(isLongPressedName) {
- 		System.out.println("Yes it is possible that it was my friends name, with some characters (possibly none) being long pressed.");
- 	  }
- 	  else {
- 		System.out.println("No it is not possible that it was my friends name, with some characters (possibly none) being long pressed.");  
- 	  }
+ 	System.out.println("Yes it is possible that it was my friends name, with some characters (possibly none) being long pressed.");
+      }
+      else {
+ 	System.out.println("No it is not possible that it was my friends name, with some characters (possibly none) being long pressed.");  
+      }
       input.close();
-	}
+    }
   }
