@@ -11,29 +11,28 @@ import java.util.*;
     }
 	
     public static void removeDuplicates() {
-      /**
-       * Removes the duplicates from the linked list.	 
-       */	 
-				    
-       HashSet<Object> set = new HashSet<Object>();
-       LinkedListNode previous = null;
-       LinkedListNode current = head;
+     /**
+      * Removes the duplicates from the linked list.	 
+      */	 				    
+      HashSet<Object> set = new HashSet<Object>();
+      LinkedListNode previous = null;
+      LinkedListNode current = head;
 		  	  
-       if(size==0) {	   
-	 System.out.println();  
-	 System.out.println("The linked list is currently empty and has no elements so no elements can be removed.");	
-       }	 
-       else {
-	 while (current != null) {
-	   if (set.contains(current.data)) {
-	     previous.next = current.next;
-	   } else {
-	     set.add(current.data);
-             previous = current;
-	   }
-	     current = current.next;
-	 }
-       }
+      if(size==0) {	   
+        System.out.println();  
+	System.out.println("The linked list is currently empty and has no elements so no elements can be removed.");	
+      }	 
+      else {
+	while (current != null) {
+	  if (set.contains(current.data)) {
+	    previous.next = current.next;
+	  } else {
+	    set.add(current.data);
+            previous = current;
+	  }
+	  current = current.next;
+	}
+      }
     }
 
     public static void main(String[] args) { 	  
