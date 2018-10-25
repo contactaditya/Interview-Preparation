@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 
- public class SortALinkedList { 	
+public class SortALinkedList { 	
   private static LinkedListNode head;
   private static int size;  
 
