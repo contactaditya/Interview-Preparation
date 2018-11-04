@@ -3,12 +3,12 @@ import java.io.*;
 
   public class MaximumSumOfLengthsOfNonOverlappingSubarraysWithKAsTheMaxElement {
 	  
-	public static int calculateMaxSumLength(int array[], int n, int k) { 
-	  int answer = 0;
-	  int count = 0;
-	  int flag = 0; // variable for checking if k appeared in subarray 
+    public static int calculateMaxSumLength(int array[], int n, int k) { 
+      int answer = 0;
+      int count = 0;
+      int flag = 0; // variable for checking if k appeared in subarray 
 	  
-	  for (int i = 0; i < n;) { 
+      for (int i = 0; i < n;) { 
         count = 0; 
         flag = 0; 
 
@@ -32,28 +32,28 @@ import java.io.*;
         }
       } 
 	  
-	  return answer;
-	}
+      return answer;
+    }
 
-	public static void main(String[] args) { 
-	  Scanner input = new Scanner(System.in);
-	  System.out.print("Enter number of elements in the array: ");
-	  int number = input.nextInt();  
-	  int array[] = new int[number];
+    public static void main(String[] args) { 
+      Scanner input = new Scanner(System.in);
+      System.out.print("Enter number of elements in the array: ");
+      int number = input.nextInt();  
+      int array[] = new int[number];
 		
-	  System.out.println();	
-	  System.out.print("Please enter the elements of the array: ");
-	  for (int i = 0; i < array.length; i++) {
-	    array[i] = input.nextInt();
-	  }
+      System.out.println();	
+      System.out.print("Please enter the elements of the array: ");
+      for (int i = 0; i < array.length; i++) {
+	array[i] = input.nextInt();
+      }
 	  	  
-	  System.out.println();	
-	  System.out.print("Enter the maximum element: ");
-	  int k = input.nextInt();  
+      System.out.println();	
+      System.out.print("Enter the maximum element: ");
+      int k = input.nextInt();  
 			
       int result = calculateMaxSumLength(array, array.length, k);
       System.out.println();	
-	  System.out.print("The maximum sum of lengths of non-overlapping subarrays (contiguous elements) with " + k + " as the maximum element is: " + result);
-	  input.close();
-	}
+      System.out.print("The maximum sum of lengths of non-overlapping subarrays (contiguous elements) with " + k + " as the maximum element is: " + result);
+      input.close();
+    }
   }
