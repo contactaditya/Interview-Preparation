@@ -113,7 +113,6 @@ import java.util.Hashtable;
         head = temp;
         head.next = null;
       }
-   
       else {	  
        // starting at the head node, crawl to the end of the list
        while(current.getNext() != null) {
@@ -244,8 +243,7 @@ import java.util.Hashtable;
       if(size==0) {	   
         System.out.println("The linked list is currently empty and has no elements so no elements can be removed.");	
         return false;
-      }	  
-	  
+      }	    
       else {		
         for(int i=1; i < index; i++) {
           if(current.getNext() == null) {
@@ -272,8 +270,7 @@ import java.util.Hashtable;
       if(size==0) {	   
         System.out.println();  
         System.out.println("The linked list is currently empty and has no elements so no elements can be removed.");	
-      }	  
-		  
+      }	  	  
       else {
         while (current != null) {
           if (set.contains(current.data)) {
@@ -310,58 +307,55 @@ import java.util.Hashtable;
     }
 		 
     public static void display() {
-      /**
-       * Displays all the contents of the link list.
-       */  
-       System.out.println();	   
-       if(size==0) {	   
-         System.out.println("The linked list is currently empty and has no elements.");	 	  	   
-       }
-   
-       else {
-         Node current = head;
-         System.out.print("Contents of the linked list are: ");	 
-         while(current != null) {	   
-           System.out.print(current.getData() + " ");	 	
-           current = current.getNext();
-         }
-         System.out.println();	 
-       }
+     /**
+      * Displays all the contents of the link list.
+      */  
+      System.out.println();	   
+      if(size==0) {	   
+        System.out.println("The linked list is currently empty and has no elements.");	 	  	   
+      }
+      else {
+        Node current = head;
+        System.out.print("Contents of the linked list are: ");	 
+        while(current != null) {	   
+          System.out.print(current.getData() + " ");	 	
+          current = current.getNext();
+        }
+        System.out.println();	 
+      }
     }
   
     public static void displayFirst() {
-      /**
-       * Displays the first element of the linked list.
-       */
-       System.out.println();	  
+     /**
+      * Displays the first element of the linked list.
+      */
+      System.out.println();	  
 	  
-       if(size==0) {	   
-         System.out.println("The linked list is currently empty and has no elements.");	 	  	   
-       }	  
-  
-       else {
-         Node current = head;	  
-         System.out.println("Content of the first element of the linked list is: " + current.getData());
-       }
+      if(size==0) {	   
+        System.out.println("The linked list is currently empty and has no elements.");	 	  	   
+      }	 
+      else {
+        Node current = head;	  
+        System.out.println("Content of the first element of the linked list is: " + current.getData());
+      }
     }
   
     public static void displayLast() {
-      /**
-       * Displays the last element of the linked list.
-       */
-       System.out.println();	 	  
+     /**
+      * Displays the last element of the linked list.
+      */
+      System.out.println();	 	  
 	  
-       if(size==0) {	   
-         System.out.println("The linked list is currently empty and has no elements.");	 	  	   
-       }
-  
-       else {		   
-         Node current = head.getNext();
-         while(current.getNext() != null) {	  	  
+      if(size==0) {	   
+        System.out.println("The linked list is currently empty and has no elements.");	 	  	   
+      }
+      else {		   
+        Node current = head.getNext();
+        while(current.getNext() != null) {	  	  
            current = current.getNext();  
-         }
-         System.out.println("Content of the last element of the linked list is: " + current.getData());
-       }
+        }
+        System.out.println("Content of the last element of the linked list is: " + current.getData());
+      }
     }
   
     public static void display(int index) {
