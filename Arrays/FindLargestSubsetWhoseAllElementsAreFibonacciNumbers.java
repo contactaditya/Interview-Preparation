@@ -23,10 +23,10 @@ import java.io.*;
       Collections.sort(result);
       System.out.println();	
       System.out.println("The largest subset from list that contain elements which are Fibonacci numbers is: " + result);   
-	}
+    }
 
-	public static void main(String[] args) {   
-	  Scanner input = new Scanner(System.in);	  		  
+    public static void main(String[] args) {   
+      Scanner input = new Scanner(System.in);	  		  
       System.out.print("Enter number of elements in the list: ");
       int number = input.nextInt();  
       ArrayList<Integer> list = new ArrayList<Integer>();	
@@ -37,7 +37,7 @@ import java.io.*;
     	list.add(input.nextInt());
       }
 	   
-	  findFibSubset(list);
-	  input.close();
-	}
+      findFibSubset(list);
+      input.close();
+    }
   }
