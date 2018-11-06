@@ -3,7 +3,7 @@ import java.io.*;
 
   public class ShortestBridge {
 	  
-	public static int shortestBridge(int[][] array) {
+    public static int shortestBridge(int[][] array) {
       int m = array.length, n = array[0].length;
       boolean[][] visited = new boolean[m][n];
       int[][] dirs = new int[][]{{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
@@ -44,21 +44,21 @@ import java.io.*;
       }
     
       return -1;
-	}
+    }
 	
-	private static void dfs(int array[][], boolean visited[][], java.util.Queue<int[]> q, int i, int j, int[][] dirs) {
-	  if (i < 0 || j < 0 || i >= array.length || j >= array[0].length || visited[i][j] || array[i][j] == 0) {
-	    return;
-	  }
-	  visited[i][j] = true;
-	  q.offer(new int[]{i, j});
-	  for (int[] dir : dirs) {
-	    dfs(array, visited, q, i + dir[0], j + dir[1], dirs);
-	  }
-	}
+    private static void dfs(int array[][], boolean visited[][], java.util.Queue<int[]> q, int i, int j, int[][] dirs) {
+      if (i < 0 || j < 0 || i >= array.length || j >= array[0].length || visited[i][j] || array[i][j] == 0) {
+	return;
+      }
+      visited[i][j] = true;
+      q.offer(new int[]{i, j});
+      for (int[] dir : dirs) {
+	dfs(array, visited, q, i + dir[0], j + dir[1], dirs);
+      }
+    }
 
-	public static void main(String[] args) {     
-	  Scanner input = new Scanner(System.in);
+    public static void main(String[] args) {     
+      Scanner input = new Scanner(System.in);
       System.out.print("Please enter the number of rows in the array: ");
       int x = input.nextInt();  
       System.out.println();
@@ -69,12 +69,12 @@ import java.io.*;
       System.out.println("Please enter the actual values in the array: ");
       for(int i=0; i < x; i++) {
         for(int j=0; j < y; j++) {
-	      array[i][j] = input.nextInt();
-	    }
+	  array[i][j] = input.nextInt();
+	}
       }
       int result = shortestBridge(array);
       System.out.println();
       System.out.println("The smallest number of 0s that must be flipped are: " + result);
       input.close();
-	}
+    }
   }
