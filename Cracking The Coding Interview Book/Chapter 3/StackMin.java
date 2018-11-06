@@ -38,8 +38,7 @@ import java.util.Stack;
     public static int pop() {
      /**
       * Removes the next item from the front of the stack.	 
-      */	 
-			  
+      */	 			  
       if(stack.isEmpty()) {
         System.out.println("The stack is already empty. No element can be removed from the stack.");  
 	return -1;
@@ -50,12 +49,10 @@ import java.util.Stack;
     public static boolean isEmpty() {
      /**
       * Test if the stack is empty.
-      */
-		   
+      */  
       if(stack.isEmpty()) {	   
 	System.out.println("The stack is currently empty and has no elements.");	 	  	   
-      }
-			   
+      }		   
       else {
 	System.out.println("The stack is currently not empty.");	 		   
       }
@@ -65,8 +62,7 @@ import java.util.Stack;
     public static int min() {
      /**
       * It finds the minimum value of the stack.
-      */	 
-				  
+      */	 			  
       if(stack.isEmpty()) {
         System.out.println("The stack is empty. No element can be returned from the stack.");  
         return Integer.MAX_VALUE;
@@ -79,8 +75,7 @@ import java.util.Stack;
     public static int size() {
      /**
       * Returns the number of items currently in the stack.
-      */
-				   
+      */		   
       System.out.println("The size of the stack is: " + stack.size());	 
       return stack.size();
     }
@@ -88,8 +83,7 @@ import java.util.Stack;
     public static int peek() {
      /**
       * Returns the front item from the stack without popping it.
-      */	 
-				  
+      */	 			  
       if(stack.isEmpty()) {  
         System.out.println("The stack is empty so we can't see the last item of the stack.");  
         return -1;
@@ -104,7 +98,6 @@ import java.util.Stack;
      /**
       * Displays all the contents of the stack.
       */
-		 
       System.out.print("Contents of the stack are: "); 
  		 
       for (int i = 0; i < stack.size(); i++) {
