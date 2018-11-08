@@ -2,26 +2,26 @@ import java.util.*;
 import java.io.*;
 
   public class FindTheLongestSubstringWithKUniqueCharactersInAGivenString {
-	public static final int MAX_CHARS = 26; 
+    public static final int MAX_CHARS = 26; 
 	
-	// Returns true if number of characters are less than required 
-	public static boolean isValid(int count[], int k) {
-	  int value = 0;
-	  for (int i = 0; i < MAX_CHARS; i++) {
-	    if (count[i] > 0) {
-	      value++;   
-	    }  
-	  }
+    // Returns true if number of characters are less than required 
+    public static boolean isValid(int count[], int k) {
+      int value = 0;
+      for (int i = 0; i < MAX_CHARS; i++) {
+        if (count[i] > 0) {
+	  value++;   
+	}  
+      }
 	  
-	  return (k >= value);  
+      return (k >= value);  
     }  
 	  
-	public static String kUniques(String string, int k) {
-	  int numberOfUniqueCharacters = 0; // number of unique characters 
-	  int n = string.length(); 	
-	  int count[] = new int[MAX_CHARS]; 
+    public static String kUniques(String string, int k) {
+      int numberOfUniqueCharacters = 0; // number of unique characters 
+      int n = string.length(); 	
+      int count[] = new int[MAX_CHARS]; 
 	  
-	  // Since no character has been visited yet
+      // Since no character has been visited yet
       for (int i = 0; i < MAX_CHARS; i++) { 
         count[i] = 0; 
       } 
@@ -64,21 +64,21 @@ import java.io.*;
       }
       
       return string.substring(maxWindowStart, maxWindowStart + maxWindowSize);
-	}
+    }
 
-	public static void main(String[] args) { 
-	  String string = new String();	  
-	  Scanner input = new Scanner(System.in);
-	  System.out.print("Enter the string: ");
-	  string = input.next(); 
-	  System.out.println();	
-	  System.out.print("Enter the number of unique characters in the longest substring: ");
-	  int k = input.nextInt(); 
+    public static void main(String[] args) { 
+      String string = new String();	  
+      Scanner input = new Scanner(System.in);
+      System.out.print("Enter the string: ");
+      string = input.next(); 
+      System.out.println();	
+      System.out.print("Enter the number of unique characters in the longest substring: ");
+      int k = input.nextInt(); 
 	  
       String longestSubstring = kUniques(string, k);
 	
       System.out.println();	
       System.out.println("The longest possible substring that has exactly " + k + " unique characters is: " + longestSubstring);	
       input.close();
-	}
+    }
   }
