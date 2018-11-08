@@ -2,14 +2,14 @@ import java.util.*;
 import java.io.*;
 
   public class LengthOfTheLongestSubstringWithoutRepeatingCharacters {
-	public static final int NO_OF_CHARS = 256; 
+    public static final int NO_OF_CHARS = 256; 
 
-	public static int longestUniqueSubstring(String string) {
-	  int n = string.length();
-	  int currentLength = 1;
-	  int maxLength = 1;
-	  int previousIndex; 
-	  int i; 
+    public static int longestUniqueSubstring(String string) {
+      int n = string.length();
+      int currentLength = 1;
+      int maxLength = 1;
+      int previousIndex; 
+      int i; 
       int visited[] = new int[NO_OF_CHARS]; 
       // Since no character has been visited yet
       for (i = 0; i < NO_OF_CHARS; i++) { 
@@ -35,11 +35,11 @@ import java.io.*;
     	maxLength = currentLength;  
       }
 		
-	  return maxLength;  
-	}
+      return maxLength;  
+    }
 	  
-	public static void main(String[] args) {   
-	  Scanner input = new Scanner(System.in);
+    public static void main(String[] args) {   
+      Scanner input = new Scanner(System.in);
       System.out.print("Enter the string: ");
       String string = input.nextLine();  
 			  
@@ -47,5 +47,5 @@ import java.io.*;
       System.out.println();
       System.out.println("The length of the longest non repeating character is: " + result);
       input.close();
-	}
+    }
   }
