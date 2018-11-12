@@ -21,7 +21,7 @@ import java.io.*;
         // Now for each part, we have calculated how many nodes that part will have: width + (i < remainder ? 1 : 0). We create a new list and write the part to that list.
         for (int j = 0; j < width + (i < rem ? 1 : 0) - 1; j++) {
           if (current != null) {
-        	current = current.next;
+            current = current.next;
           }
         }
         if (current != null) {
@@ -61,4 +61,4 @@ import java.io.*;
 	  
       input.close();
     }
- }
+  }
