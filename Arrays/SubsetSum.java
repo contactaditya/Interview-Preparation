@@ -8,19 +8,16 @@ public class SubsetSum {
 	
     boolean subset[][] = new boolean[sum + 1][n + 1];     
     // In any set there will be empty subset with sum 0.
-  
     for(int i = 0; i <= n; i++) {
       subset[0][i] = true;
     }
   
     // We can't find a sum > 0 in an empty array.
-  
     for(int s = 1; s <= sum; s++) {
       subset[s][0] = false;
     }
   
     // Fill the subset table in a bottom up manner.
-	  
     for(int i = 1; i <= sum; i++) {	  
       for(int j = 1; j <= n; j++) {   
         subset[i][j] = subset[i][j-1];
