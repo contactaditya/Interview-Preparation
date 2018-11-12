@@ -12,8 +12,8 @@ import java.io.*;
 
      public static void DFS(int array[][], int row, int column, boolean visited[][]) {
        int count = 0;	
-       int rowNumber[] = new int[] {-1, -1, -1,  0, 0,  1, 1, 1};
-       int columnNumber[] = new int[] {-1,  0,  1, -1, 1, -1, 0, 1}; 	
+       int rowNumber[] = new int[] {-1, -1, -1, 0, 0, 1, 1, 1};
+       int columnNumber[] = new int[] {-1, 0, 1, -1, 1, -1, 0, 1}; 	
       
        // Mark this cell as visited
        visited[row][column] = true;
