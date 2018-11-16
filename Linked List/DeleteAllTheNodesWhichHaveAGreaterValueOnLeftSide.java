@@ -2,10 +2,10 @@ import java.util.*;
 import java.io.*;
   
   public class DeleteAllTheNodesWhichHaveAGreaterValueOnLeftSide { 	
-	private LinkedListNode head;
-	private static int size;  
+    private LinkedListNode head;
+    private static int size;  
 	
-	public void deleteAllTheNodesWhichHaveAGreaterValueOnLeftSide(LinkedListNode head) { 	 
+    public void deleteAllTheNodesWhichHaveAGreaterValueOnLeftSide(LinkedListNode head) { 	 
       LinkedListNode current = head; 
     
       /* Initialise max */
@@ -24,33 +24,33 @@ import java.io.*;
           current.next = temp.next; 
         }   
       }    
-	}
+    }
 	
-	public void PrintElementsOfALinkedList(LinkedListNode head) {	 
-	  LinkedListNode current = head; 		    
-	  while(current != null) {	   
-		System.out.print(current.getData() + " ");	 	
-		current = current.getNext();
-	  }
-	}  		
+    public void PrintElementsOfALinkedList(LinkedListNode head) {	 
+      LinkedListNode current = head; 		    
+      while(current != null) {	   
+	System.out.print(current.getData() + " ");	 	
+	current = current.getNext();
+      }
+    }  		
 
-	public static void main(String[] args) { 	
-	  DeleteAllTheNodesWhichHaveAGreaterValueOnLeftSide list = new DeleteAllTheNodesWhichHaveAGreaterValueOnLeftSide();
-	  list.head = new LinkedListNode(25);
-	  list.head.next = new LinkedListNode(15);
-	  list.head.next.next = new LinkedListNode(6);
-	  list.head.next.next.next = new LinkedListNode(48);
-	  list.head.next.next.next.next = new LinkedListNode(12);
-	  list.head.next.next.next.next.next = new LinkedListNode(5);
-	  list.head.next.next.next.next.next.next = new LinkedListNode(16);
-	  list.head.next.next.next.next.next.next.next = new LinkedListNode(14);
+    public static void main(String[] args) { 	
+      DeleteAllTheNodesWhichHaveAGreaterValueOnLeftSide list = new DeleteAllTheNodesWhichHaveAGreaterValueOnLeftSide();
+      list.head = new LinkedListNode(25);
+      list.head.next = new LinkedListNode(15);
+      list.head.next.next = new LinkedListNode(6);
+      list.head.next.next.next = new LinkedListNode(48);
+      list.head.next.next.next.next = new LinkedListNode(12);
+      list.head.next.next.next.next.next = new LinkedListNode(5);
+      list.head.next.next.next.next.next.next = new LinkedListNode(16);
+      list.head.next.next.next.next.next.next.next = new LinkedListNode(14);
 	  
-	  System.out.print("Contents of the linked list before deleting are: ");	 
-	  list.PrintElementsOfALinkedList(list.head);
-	  list.deleteAllTheNodesWhichHaveAGreaterValueOnLeftSide(list.head); 
-	  System.out.println();
-	  System.out.println();
-	  System.out.print("Contents of the linked list after deleting are: ");	 
-	  list.PrintElementsOfALinkedList(list.head);
-	}
+      System.out.print("Contents of the linked list before deleting are: ");	 
+      list.PrintElementsOfALinkedList(list.head);
+      list.deleteAllTheNodesWhichHaveAGreaterValueOnLeftSide(list.head); 
+      System.out.println();
+      System.out.println();
+      System.out.print("Contents of the linked list after deleting are: ");	 
+      list.PrintElementsOfALinkedList(list.head);
+    }
   }
