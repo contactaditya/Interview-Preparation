@@ -2,88 +2,76 @@ import java.util.*;
 import java.io.*;
 
  public class SortLinkedList {
-   private static LinkedListNode head;
+   private LinkedListNode head;
    private static int size;  
 
    public SortLinkedList() {
-     // this is an empty list, so the reference to the head node is set to a new node with no data				  
-     head = new LinkedListNode(null);
-     size = 0;
+	 // this is an empty list, so the reference to the head node is set to a new node with no data				  
+	 head = new LinkedListNode(null);
+	 size = 0;
    } 
 
-   public static LinkedListNode sortLinkedList(LinkedListNode head) { 
-     if (head == null || head.next == null) {
-       return head;	 
-     }
+   public LinkedListNode sortLinkedList(LinkedListNode head) { 
+	 if (head == null || head.next == null) {
+	   return head;	 
+	 }
 	    
-     // step 1. Cut the list to two halves
-     LinkedListNode previous = null; 
-     LinkedListNode slow = head;
-     LinkedListNode fast = head;
+	 // step 1. Cut the list to two halves
+	 LinkedListNode dummy = head; 
+	 LinkedListNode slow = head;
+	 LinkedListNode fast = head;
 	    
-     while (fast != null && fast.next != null) {
-       previous = slow;
-       slow = slow.next;
-       fast = fast.next.next;
-     }
+	 while (fast != null && fast.next != null) {
+	   dummy = slow;
+	   slow = slow.next;
+	   fast = fast.next.next;
+	 }
 	    
-     previous.next = null;
-		
-     // step 2. Sort each half 
-     LinkedListNode list1 = sortLinkedList(head);
-     LinkedListNode list2 = sortLinkedList(slow);
-	   
-     // step 3. merge l1 and l2
-     return merge(list1, list2);
+	 dummy.next = null;
+			    
+	 // step 2. Sort the two Linked List and merge 
+	 return merge(sortLinkedList(head), sortLinkedList(slow));
    }   
 	 	 
-   private static LinkedListNode merge(LinkedListNode left, LinkedListNode right) {	   
-     LinkedListNode l = new LinkedListNode(0), p = l;
-	   
-     while (left != null && right != null) {
-       if ((int)left.data < (int)right.data) {
-	 p.next = left;
-	 left = left.next;
-       } else {
-	 p.next = right;
-	 right = right.next;
-       }
-       p = p.next;
+   private LinkedListNode merge(LinkedListNode list1, LinkedListNode list2) {	   
+     if (list1 == null) {
+       return list2;
      }
-		    
-     if (left != null) {
-       p.next = left;
+     if (list2 == null) {
+       return list1;
      }
-		    
-     if (right != null) {
-       p.next = right;
+     if ((int)list1.data <= (int)list2.data) {
+       list1.next = merge(list1.next, list2);
+       return list1;
+     } else {
+       list2.next = merge(list1, list2.next);
+       return list2;
      }
-     return l.next;
    }
 
-   public static void PrintElementsOfALinkedList(LinkedListNode head) {	 
-     LinkedListNode current = head; 		    
-     while(current != null) {	   
-       System.out.print(current.getData() + " ");	 	
-       current = current.getNext();
-     }
+   public void PrintElementsOfALinkedList(LinkedListNode head) {	 
+	 LinkedListNode current = head; 		    
+	 while(current != null) {	   
+	   System.out.print(current.getData() + " ");	 	
+	   current = current.getNext();
+	 }
    } 	 
 
    public static void main(String[] args) {
-     SortLinkedList list = new SortLinkedList();
-     list.head = new LinkedListNode(2);
-     list.head.next = new LinkedListNode(3);
-     list.head.next.next = new LinkedListNode(4);
-     list.head.next.next.next = new LinkedListNode(3);
-     list.head.next.next.next.next = new LinkedListNode(4);	  
-     list.head.next.next.next.next.next = new LinkedListNode(5);
+	 SortLinkedList list = new SortLinkedList();
+	 list.head = new LinkedListNode(15);
+	 list.head.next = new LinkedListNode(10);
+	 list.head.next.next = new LinkedListNode(5);
+	 list.head.next.next.next = new LinkedListNode(20);
+	 list.head.next.next.next.next = new LinkedListNode(3);	  
+	 list.head.next.next.next.next.next = new LinkedListNode(2);
 
-     System.out.print("Contents of the linked list before sorting are: ");	 
-     list.PrintElementsOfALinkedList(head);
-     list.sortLinkedList(head); 
-     System.out.println();
-     System.out.println();
-     System.out.print("Contents of the linked list after sorting are: ");	 
-     list.PrintElementsOfALinkedList(head);		
+	 System.out.print("Contents of the linked list before sorting are: ");	 
+	 list.PrintElementsOfALinkedList(list.head);
+	 LinkedListNode sortedList = list.sortLinkedList(list.head); 
+	 System.out.println();
+	 System.out.println();
+	 System.out.print("Contents of the linked list after sorting are: ");	 
+	 list.PrintElementsOfALinkedList(sortedList);		
    }
  }
