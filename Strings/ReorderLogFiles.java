@@ -3,9 +3,9 @@ import java.io.*;
 
   public class ReorderLogFiles {
 	  
-	public static String[] reorderLogFiles(String[] logs) {
-	  String[] result = new String[logs.length];
-	  List<String> digitLog = new ArrayList<String>();
+    public static String[] reorderLogFiles(String[] logs) {
+      String[] result = new String[logs.length];
+      List<String> digitLog = new ArrayList<String>();
       Map<String, String> charLog = new TreeMap<String, String>();
       for(String string : logs) {
         if(isDigit(string)) {
@@ -23,27 +23,27 @@ import java.io.*;
     	result[i++] = d;
       }
       
-	  return result;      
-	}
+      return result;      
+    }
 
-	private static boolean isDigit(String string) {
-	  int index = 0;
-	  while(string.charAt(index) != ' ') {
-	    index++;
-	  }
-	  return Character.isDigit(string.charAt(index + 1));
-	}
-
-	private static String extractLog(String string) {
-	  int index = 0;
-	  while(string.charAt(index) != ' ') {
-		index++;
+    private static boolean isDigit(String string) {
+      int index = 0;
+      while(string.charAt(index) != ' ') {
+	index++;
       }
-	  return string.substring(index + 1);
-	}
+      return Character.isDigit(string.charAt(index + 1));
+    }
 
-	public static void main(String[] args) {  
-	  Scanner input = new Scanner(System.in);	  
+    private static String extractLog(String string) {
+      int index = 0;
+      while(string.charAt(index) != ' ') {
+	index++;
+      }
+      return string.substring(index + 1);
+    }
+
+    public static void main(String[] args) {  
+      Scanner input = new Scanner(System.in);	  
       System.out.print("Enter number of logs in the array: ");
       int numbers = input.nextInt();   
       String logs[] = new String[numbers];
@@ -52,7 +52,7 @@ import java.io.*;
       input.nextLine();
       System.out.println("Please enter the actual values in the logs: ");
       for (int i = 0; i < numbers; i++) {
-	    logs[i] = input.nextLine(); 
+	logs[i] = input.nextLine(); 
       }
 	    
       String result[] = reorderLogFiles(logs); 
@@ -67,5 +67,5 @@ import java.io.*;
     	}
       }
       input.close();
-	}
+    }
   }
