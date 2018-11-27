@@ -3,32 +3,32 @@ import java.io.*;
 
   public class CountAndSay {
 	  
-    public static String countAndSay(int number) {
-      String s = "1";
-      for (int i = 1; i < number; i++) {
-	StringBuilder sb = new StringBuilder();
-	for (int j = 1, count = 1; j <= s.length(); j++) {
-          if (j == s.length() || s.charAt(j - 1) != s.charAt(j)) {
-            sb.append(count);
-            sb.append(s.charAt(j - 1));
-            count = 1;
-          } else {
-            count++;
-          }
+	public static String countAndSay(int number) {
+	  if (number == 1) {
+	    return "1";
+	  }
+	  String string = countAndSay(number-1);
+	  StringBuilder sb = new StringBuilder();
+	  int count = 0;
+	  for (int i = 0; i <= string.length(); i++) {
+        if (i == string.length() || (i - 1) >= 0 && string.charAt(i - 1) != string.charAt(i)) {
+          sb.append(count);
+          sb.append(string.charAt(i - 1));
+          count = 0;
         }
-	s = sb.toString();
-      }
+        count++;
+	  }
 		
-      return s;      
-    }	  
+	  return sb.toString();      
+	}	  
 
-    public static void main(String[] args) { 	  
-      Scanner input = new Scanner(System.in);
+	public static void main(String[] args) { 	  
+	  Scanner input = new Scanner(System.in);
       System.out.print("Enter the number: ");
       int number = input.nextInt();  
 		 		
       String nthTerm = countAndSay(number);
       System.out.println();	
       System.out.print("The nth term of the count-and-say sequence is: " + nthTerm);
-    }
+	}
   }
