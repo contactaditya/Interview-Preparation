@@ -57,7 +57,7 @@ import java.io.*;
       if(isEditDistanceOne(string1, string2)) {
     	System.out.println("Yes the two words are exactly one edit distance away.");   
       } else {
-    	System.out.println("No the two words are exactly one edit distance away. ");  
+    	System.out.println("No the two words are not exactly one edit distance away. ");  
       }
       input.close();
     }
