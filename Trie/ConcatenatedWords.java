@@ -103,6 +103,5 @@ import java.io.*;
       result = findAllConcatenatedWordsInADictionary(words);
       System.out.println();
       System.out.print("The solution set is: " + result);
-
     }
   }
