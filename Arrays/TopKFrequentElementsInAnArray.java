@@ -8,9 +8,9 @@ import java.io.*;
      HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
      for(int number : array) {
        if(map.containsKey(number)) {
-	     map.put(number, map.get(number)+1);
+	 map.put(number, map.get(number)+1);
        } else {
-	     map.put(number, 1);
+	 map.put(number, 1);
        }
      }
 	   
@@ -19,7 +19,7 @@ import java.io.*;
      for(int key : map.keySet()) {
        int frequency = map.get(key);
        if (bucket[frequency] == null) {
- 	     bucket[frequency] = new ArrayList<>();
+ 	 bucket[frequency] = new ArrayList<>();
        }
        bucket[frequency].add(key);
      }
@@ -28,18 +28,18 @@ import java.io.*;
 	   
      for (int position = bucket.length - 1; position >= 0 && result.size() < k; position--) {
        if (bucket[position] != null) {
-	     result.addAll(bucket[position]);
+	 result.addAll(bucket[position]);
        }
      }
 
      return result;     
    }	 
    
-   public static List<Integer> topKFrequent1(int[] array, int k) {
-	 List<Integer> result = new ArrayList<Integer>();
-	 if (array == null || array.length == 0) {
-	   return result;
-	 }
+   public static List<Integer> topKFrequent1(int[] array, int k) { 
+     List<Integer> result = new ArrayList<Integer>();
+     if (array == null || array.length == 0) {
+       return result; 
+     }
      int min = Integer.MAX_VALUE, max = Integer.MIN_VALUE;
      for (int i = 0; i < array.length; i++) {
        if (array[i] < min) {
@@ -66,7 +66,7 @@ import java.io.*;
        }
      }
 
-	 return result;     
+     return result;     
    }	    
 
    public static void main(String[] args) {
