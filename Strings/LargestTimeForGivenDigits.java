@@ -3,8 +3,8 @@ import java.io.*;
 
   public class LargestTimeForGivenDigits {
 	  
-	public static String largestTimeFromDigits(int[] array) {
-	  String answer = new String();  
+    public static String largestTimeFromDigits(int[] array) {
+      String answer = new String();  
       // Choose different indices i, j, k, l as a permutation of 0, 1, 2, 3
       for (int i = 0; i < 4; i++) {
         for (int j = 0; j < 4; j++) {
@@ -20,26 +20,26 @@ import java.io.*;
             }
           }
         }
-	  }
+      }
 		
-	  return answer;      
-	}
+      return answer;      
+    }
 
-	public static void main(String[] args) {   
-	  Scanner input = new Scanner(System.in);
-	  System.out.print("Enter number of elements in the array: ");
-	  int numbers = input.nextInt();   
-	  int array[] = new int[numbers];
+    public static void main(String[] args) {   
+      Scanner input = new Scanner(System.in);
+      System.out.print("Enter number of elements in the array: ");
+      int numbers = input.nextInt();   
+      int array[] = new int[numbers];
 	    
-	  System.out.println();
-	  System.out.print("Please enter the actual values in the array: ");
-	  for (int i = 0; i < numbers; i++) {
-		array[i] = input.nextInt(); 
-	  }
+      System.out.println();
+      System.out.print("Please enter the actual values in the array: ");
+      for (int i = 0; i < numbers; i++) {
+	array[i] = input.nextInt(); 
+      }
 	   
-	  String largestTimeFromDigits = largestTimeFromDigits(array);
-	  System.out.println();
-	  System.out.print("The largest 24 hour time that can be made is: " + largestTimeFromDigits);
-	  input.close();
-	}
+      String largestTimeFromDigits = largestTimeFromDigits(array);
+      System.out.println();
+      System.out.print("The largest 24 hour time that can be made is: " + largestTimeFromDigits);
+      input.close();
+    }
   }
