@@ -37,5 +37,6 @@ import java.io.*;
      System.out.println();
      result = groupAnagrams(array);
      System.out.println("The anagrams after being grouped together: " + result);
+     input.close();
    }
  }
