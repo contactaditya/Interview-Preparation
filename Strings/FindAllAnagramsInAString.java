@@ -9,8 +9,8 @@ import java.io.*;
 	return result;		
       }
       int m = string1.length(), n = string2.length();
-      for (int i = 0; i < m-n+1; i++) {
-        String current = string1.substring(i, i+n);
+      for (int i = 0; i < m - n + 1; i++) {
+        String current = string1.substring(i, i + n);
         if (isAnagram(current, string2)) {
           result.add(i);
         }
@@ -26,12 +26,12 @@ import java.io.*;
       int[] dictionary = new int[26];
       for (int i = 0; i < string1.length(); i++) {
         char ch = string1.charAt(i);
-        dictionary[ch-'a']++;
+        dictionary[ch - 'a']++;
       }
       for (int i = 0; i < string2.length(); i++) {
         char ch = string2.charAt(i);
-        dictionary[ch-'a']--;
-        if (dictionary[ch-'a'] < 0) {
+        dictionary[ch - 'a']--;
+        if (dictionary[ch - 'a'] < 0) {
           return false;
         }
       }
@@ -44,14 +44,14 @@ import java.io.*;
       if (string1 == null ||  string1 == null || string1.length() < string2.length()) {
 	return result;		
       }
-      int[] letters = new int['z'-'a'+1];
-      for (int i=0; i<string2.length(); i++) {
-	letters[string2.charAt(i)-'a']--;
-	letters[string1.charAt(i)-'a']++;
+      int[] letters = new int['z'-'a'+ 1];
+      for (int i = 0; i < string2.length(); i++) {
+	letters[string2.charAt(i) - 'a']--;
+	letters[string1.charAt(i) - 'a']++;
       }
-      for (int i=0; i<=string1.length()-string2.length(); i++) {
+      for (int i = 0; i <= string1.length() - string2.length(); i++) {
 	boolean anagram = true;
-	for (int j=0; j<letters.length; j++) {
+	for (int j = 0; j < letters.length; j++) {
 	  if (letters[j] != 0) {
 	    anagram = false;
 	    break;
@@ -61,10 +61,10 @@ import java.io.*;
 	  result.add(i);
 	}
 	if (i < string1.length()) {
-	  letters[string1.charAt(i)-'a']--;
+	  letters[string1.charAt(i) - 'a']--;
 	}
-	if (i < string1.length()-string2.length()) {
-	  letters[string1.charAt(i+string2.length())-'a']++;
+	if (i < string1.length() - string2.length()) {
+	  letters[string1.charAt(i + string2.length()) - 'a']++;
 	}
       }
       return result;
