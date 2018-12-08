@@ -25,6 +25,47 @@ import java.io.*;
 		
 	  return min == Integer.MAX_VALUE ? 0 : min;      
 	}
+	
+	public static int minAreaRectangle1(int[][] points) {
+	  Arrays.sort(points, new Comparator<int[]>() {
+	    public int compare(int[] a, int[] b) {
+	      return a[0] == b[0] ? a[1] - b[1] : a[0] - b[0];
+	    }
+	  });
+	  
+	  Map<Integer, Set<Integer>> map = new HashMap<Integer, Set<Integer>>();
+      for (int[] p : points) {
+        if (!map.containsKey(p[1])) {
+          map.put(p[1], new HashSet<Integer>());
+        }
+          
+        map.get(p[1]).add(p[0]);
+      }
+      int min = Integer.MAX_VALUE;
+      for (int i=0; i < points.length - 1; i++) {
+        int[] p1 = points[i], p2 = points[i+1];
+        // The two points are not on the same x axis.
+        if (p1[0] != p2[0]) {
+          continue;
+        }
+        // Get height
+        int height = p2[1] - p1[1];
+        
+        // Use y1 of p1 to get the other x1 that has the same y1.
+        for (int x : map.get(p1[1])) {
+          if (x == p1[0]) {
+            continue;
+          }
+          // Get width.
+          // If there is an x2 also has the same y2 as p2.
+          if (map.get(p2[1]).contains(x)) {
+            int width = Math.abs(x - p1[0]);
+            min = Math.min(min, height * width);
+          }
+        }
+      }
+	  return min == Integer.MAX_VALUE ? 0 : min;      
+    }	
 
 	public static void main(String[] args) { 	 
 	  Scanner input = new Scanner(System.in);
