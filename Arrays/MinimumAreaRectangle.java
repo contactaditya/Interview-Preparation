@@ -3,7 +3,7 @@ import java.io.*;
 
   public class MinimumAreaRectangle {
 	  
-	public static int minAreaRectangle(int[][] points) {
+    public static int minAreaRectangle(int[][] points) {
       Map<Integer, Set<Integer>> map = new HashMap<Integer, Set<Integer>>();
       for (int[] p : points) {
         if (!map.containsKey(p[0])) {
@@ -23,17 +23,17 @@ import java.io.*;
         }
       }
 		
-	  return min == Integer.MAX_VALUE ? 0 : min;      
-	}
+      return min == Integer.MAX_VALUE ? 0 : min;      
+    }
 	
-	public static int minAreaRectangle1(int[][] points) {
-	  Arrays.sort(points, new Comparator<int[]>() {
-	    public int compare(int[] a, int[] b) {
-	      return a[0] == b[0] ? a[1] - b[1] : a[0] - b[0];
-	    }
-	  });
+    public static int minAreaRectangle1(int[][] points) {
+      Arrays.sort(points, new Comparator<int[]>() {
+        public int compare(int[] a, int[] b) {
+	  return a[0] == b[0] ? a[1] - b[1] : a[0] - b[0];
+	}
+      });
 	  
-	  Map<Integer, Set<Integer>> map = new HashMap<Integer, Set<Integer>>();
+      Map<Integer, Set<Integer>> map = new HashMap<Integer, Set<Integer>>();
       for (int[] p : points) {
         if (!map.containsKey(p[1])) {
           map.put(p[1], new HashSet<Integer>());
@@ -64,25 +64,25 @@ import java.io.*;
           }
         }
       }
-	  return min == Integer.MAX_VALUE ? 0 : min;      
+      return min == Integer.MAX_VALUE ? 0 : min;      
     }	
-
-	public static void main(String[] args) { 	 
-	  Scanner input = new Scanner(System.in);
-	  System.out.print("Enter the number of points in the xy-plane: ");
-	  int x = input.nextInt();  
-	  int[][] points = new int[x][2];
-	  System.out.println();
-	  System.out.println("Please enter the actual points in the plane: ");
-	  for(int i = 0; i < x; i++) {
-	    for(int j = 0; j < 2; j++) {
-	      points[i][j] = input.nextInt();
-	    }
-	  }
 	  
-	  int minAreaRectangle = minAreaRectangle(points); 
-	  System.out.println();
-	  System.out.print("The minimum area of a rectangle formed from these points, with sides parallel to the x and y axes is: " + minAreaRectangle);
-	  input.close();
-	}
+    public static void main(String[] args) { 	 
+      Scanner input = new Scanner(System.in);
+      System.out.print("Enter the number of points in the xy-plane: ");
+      int x = input.nextInt();  
+      int[][] points = new int[x][2];
+      System.out.println();
+      System.out.println("Please enter the actual points in the plane: ");
+      for(int i = 0; i < x; i++) {
+	for(int j = 0; j < 2; j++) {
+	  points[i][j] = input.nextInt();
+        }
+      }
+	  
+      int minAreaRectangle = minAreaRectangle(points); 
+      System.out.println();
+      System.out.print("The minimum area of a rectangle formed from these points, with sides parallel to the x and y axes is: " + minAreaRectangle);
+      input.close();
+    }
   }
