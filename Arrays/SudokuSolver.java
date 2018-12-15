@@ -3,22 +3,22 @@ import java.io.*;
 
   public class SudokuSolver {
 	  
-	public static void solveSudoku(char[][] board) {
+    public static void solveSudoku(char[][] board) {
       if(board == null || board.length == 0) {
-	    return;
+	return;
       }	        
       solve(board);    
-	  System.out.println();
-	  System.out.println("The solution to the sudoku puzzle is: ");
-	  for (int i = 0; i < 9; i++) {
-	    for (int j = 0; j < 9; j++) {
-		  System.out.print(board[i][j] + " ");
-	    }
-	    System.out.println();
-	  }	
+      System.out.println();
+      System.out.println("The solution to the sudoku puzzle is: ");
+      for (int i = 0; i < 9; i++) {
+        for (int j = 0; j < 9; j++) {
+	  System.out.print(board[i][j] + " ");
 	}
+	System.out.println();
+      }	
+    }
 
-	private static boolean solve(char[][] board) {
+    private static boolean solve(char[][] board) {
       for(int i = 0; i < board.length; i++) {
         for(int j = 0; j < board[0].length; j++) {
           if(board[i][j] == '.') { 
@@ -32,16 +32,16 @@ import java.io.*;
                   board[i][j] = '.'; 
                 } 
               }
-        	}
+            }
             return false;
           }
         }
-	  }
-	  return true;
-	}
+      }
+      return true;
+    }
 
-	private static boolean isValid(char[][] board, int row, int column, char c) {
-	  for(int i = 0; i < 9; i++) {
+    private static boolean isValid(char[][] board, int row, int column, char c) {
+      for(int i = 0; i < 9; i++) {
         if(board[i][column] != '.' && board[i][column] == c) {
           return false; // check row
         }
@@ -53,20 +53,20 @@ import java.io.*;
         }
       }
 		
-	  return true;
-	}
+      return true;
+    }
 
-	public static void main(String[] args) {   
-	  Scanner input = new Scanner(System.in);	 	 
-	  char board[][] = new char[9][9];
+    public static void main(String[] args) {   
+      Scanner input = new Scanner(System.in);	 	 
+      char board[][] = new char[9][9];
       System.out.println("Please enter the elements in the board array: ");
       for (int i = 0; i < 9; i++) {
         for (int j = 0; j < 9; j++) {
-	      board[i][j] = input.next().charAt(0);
+	  board[i][j] = input.next().charAt(0);
         }
       }
 	  
       solveSudoku(board);
       input.close();
-	}
+    }
   }
