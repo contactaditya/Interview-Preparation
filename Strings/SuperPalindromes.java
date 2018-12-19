@@ -4,7 +4,7 @@ import java.io.*;
  public class SuperPalindromes {
 	  
    public static int superpalindromesInRange(String sL, String sR) {
-	 long L = Long.valueOf(sL);
+     long L = Long.valueOf(sL);
      long R = Long.valueOf(sR);
      int MAGIC = 100000;
      int answer = 0;
@@ -40,37 +40,36 @@ import java.io.*;
     	 answer++;
        }
      }    
-	
 		
-	 return answer;       
+     return answer;       
    } 
    
    public static boolean isPalindrome(long x) {
-	 String string = Long.toString(x);
-	 int n = string.length();
-	 for(int i = 0; i < n/2 + n % 2; i++) {
-	   if (string.charAt(i) != string.charAt(n-i-1)) {
-		 return false;
-	   }
-	 }
+     String string = Long.toString(x);
+     int n = string.length();
+     for(int i = 0; i < n/2 + n % 2; i++) {
+       if (string.charAt(i) != string.charAt(n-i-1)) {
+	 return false;
+       }
+     }
 	    
-	 return true; 
+     return true; 
    }
 	  
    public static void main(String[] args) { 	 
-	 String L = new String();	  
-	 Scanner input = new Scanner(System.in);
-	 System.out.print("Enter the first integer: ");
-	 L = input.nextLine();
+     String L = new String();	  
+     Scanner input = new Scanner(System.in);
+     System.out.print("Enter the first integer: ");  
+     L = input.nextLine();
 	  
-	 System.out.println();	
-	 String R = new String();	  
-	 System.out.print("Enter the second string: ");
-	 R = input.nextLine();
+     System.out.println();	
+     String R = new String();	  
+     System.out.print("Enter the second string: "); 
+     R = input.nextLine();
 	  
-	 int numberOfSuperPalindromes = superpalindromesInRange(L, R);
-	 System.out.println();	
-	 System.out.println("The number of super palindromes between the two given positive integers are: " + numberOfSuperPalindromes);	
-	 input.close();
+     int numberOfSuperPalindromes = superpalindromesInRange(L, R);
+     System.out.println();	
+     System.out.println("The number of super palindromes between the two given positive integers are: " + numberOfSuperPalindromes);	
+     input.close();
    }
  }
