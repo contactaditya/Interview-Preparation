@@ -13,7 +13,7 @@ import java.io.*;
       	}
       	else {
       	  if(stack.isEmpty() || !matches(stack.pop(), c)) {
-      		return 0;
+      	    return 0;
       	  }
       	}
       }
