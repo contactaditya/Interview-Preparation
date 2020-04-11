@@ -3,7 +3,7 @@ import java.io.*;
 
   public class RelativeSortArray {
 	  
-	public static int[] relativeSortArray(int[] array1, int[] array2) {
+    public static int[] relativeSortArray(int[] array1, int[] array2) {
       int count[] = new int[1001];
       int k = 0;
       int result[] = new int[array1.length];
@@ -24,11 +24,11 @@ import java.io.*;
         }
       }
      
-	  return result;
+      return result;
     }	  
 
-	public static void main(String[] args) { 
-	  Scanner input = new Scanner(System.in);
+    public static void main(String[] args) { 
+      Scanner input = new Scanner(System.in);
       System.out.print("Enter number of elements in the first array: ");
       int number = input.nextInt();  
       int array1[] = new int[number];
@@ -36,7 +36,7 @@ import java.io.*;
       System.out.println();	
       System.out.print("Please enter the actual values in the array: ");
       for (int i = 0; i < array1.length; i++) {
-	    array1[i] = input.nextInt();
+        array1[i] = input.nextInt();
       }
 		    
       System.out.println();	
@@ -47,7 +47,7 @@ import java.io.*;
       System.out.println();	
       System.out.print("Please enter the actual values in the array: ");
       for (int i = 0; i < array2.length; i++) {
-	    array2[i] = input.nextInt();
+	array2[i] = input.nextInt();
       }
 		  
       int result[] = new int[array1.length];
@@ -56,8 +56,8 @@ import java.io.*;
       System.out.println();	
       System.out.print("The relative ordering of the items in array1 according to the items in the array2 is: ");
       for(int i = 0; i < result.length; i++) {
-	    System.out.print(result[i] + " ");
+	System.out.print(result[i] + " ");
       }
       input.close();
-	}
+    }
   }
