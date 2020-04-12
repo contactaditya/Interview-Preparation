@@ -1,17 +1,17 @@
 import java.io.*;
 import java.util.*;
 
-  public class SortedArrayToBalancedBST { 
+  public class ConvertSortedArrayToBalancedBST { 
     static Node root;	    
     static Node previous;
     
-	public Node sortedArrayToBST(int[] array) {
-	  if (array.length == 0) {
-		return null;
-	  }	
+    public Node sortedArrayToBST(int[] array) {
+      if (array.length == 0) {
+	return null;
+      }	
 			
-	  return sortedArrayToBST(array, 0, array.length - 1);    
-	}	  
+      return sortedArrayToBST(array, 0, array.length - 1);    
+    }	  
  
     private Node sortedArrayToBST(int array[], int start, int end) {
       if (start > end) {
@@ -42,7 +42,7 @@ import java.util.*;
     }
     
     public static void main(String[] args) {  
-      SortedArrayToBalancedBST tree = new SortedArrayToBalancedBST();
+      ConvertSortedArrayToBalancedBST tree = new ConvertSortedArrayToBalancedBST();
       Scanner input = new Scanner(System.in);
       System.out.print("Enter the number of elements in the array: ");
       int n = input.nextInt();
