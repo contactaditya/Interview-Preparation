@@ -4,8 +4,16 @@ import java.util.*;
   public class SortedArrayToBalancedBST { 
     static Node root;	    
     static Node previous;
+    
+	public Node sortedArrayToBST(int[] array) {
+	  if (array.length == 0) {
+		return null;
+	  }	
+			
+	  return sortedArrayToBST(array, 0, array.length - 1);    
+	}	  
  
-    public static Node sortedArrayToBST(int array[], int start, int end) {
+    private Node sortedArrayToBST(int array[], int start, int end) {
       if (start > end) {
         return null;
       }
@@ -23,7 +31,7 @@ import java.util.*;
       return node; 
     }
  
-    public void printPreorderTraversal(Node node) {
+    private void printPreorderTraversal(Node node) {
       if (node == null) {
         return;
       }
@@ -32,7 +40,7 @@ import java.util.*;
       printPreorderTraversal(node.left);
       printPreorderTraversal(node.right);
     }
-
+    
     public static void main(String[] args) {  
       SortedArrayToBalancedBST tree = new SortedArrayToBalancedBST();
       Scanner input = new Scanner(System.in);
@@ -41,14 +49,15 @@ import java.util.*;
       int array[] = new int[n];
       System.out.println();	
       System.out.print("Please enter the elements in the array: ");
-      for(int i=0; i < n; i++) {
+      for(int i = 0; i < n; i++) {
         array[i] = input.nextInt();
       }
 	  
-      root = sortedArrayToBST(array, 0, n - 1);
+      root = tree.sortedArrayToBST(array);
 	  
       System.out.println();
       System.out.print("Preorder traversal of binary tree is: ");
-      tree.printPreorderTraversal(root);		
+      tree.printPreorderTraversal(root);
+      input.close();
     }
   }
