@@ -3,8 +3,8 @@ import java.io.*;
 
   public class StringMatchingInAnArray {
 	  
-	public static List<String> stringMatching(String[] words) {
-	  HashSet<String> set = new HashSet<String>();
+    public static List<String> stringMatching(String[] words) {
+      HashSet<String> set = new HashSet<String>();
       
       for(int i = 0; i < words.length - 1; i++) {
     	String currentWord = words[i];
@@ -20,11 +20,11 @@ import java.io.*;
       }
 		
       List<String> result = new ArrayList<String>(set); 	
-	  return result;      
-	}	  
+      return result;      
+    }	  
 
-	public static void main(String[] args) {      
-	  Scanner input = new Scanner(System.in);
+    public static void main(String[] args) {      
+      Scanner input = new Scanner(System.in);
       System.out.print("Enter number of words: ");
       int numbers = input.nextInt();   
       String words[] = new String[numbers];
@@ -34,7 +34,7 @@ import java.io.*;
       System.out.print("Please enter the actual words: ");
       System.out.println();
       for (int i = 0; i < numbers; i++) {
-	    words[i] = input.nextLine(); 
+        words[i] = input.nextLine(); 
       }
 	  
       List<String> result = new ArrayList<String>(); 
@@ -42,5 +42,5 @@ import java.io.*;
       System.out.println();
       System.out.println("All strings in words which are substring of another word in any order are: " + result);	
       input.close();
-	}
+    }
   }
