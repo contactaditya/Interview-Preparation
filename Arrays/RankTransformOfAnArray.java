@@ -22,7 +22,7 @@ import java.io.*;
         }
       }
       
-  	  // Retrive the values for getting ranks in correct order.
+      // Retrive the values for getting ranks in correct order.
       for(int i = 0; i< result.length; i++){
         result[i] = map.get(array[i]);
       }
@@ -30,8 +30,8 @@ import java.io.*;
       return result;	
     }	
 
-	public static void main(String[] args) { 
-	  Scanner input = new Scanner(System.in);
+    public static void main(String[] args) { 
+      Scanner input = new Scanner(System.in);
       System.out.print("Enter number of elements in the array: ");
       int number = input.nextInt();  
       int array[] = new int[number];
@@ -46,8 +46,8 @@ import java.io.*;
       int[] result = arrayRankTransform(array);
       System.out.print("The rank transform of the array is: ");  
       for (int i=0; i < result.length; i++) {
-	    System.out.print(result[i] + " ");
+        System.out.print(result[i] + " ");
       }	  
       input.close();
-	}
+    }
   }
