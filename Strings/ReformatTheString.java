@@ -3,8 +3,8 @@ import java.io.*;
 
   public class ReformatTheString {
 	  
-	public static String reformat(String string) {
-	  List<Character> digit = new ArrayList<Character>();
+    public static String reformat(String string) {
+      List<Character> digit = new ArrayList<Character>();
       List<Character> letter = new ArrayList<Character>();
       
       for (char c: string.toCharArray()) {
@@ -39,11 +39,11 @@ import java.io.*;
         }  
       }
 		
-	  return result.toString();	        
-	}
+      return result.toString();	        
+    }
 
-	public static void main(String[] args) {   
-	  Scanner input = new Scanner(System.in);
+    public static void main(String[] args) {   
+      Scanner input = new Scanner(System.in);
       System.out.print("Enter the alphanumeric string: ");
       String string = input.nextLine();  
 			  
@@ -51,5 +51,5 @@ import java.io.*;
       System.out.println();
       System.out.println("The reformatted string is: " + reformattedString);
       input.close();
-	}
+    }
   }
