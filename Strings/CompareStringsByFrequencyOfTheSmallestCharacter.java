@@ -3,30 +3,30 @@ import java.io.*;
 
   public class CompareStringsByFrequencyOfTheSmallestCharacter {
 	  
-	public static int[] numSmallerByFrequency(String queries[], String words[]) {
-	  int[] wordsFrequency = new int[11];
+    public static int[] numSmallerByFrequency(String queries[], String words[]) {
+      int[] wordsFrequency = new int[11];
 	  
-	  for(String str : words) {
-		int frequency = getFrequency(str);
+      for(String str : words) {
+	int frequency = getFrequency(str);
 
-		for(int i = 1; i < frequency; i++) {
-		  wordsFrequency[i]++;
-		}
-	  }
+        for(int i = 1; i < frequency; i++) {
+          wordsFrequency[i]++;
+	}
+      }
 	  
       int result[] = new int[queries.length];
       int i = 0;
       for(String string : queries) {
-		int frequency = getFrequency(string);
-		result[i] = wordsFrequency[frequency];
-		i++;
-	  }
+	int frequency = getFrequency(string);
+	result[i] = wordsFrequency[frequency];
+	i++;
+      }
     		
-	  return result;      
+      return result;      
     }
 
-	private static int getFrequency(String word) {
-	  char minC = 'z';
+    private static int getFrequency(String word) {
+      char minC = 'z';
       int count = 0;
       for (char ch : word.toCharArray()) {
         if (ch < minC) {
@@ -37,11 +37,11 @@ import java.io.*;
         }
       }
       
-	  return count;
-	}
+      return count;
+    }
 
-	public static void main(String[] args) {      
-	  Scanner input = new Scanner(System.in);
+    public static void main(String[] args) {      
+      Scanner input = new Scanner(System.in);
       System.out.print("Enter number of elements in the array: ");
       int numbersA = input.nextInt();   
       String queries[] = new String[numbersA];
@@ -51,7 +51,7 @@ import java.io.*;
       System.out.print("Please enter the actual values in the array: ");
       System.out.println();
       for (int i = 0; i < numbersA; i++) {
-	    queries[i] = input.nextLine(); 
+	queries[i] = input.nextLine(); 
       }
     
       System.out.println();
@@ -76,5 +76,5 @@ import java.io.*;
       }
       System.out.print("]");
       input.close();
-	}
+    }
   }
